@@ -1,6 +1,6 @@
 # physics-ai999x: ONNX formula pack guide
 
-Version 1.2.0. 365 exact formula graphs — every certified closed-form capability of physics-ai999x, compiled from its exact formula (nothing learned, nothing approximate). Float64, standard ONNX operators; run them with onnxruntime in Python, C++, C#, Java or the browser. Creator / engineer: Ibnul Jaif Farabi · AI999X · Apache-2.0.
+Version 1.3.0. 365 exact formula graphs — every certified closed-form capability of physics-ai999x, compiled from its exact formula (nothing learned, nothing approximate). Float64, standard ONNX operators; run them with onnxruntime in Python, C++, C#, Java or the browser. Creator / engineer: Ibnul Jaif Farabi · AI999X · Apache-2.0.
 
 ## Find the right formula (autocomplete)
 

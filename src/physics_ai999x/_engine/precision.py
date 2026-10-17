@@ -67,6 +67,19 @@ def agrees(computed: float, reference, mode: str = "presentation", *, scale: flo
     return abs(computed - ref) <= rtol * abs(ref)
 
 
+def within(computed, reference, rtol: float, *, scale: float | None = None) -> bool:
+    """`computed` within relative `rtol` of `reference`. A zero reference is compared against `scale` (the size of the
+    terms that produced it), never against a fixed absolute floor: `rtol * max(1e-12, |want|)` accepted ANY answer
+    smaller than 1e-12 in SI — 3.2e-19 C for 3.2e-18 C, 3.0e-19 kg*m/s for 6.0e-22 kg*m/s (physics-questions-3,
+    2026-10-17: three wrong teacher answers were machine-checked that way)."""
+    if computed is None or reference is None:
+        return False
+    ref = float(reference)
+    if ref == 0.0:
+        return computed == 0.0 or (scale is not None and abs(computed) <= rtol * abs(scale))
+    return abs(computed - ref) <= rtol * abs(ref)
+
+
 def deviation(computed: float, reference: float) -> float:
     return (computed - reference) / reference if reference else 0.0
 

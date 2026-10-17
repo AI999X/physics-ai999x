@@ -4,7 +4,7 @@
 
 **[Install](https://pypi.org/project/physics-ai999x/)** · **[Capability guide](https://huggingface.co/AI999X/physics-ai999x/tree/main/docs)** · **[Evaluation](https://huggingface.co/AI999X/physics-ai999x/tree/main/evaluation)** · **[AI999X on Hugging Face](https://huggingface.co/AI999X)** · **[Website](https://ai999x.com)** · **[Support: Buy Me a Coffee](https://buymeacoffee.com/ibnuljaiffarabi)**
 
-License: Apache-2.0 · Author: Ibnul Jaif Farabi (creator and engineer) · Organization: AI999X · Version 1.2.0
+License: Apache-2.0 · Author: Ibnul Jaif Farabi (creator and engineer) · Organization: AI999X · Version 1.3.0
 
 physics-ai999x is an offline, deterministic Python solver that answers physics questions with verified results from 148 certified capabilities, gives 859 documented answers identically on Windows and Linux, and refuses rather than guesses when an answer cannot be verified.
 
@@ -25,7 +25,7 @@ physics-ai999x is an offline, deterministic Python solver that answers physics q
 
 | Property | Value |
 |---|---|
-| Package | `physics-ai999x` 1.2.0 (import `physics_ai999x`) |
+| Package | `physics-ai999x` 1.3.0 (import `physics_ai999x`) |
 | Type | Deterministic neuro-symbolic physics engine (rule-based reading + certified symbolic capabilities) |
 | Capabilities | 23 certified derivations, 16 certified model_familys, 2 certified procedures, 107 certified relations |
 | Knowledge pack | version 0.6.0 |
@@ -59,7 +59,7 @@ physics.ask("Who created you?").message
 # -> physics-ai999x was created and engineered by Ibnul Jaif Farabi at AI999X.
 ```
 
-Command line: `physics-ai999x "<question>"`, `physics-ai999x --capabilities`. The outputs above were produced by running this exact code on physics-ai999x 1.2.0.
+Command line: `physics-ai999x "<question>"`, `physics-ai999x --capabilities`. The outputs above were produced by running this exact code on physics-ai999x 1.3.0.
 
 ## How every answer is verified
 
@@ -83,6 +83,35 @@ Capabilities are certified before they ship: each must reproduce hand-worked ref
 | Verified natural-language questions (physics-questions-1) | 1567 | 478 | 1086 | **0** |
 
 Wrong means a number that disagrees with the verified answer. On the verified-question set, 3 of 481 answers differ from the record: two are unit spellings (ohm/ohms) or a self-contradictory question ('angular frequency in Hz'), one pairs two records that share an id; none is a reading error. Refusals are expected for questions outside the certified capabilities or with unusual wording; solve() covers every capability with typed inputs.
+
+## Optional decision model (auto (gated) + suggest)
+
+This repository also holds a compact ONNX decision model (`onnx/`, 37.4 MB int8, 33.4M parameters, CPU; fine-tuned from BAAI/bge-small-en-v1.5): it reads a question the rule-based reader refuses, names the capability it needs and copies the input values from the words (it never writes a digit itself).
+
+**When it answers by itself:** only through a gate — confidence at or above the zero-wrong cut chosen on validation with this very file, every required input read, every number in the question used, and the engine's verification; the asked quantity read by the rule-based reader (never inferred from which value is missing), every input copied with its unit, no direction or sign word in the question, and the relation's context conditions. The answer says it was read by the model. Otherwise it **suggests** the capability and a pre-filled call for you to check.
+
+| Measured (held-out questions the rule-based reader refuses) | Value |
+|---|---|
+| Right capability named | 157 of 159 named right (227 held-out questions the rule-based reader refuses) |
+| Input values copied | through the gate: 19 answered automatically on test, 0 wrong; 201 get a suggestion |
+| CPU latency, p95 | 47.2 ms (4 threads) |
+
+Through the gate it answered 19 held-out test and 22 validation questions that the rule-based reader refuses, with 0 wrong. On 1,377 rejected teacher questions it answered 41 distinct questions by itself, all correct by hand calculation (in every disagreement the teacher's key was wrong), and the 88 benchmark questions the reader refuses stay refused.
+
+```bash
+pip install "physics-ai999x[onnx]"
+hf download AI999X/physics-ai999x --include "onnx/*" --local-dir physics_model
+```
+
+```python
+import physics_ai999x as physics
+reader = physics.DecisionReader("physics_model/onnx")
+physics.ask("A 0.25 m rod generates 5 V while sliding in a 1 T field. How fast is the rod moving?", reader=reader).value   # -> 20.0 (m/s), read by the model, verified by the engine
+physics.ask("quick one: spring 500 N/m, mass 0.01 kg, amplitude 0.004 m, top speed?", reader=reader).message
+# -> ... Suggestion (decision model, not verified): this looks like `shm_max_speed` ... run physics_ai999x.shm_max_speed(k='500 N/m', m='0.01 kg', X='0.004 m')
+```
+
+Why the gate: the engine verifies a computation, not a reading. A copied number carries no sign, and the model does not decide what is asked — the rule-based reader names the asked quantity, and a question that sets directions against each other goes to a suggestion. Before that check, one held-out question ('downward at 2.0 m/s ... upward acceleration') was answered 8 m/s instead of 4 m/s upward.
 
 ## Capabilities
 
@@ -110,10 +139,10 @@ Wrong means a number that disagrees with the verified answer. On the verified-qu
 ## Citation
 
 ```bibtex
-@software{physics_ai999x_1_2_0,
+@software{physics_ai999x_1_3_0,
   title  = {physics-ai999x: an offline, verified physics solver},
   author = {Farabi, Ibnul Jaif}, organization = {AI999X},
-  year   = {2026}, version = {1.2.0},
+  year   = {2026}, version = {1.3.0},
   url    = {https://huggingface.co/AI999X/physics-ai999x}
 }
 ```

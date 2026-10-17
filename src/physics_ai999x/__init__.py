@@ -22,9 +22,9 @@ except ImportError:                        # the factory's source tree, during d
     from ai999x_factory.runtime import Answer, Pack
     from ai999x_factory.runtime.product import Product
 
-__version__ = "1.2.0"     # release 1.1.0 (2026-10-17): reader fixes (asked quantity, asked unit, sign and role words, oscillation); 1.0.0 on 2026-10-16
+__version__ = "1.3.0"     # release 1.3.0 (2026-10-17): the decision model (gated auto + suggest), reader fixes; 1.2.0 ONNX formula pack; 1.1.0 reader fixes; 1.0.0 on 2026-10-16
 __all__ = ["ask", "solve", "formula", "formulas", "quantities", "conditions", "capabilities", "compile_problem",
-           "plot", "plot_relation", "Answer", "pack", "topics", "templates", "suggest", "explain", "prove", "derivations", "about", "__version__"]
+           "plot", "plot_relation", "Answer", "pack", "topics", "templates", "suggest", "explain", "prove", "derivations", "about", "DecisionReader", "__version__"]
 # the shared domain API (ai999x_factory.runtime.product): the pack built into the package, else the source tree's
 _P = Product("physics", [Path(__file__).resolve().parent / "pack", Path(__file__).resolve().parents[3]])
 
@@ -43,7 +43,26 @@ def ask(question, *, reader=None) -> Answer:
     answer."""
     if reader is None or not isinstance(question, str):
         return _P.ask(question)
-    return reader.ask(question, pack())
+    if hasattr(reader, "ask"):                     # the earlier trained reader (physics_ai999x.reader)
+        return reader.ask(question, pack())
+    answer = _P.ask(question)                      # the decision model: only where the rule-based reader refuses
+    try:
+        from ._engine.decision_reader import suggest
+    except ImportError:
+        from ai999x_factory.runtime.decision_reader import suggest
+    return suggest(_P, question, answer, reader)
+
+
+def DecisionReader(folder):                       # noqa: N802 (a factory with the class's name, imported lazily)
+    """The optional decision model (gated auto + suggest), pip install "physics-ai999x[onnx]". A question the rule-based
+    reader refuses is ANSWERED only through the gate: confidence at the zero-wrong cut, the asked quantity read by the
+    rule-based reader, every input copied with its unit, every number used, no direction or sign word, the relation's
+    context conditions, and the engine's verification; otherwise the answer carries a SUGGESTION to check."""
+    try:
+        from ._engine.decision_reader import DecisionReader as _R
+    except ImportError:
+        from ai999x_factory.runtime.decision_reader import DecisionReader as _R
+    return _R(folder)
 
 
 def compile_problem(question: str):

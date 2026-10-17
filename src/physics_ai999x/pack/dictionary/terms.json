@@ -1598,6 +1598,22 @@
    "unit": "rad/s",
    "assumption": "it starts from rest (no initial rotation)",
    "when_tag": "rotating"
+  },
+  {
+   "phrase": "to a hover",
+   "kind": "speed",
+   "role": "final",
+   "value": 0,
+   "unit": "m/s",
+   "assumption": "ends hovering at rest"
+  },
+  {
+   "phrase": "comes to a hover",
+   "kind": "speed",
+   "role": "final",
+   "value": 0,
+   "unit": "m/s",
+   "assumption": "ends hovering at rest"
   }
  ],
  "context": [
@@ -3248,6 +3264,122 @@
   {
    "phrase": "converted into energy",
    "tag": "mass_energy"
+  },
+  {
+   "phrase": "constant acceleration",
+   "tag": "accelerated"
+  },
+  {
+   "phrase": "uniform acceleration",
+   "tag": "accelerated"
+  },
+  {
+   "phrase": "deceleration",
+   "tag": "accelerated"
+  },
+  {
+   "phrase": "to a hover",
+   "tag": "accelerated"
+  },
+  {
+   "phrase": "comes to a hover",
+   "tag": "accelerated"
+  },
+  {
+   "phrase": "throwing it directly upwards",
+   "tag": "accelerated"
+  },
+  {
+   "phrase": "throwing it directly upward",
+   "tag": "accelerated"
+  },
+  {
+   "phrase": "throwing it straight up",
+   "tag": "accelerated"
+  },
+  {
+   "phrase": "throws it straight up",
+   "tag": "accelerated"
+  },
+  {
+   "phrase": "throws it upward",
+   "tag": "accelerated"
+  },
+  {
+   "phrase": "throws it upwards",
+   "tag": "accelerated"
+  },
+  {
+   "phrase": "throwing it upward",
+   "tag": "accelerated"
+  },
+  {
+   "phrase": "throwing it upwards",
+   "tag": "accelerated"
+  },
+  {
+   "phrase": "thrown directly upwards",
+   "tag": "accelerated"
+  },
+  {
+   "phrase": "thrown directly upward",
+   "tag": "accelerated"
+  },
+  {
+   "phrase": "throws it directly upward",
+   "tag": "accelerated"
+  },
+  {
+   "phrase": "throws it directly upwards",
+   "tag": "accelerated"
+  },
+  {
+   "phrase": "throwing it directly upwards",
+   "tag": "thrown_up"
+  },
+  {
+   "phrase": "throwing it directly upward",
+   "tag": "thrown_up"
+  },
+  {
+   "phrase": "throwing it straight up",
+   "tag": "thrown_up"
+  },
+  {
+   "phrase": "throws it straight up",
+   "tag": "thrown_up"
+  },
+  {
+   "phrase": "throws it upward",
+   "tag": "thrown_up"
+  },
+  {
+   "phrase": "throws it upwards",
+   "tag": "thrown_up"
+  },
+  {
+   "phrase": "throwing it upward",
+   "tag": "thrown_up"
+  },
+  {
+   "phrase": "throwing it upwards",
+   "tag": "thrown_up"
+  },
+  {
+   "phrase": "thrown directly upwards",
+   "tag": "thrown_up"
+  },
+  {
+   "phrase": "thrown directly upward",
+   "tag": "thrown_up"
+  },
+  {
+   "phrase": "throws it directly upward",
+   "tag": "thrown_up"
+  },
+  {
+   "phrase": "throws it directly upwards",
+   "tag": "thrown_up"
   }
  ],
  "kind_tags": {
@@ -3703,6 +3835,19 @@
     "from the centre",
     "to the center",
     "to the centre"
+   ]
+  },
+  {
+   "kind": "acceleration",
+   "from": "plain",
+   "role": "gravity",
+   "phrases": [
+    "surface gravity",
+    "gravitational acceleration",
+    "acceleration due to gravity",
+    "acceleration of gravity",
+    "free-fall acceleration",
+    "free fall acceleration"
    ]
   }
  ]

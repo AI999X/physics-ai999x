@@ -130,7 +130,8 @@ def _strip(tok: str) -> str:
 def _unit_after(text: str, pos: int):
     """The longest unit spelled right after a number: (unit object, spelling, end position) or None."""
     start = pos + re.match(r"[ \t]*-?[ \t]*", text[pos:]).end()       # "3 kg", "3-kg", "3kg", "30°"
-    toks = [(start + t.start(), t.group()) for t in re.finditer(r"\S+", text[start:start + 60])][:4]
+    # up to six words: "kilogram meters squared per second" is five (with four, the reading stopped at kg*m^2)
+    toks = [(start + t.start(), t.group()) for t in re.finditer(r"\S+", text[start:start + 80])][:6]
     for k in range(len(toks), 0, -1):
         words = [_strip(t) for _, t in toks[:k]]
         if not all(words):
@@ -202,12 +203,67 @@ def _drop_reference(m: re.Match) -> str:
     return m.group(1)
 
 
+_NUMBER_WORDS = {"zero": 0, "one": 1, "two": 2, "three": 3, "four": 4, "five": 5, "six": 6, "seven": 7, "eight": 8,
+                 "nine": 9, "ten": 10, "eleven": 11, "twelve": 12, "thirteen": 13, "fourteen": 14, "fifteen": 15,
+                 "sixteen": 16, "seventeen": 17, "eighteen": 18, "nineteen": 19, "twenty": 20, "thirty": 30,
+                 "forty": 40, "fifty": 50, "sixty": 60, "seventy": 70, "eighty": 80, "ninety": 90, "hundred": 100}
+# a number written in words is still a stated number when a unit or a counted thing follows it ("every five seconds",
+# "ten complete waves"): written as digits it must be used like any other, or the question is refused
+# (physics-questions-3: "ten complete waves ... every five seconds" was ignored and a free fall answered instead)
+_NUM_WORD = r"(?:" + "|".join(sorted(_NUMBER_WORDS, key=len, reverse=True)) + r"|thousand)"
+_SPELLED_MEASURE = re.compile(
+    r"\b(" + _NUM_WORD + r"(?:(?:[\s-]+(?:and\s+)?|\s+point\s+)" + _NUM_WORD + r")*)\s+"
+    r"(?=(?:(?:complete|full|whole|equal|identical|more|extra)\s+)?"
+    r"(?:seconds?|minutes?|hours?|days?|years?|met(?:er|re)s?|kilomet(?:er|re)s?|centimet(?:er|re)s?|"
+    r"millimet(?:er|re)s?|kilograms?|grams?|newtons?|joules?|watts?|volts?|amperes?|amps?|ohms?|hertz|kelvins?|"
+    r"degrees?|pascals?|lit(?:er|re)s?|coulombs?|farads?|henr(?:y|ies)|teslas?|waves?|oscillations?|cycles?|"
+    r"revolutions?|rotations?|turns?|vibrations?|swings?|crests?|pulses?|laps?|loops?|wavelengths?)\b)", re.I)
+
+
+def spelled_number(phrase: str):
+    """'twelve hundred' -> 1200, 'forty-five' -> 45, 'zero point five' -> 0.5, 'two thousand and fifty' -> 2050;
+    None when the words do not form one number (then the text is left as written)."""
+    words = [w for w in re.split(r"[\s-]+", phrase.lower()) if w and w != "and"]
+    if "point" in words:
+        i = words.index("point")
+        whole = spelled_number(" ".join(words[:i])) if i else 0
+        digits = words[i + 1:]
+        if whole is None or not digits or any(_NUMBER_WORDS.get(d, 10) > 9 for d in digits):
+            return None
+        return float(f"{int(whole)}." + "".join(str(_NUMBER_WORDS[d]) for d in digits))
+    total = current = 0
+    last = None
+    for w in words:
+        if w == "hundred":
+            current = (current or 1) * 100
+        elif w == "thousand":
+            total += (current or 1) * 1000
+            current = 0
+        elif w in _NUMBER_WORDS:
+            v = _NUMBER_WORDS[w]
+            if last in _NUMBER_WORDS and last != "hundred" and not (_NUMBER_WORDS[last] >= 20 and v < 10 and _NUMBER_WORDS[last] % 10 == 0):
+                return None                                # "five three" is not one number
+            current += v
+        else:
+            return None
+        last = w
+    return total + current
+
+
+def _spelled(m) -> str:
+    value = spelled_number(m.group(1))
+    if value is None:
+        return m.group(0)
+    return f"{value:g} "
+
+
 _NOTATION = [
+    (_SPELLED_MEASURE, _spelled),
     (re.compile(r"\^\s*\(\s*[–—]"), "^(-"),                                               # en dash as a minus sign
     (re.compile(r"(?:\(\s*)?(?:assume\s+that\s+)?\b1\s+([A-Za-zΩ]+)\s+(?:equals|=|is equal to)\s+[\d,.]+\s+"
                 r"([A-Za-zΩ/^\d]+(?:\s+per\s+[A-Za-z]+)?)\s*(?:\.\s*)?(?:\)|(?=[.;?]))", re.I), _drop_unit_definition),
     (re.compile(r"(\d)\s*[*x×·]\s*10\s*\^\s*\(\s*([-−+]?\d+)\s*\)"), r"\1e\2"),        # 3.33*10^(-2) -> 3.33e-2
-    (re.compile(r"(\d)\s*[*×·]\s*10\s*\^\s*([-−+]?\d+)"), r"\1e\2"),                   # 1.2*10^4, 1.2·10^4
+    (re.compile(r"(\d)\s*[*×·x]\s*10\s*\^\s*([-−+]?\d+)"), r"\1e\2"),                  # 1.2*10^4, 1.2·10^4, 1.2 x 10^4
     (re.compile(r"\^\s*\(\s*([-−]?\d+)\s*\)"), r"^\1"),                                  # m/s^(2) -> m/s^2
     (re.compile(r"º"), "°"),                                                              # ordinal sign as degree
     (re.compile(r"°\s+([CF])\b"), r"°\1"),                                                # "1100° C"
