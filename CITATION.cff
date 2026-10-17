@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "physics-ai999x: an offline, verified physics solver"
+authors:
+  - family-names: Farabi
+    given-names: Ibnul Jaif
+    affiliation: AI999X
+version: 1.2.0
+license: Apache-2.0
+url: "https://huggingface.co/AI999X/physics-ai999x"
+repository-code: "https://huggingface.co/AI999X/physics-ai999x"
+keywords:
+  - physics
+  - physics solver
+  - physics calculator
+  - kinematics
+  - dynamics
+  - energy
+  - electricity
+  - thermodynamics
+  - fluids
+  - optics
+  - units
+  - dimensional analysis

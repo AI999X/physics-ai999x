@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "physics-ai999x"
+version = "1.2.0"
+description = "Offline, verified physics solver: natural-language questions to typed quantities, certified relations, step-by-step working, LaTeX and honest refusals (zero wrong answers by design)"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "Apache-2.0"}
+authors = [{name = "Ibnul Jaif Farabi"}]
+maintainers = [{name = "AI999X"}]
+keywords = ["physics", "physics solver", "physics calculator", "kinematics", "dynamics", "energy", "electricity", "thermodynamics", "fluids", "optics", "units", "dimensional analysis", "word problems", "ai999x", "verified ai", "neuro-symbolic", "deterministic", "offline", "cpu", "stem", "education", "step-by-step", "latex", "solver", "zero hallucination"]
+classifiers = ["License :: OSI Approved :: Apache Software License", "Programming Language :: Python :: 3", "Programming Language :: Python :: 3 :: Only", "Operating System :: OS Independent", "Intended Audience :: Education", "Intended Audience :: Science/Research", "Intended Audience :: Developers", "Topic :: Scientific/Engineering", "Topic :: Education", "Development Status :: 5 - Production/Stable"]
+dependencies = ["sympy>=1.12", "mpmath>=1.3"]
+
+[project.optional-dependencies]
+plot = ["matplotlib>=3.7"]
+onnx = ["onnxruntime>=1.17", "tokenizers>=0.15", "numpy>=1.24"]
+all = ["matplotlib>=3.7", "onnxruntime>=1.17", "tokenizers>=0.15", "numpy>=1.24"]
+
+[project.scripts]
+physics-ai999x = "physics_ai999x.cli:main"
+
+[project.urls]
+"Source" = "https://github.com/AI999X/physics-ai999x"
+"Issues" = "https://github.com/AI999X/physics-ai999x/issues"
+"Homepage" = "https://ai999x.com"
+"Hugging Face" = "https://huggingface.co/AI999X/physics-ai999x"
+"Funding" = "https://buymeacoffee.com/ibnuljaiffarabi"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+physics_ai999x = ["pack/*.json", "pack/*/*.json", "pack/*.sqlite", "pack/capabilities/*.py"]

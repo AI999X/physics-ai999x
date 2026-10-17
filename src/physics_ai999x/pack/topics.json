@@ -1,0 +1,2231 @@
+{
+ "domain": "physics",
+ "topics": [
+  {
+   "id": "physics.foundations.measurement",
+   "name": "Units, measurement and estimation",
+   "area": "Measurement and method",
+   "status": "under review",
+   "relations": [],
+   "knowledge": {
+    "verified_records": 0,
+    "unverified_records": 44
+   },
+   "search_words": [
+    "physics",
+    "units",
+    "approximation",
+    "precision",
+    "method",
+    "accuracy",
+    "significant",
+    "figures",
+    "uncertainty",
+    "introduction",
+    "classical",
+    "model",
+    "modern",
+    "quantum",
+    "mechanics",
+    "relativity",
+    "scientific",
+    "second",
+    "theory",
+    "physical",
+    "quantities",
+    "conversion",
+    "factor",
+    "derived",
+    "english",
+    "fundamental",
+    "kilogram",
+    "meter",
+    "metric",
+    "system",
+    "order",
+    "magnitude",
+    "adding",
+    "percents",
+    "percent"
+   ]
+  },
+  {
+   "id": "physics.mechanics.linear_motion",
+   "name": "Motion along a line",
+   "area": "Mechanics",
+   "status": "executable",
+   "relations": [
+    {
+     "key": "average_velocity_displacement",
+     "name": "Displacement from the mean of initial and final velocity",
+     "equation": "x = (v0 + v)*t/2"
+    },
+    {
+     "key": "displacement_time",
+     "name": "Displacement under constant acceleration",
+     "equation": "x = v0*t + a*t**2/2"
+    },
+    {
+     "key": "max_height_vertical_throw",
+     "name": "Maximum height of a vertical throw",
+     "equation": "h = v0**2/(2*g)"
+    },
+    {
+     "key": "speed_after_fall_from_rest",
+     "name": "Speed after falling from rest",
+     "equation": "v = sqrt(2*g*h)"
+    },
+    {
+     "key": "time_to_top_vertical_throw",
+     "name": "Time to the top of a vertical throw",
+     "equation": "t = v0/g"
+    },
+    {
+     "key": "uniform_motion",
+     "name": "Motion at constant velocity",
+     "equation": "d = v*t"
+    },
+    {
+     "key": "velocity_displacement",
+     "name": "Speed after a displacement under constant acceleration",
+     "equation": "v**2 = v0**2 + 2*a*x"
+    },
+    {
+     "key": "velocity_time",
+     "name": "Velocity under constant acceleration",
+     "equation": "v = v0 + a*t"
+    }
+   ],
+   "knowledge": {
+    "verified_records": 124,
+    "unverified_records": 129
+   },
+   "search_words": [
+    "acceleration",
+    "time",
+    "velocity",
+    "speed",
+    "average",
+    "instantaneous",
+    "displacement",
+    "distance",
+    "kinematics",
+    "motion",
+    "dimensional",
+    "variable",
+    "traveled",
+    "position",
+    "vectors",
+    "scalars",
+    "coordinate",
+    "systems",
+    "scalar",
+    "vector",
+    "elapsed",
+    "model",
+    "deceleration",
+    "equations",
+    "constant",
+    "dimension",
+    "slope",
+    "problem",
+    "solving",
+    "basics",
+    "falling",
+    "objects",
+    "gravity",
+    "free",
+    "fall",
+    "graphical",
+    "analysis",
+    "dependent",
+    "independent",
+    "intercept"
+   ]
+  },
+  {
+   "id": "physics.mechanics.plane_motion",
+   "name": "Vectors, projectiles and relative motion",
+   "area": "Mechanics",
+   "status": "machine-checked",
+   "relations": [],
+   "knowledge": {
+    "verified_records": 5,
+    "unverified_records": 54
+   },
+   "search_words": [
+    "vector",
+    "addition",
+    "motion",
+    "projectile",
+    "kinematics",
+    "head",
+    "subtraction",
+    "methods",
+    "tail",
+    "method",
+    "resultant",
+    "velocity",
+    "analytical",
+    "relativity",
+    "dimensions",
+    "introduction",
+    "component",
+    "direction",
+    "magnitude",
+    "graphical",
+    "commutative",
+    "scalar",
+    "resistance",
+    "range",
+    "trajectory",
+    "velocities",
+    "classical",
+    "relative"
+   ]
+  },
+  {
+   "id": "physics.mechanics.forces",
+   "name": "Forces and Newton's laws",
+   "area": "Mechanics",
+   "status": "executable",
+   "relations": [
+    {
+     "key": "acceleration_frictionless_incline",
+     "name": "Acceleration down a frictionless incline",
+     "equation": "a = g*sin(theta)"
+    },
+    {
+     "key": "net_force_friction",
+     "name": "Net force with an opposing friction force",
+     "equation": "F = P - f"
+    },
+    {
+     "key": "newton_second",
+     "name": "Net force and acceleration",
+     "equation": "F = m*a"
+    },
+    {
+     "key": "normal_force_incline",
+     "name": "Normal force on an incline",
+     "equation": "N = m*g*cos(theta)"
+    },
+    {
+     "key": "normal_on_level",
+     "name": "Normal force on a level surface",
+     "equation": "N = W"
+    },
+    {
+     "key": "tension_hanging_at_rest",
+     "name": "Tension in a rope holding a hanging body",
+     "equation": "T = m*g"
+    },
+    {
+     "key": "weight",
+     "name": "Weight in a uniform gravitational field",
+     "equation": "W = m*g"
+    },
+    {
+     "key": "weight_component_along_incline",
+     "name": "Component of the weight along an incline",
+     "equation": "F = m*g*sin(theta)"
+    }
+   ],
+   "knowledge": {
+    "verified_records": 81,
+    "unverified_records": 100
+   },
+   "search_words": [
+    "newton",
+    "motion",
+    "force",
+    "inertia",
+    "forces",
+    "concept",
+    "free",
+    "system",
+    "first",
+    "external",
+    "second",
+    "third",
+    "normal",
+    "tension",
+    "development",
+    "dynamics",
+    "body",
+    "diagram",
+    "friction",
+    "mass",
+    "weight",
+    "acceleration",
+    "fall",
+    "thrust",
+    "where",
+    "symmetry",
+    "other",
+    "examples",
+    "inertial",
+    "frame",
+    "reference",
+    "problem",
+    "solving",
+    "strategies",
+    "further",
+    "applications",
+    "laws",
+    "extended",
+    "topic",
+    "four"
+   ]
+  },
+  {
+   "id": "physics.mechanics.friction_drag_elasticity",
+   "name": "Friction, drag and elasticity",
+   "area": "Mechanics",
+   "status": "executable",
+   "relations": [
+    {
+     "key": "kinetic_friction",
+     "name": "Sliding friction",
+     "equation": "f = mu*N"
+    }
+   ],
+   "knowledge": {
+    "verified_records": 16,
+    "unverified_records": 49
+   },
+   "search_words": [
+    "friction",
+    "kinetic",
+    "magnitude",
+    "static",
+    "object",
+    "stress",
+    "where",
+    "drag",
+    "facing",
+    "fluid",
+    "strain",
+    "deformation",
+    "stokes",
+    "baseball",
+    "moving",
+    "velocity",
+    "viscosity",
+    "forces",
+    "force",
+    "elasticity",
+    "shear",
+    "tensile",
+    "strength"
+   ]
+  },
+  {
+   "id": "physics.mechanics.circular_motion_gravitation",
+   "name": "Circular motion, gravitation and orbits",
+   "area": "Mechanics",
+   "status": "executable",
+   "relations": [
+    {
+     "key": "centripetal_acceleration",
+     "name": "Centripetal acceleration",
+     "equation": "a = v**2/r"
+    },
+    {
+     "key": "centripetal_acceleration_omega",
+     "name": "Centripetal acceleration from angular velocity",
+     "equation": "a = r*omega**2"
+    },
+    {
+     "key": "centripetal_force",
+     "name": "Centripetal force",
+     "equation": "F = m*v**2/r"
+    },
+    {
+     "key": "orbital_period",
+     "name": "Period of a circular orbit",
+     "equation": "T = 2*pi*sqrt(r**3/(G*M))"
+    },
+    {
+     "key": "orbital_speed",
+     "name": "Speed in a circular orbit",
+     "equation": "v = sqrt(G*M/r)"
+    },
+    {
+     "key": "surface_gravity",
+     "name": "Gravitational acceleration at a distance from a mass",
+     "equation": "g = G*M/r**2"
+    },
+    {
+     "key": "tangential_speed",
+     "name": "Speed on a circle from angular speed",
+     "equation": "v = omega*r"
+    }
+   ],
+   "knowledge": {
+    "verified_records": 54,
+    "unverified_records": 47
+   },
+   "search_words": [
+    "force",
+    "velocity",
+    "centripetal",
+    "angle",
+    "linear",
+    "ideal",
+    "rotation",
+    "angular",
+    "newton",
+    "universal",
+    "gravitation",
+    "circular",
+    "perpendicular",
+    "acceleration",
+    "fictitious",
+    "inertial",
+    "coriolis",
+    "length",
+    "gravitational",
+    "constant",
+    "radians",
+    "radius",
+    "curvature",
+    "uniform",
+    "motion",
+    "path",
+    "ultracentrifuge",
+    "banked",
+    "curve",
+    "banking",
+    "speed",
+    "forces",
+    "frames",
+    "centrifugal",
+    "frame",
+    "reference",
+    "center",
+    "mass",
+    "microgravity",
+    "satellites"
+   ]
+  },
+  {
+   "id": "physics.mechanics.work_energy_power",
+   "name": "Work, energy and power",
+   "area": "Mechanics",
+   "status": "executable",
+   "relations": [
+    {
+     "key": "gravitational_pe",
+     "name": "Gravitational potential energy near the surface",
+     "equation": "U = m*g*h"
+    },
+    {
+     "key": "kinetic_energy",
+     "name": "Translational kinetic energy",
+     "equation": "K = m*v**2/2"
+    },
+    {
+     "key": "net_work_kinetic_energy",
+     "name": "Work-energy theorem",
+     "equation": "W = m*(v**2 - v0**2)/2"
+    },
+    {
+     "key": "power_energy",
+     "name": "Average power",
+     "equation": "P = E/t"
+    },
+    {
+     "key": "power_force_speed",
+     "name": "Power of a force on a moving body",
+     "equation": "P = F*v"
+    },
+    {
+     "key": "spring_energy",
+     "name": "Energy stored in a linear spring",
+     "equation": "U = k*x**2/2"
+    },
+    {
+     "key": "spring_force",
+     "name": "Force of a linear spring",
+     "equation": "F = k*x"
+    },
+    {
+     "key": "spring_launch_speed",
+     "name": "Speed of a body launched by a spring",
+     "equation": "k*x**2/2 = m*v**2/2"
+    },
+    {
+     "key": "work",
+     "name": "Work by a constant force",
+     "equation": "W = F*d*cos(theta)"
+    }
+   ],
+   "knowledge": {
+    "verified_records": 124,
+    "unverified_records": 114
+   },
+   "search_words": [
+    "energy",
+    "work",
+    "potential",
+    "conservation",
+    "power",
+    "gravitational",
+    "times",
+    "kinetic",
+    "theorem",
+    "conservative",
+    "forces",
+    "mechanical",
+    "force",
+    "nonconservative",
+    "metabolic",
+    "rate",
+    "scientific",
+    "definition",
+    "chemical",
+    "joule",
+    "kilowatt",
+    "hour",
+    "compressed",
+    "extended",
+    "renewable",
+    "forms",
+    "thermal",
+    "magnitude",
+    "cosine",
+    "angle",
+    "friction",
+    "spring",
+    "efficiency",
+    "electrical",
+    "nuclear",
+    "radiant",
+    "fossil",
+    "fuels",
+    "horsepower",
+    "watt"
+   ]
+  },
+  {
+   "id": "physics.mechanics.momentum_collisions",
+   "name": "Momentum and collisions",
+   "area": "Mechanics",
+   "status": "executable",
+   "relations": [
+    {
+     "key": "average_force_from_momentum_change",
+     "name": "Average net force from a change of momentum",
+     "equation": "F = (p2 - p1)/t"
+    },
+    {
+     "key": "impulse",
+     "name": "Impulse of a constant force",
+     "equation": "J = F*t"
+    },
+    {
+     "key": "momentum",
+     "name": "Linear momentum",
+     "equation": "p = m*v"
+    }
+   ],
+   "knowledge": {
+    "verified_records": 38,
+    "unverified_records": 76
+   },
+   "search_words": [
+    "momentum",
+    "collisions",
+    "collision",
+    "inelastic",
+    "linear",
+    "impulse",
+    "conservation",
+    "elastic",
+    "dimension",
+    "point",
+    "masses",
+    "force",
+    "change",
+    "quark",
+    "second",
+    "motion",
+    "principle",
+    "isolated",
+    "system",
+    "internal",
+    "kinetic",
+    "energy",
+    "perfectly",
+    "dimensions",
+    "introduction",
+    "rocket",
+    "propulsion"
+   ]
+  },
+  {
+   "id": "physics.mechanics.statics_torque",
+   "name": "Equilibrium and torque",
+   "area": "Mechanics",
+   "status": "executable",
+   "relations": [
+    {
+     "key": "torque_lever",
+     "name": "Torque of a force",
+     "equation": "tau = r*F*sin(theta)"
+    }
+   ],
+   "knowledge": {
+    "verified_records": 12,
+    "unverified_records": 44
+   },
+   "search_words": [
+    "equilibrium",
+    "condition",
+    "torque",
+    "static",
+    "first",
+    "dynamic",
+    "units",
+    "where",
+    "between",
+    "second",
+    "perpendicular",
+    "lever",
+    "pivot",
+    "point",
+    "line",
+    "along",
+    "which",
+    "magnitude",
+    "force",
+    "stability",
+    "center",
+    "gravity",
+    "neutral",
+    "stable",
+    "unstable",
+    "applications",
+    "statics",
+    "including",
+    "problem",
+    "solving",
+    "strategies",
+    "simple",
+    "machines",
+    "mechanical",
+    "advantage",
+    "forces",
+    "torques",
+    "muscles",
+    "joints"
+   ]
+  },
+  {
+   "id": "physics.mechanics.rotation",
+   "name": "Rotational motion and angular momentum",
+   "area": "Mechanics",
+   "status": "executable",
+   "relations": [
+    {
+     "key": "angular_momentum",
+     "name": "Angular momentum of a rotating body",
+     "equation": "L = Ir*omega"
+    },
+    {
+     "key": "angular_momentum_point_mass",
+     "name": "Angular momentum of a point mass on a circle",
+     "equation": "L = m*v*r"
+    },
+    {
+     "key": "angular_velocity_angle",
+     "name": "Angular velocity and angle turned under constant angular acceleration",
+     "equation": "omega**2 = omega0**2 + 2*alpha*theta"
+    },
+    {
+     "key": "angular_velocity_time",
+     "name": "Angular velocity under constant angular acceleration",
+     "equation": "omega = omega0 + alpha*t"
+    },
+    {
+     "key": "rotational_kinetic_energy",
+     "name": "Rotational kinetic energy",
+     "equation": "KR = Ir*omega**2/2"
+    },
+    {
+     "key": "tangential_acceleration",
+     "name": "Tangential acceleration of a point on a rotating body",
+     "equation": "a = r*alpha"
+    }
+   ],
+   "knowledge": {
+    "verified_records": 28,
+    "unverified_records": 51
+   },
+   "search_words": [
+    "angular",
+    "rotational",
+    "momentum",
+    "energy",
+    "acceleration",
+    "motion",
+    "inertia",
+    "kinematics",
+    "kinetic",
+    "work",
+    "conservation",
+    "change",
+    "velocity",
+    "tangential",
+    "dynamics",
+    "moment",
+    "torque",
+    "revisited",
+    "theorem",
+    "collisions",
+    "extended",
+    "bodies",
+    "dimensions",
+    "gyroscopic",
+    "effects",
+    "vector",
+    "aspects",
+    "right",
+    "hand",
+    "rule"
+   ]
+  },
+  {
+   "id": "physics.fluids.statics",
+   "name": "Fluids at rest: density, pressure, buoyancy",
+   "area": "Fluids",
+   "status": "executable",
+   "relations": [
+    {
+     "key": "density",
+     "name": "Mass density",
+     "equation": "rho = m/V"
+    },
+    {
+     "key": "hydrostatic_pressure",
+     "name": "Pressure of a column of fluid",
+     "equation": "P = rho*g*h"
+    },
+    {
+     "key": "pressure_force",
+     "name": "Pressure of a force on an area",
+     "equation": "P = F/A"
+    }
+   ],
+   "knowledge": {
+    "verified_records": 73,
+    "unverified_records": 86
+   },
+   "search_words": [
+    "pressure",
+    "principle",
+    "fluid",
+    "absolute",
+    "archimedes",
+    "capillary",
+    "action",
+    "density",
+    "gauge",
+    "pascal",
+    "surface",
+    "tension",
+    "diastolic",
+    "systolic",
+    "forces",
+    "what",
+    "fluids",
+    "liquid",
+    "variation",
+    "depth",
+    "measurement",
+    "buoyant",
+    "force",
+    "specific",
+    "gravity",
+    "cohesion",
+    "adhesion",
+    "liquids",
+    "adhesive",
+    "cohesive",
+    "contact",
+    "angle",
+    "pressures",
+    "body",
+    "glaucoma",
+    "intraocular",
+    "micturition",
+    "reflex"
+   ]
+  },
+  {
+   "id": "physics.fluids.flow",
+   "name": "Fluid flow and viscosity",
+   "area": "Fluids",
+   "status": "executable",
+   "relations": [
+    {
+     "key": "speed_after_fall_from_rest",
+     "name": "Speed after falling from rest",
+     "equation": "v = sqrt(2*g*h)"
+    }
+   ],
+   "knowledge": {
+    "verified_records": 30,
+    "unverified_records": 65
+   },
+   "search_words": [
+    "bernoulli",
+    "flow",
+    "equation",
+    "poiseuille",
+    "osmosis",
+    "rate",
+    "fluid",
+    "viscosity",
+    "laminar",
+    "turbulence",
+    "viscous",
+    "transport",
+    "diffusion",
+    "dialysis",
+    "osmotic",
+    "pressure",
+    "reverse",
+    "relation",
+    "velocity",
+    "principle",
+    "dynamics",
+    "liter",
+    "resistance",
+    "volume",
+    "most",
+    "general",
+    "applications",
+    "onset",
+    "reynolds",
+    "number",
+    "motion",
+    "object",
+    "terminal",
+    "speed",
+    "drag",
+    "molecular",
+    "phenomena",
+    "related",
+    "processes",
+    "active"
+   ]
+  },
+  {
+   "id": "physics.thermal.gases_temperature",
+   "name": "Temperature, expansion and gases",
+   "area": "Heat and thermodynamics",
+   "status": "executable",
+   "relations": [
+    {
+     "key": "ideal_gas_moles",
+     "name": "Ideal gas law",
+     "equation": "P*V = n*R*T"
+    },
+    {
+     "key": "linear_expansion",
+     "name": "Linear thermal expansion",
+     "equation": "dL = alpha_t*L*dT"
+    },
+    {
+     "key": "volume_expansion",
+     "name": "Thermal expansion of volume",
+     "equation": "dV = beta*V0*dT"
+    }
+   ],
+   "knowledge": {
+    "verified_records": 5,
+    "unverified_records": 57
+   },
+   "search_words": [
+    "thermal",
+    "temperature",
+    "expansion",
+    "pressure",
+    "scale",
+    "critical",
+    "point",
+    "humidity",
+    "celsius",
+    "partial",
+    "degree",
+    "fahrenheit",
+    "diagram",
+    "coefficient",
+    "ideal",
+    "phase",
+    "vapor",
+    "relative",
+    "absolute",
+    "zero",
+    "avogadro",
+    "number",
+    "dalton",
+    "pressures",
+    "kelvin",
+    "equilibrium",
+    "zeroth",
+    "thermodynamics",
+    "solids",
+    "liquids",
+    "linear",
+    "volume",
+    "stress",
+    "boltzmann",
+    "constant",
+    "mole",
+    "kinetic",
+    "theory",
+    "atomic",
+    "molecular"
+   ]
+  },
+  {
+   "id": "physics.thermal.heat_transfer",
+   "name": "Heat, phase change and heat transfer",
+   "area": "Heat and thermodynamics",
+   "status": "executable",
+   "relations": [
+    {
+     "key": "heat",
+     "name": "Heat for a temperature change",
+     "equation": "Q = m*c*dT"
+    },
+    {
+     "key": "latent_heat_fusion",
+     "name": "Heat to melt or freeze",
+     "equation": "Q = m*Lf"
+    },
+    {
+     "key": "latent_heat_vaporization",
+     "name": "Heat to boil or condense",
+     "equation": "Q = m*Lv"
+    }
+   ],
+   "knowledge": {
+    "verified_records": 28,
+    "unverified_records": 58
+   },
+   "search_words": [
+    "heat",
+    "radiation",
+    "transfer",
+    "conduction",
+    "convection",
+    "latent",
+    "temperature",
+    "change",
+    "sublimation",
+    "rate",
+    "kilocalorie",
+    "coefficient",
+    "mechanical",
+    "equivalent",
+    "surface",
+    "area",
+    "object",
+    "inversely",
+    "proportional",
+    "distance",
+    "capacity",
+    "specific",
+    "where",
+    "phase",
+    "methods",
+    "conductive",
+    "thermal",
+    "conductivity",
+    "emissivity",
+    "greenhouse",
+    "effect",
+    "stefan",
+    "boltzmann"
+   ]
+  },
+  {
+   "id": "physics.thermal.thermodynamics",
+   "name": "Thermodynamic laws, engines and entropy",
+   "area": "Heat and thermodynamics",
+   "status": "executable",
+   "relations": [
+    {
+     "key": "carnot_efficiency",
+     "name": "Carnot (maximum) efficiency",
+     "equation": "eff = 1 - Tc/Th"
+    },
+    {
+     "key": "cop_heat_pump",
+     "name": "Coefficient of performance of a heat pump",
+     "equation": "cop = Qh/W"
+    },
+    {
+     "key": "cop_refrigerator",
+     "name": "Coefficient of performance of a refrigerator",
+     "equation": "cop = Qc/W"
+    },
+    {
+     "key": "engine_efficiency",
+     "name": "Efficiency of a heat engine",
+     "equation": "eff = W/Qh"
+    },
+    {
+     "key": "engine_energy_balance",
+     "name": "Energy balance of a cyclic heat engine",
+     "equation": "W = Qh - Qc"
+    }
+   ],
+   "knowledge": {
+    "verified_records": 44,
+    "unverified_records": 67
+   },
+   "search_words": [
+    "thermodynamics",
+    "process",
+    "entropy",
+    "heat",
+    "second",
+    "carnot",
+    "first",
+    "engine",
+    "energy",
+    "efficiency",
+    "cycle",
+    "statistical",
+    "human",
+    "metabolism",
+    "internal",
+    "irreversible",
+    "some",
+    "simple",
+    "processes",
+    "adiabatic",
+    "cyclical",
+    "isobaric",
+    "isochoric",
+    "isothermal",
+    "introduction",
+    "engines",
+    "their",
+    "otto",
+    "perfect",
+    "restated",
+    "applications",
+    "pumps",
+    "refrigerators",
+    "coefficient",
+    "performance",
+    "pump",
+    "disorder",
+    "unavailability",
+    "change",
+    "reversible"
+   ]
+  },
+  {
+   "id": "physics.waves.oscillations_waves",
+   "name": "Oscillations and waves",
+   "area": "Oscillations, waves and sound",
+   "status": "executable",
+   "relations": [
+    {
+     "key": "angular_frequency",
+     "name": "Angular frequency and frequency",
+     "equation": "omega = 2*pi*f"
+    },
+    {
+     "key": "pendulum_period",
+     "name": "Period of a simple pendulum",
+     "equation": "T = 2*pi*sqrt(Lp/g)"
+    },
+    {
+     "key": "period_frequency",
+     "name": "Period and frequency",
+     "equation": "T = 1/f"
+    },
+    {
+     "key": "shm_max_speed",
+     "name": "Maximum speed of a mass on a spring",
+     "equation": "v = X*sqrt(k/m)"
+    },
+    {
+     "key": "spring_oscillation_period",
+     "name": "Period of a mass on a spring",
+     "equation": "T = 2*pi*sqrt(m/k)"
+    },
+    {
+     "key": "wave_speed",
+     "name": "Speed of a periodic wave",
+     "equation": "v = f*lam"
+    }
+   ],
+   "knowledge": {
+    "verified_records": 87,
+    "unverified_records": 89
+   },
+   "search_words": [
+    "motion",
+    "simple",
+    "harmonic",
+    "frequency",
+    "wave",
+    "energy",
+    "damping",
+    "interference",
+    "force",
+    "period",
+    "oscillations",
+    "periodic",
+    "oscillator",
+    "pendulum",
+    "resonance",
+    "waves",
+    "superposition",
+    "intensity",
+    "hooke",
+    "stress",
+    "strain",
+    "revisited",
+    "deformation",
+    "elastic",
+    "potential",
+    "constant",
+    "oscillate",
+    "over",
+    "restoring",
+    "under",
+    "special",
+    "amplitude",
+    "uniform",
+    "circular",
+    "damped",
+    "critical",
+    "forced",
+    "natural",
+    "resonate",
+    "longitudinal"
+   ]
+  },
+  {
+   "id": "physics.waves.sound",
+   "name": "Sound and hearing",
+   "area": "Oscillations, waves and sound",
+   "status": "machine-checked",
+   "relations": [],
+   "knowledge": {
+    "verified_records": 10,
+    "unverified_records": 60
+   },
+   "search_words": [
+    "sound",
+    "intensity",
+    "doppler",
+    "ultrasound",
+    "level",
+    "hearing",
+    "frequency",
+    "wavelength",
+    "effect",
+    "sonic",
+    "speed",
+    "pitch",
+    "where",
+    "loudness",
+    "note",
+    "pressure",
+    "unit",
+    "booms",
+    "wake",
+    "shift",
+    "boom",
+    "interference",
+    "resonance",
+    "standing",
+    "waves",
+    "columns",
+    "antinode",
+    "fundamental",
+    "harmonics",
+    "node",
+    "overtones",
+    "timbre",
+    "infrasound",
+    "phon",
+    "tone",
+    "acoustic",
+    "impedance",
+    "shifted",
+    "reflection",
+    "coefficient"
+   ]
+  },
+  {
+   "id": "physics.electricity.charge_field",
+   "name": "Charge, Coulomb's law and electric fields",
+   "area": "Electricity and magnetism",
+   "status": "executable",
+   "relations": [
+    {
+     "key": "electric_force_in_field",
+     "name": "Force on a charge in an electric field",
+     "equation": "F = q*Ef"
+    },
+    {
+     "key": "point_charge_field",
+     "name": "Electric field of a point charge",
+     "equation": "Ef = ke*Q/r**2"
+    }
+   ],
+   "knowledge": {
+    "verified_records": 0,
+    "unverified_records": 55
+   },
+   "search_words": [
+    "charge",
+    "electric",
+    "field",
+    "coulomb",
+    "electrostatic",
+    "static",
+    "force",
+    "electricity",
+    "conservation",
+    "electron",
+    "free",
+    "conductors",
+    "conductor",
+    "grounded",
+    "lines",
+    "electrostatics",
+    "equilibrium",
+    "printer",
+    "electromagnetic",
+    "polar",
+    "molecule",
+    "proton",
+    "graaff",
+    "generator",
+    "insulators",
+    "repulsion",
+    "induction",
+    "insulator",
+    "polarization",
+    "polarized",
+    "vector",
+    "concept",
+    "revisited",
+    "point",
+    "test",
+    "multiple",
+    "charges",
+    "forces",
+    "biology",
+    "interaction"
+   ]
+  },
+  {
+   "id": "physics.electricity.potential_capacitors",
+   "name": "Electric potential and capacitors",
+   "area": "Electricity and magnetism",
+   "status": "executable",
+   "relations": [
+    {
+     "key": "capacitance_definition",
+     "name": "Charge on a capacitor",
+     "equation": "Q = C*V"
+    },
+    {
+     "key": "capacitor_energy",
+     "name": "Energy stored in a capacitor",
+     "equation": "Ecap = C*V**2/2"
+    },
+    {
+     "key": "parallel_plate_capacitor",
+     "name": "Capacitance of parallel plates",
+     "equation": "C = eps0*A/d"
+    },
+    {
+     "key": "point_charge_potential",
+     "name": "Electric potential of a point charge",
+     "equation": "V = ke*Q/r"
+    },
+    {
+     "key": "uniform_field_potential",
+     "name": "Potential difference in a uniform field",
+     "equation": "V = Ef*d"
+    }
+   ],
+   "knowledge": {
+    "verified_records": 27,
+    "unverified_records": 49
+   },
+   "search_words": [
+    "potential",
+    "electric",
+    "energy",
+    "capacitors",
+    "difference",
+    "charge",
+    "equipotential",
+    "capacitor",
+    "dielectric",
+    "parallel",
+    "electron",
+    "volt",
+    "mechanical",
+    "voltage",
+    "where",
+    "uniform",
+    "field",
+    "scalar",
+    "vector",
+    "tells",
+    "that",
+    "electrical",
+    "point",
+    "lines",
+    "defibrillator",
+    "line",
+    "grounding",
+    "dielectrics",
+    "capacitance",
+    "strength",
+    "plate",
+    "polar",
+    "molecule",
+    "series",
+    "stored"
+   ]
+  },
+  {
+   "id": "physics.electricity.current_resistance",
+   "name": "Current, resistance and power",
+   "area": "Electricity and magnetism",
+   "status": "executable",
+   "relations": [
+    {
+     "key": "charge_current",
+     "name": "Charge carried by a steady current",
+     "equation": "Q = I*t"
+    },
+    {
+     "key": "electric_power",
+     "name": "Electric power",
+     "equation": "P = V*I"
+    },
+    {
+     "key": "ohm",
+     "name": "Voltage across an ohmic resistance",
+     "equation": "V = I*R"
+    },
+    {
+     "key": "ohm_power_current",
+     "name": "Power from current and resistance",
+     "equation": "P = I**2*R"
+    },
+    {
+     "key": "ohm_power_voltage",
+     "name": "Power from voltage and resistance",
+     "equation": "P = V**2/R"
+    },
+    {
+     "key": "resistivity",
+     "name": "Resistance of a uniform wire",
+     "equation": "R = rho_e*L/A"
+    },
+    {
+     "key": "rms_current",
+     "name": "Rms current of a sinusoidal supply",
+     "equation": "Irms = I0/sqrt(2)"
+    },
+    {
+     "key": "rms_voltage",
+     "name": "Rms voltage of a sinusoidal supply",
+     "equation": "Vrms = V0/sqrt(2)"
+    }
+   ],
+   "knowledge": {
+    "verified_records": 98,
+    "unverified_records": 72
+   },
+   "search_words": [
+    "current",
+    "electric",
+    "resistance",
+    "resistivity",
+    "simple",
+    "circuit",
+    "power",
+    "alternating",
+    "direct",
+    "voltage",
+    "hazard",
+    "nerve",
+    "conduction",
+    "ampere",
+    "drift",
+    "velocity",
+    "electrocardiogram",
+    "density",
+    "each",
+    "carrier",
+    "charge",
+    "circuits",
+    "ohmic",
+    "temperature",
+    "coefficient",
+    "energy",
+    "versus",
+    "hazards",
+    "human",
+    "body",
+    "microshock",
+    "sensitive",
+    "shock",
+    "short",
+    "thermal",
+    "electrocardiograms",
+    "bioelectricity",
+    "semipermeable"
+   ]
+  },
+  {
+   "id": "physics.electricity.circuits",
+   "name": "DC circuits and instruments",
+   "area": "Electricity and magnetism",
+   "status": "machine-checked",
+   "relations": [],
+   "knowledge": {
+    "verified_records": 32,
+    "unverified_records": 52
+   },
+   "search_words": [
+    "voltage",
+    "resistance",
+    "resistors",
+    "series",
+    "parallel",
+    "meter",
+    "bridge",
+    "current",
+    "electromotive",
+    "force",
+    "kirchhoff",
+    "rules",
+    "terminal",
+    "rule",
+    "null",
+    "measurements",
+    "analog",
+    "device",
+    "capacitance",
+    "conservation",
+    "laws",
+    "digital",
+    "joule",
+    "ohmmeter",
+    "resistor",
+    "drop",
+    "internal",
+    "potential",
+    "difference",
+    "junction",
+    "loop",
+    "voltmeters",
+    "ammeters",
+    "ammeter",
+    "sensitivity",
+    "full",
+    "scale",
+    "deflection",
+    "galvanometer",
+    "shunt"
+   ]
+  },
+  {
+   "id": "physics.magnetism.fields_forces",
+   "name": "Magnetic fields and forces",
+   "area": "Electricity and magnetism",
+   "status": "executable",
+   "relations": [
+    {
+     "key": "cyclotron_radius",
+     "name": "Radius of a charged particle's circle in a magnetic field",
+     "equation": "r = m*v/(q*B*sin(theta))"
+    },
+    {
+     "key": "long_wire_field",
+     "name": "Magnetic field of a long straight wire",
+     "equation": "B = mu0*I/(2*pi*r)"
+    },
+    {
+     "key": "loop_center_field",
+     "name": "Magnetic field at the centre of a circular loop",
+     "equation": "B = mu0*I/(2*r)"
+    },
+    {
+     "key": "magnetic_force_charge",
+     "name": "Magnetic force on a moving charge",
+     "equation": "F = q*v*B*sin(theta)"
+    },
+    {
+     "key": "magnetic_force_wire",
+     "name": "Magnetic force on a current-carrying wire",
+     "equation": "F = I*L*B*sin(theta)"
+    },
+    {
+     "key": "solenoid_field",
+     "name": "Magnetic field inside a long solenoid",
+     "equation": "B = mu0*nt*I"
+    }
+   ],
+   "knowledge": {
+    "verified_records": 21,
+    "unverified_records": 110
+   },
+   "search_words": [
+    "magnetic",
+    "field",
+    "force",
+    "charge",
+    "lines",
+    "hall",
+    "current",
+    "ampere",
+    "resonance",
+    "pole",
+    "right",
+    "hand",
+    "rule",
+    "direction",
+    "fields",
+    "loop",
+    "strength",
+    "moving",
+    "applications",
+    "effect",
+    "carrying",
+    "solenoid",
+    "magnets",
+    "monopoles",
+    "imaging",
+    "magnetocardiogram",
+    "magnetoencephalogram",
+    "maxwell",
+    "equations",
+    "north",
+    "nuclear",
+    "velocity",
+    "south",
+    "ferromagnets",
+    "electromagnets",
+    "curie",
+    "temperature",
+    "domains",
+    "electromagnet",
+    "electromagnetism"
+   ]
+  },
+  {
+   "id": "physics.magnetism.induction_ac",
+   "name": "Induction and alternating current",
+   "area": "Electricity and magnetism",
+   "status": "executable",
+   "relations": [
+    {
+     "key": "capacitive_reactance",
+     "name": "Reactance of a capacitor",
+     "equation": "X = 1/(2*pi*f*C)"
+    },
+    {
+     "key": "inductive_reactance",
+     "name": "Reactance of an inductor",
+     "equation": "X = 2*pi*f*L"
+    },
+    {
+     "key": "rl_time_constant",
+     "name": "Time constant of an RL circuit",
+     "equation": "tau = L/R"
+    }
+   ],
+   "knowledge": {
+    "verified_records": 49,
+    "unverified_records": 76
+   },
+   "search_words": [
+    "magnetic",
+    "induction",
+    "inductance",
+    "transformer",
+    "reactance",
+    "flux",
+    "electric",
+    "angle",
+    "faraday",
+    "lenz",
+    "eddy",
+    "damping",
+    "back",
+    "step",
+    "hazard",
+    "inductor",
+    "circuits",
+    "inductive",
+    "capacitive",
+    "induced",
+    "generator",
+    "electromagnetic",
+    "henry",
+    "motional",
+    "currents",
+    "current",
+    "generators",
+    "peak",
+    "transformers",
+    "self",
+    "down",
+    "equation",
+    "electrical",
+    "safety",
+    "systems",
+    "devices",
+    "shock",
+    "thermal",
+    "three",
+    "wire"
+   ]
+  },
+  {
+   "id": "physics.optics.em_waves",
+   "name": "Electromagnetic waves",
+   "area": "Electricity and magnetism",
+   "status": "machine-checked",
+   "relations": [],
+   "knowledge": {
+    "verified_records": 9,
+    "unverified_records": 46
+   },
+   "search_words": [
+    "field",
+    "electromagnetic",
+    "waves",
+    "electric",
+    "frequency",
+    "magnetic",
+    "strength",
+    "wave",
+    "maxwell",
+    "equations",
+    "amplitude",
+    "modulation",
+    "lines",
+    "spectrum",
+    "predicted",
+    "observed",
+    "electromotive",
+    "force",
+    "extremely",
+    "hertz",
+    "infrared",
+    "radiation",
+    "oscillate",
+    "radio",
+    "resonant",
+    "circuit",
+    "speed",
+    "light",
+    "production",
+    "microwaves",
+    "standing",
+    "transverse",
+    "carrier",
+    "gamma",
+    "intensity",
+    "radar",
+    "thermal",
+    "agitation",
+    "energy",
+    "maximum"
+   ]
+  },
+  {
+   "id": "physics.optics.geometric",
+   "name": "Reflection, refraction, lenses and mirrors",
+   "area": "Light and optics",
+   "status": "executable",
+   "relations": [
+    {
+     "key": "index_of_refraction",
+     "name": "Index of refraction",
+     "equation": "n = c/v"
+    },
+    {
+     "key": "mirror_focal_length",
+     "name": "Focal length of a spherical mirror",
+     "equation": "f = R/2"
+    },
+    {
+     "key": "thin_lens",
+     "name": "Thin lens equation",
+     "equation": "1/d_o + 1/d_i = 1/f"
+    }
+   ],
+   "knowledge": {
+    "verified_records": 3,
+    "unverified_records": 58
+   },
+   "search_words": [
+    "reflection",
+    "image",
+    "mirror",
+    "refraction",
+    "light",
+    "optics",
+    "dispersion",
+    "rainbow",
+    "formation",
+    "converging",
+    "lens",
+    "diverging",
+    "focal",
+    "aspect",
+    "geometric",
+    "material",
+    "vacuum",
+    "index",
+    "zircon",
+    "total",
+    "internal",
+    "corner",
+    "reflector",
+    "critical",
+    "angle",
+    "fiber",
+    "prisms",
+    "lenses",
+    "length",
+    "point",
+    "magnification",
+    "power",
+    "real",
+    "virtual",
+    "mirrors"
+   ]
+  },
+  {
+   "id": "physics.optics.instruments",
+   "name": "Vision and optical instruments",
+   "area": "Light and optics",
+   "status": "machine-checked",
+   "relations": [],
+   "knowledge": {
+    "verified_records": 8,
+    "unverified_records": 61
+   },
+   "search_words": [
+    "vision",
+    "color",
+    "point",
+    "correction",
+    "retinex",
+    "theory",
+    "physics",
+    "accommodation",
+    "near",
+    "where",
+    "presbyopia",
+    "astigmatism",
+    "farsightedness",
+    "hyperopia",
+    "laser",
+    "myopia",
+    "nearsightedness",
+    "constancy",
+    "hues",
+    "rods",
+    "cones",
+    "simplified",
+    "microscopes",
+    "compound",
+    "microscope",
+    "eyepiece",
+    "numerical",
+    "aperture",
+    "objective",
+    "lens",
+    "telescopes",
+    "adaptive",
+    "optics",
+    "angular",
+    "magnification",
+    "aberrations",
+    "aberration"
+   ]
+  },
+  {
+   "id": "physics.optics.wave_optics",
+   "name": "Interference, diffraction and polarization",
+   "area": "Light and optics",
+   "status": "executable",
+   "relations": [
+    {
+     "key": "wavelength_in_medium",
+     "name": "Wavelength of light in a medium",
+     "equation": "lam_n = lam/n"
+    }
+   ],
+   "knowledge": {
+    "verified_records": 4,
+    "unverified_records": 82
+   },
+   "search_words": [
+    "interference",
+    "slit",
+    "diffraction",
+    "polarized",
+    "polarization",
+    "light",
+    "double",
+    "microscopes",
+    "wave",
+    "brewster",
+    "grating",
+    "wavelength",
+    "huygens",
+    "principle",
+    "destructive",
+    "single",
+    "contrast",
+    "rayleigh",
+    "criterion",
+    "thin",
+    "film",
+    "microscope",
+    "aspect",
+    "angle",
+    "satisfied",
+    "where",
+    "reflected",
+    "that",
+    "completely",
+    "medium",
+    "vacuum",
+    "order",
+    "young",
+    "experiment",
+    "coherent",
+    "constructive",
+    "incoherent",
+    "multiple",
+    "limits",
+    "resolution"
+   ]
+  },
+  {
+   "id": "physics.modern.relativity",
+   "name": "Special relativity",
+   "area": "Modern physics",
+   "status": "executable",
+   "relations": [
+    {
+     "key": "rest_energy",
+     "name": "Rest energy",
+     "equation": "E0 = m*c**2"
+    }
+   ],
+   "knowledge": {
+    "verified_records": 1,
+    "unverified_records": 34
+   },
+   "search_words": [
+    "relativistic",
+    "relativity",
+    "energy",
+    "special",
+    "time",
+    "length",
+    "addition",
+    "postulate",
+    "momentum",
+    "dilation",
+    "proper",
+    "contraction",
+    "velocity",
+    "rest",
+    "einstein",
+    "postulates",
+    "first",
+    "inertial",
+    "frame",
+    "reference",
+    "michelson",
+    "morley",
+    "experiment",
+    "observers",
+    "second",
+    "speed",
+    "light",
+    "simultaneity",
+    "where",
+    "twin",
+    "paradox",
+    "velocities",
+    "classical",
+    "doppler",
+    "effects",
+    "mass",
+    "kinetic",
+    "total"
+   ]
+  },
+  {
+   "id": "physics.modern.quantum",
+   "name": "Photons and the quantum",
+   "area": "Modern physics",
+   "status": "executable",
+   "relations": [
+    {
+     "key": "de_broglie",
+     "name": "De Broglie wavelength",
+     "equation": "lam = h/p"
+    },
+    {
+     "key": "photon_energy",
+     "name": "Energy of a photon",
+     "equation": "E = h*f"
+    },
+    {
+     "key": "photon_energy_wavelength",
+     "name": "Photon energy from wavelength",
+     "equation": "E = h*c/lam"
+    },
+    {
+     "key": "photon_momentum",
+     "name": "Momentum of a photon",
+     "equation": "p = h/lam"
+    }
+   ],
+   "knowledge": {
+    "verified_records": 9,
+    "unverified_records": 65
+   },
+   "search_words": [
+    "uncertainty",
+    "photon",
+    "energy",
+    "radiation",
+    "wave",
+    "principle",
+    "effect",
+    "momentum",
+    "particle",
+    "duality",
+    "blackbody",
+    "heisenberg",
+    "photoelectric",
+    "probability",
+    "quantization",
+    "atomic",
+    "spectra",
+    "correspondence",
+    "gamma",
+    "planck",
+    "constant",
+    "quantized",
+    "quantum",
+    "mechanics",
+    "visible",
+    "light",
+    "where",
+    "binding",
+    "energies",
+    "electromagnetic",
+    "spectrum",
+    "bremsstrahlung",
+    "characteristic",
+    "rays",
+    "infrared",
+    "ionizing",
+    "microwaves",
+    "ultraviolet",
+    "compton",
+    "nature"
+   ]
+  },
+  {
+   "id": "physics.modern.atomic",
+   "name": "Atoms and atomic spectra",
+   "area": "Modern physics",
+   "status": "under review",
+   "relations": [],
+   "knowledge": {
+    "verified_records": 0,
+    "unverified_records": 68
+   },
+   "search_words": [
+    "atom",
+    "quantum",
+    "atomic",
+    "hydrogen",
+    "number",
+    "momentum",
+    "quantization",
+    "spin",
+    "discovery",
+    "pauli",
+    "exclusion",
+    "principle",
+    "numbers",
+    "bohr",
+    "like",
+    "applications",
+    "excitations",
+    "excitation",
+    "intrinsic",
+    "magnetic",
+    "field",
+    "orbital",
+    "angular",
+    "brownian",
+    "motion",
+    "spectrum",
+    "wavelengths",
+    "parts",
+    "electrons",
+    "nuclei",
+    "cathode",
+    "tube",
+    "planetary",
+    "model",
+    "shell",
+    "theory",
+    "radius",
+    "double",
+    "slit",
+    "interference"
+   ]
+  },
+  {
+   "id": "physics.modern.nuclear",
+   "name": "Radioactivity and the nucleus",
+   "area": "Modern physics",
+   "status": "machine-checked",
+   "relations": [],
+   "knowledge": {
+    "verified_records": 3,
+    "unverified_records": 68
+   },
+   "search_words": [
+    "decay",
+    "nuclear",
+    "electron",
+    "radiation",
+    "energy",
+    "rays",
+    "binding",
+    "alpha",
+    "beta",
+    "neutrino",
+    "gamma",
+    "nucleus",
+    "atomic",
+    "mass",
+    "number",
+    "equation",
+    "capture",
+    "positron",
+    "half",
+    "life",
+    "activity",
+    "tunneling",
+    "radioactivity",
+    "becquerel",
+    "curie",
+    "daughter",
+    "antineutrino",
+    "ionizing",
+    "magic",
+    "numbers",
+    "radioactive",
+    "detection",
+    "detectors",
+    "geiger",
+    "tube",
+    "photomultiplier",
+    "detector",
+    "substructure",
+    "chart",
+    "nuclides"
+   ]
+  },
+  {
+   "id": "physics.modern.nuclear_applications",
+   "name": "Radiation, fission and fusion",
+   "area": "Modern physics",
+   "status": "under review",
+   "relations": [],
+   "knowledge": {
+    "verified_records": 0,
+    "unverified_records": 60
+   },
+   "search_words": [
+    "fission",
+    "dose",
+    "nuclear",
+    "camera",
+    "annihilation",
+    "biological",
+    "ionizing",
+    "radiation",
+    "therapeutic",
+    "food",
+    "irradiation",
+    "fusion",
+    "confinement",
+    "proton",
+    "diagnostics",
+    "medical",
+    "imaging",
+    "anger",
+    "breeder",
+    "reactors",
+    "gamma",
+    "gray",
+    "positron",
+    "emission",
+    "tomography",
+    "radiolytic",
+    "products",
+    "radiopharmaceutical",
+    "relative",
+    "effectiveness",
+    "roentgen",
+    "equivalent",
+    "spect",
+    "tagged",
+    "detects",
+    "effects",
+    "high",
+    "hormesis",
+    "linear",
+    "hypothesis"
+   ]
+  },
+  {
+   "id": "physics.modern.particles",
+   "name": "Particle physics",
+   "area": "Modern physics",
+   "status": "machine-checked",
+   "relations": [],
+   "knowledge": {
+    "verified_records": 11,
+    "unverified_records": 68
+   },
+   "search_words": [
+    "number",
+    "family",
+    "conservation",
+    "theory",
+    "particle",
+    "total",
+    "boson",
+    "quantum",
+    "electron",
+    "muon",
+    "meson",
+    "quark",
+    "particles",
+    "forces",
+    "gluons",
+    "synchrotron",
+    "baryon",
+    "chromodynamics",
+    "yukawa",
+    "heisenberg",
+    "uncertainty",
+    "principle",
+    "revisited",
+    "gauge",
+    "physics",
+    "pion",
+    "confinement",
+    "virtual",
+    "four",
+    "basic",
+    "feynman",
+    "diagram",
+    "electrodynamics",
+    "accelerators",
+    "create",
+    "matter",
+    "energy",
+    "colliding",
+    "beams",
+    "cyclotron"
+   ]
+  },
+  {
+   "id": "physics.modern.frontiers",
+   "name": "Cosmology and frontiers",
+   "area": "Modern physics",
+   "status": "under review",
+   "relations": [],
+   "knowledge": {
+    "verified_records": 0,
+    "unverified_records": 67
+   },
+   "search_words": [
+    "epoch",
+    "cosmology",
+    "cosmological",
+    "dark",
+    "matter",
+    "constant",
+    "quantum",
+    "gravity",
+    "general",
+    "relativity",
+    "critical",
+    "curved",
+    "complexity",
+    "chaos",
+    "temperature",
+    "superconductors",
+    "particle",
+    "physics",
+    "bang",
+    "cosmic",
+    "microwave",
+    "background",
+    "shift",
+    "electroweak",
+    "hubble",
+    "spontaneous",
+    "symmetry",
+    "breaking",
+    "superforce",
+    "black",
+    "holes",
+    "escape",
+    "velocity",
+    "event",
+    "horizon",
+    "gravitational",
+    "waves",
+    "neutron",
+    "stars",
+    "quasars"
+   ]
+  }
+ ]
+}

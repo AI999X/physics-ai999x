@@ -1,0 +1,9 @@
+{
+ "certified": [
+  "two_resistors_series_parallel",
+  "uniform_acceleration_state"
+ ],
+ "generated": "2026-10-15",
+ "tool": "tools/certify_procedures.py",
+ "report": "release/procedure_certification.json"
+}

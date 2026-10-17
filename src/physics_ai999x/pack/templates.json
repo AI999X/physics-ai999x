@@ -1,0 +1,1490 @@
+[
+{
+"relation": "uniform_motion",
+"name": "Motion at constant velocity",
+"finds": "distance",
+"pattern": "The velocity is <velocity>. The duration is <duration>. What is the distance?",
+"example": "The velocity is 20 m/s. The duration is 30 s. What is the distance?",
+"answer": "600 m"
+},
+{
+"relation": "uniform_motion",
+"name": "Motion at constant velocity",
+"finds": "distance",
+"pattern": "The velocity is <velocity>. The duration is <duration>. What is the distance?",
+"example": "The velocity is 72 km/h. The duration is 0.5 h. What is the distance?",
+"answer": "36000 m"
+},
+{
+"relation": "velocity_time",
+"name": "Velocity under constant acceleration",
+"finds": "final velocity",
+"pattern": "The initial velocity is <initial velocity>. The acceleration is <acceleration>. The duration is <duration>. What is the final velocity?",
+"example": "The initial velocity is 5 m/s. The acceleration is 2 m/s^2. The duration is 4 s. What is the final velocity?",
+"answer": "13 m/s"
+},
+{
+"relation": "displacement_time",
+"name": "Displacement under constant acceleration",
+"finds": "distance",
+"pattern": "The initial velocity is <initial velocity>. The acceleration is <acceleration>. The duration is <duration>. What is the distance?",
+"example": "The initial velocity is 3 m/s. The acceleration is 2 m/s^2. The duration is 4 s. What is the distance?",
+"answer": "28 m"
+},
+{
+"relation": "velocity_displacement",
+"name": "Speed after a displacement under constant acceleration",
+"finds": "final velocity",
+"pattern": "The initial velocity is <initial velocity>. The acceleration is <acceleration>. The distance is <distance>. What is the final velocity?",
+"example": "The initial velocity is 6 m/s. The acceleration is 2 m/s^2. The distance is 16 m. What is the final velocity?",
+"answer": "10 m/s"
+},
+{
+"relation": "average_velocity_displacement",
+"name": "Displacement from the mean of initial and final velocity",
+"finds": "distance",
+"pattern": "The initial velocity is <initial velocity>. The final velocity is <final velocity>. The duration is <duration>. What is the distance?",
+"example": "The initial velocity is 4 m/s. The final velocity is 10 m/s. The duration is 3 s. What is the distance?",
+"answer": "21 m"
+},
+{
+"relation": "newton_second",
+"name": "Net force and acceleration",
+"finds": "net force",
+"pattern": "The mass is <mass>. The acceleration is <acceleration>. What is the net force?",
+"example": "The mass is 4 kg. The acceleration is 2.5 m/s^2. What is the net force?",
+"answer": "10 N"
+},
+{
+"relation": "newton_second",
+"name": "Net force and acceleration",
+"finds": "acceleration",
+"pattern": "The net force is <net force>. The mass is <mass>. What is the acceleration?",
+"example": "The net force is 1 kN. The mass is 250 kg. What is the acceleration?",
+"answer": "4 m/s^2"
+},
+{
+"relation": "weight",
+"name": "Weight in a uniform gravitational field",
+"finds": "weight",
+"pattern": "The mass is <mass>. The gravitational acceleration is <gravitational acceleration>. What is the weight?",
+"example": "The mass is 10 kg. The gravitational acceleration is 9.8 m/s^2. What is the weight?",
+"answer": "98 N"
+},
+{
+"relation": "net_force_friction",
+"name": "Net force with an opposing friction force",
+"finds": "net force",
+"pattern": "The applied force is <applied force>. The friction force is <friction force>. What is the net force?",
+"example": "The applied force is 50 N. The friction force is 12 N. What is the net force?",
+"answer": "38 N"
+},
+{
+"relation": "kinetic_friction",
+"name": "Sliding friction",
+"finds": "friction force",
+"pattern": "The coefficient of kinetic friction is <coefficient of kinetic friction>. The normal force is <normal force>. What is the friction force?",
+"example": "The coefficient of kinetic friction is 0.25. The normal force is 80 N. What is the friction force?",
+"answer": "20 N"
+},
+{
+"relation": "normal_on_level",
+"name": "Normal force on a level surface",
+"finds": "normal force",
+"pattern": "The weight is <weight>. What is the normal force?",
+"example": "The weight is 70 N. What is the normal force?",
+"answer": "70 N"
+},
+{
+"relation": "momentum",
+"name": "Linear momentum",
+"finds": "momentum",
+"pattern": "The mass is <mass>. The velocity is <velocity>. What is the momentum?",
+"example": "The mass is 2 kg. The velocity is 7 m/s. What is the momentum?",
+"answer": "14 kg*m/s"
+},
+{
+"relation": "impulse",
+"name": "Impulse of a constant force",
+"finds": "impulse",
+"pattern": "The force is <force>. The duration is <duration>. What is the impulse?",
+"example": "The force is 15 N. The duration is 4 s. What is the impulse?",
+"answer": "60 N*s"
+},
+{
+"relation": "work",
+"name": "Work by a constant force",
+"finds": "work done",
+"pattern": "The force is <force>. The distance is <distance>. The angle is <angle>. What is the work done?",
+"example": "The force is 10 N. The distance is 5 m. The angle is 60 deg. What is the work done?",
+"answer": "25 J"
+},
+{
+"relation": "work",
+"name": "Work by a constant force",
+"finds": "work done",
+"pattern": "The force is <force>. The distance is <distance>. The angle is <angle>. What is the work done?",
+"example": "The force is 10 N. The distance is 5 m. The angle is 90 deg. What is the work done?",
+"answer": "0 J"
+},
+{
+"relation": "kinetic_energy",
+"name": "Translational kinetic energy",
+"finds": "kinetic energy",
+"pattern": "The mass is <mass>. The velocity is <velocity>. What is the kinetic energy?",
+"example": "The mass is 4 kg. The velocity is 3 m/s. What is the kinetic energy?",
+"answer": "18 J"
+},
+{
+"relation": "kinetic_energy",
+"name": "Translational kinetic energy",
+"finds": "kinetic energy",
+"pattern": "The mass is <mass>. The velocity is <velocity>. What is the kinetic energy?",
+"example": "The mass is 500 g. The velocity is 2 m/s. What is the kinetic energy?",
+"answer": "1 J"
+},
+{
+"relation": "gravitational_pe",
+"name": "Gravitational potential energy near the surface",
+"finds": "gravitational potential energy",
+"pattern": "The mass is <mass>. The gravitational acceleration is <gravitational acceleration>. The height is <height>. What is the gravitational potential energy?",
+"example": "The mass is 2 kg. The gravitational acceleration is 9.8 m/s^2. The height is 5 m. What is the gravitational potential energy?",
+"answer": "98 J"
+},
+{
+"relation": "spring_force",
+"name": "Force of a linear spring",
+"finds": "spring force",
+"pattern": "The spring constant is <spring constant>. The extension is <extension>. What is the spring force?",
+"example": "The spring constant is 300 N/m. The extension is 5 cm. What is the spring force?",
+"answer": "15 N"
+},
+{
+"relation": "spring_energy",
+"name": "Energy stored in a linear spring",
+"finds": "elastic potential energy",
+"pattern": "The spring constant is <spring constant>. The extension is <extension>. What is the elastic potential energy?",
+"example": "The spring constant is 400 N/m. The extension is 0.1 m. What is the elastic potential energy?",
+"answer": "2 J"
+},
+{
+"relation": "power_energy",
+"name": "Average power",
+"finds": "power",
+"pattern": "The energy is <energy>. The duration is <duration>. What is the power?",
+"example": "The energy is 600 J. The duration is 20 s. What is the power?",
+"answer": "30 W"
+},
+{
+"relation": "power_energy",
+"name": "Average power",
+"finds": "energy",
+"pattern": "The power is <power>. The duration is <duration>. What is the energy?",
+"example": "The power is 100 W. The duration is 2 h. What is the energy?",
+"answer": "720000 J"
+},
+{
+"relation": "power_force_speed",
+"name": "Power of a force on a moving body",
+"finds": "power",
+"pattern": "The force is <force>. The velocity is <velocity>. What is the power?",
+"example": "The force is 40 N. The velocity is 3 m/s. What is the power?",
+"answer": "120 W"
+},
+{
+"relation": "centripetal_acceleration",
+"name": "Centripetal acceleration",
+"finds": "centripetal acceleration",
+"pattern": "The velocity is <velocity>. The radius is <radius>. What is the centripetal acceleration?",
+"example": "The velocity is 6 m/s. The radius is 3 m. What is the centripetal acceleration?",
+"answer": "12 m/s^2"
+},
+{
+"relation": "centripetal_force",
+"name": "Centripetal force",
+"finds": "centripetal force",
+"pattern": "The mass is <mass>. The velocity is <velocity>. The radius is <radius>. What is the centripetal force?",
+"example": "The mass is 2 kg. The velocity is 6 m/s. The radius is 3 m. What is the centripetal force?",
+"answer": "24 N"
+},
+{
+"relation": "tangential_speed",
+"name": "Speed on a circle from angular speed",
+"finds": "velocity",
+"pattern": "The angular frequency is <angular frequency>. The radius is <radius>. What is the velocity?",
+"example": "The angular frequency is 4 rad/s. The radius is 0.5 m. What is the velocity?",
+"answer": "2 m/s"
+},
+{
+"relation": "angular_frequency",
+"name": "Angular frequency and frequency",
+"finds": "angular frequency",
+"pattern": "The frequency is <frequency>. What is the angular frequency?",
+"example": "The frequency is 0.5 Hz. What is the angular frequency?",
+"answer": "3.14159 rad/s"
+},
+{
+"relation": "period_frequency",
+"name": "Period and frequency",
+"finds": "period",
+"pattern": "The frequency is <frequency>. What is the period?",
+"example": "The frequency is 4 Hz. What is the period?",
+"answer": "0.25 s"
+},
+{
+"relation": "density",
+"name": "Mass density",
+"finds": "density",
+"pattern": "The mass is <mass>. The volume is <volume>. What is the density?",
+"example": "The mass is 6 kg. The volume is 2 L. What is the density?",
+"answer": "3000 kg/m^3"
+},
+{
+"relation": "pressure_force",
+"name": "Pressure of a force on an area",
+"finds": "pressure",
+"pattern": "The force is <force>. The area is <area>. What is the pressure?",
+"example": "The force is 200 N. The area is 0.04 m^2. What is the pressure?",
+"answer": "5000 Pa"
+},
+{
+"relation": "hydrostatic_pressure",
+"name": "Pressure of a column of fluid",
+"finds": "pressure",
+"pattern": "The density is <density>. The gravitational acceleration is <gravitational acceleration>. The depth is <depth>. What is the pressure?",
+"example": "The density is 1000 kg/m^3. The gravitational acceleration is 9.8 m/s^2. The depth is 2 m. What is the pressure?",
+"answer": "19600 Pa"
+},
+{
+"relation": "ohm",
+"name": "Voltage across an ohmic resistance",
+"finds": "potential difference",
+"pattern": "The current is <current>. The resistance is <resistance>. What is the potential difference?",
+"example": "The current is 3 A. The resistance is 4 ohm. What is the potential difference?",
+"answer": "12 V"
+},
+{
+"relation": "ohm",
+"name": "Voltage across an ohmic resistance",
+"finds": "current",
+"pattern": "The potential difference is <potential difference>. The resistance is <resistance>. What is the current?",
+"example": "The potential difference is 9 V. The resistance is 3 kohm. What is the current?",
+"answer": "0.003 A"
+},
+{
+"relation": "electric_power",
+"name": "Electric power",
+"finds": "power",
+"pattern": "The potential difference is <potential difference>. The current is <current>. What is the power?",
+"example": "The potential difference is 12 V. The current is 3 A. What is the power?",
+"answer": "36 W"
+},
+{
+"relation": "charge_current",
+"name": "Charge carried by a steady current",
+"finds": "charge",
+"pattern": "The current is <current>. The duration is <duration>. What is the charge?",
+"example": "The current is 2 A. The duration is 30 s. What is the charge?",
+"answer": "60 C"
+},
+{
+"relation": "wave_speed",
+"name": "Speed of a periodic wave",
+"finds": "wave speed",
+"pattern": "The frequency is <frequency>. The wavelength is <wavelength>. What is the wave speed?",
+"example": "The frequency is 50 Hz. The wavelength is 0.4 m. What is the wave speed?",
+"answer": "20 m/s"
+},
+{
+"relation": "heat",
+"name": "Heat for a temperature change",
+"finds": "heat",
+"pattern": "The mass is <mass>. The specific heat capacity is <specific heat capacity>. The temperature change is <temperature change>. What is the heat?",
+"example": "The mass is 0.5 kg. The specific heat capacity is 4000 J/(kg*K). The temperature change is 10 K. What is the heat?",
+"answer": "20000 J"
+},
+{
+"relation": "max_height_vertical_throw",
+"name": "Maximum height of a vertical throw",
+"finds": "maximum height",
+"pattern": "It is thrown straight up. The initial velocity is <initial velocity>. The gravitational acceleration is <gravitational acceleration>. What is the maximum height?",
+"example": "It is thrown straight up. The initial velocity is 14 m/s. The gravitational acceleration is 9.8 m/s^2. What is the maximum height?",
+"answer": "10 m"
+},
+{
+"relation": "max_height_vertical_throw",
+"name": "Maximum height of a vertical throw",
+"finds": "maximum height",
+"pattern": "It is thrown straight up. The initial velocity is <initial velocity>. The gravitational acceleration is <gravitational acceleration>. What is the maximum height?",
+"example": "It is thrown straight up. The initial velocity is 7 m/s. The gravitational acceleration is 9.8 m/s^2. What is the maximum height?",
+"answer": "2.5 m"
+},
+{
+"relation": "normal_force_incline",
+"name": "Normal force on an incline",
+"finds": "normal force",
+"pattern": "It is on an incline. The mass is <mass>. The gravitational acceleration is <gravitational acceleration>. The angle of the incline is <angle of the incline>. What is the normal force?",
+"example": "It is on an incline. The mass is 10 kg. The gravitational acceleration is 9.8 m/s^2. The angle of the incline is 60 deg. What is the normal force?",
+"answer": "49 N"
+},
+{
+"relation": "normal_force_incline",
+"name": "Normal force on an incline",
+"finds": "normal force",
+"pattern": "It is on an incline. The mass is <mass>. The gravitational acceleration is <gravitational acceleration>. The angle of the incline is <angle of the incline>. What is the normal force?",
+"example": "It is on an incline. The mass is 10 kg. The gravitational acceleration is 9.8 m/s^2. The angle of the incline is 0 deg. What is the normal force?",
+"answer": "98 N"
+},
+{
+"relation": "weight_component_along_incline",
+"name": "Component of the weight along an incline",
+"finds": "weight along the slope",
+"pattern": "It is on an incline. The mass is <mass>. The gravitational acceleration is <gravitational acceleration>. The angle of the incline is <angle of the incline>. What is the weight along the slope?",
+"example": "It is on an incline. The mass is 10 kg. The gravitational acceleration is 9.8 m/s^2. The angle of the incline is 30 deg. What is the weight along the slope?",
+"answer": "49 N"
+},
+{
+"relation": "weight_component_along_incline",
+"name": "Component of the weight along an incline",
+"finds": "weight along the slope",
+"pattern": "It is on an incline. The mass is <mass>. The gravitational acceleration is <gravitational acceleration>. The angle of the incline is <angle of the incline>. What is the weight along the slope?",
+"example": "It is on an incline. The mass is 10 kg. The gravitational acceleration is 9.8 m/s^2. The angle of the incline is 90 deg. What is the weight along the slope?",
+"answer": "98 N"
+},
+{
+"relation": "acceleration_frictionless_incline",
+"name": "Acceleration down a frictionless incline",
+"finds": "acceleration",
+"pattern": "It is on an incline. The surface is frictionless. The gravitational acceleration is <gravitational acceleration>. The angle of the incline is <angle of the incline>. What is the acceleration?",
+"example": "It is on an incline. The surface is frictionless. The gravitational acceleration is 9.8 m/s^2. The angle of the incline is 30 deg. What is the acceleration?",
+"answer": "4.9 m/s^2"
+},
+{
+"relation": "acceleration_frictionless_incline",
+"name": "Acceleration down a frictionless incline",
+"finds": "acceleration",
+"pattern": "It is on an incline. The surface is frictionless. The gravitational acceleration is <gravitational acceleration>. The angle of the incline is <angle of the incline>. What is the acceleration?",
+"example": "It is on an incline. The surface is frictionless. The gravitational acceleration is 9.8 m/s^2. The angle of the incline is 90 deg. What is the acceleration?",
+"answer": "9.8 m/s^2"
+},
+{
+"relation": "spring_launch_speed",
+"name": "Speed of a body launched by a spring",
+"finds": "final velocity",
+"pattern": "It is launched by a spring. The surface is frictionless. The spring constant is <spring constant>. The extension is <extension>. The mass is <mass>. What is the final velocity?",
+"example": "It is launched by a spring. The surface is frictionless. The spring constant is 100 N/m. The extension is 0.2 m. The mass is 1 kg. What is the final velocity?",
+"answer": "2 m/s"
+},
+{
+"relation": "spring_launch_speed",
+"name": "Speed of a body launched by a spring",
+"finds": "final velocity",
+"pattern": "It is launched by a spring. The surface is frictionless. The spring constant is <spring constant>. The extension is <extension>. The mass is <mass>. What is the final velocity?",
+"example": "It is launched by a spring. The surface is frictionless. The spring constant is 50 N/m. The extension is 0.1 m. The mass is 0.5 kg. What is the final velocity?",
+"answer": "1 m/s"
+},
+{
+"relation": "net_work_kinetic_energy",
+"name": "Work-energy theorem",
+"finds": "net work",
+"pattern": "The mass is <mass>. The initial velocity is <initial velocity>. The final velocity is <final velocity>. What is the net work?",
+"example": "The mass is 6 kg. The initial velocity is 1 m/s. The final velocity is 3 m/s. What is the net work?",
+"answer": "24 J"
+},
+{
+"relation": "net_work_kinetic_energy",
+"name": "Work-energy theorem",
+"finds": "net work",
+"pattern": "The mass is <mass>. The initial velocity is <initial velocity>. The final velocity is <final velocity>. What is the net work?",
+"example": "The mass is 2 kg. The initial velocity is 5 m/s. The final velocity is 3 m/s. What is the net work?",
+"answer": "-16 J"
+},
+{
+"relation": "tension_hanging_at_rest",
+"name": "Tension in a rope holding a hanging body",
+"finds": "tension",
+"pattern": "It hangs at rest from a rope. The mass is <mass>. The gravitational acceleration is <gravitational acceleration>. What is the tension?",
+"example": "It hangs at rest from a rope. The mass is 10 kg. The gravitational acceleration is 9.8 m/s^2. What is the tension?",
+"answer": "98 N"
+},
+{
+"relation": "tension_hanging_at_rest",
+"name": "Tension in a rope holding a hanging body",
+"finds": "tension",
+"pattern": "It hangs at rest from a rope. The mass is <mass>. The gravitational acceleration is <gravitational acceleration>. What is the tension?",
+"example": "It hangs at rest from a rope. The mass is 0.5 kg. The gravitational acceleration is 9.8 m/s^2. What is the tension?",
+"answer": "4.9 N"
+},
+{
+"relation": "average_force_from_momentum_change",
+"name": "Average net force from a change of momentum",
+"finds": "net force",
+"pattern": "The final momentum is <final momentum>. The initial momentum is <initial momentum>. The duration is <duration>. What is the net force?",
+"example": "The final momentum is 25 kg*m/s. The initial momentum is 10 kg*m/s. The duration is 3 s. What is the net force?",
+"answer": "5 N"
+},
+{
+"relation": "average_force_from_momentum_change",
+"name": "Average net force from a change of momentum",
+"finds": "net force",
+"pattern": "The final momentum is <final momentum>. The initial momentum is <initial momentum>. The duration is <duration>. What is the net force?",
+"example": "The final momentum is 2 kg*m/s. The initial momentum is 6 kg*m/s. The duration is 0.5 s. What is the net force?",
+"answer": "-8 N"
+},
+{
+"relation": "speed_after_fall_from_rest",
+"name": "Speed after falling from rest",
+"finds": "final velocity",
+"pattern": "It is dropped. It starts from rest. The gravitational acceleration is <gravitational acceleration>. The height is <height>. What is the final velocity?",
+"example": "It is dropped. It starts from rest. The gravitational acceleration is 9.8 m/s^2. The height is 10 m. What is the final velocity?",
+"answer": "14 m/s"
+},
+{
+"relation": "speed_after_fall_from_rest",
+"name": "Speed after falling from rest",
+"finds": "final velocity",
+"pattern": "It is dropped. It starts from rest. The gravitational acceleration is <gravitational acceleration>. The height is <height>. What is the final velocity?",
+"example": "It is dropped. It starts from rest. The gravitational acceleration is 9.8 m/s^2. The height is 2.5 m. What is the final velocity?",
+"answer": "7 m/s"
+},
+{
+"relation": "electric_force_in_field",
+"name": "Force on a charge in an electric field",
+"finds": "electric force",
+"pattern": "A charge of <number> uC is placed in an electric field of <number> N/C. What is the electric force on it?",
+"example": "A charge of 2 uC is placed in an electric field of 30000 N/C. What is the electric force on it?",
+"answer": "0.06 N"
+},
+{
+"relation": "electric_force_in_field",
+"name": "Force on a charge in an electric field",
+"finds": "electric force",
+"pattern": "A <number> nC charged particle sits in an electric field of <number> N/C. What electric force acts on it?",
+"example": "A 5 nC charged particle sits in an electric field of 4000 N/C. What electric force acts on it?",
+"answer": "2e-05 N"
+},
+{
+"relation": "point_charge_field",
+"name": "Electric field of a point charge",
+"finds": "electric field",
+"pattern": "What is the electric field <number> m from a point charge of <number> uC?",
+"example": "What is the electric field 0.3 m from a point charge of 2 uC?",
+"answer": "199723 N/C"
+},
+{
+"relation": "point_charge_field",
+"name": "Electric field of a point charge",
+"finds": "electric field strength",
+"pattern": "Find the electric field strength at a distance of <number> cm from a charged sphere carrying <number> nC.",
+"example": "Find the electric field strength at a distance of 10 cm from a charged sphere carrying 1 nC.",
+"answer": "898.755 N/C"
+},
+{
+"relation": "point_charge_potential",
+"name": "Electric potential of a point charge",
+"finds": "electric potential",
+"pattern": "What is the electric potential <number> m from a point charge of <number> nC?",
+"example": "What is the electric potential 0.5 m from a point charge of 3 nC?",
+"answer": "53.9253 V"
+},
+{
+"relation": "point_charge_potential",
+"name": "Electric potential of a point charge",
+"finds": "electric potential",
+"pattern": "Find the electric potential at <number> m from a point charge of <number> uC.",
+"example": "Find the electric potential at 2 m from a point charge of 1 uC.",
+"answer": "4493.78 V"
+},
+{
+"relation": "uniform_field_potential",
+"name": "Potential difference in a uniform field",
+"finds": "potential difference",
+"pattern": "Parallel plates are <number> mm apart with a uniform electric field of <number> V/m between the plates. What is the potential difference?",
+"example": "Parallel plates are 5 mm apart with a uniform electric field of 2000 V/m between the plates. What is the potential difference?",
+"answer": "10 V"
+},
+{
+"relation": "uniform_field_potential",
+"name": "Potential difference in a uniform field",
+"finds": "electric field",
+"pattern": "A <number> V battery is connected across parallel plates with a plate separation of <number> mm. What is the uniform electric field between the plates?",
+"example": "A 12 V battery is connected across parallel plates with a plate separation of 2 mm. What is the uniform electric field between the plates?",
+"answer": "6000 N/C"
+},
+{
+"relation": "capacitance_definition",
+"name": "Charge on a capacitor",
+"finds": "charge",
+"pattern": "A <number> uF capacitor is charged to <number> V. How much charge does it hold?",
+"example": "A 10 uF capacitor is charged to 12 V. How much charge does it hold?",
+"answer": "0.00012 C"
+},
+{
+"relation": "capacitance_definition",
+"name": "Charge on a capacitor",
+"finds": "capacitance",
+"pattern": "A capacitor holds a charge of <number> uC when connected to <number> V. What is its capacitance?",
+"example": "A capacitor holds a charge of 5 uC when connected to 100 V. What is its capacitance?",
+"answer": "5e-08 F"
+},
+{
+"relation": "capacitor_energy",
+"name": "Energy stored in a capacitor",
+"finds": "energy stored in the capacitor",
+"pattern": "A <number> uF capacitor is charged to <number> V. What is the energy stored in the capacitor?",
+"example": "A 100 uF capacitor is charged to 20 V. What is the energy stored in the capacitor?",
+"answer": "0.02 J"
+},
+{
+"relation": "capacitor_energy",
+"name": "Energy stored in a capacitor",
+"finds": "energy",
+"pattern": "How much energy is stored in a capacitor of <number> uF charged to <number> V?",
+"example": "How much energy is stored in a capacitor of 2 uF charged to 300 V?",
+"answer": "0.09 J"
+},
+{
+"relation": "parallel_plate_capacitor",
+"name": "Capacitance of parallel plates",
+"finds": "capacitance",
+"pattern": "A capacitor has parallel plates of area <number> m^<number> with a plate separation of <number> mm. What is its capacitance?",
+"example": "A capacitor has parallel plates of area 0.01 m^2 with a plate separation of 1 mm. What is its capacitance?",
+"answer": "8.85419e-11 F"
+},
+{
+"relation": "parallel_plate_capacitor",
+"name": "Capacitance of parallel plates",
+"finds": "capacitance",
+"pattern": "What is the capacitance of a capacitor with plates of area <number> m^<number> and a separation of <number> mm?",
+"example": "What is the capacitance of a capacitor with plates of area 2 m^2 and a separation of 5 mm?",
+"answer": "3.54168e-09 F"
+},
+{
+"relation": "ohm_power_current",
+"name": "Power from current and resistance",
+"finds": "power",
+"pattern": "A current of <number> A flows through a <number> ohm resistor. What power does it dissipate?",
+"example": "A current of 2 A flows through a 5 ohm resistor. What power does it dissipate?",
+"answer": "20 W"
+},
+{
+"relation": "ohm_power_current",
+"name": "Power from current and resistance",
+"finds": "current",
+"pattern": "A heater with a resistance of <number> ohm dissipates <number> W. What current flows through it?",
+"example": "A heater with a resistance of 4 ohm dissipates 100 W. What current flows through it?",
+"answer": "5 A"
+},
+{
+"relation": "ohm_power_voltage",
+"name": "Power from voltage and resistance",
+"finds": "power",
+"pattern": "A <number> ohm resistor is connected across <number> V. What power does it dissipate?",
+"example": "A 6 ohm resistor is connected across 12 V. What power does it dissipate?",
+"answer": "24 W"
+},
+{
+"relation": "ohm_power_voltage",
+"name": "Power from voltage and resistance",
+"finds": "resistance",
+"pattern": "A lamp dissipates <number> W when connected to <number> V. What is its resistance?",
+"example": "A lamp dissipates 60 W when connected to 120 V. What is its resistance?",
+"answer": "240 ohm"
+},
+{
+"relation": "resistivity",
+"name": "Resistance of a uniform wire",
+"finds": "resistance",
+"pattern": "A copper wire of resistivity <number> ohm*m has a wire length of <number> m and a cross-sectional area of <number> m^2. What is its resistance?",
+"example": "A copper wire of resistivity 1.68e-8 ohm*m has a wire length of 10 m and a cross-sectional area of 1e-6 m^2. What is its resistance?",
+"answer": "0.168 ohm"
+},
+{
+"relation": "resistivity",
+"name": "Resistance of a uniform wire",
+"finds": "resistance",
+"pattern": "What is the resistance of a wire with resistivity <number> ohm*m, wire length <number> m and area <number> m^<number>?",
+"example": "What is the resistance of a wire with resistivity 5e-7 ohm*m, wire length 0.8 m and area 2e-7 m^2?",
+"answer": "2 ohm"
+},
+{
+"relation": "magnetic_force_charge",
+"name": "Magnetic force on a moving charge",
+"finds": "magnetic force",
+"pattern": "A proton with charge <number> C moves at <number> m/s perpendicular to the field of a <number> T magnetic field. What is the magnetic force on it?",
+"example": "A proton with charge 1.6e-19 C moves at 2e6 m/s perpendicular to the field of a 0.5 T magnetic field. What is the magnetic force on it?",
+"answer": "1.6e-13 N"
+},
+{
+"relation": "magnetic_force_charge",
+"name": "Magnetic force on a moving charge",
+"finds": "magnetic force",
+"pattern": "A <number> uC charge moves at <number> m/s at an angle of <number> degrees to a <number> T magnetic field. What is the magnetic force?",
+"example": "A 3 uC charge moves at 400 m/s at an angle of 30 degrees to a 0.2 T magnetic field. What is the magnetic force?",
+"answer": "0.00012 N"
+},
+{
+"relation": "magnetic_force_wire",
+"name": "Magnetic force on a current-carrying wire",
+"finds": "magnetic force",
+"pattern": "A wire carrying <number> A has a wire length of <number> m perpendicular to the field of a <number> T magnetic field. What is the magnetic force on the wire?",
+"example": "A wire carrying 5 A has a wire length of 0.2 m perpendicular to the field of a 0.4 T magnetic field. What is the magnetic force on the wire?",
+"answer": "0.4 N"
+},
+{
+"relation": "magnetic_force_wire",
+"name": "Magnetic force on a current-carrying wire",
+"finds": "magnetic force",
+"pattern": "A wire length of <number> m carries <number> A at an angle of <number> degrees to a <number> T magnetic field. What is the magnetic force?",
+"example": "A wire length of 0.5 m carries 2 A at an angle of 30 degrees to a 0.1 T magnetic field. What is the magnetic force?",
+"answer": "0.05 N"
+},
+{
+"relation": "long_wire_field",
+"name": "Magnetic field of a long straight wire",
+"finds": "magnetic field",
+"pattern": "What is the magnetic field <number> cm from a long straight wire carrying <number> A?",
+"example": "What is the magnetic field 5 cm from a long straight wire carrying 10 A?",
+"answer": "4e-05 T"
+},
+{
+"relation": "long_wire_field",
+"name": "Magnetic field of a long straight wire",
+"finds": "magnetic field",
+"pattern": "A long wire carries <number> A. What is the magnetic field at a distance of <number> cm?",
+"example": "A long wire carries 2 A. What is the magnetic field at a distance of 1 cm?",
+"answer": "4e-05 T"
+},
+{
+"relation": "solenoid_field",
+"name": "Magnetic field inside a long solenoid",
+"finds": "magnetic field",
+"pattern": "A solenoid has <number> turns per meter and carries <number> A. What is the magnetic field inside it?",
+"example": "A solenoid has 1000 turns per meter and carries 2 A. What is the magnetic field inside it?",
+"answer": "0.00251327 T"
+},
+{
+"relation": "solenoid_field",
+"name": "Magnetic field inside a long solenoid",
+"finds": "current",
+"pattern": "What current gives a magnetic field of <number> T inside a solenoid with <number> turns per meter?",
+"example": "What current gives a magnetic field of 0.01 T inside a solenoid with 2000 turns per meter?",
+"answer": "3.97887 A"
+},
+{
+"relation": "surface_gravity",
+"name": "Gravitational acceleration at a distance from a mass",
+"finds": "acceleration due to gravity",
+"pattern": "A planet has a mass of <number> kg and a radius of <number> m. What is the acceleration due to gravity at its surface?",
+"example": "A planet has a mass of 5.97e24 kg and a radius of 6.37e6 m. What is the acceleration due to gravity at its surface?",
+"answer": "9.81977 m/s^2"
+},
+{
+"relation": "surface_gravity",
+"name": "Gravitational acceleration at a distance from a mass",
+"finds": "surface gravity",
+"pattern": "The moon has a mass of <number> kg and a radius of <number> m. What is its surface gravity?",
+"example": "The moon has a mass of 7.35e22 kg and a radius of 1.74e6 m. What is its surface gravity?",
+"answer": "1.6203 m/s^2"
+},
+{
+"relation": "orbital_speed",
+"name": "Speed in a circular orbit",
+"finds": "orbital speed",
+"pattern": "A satellite is in a circular orbit of radius <number> m around a planet of mass <number> kg. What is its orbital speed?",
+"example": "A satellite is in a circular orbit of radius 6.77e6 m around a planet of mass 5.97e24 kg. What is its orbital speed?",
+"answer": "7671.77 m/s"
+},
+{
+"relation": "orbital_speed",
+"name": "Speed in a circular orbit",
+"finds": "orbital speed",
+"pattern": "A planet orbits a star of mass <number> kg at an orbital radius of <number> m. Find its orbital speed.",
+"example": "A planet orbits a star of mass 1.99e30 kg at an orbital radius of 1.5e11 m. Find its orbital speed.",
+"answer": "29756.6 m/s"
+},
+{
+"relation": "orbital_period",
+"name": "Period of a circular orbit",
+"finds": "orbital period",
+"pattern": "A satellite orbits a planet of mass <number> kg at an orbital radius of <number> m. What is its orbital period?",
+"example": "A satellite orbits a planet of mass 5.97e24 kg at an orbital radius of 4.22e7 m. What is its orbital period?",
+"answer": "86289.6 s"
+},
+{
+"relation": "orbital_period",
+"name": "Period of a circular orbit",
+"finds": "orbital period",
+"pattern": "What is the orbital period of a planet that orbits a star of mass <number> kg at a radius of <number> m?",
+"example": "What is the orbital period of a planet that orbits a star of mass 1.99e30 kg at a radius of 1.5e11 m?",
+"answer": "3.16729e+07 s"
+},
+{
+"relation": "ideal_gas_moles",
+"name": "Ideal gas law",
+"finds": "pressure",
+"pattern": "<number> moles of an ideal gas are held at <number> K in a volume of <number> m^3. What is the pressure?",
+"example": "2 moles of an ideal gas are held at 300 K in a volume of 0.05 m^3. What is the pressure?",
+"answer": "99773.6 Pa"
+},
+{
+"relation": "ideal_gas_moles",
+"name": "Ideal gas law",
+"finds": "moles",
+"pattern": "A gas at a pressure of <number> Pa occupies <number> m^<number> at <number> K. How many moles of gas are there?",
+"example": "A gas at a pressure of 200000 Pa occupies 0.01 m^3 at 300 K. How many moles of gas are there?",
+"answer": "0.801816 mol"
+},
+{
+"relation": "latent_heat_fusion",
+"name": "Heat to melt or freeze",
+"finds": "heat",
+"pattern": "How much heat is needed to melt <number> kg of ice at <number> C? The latent heat of fusion is <number> J/kg.",
+"example": "How much heat is needed to melt 2 kg of ice at 0 C? The latent heat of fusion is 334000 J/kg.",
+"answer": "668000 J"
+},
+{
+"relation": "latent_heat_fusion",
+"name": "Heat to melt or freeze",
+"finds": "mass",
+"pattern": "A block of lead melts completely when it absorbs <number> J. The heat of fusion of lead is <number> J/kg. What is its mass?",
+"example": "A block of lead melts completely when it absorbs 100000 J. The heat of fusion of lead is 25000 J/kg. What is its mass?",
+"answer": "4 kg"
+},
+{
+"relation": "latent_heat_vaporization",
+"name": "Heat to boil or condense",
+"finds": "heat",
+"pattern": "How much heat is needed to boil <number> kg of water at <number> C if the latent heat of vaporization is <number> J/kg?",
+"example": "How much heat is needed to boil 0.5 kg of water at 100 C if the latent heat of vaporization is 2.26e6 J/kg?",
+"answer": "1.13e+06 J"
+},
+{
+"relation": "latent_heat_vaporization",
+"name": "Heat to boil or condense",
+"finds": "mass",
+"pattern": "Steam condenses and releases <number> J. The heat of vaporization is <number> J/kg. What mass of steam condenses?",
+"example": "Steam condenses and releases 4.52e6 J. The heat of vaporization is 2.26e6 J/kg. What mass of steam condenses?",
+"answer": "2 kg"
+},
+{
+"relation": "linear_expansion",
+"name": "Linear thermal expansion",
+"finds": "change in length",
+"pattern": "A steel rail with an original length of <number> m expands as it is heated by <number> K. The coefficient of linear expansion is <number> <number>/K. What is the change in length?",
+"example": "A steel rail with an original length of 100 m expands as it is heated by 30 K. The coefficient of linear expansion is 12e-6 1/K. What is the change in length?",
+"answer": "0.036 m"
+},
+{
+"relation": "linear_expansion",
+"name": "Linear thermal expansion",
+"finds": "temperature change",
+"pattern": "An aluminium rod with an initial length of <number> m expands by <number> m. Its coefficient of linear expansion is <number> <number>/K. What temperature change caused the expansion?",
+"example": "An aluminium rod with an initial length of 2 m expands by 0.002 m. Its coefficient of linear expansion is 2.4e-5 1/K. What temperature change caused the expansion?",
+"answer": "41.6667 K"
+},
+{
+"relation": "thin_lens",
+"name": "Thin lens equation",
+"finds": "image distance",
+"pattern": "An object is placed <number> cm from a converging lens with a focal length of <number> cm. What is the image distance?",
+"example": "An object is placed 30 cm from a converging lens with a focal length of 10 cm. What is the image distance?",
+"answer": "0.15 m"
+},
+{
+"relation": "thin_lens",
+"name": "Thin lens equation",
+"finds": "focal length",
+"pattern": "A lens forms an image at an image distance of <number> cm for an object distance of <number> cm. What is the focal length?",
+"example": "A lens forms an image at an image distance of 50 cm for an object distance of 50 cm. What is the focal length?",
+"answer": "0.25 m"
+},
+{
+"relation": "photon_energy",
+"name": "Energy of a photon",
+"finds": "energy of a photon",
+"pattern": "What is the energy of a photon with a frequency of <number> Hz?",
+"example": "What is the energy of a photon with a frequency of 5e14 Hz?",
+"answer": "3.31304e-19 J"
+},
+{
+"relation": "photon_energy",
+"name": "Energy of a photon",
+"finds": "frequency",
+"pattern": "A photon has an energy of <number> J. What is its frequency?",
+"example": "A photon has an energy of 3.3e-19 J. What is its frequency?",
+"answer": "4.98033e+14 Hz"
+},
+{
+"relation": "photon_energy_wavelength",
+"name": "Photon energy from wavelength",
+"finds": "energy of a photon",
+"pattern": "What is the energy of a photon of wavelength <number> nm?",
+"example": "What is the energy of a photon of wavelength 500 nm?",
+"answer": "3.97289e-19 J"
+},
+{
+"relation": "photon_energy_wavelength",
+"name": "Photon energy from wavelength",
+"finds": "wavelength",
+"pattern": "A photon has an energy of <number> J. What is its wavelength?",
+"example": "A photon has an energy of 2e-19 J. What is its wavelength?",
+"answer": "9.93223e-07 m"
+},
+{
+"relation": "photon_momentum",
+"name": "Momentum of a photon",
+"finds": "momentum",
+"pattern": "What is the momentum of a photon with a wavelength of <number> nm?",
+"example": "What is the momentum of a photon with a wavelength of 500 nm?",
+"answer": "1.32521e-27 kg*m/s"
+},
+{
+"relation": "photon_momentum",
+"name": "Momentum of a photon",
+"finds": "wavelength",
+"pattern": "A photon has a momentum of <number> kg*m/s. What is its wavelength?",
+"example": "A photon has a momentum of 1e-27 kg*m/s. What is its wavelength?",
+"answer": "6.62607e-07 m"
+},
+{
+"relation": "de_broglie",
+"name": "De Broglie wavelength",
+"finds": "wavelength",
+"pattern": "An electron has a momentum of <number> kg*m/s. What is its de Broglie wavelength?",
+"example": "An electron has a momentum of 1e-24 kg*m/s. What is its de Broglie wavelength?",
+"answer": "6.62607e-10 m"
+},
+{
+"relation": "de_broglie",
+"name": "De Broglie wavelength",
+"finds": "wavelength",
+"pattern": "An electron with mass <number> kg moves at <number> m/s. What is its de Broglie wavelength?",
+"example": "An electron with mass 9.11e-31 kg moves at 2e6 m/s. What is its de Broglie wavelength?",
+"answer": "3.6367e-10 m"
+},
+{
+"relation": "rest_energy",
+"name": "Rest energy",
+"finds": "rest energy",
+"pattern": "What is the rest energy of a <number> g mass?",
+"example": "What is the rest energy of a 1 g mass?",
+"answer": "8.98755e+13 J"
+},
+{
+"relation": "rest_energy",
+"name": "Rest energy",
+"finds": "mass",
+"pattern": "A reaction releases <number> J when mass is converted entirely into energy. How much mass was converted?",
+"example": "A reaction releases 9e13 J when mass is converted entirely into energy. How much mass was converted?",
+"answer": "0.00100139 kg"
+},
+{
+"relation": "pendulum_period",
+"name": "Period of a simple pendulum",
+"finds": "period",
+"pattern": "What is the period of a pendulum with a pendulum length of <number> m?",
+"example": "What is the period of a pendulum with a pendulum length of 1 m?",
+"answer": "2.00641 s"
+},
+{
+"relation": "pendulum_period",
+"name": "Period of a simple pendulum",
+"finds": "length of the pendulum",
+"pattern": "A pendulum has a period of <number> s. What is the length of the pendulum?",
+"example": "A pendulum has a period of 2 s. What is the length of the pendulum?",
+"answer": "0.993621 m"
+},
+{
+"relation": "spring_oscillation_period",
+"name": "Period of a mass on a spring",
+"finds": "period",
+"pattern": "A <number> kg mass oscillates on a spring with a spring constant of <number> N/m. What is the period?",
+"example": "A 0.5 kg mass oscillates on a spring with a spring constant of 200 N/m. What is the period?",
+"answer": "0.314159 s"
+},
+{
+"relation": "spring_oscillation_period",
+"name": "Period of a mass on a spring",
+"finds": "mass",
+"pattern": "A mass oscillates on a spring of stiffness <number> N/m with a period of <number> s. What is the mass?",
+"example": "A mass oscillates on a spring of stiffness 40 N/m with a period of 1 s. What is the mass?",
+"answer": "1.01321 kg"
+},
+{
+"relation": "torque_lever",
+"name": "Torque of a force",
+"finds": "torque",
+"pattern": "A wrench applies an applied force of <number> N at a lever arm of <number> m, at an angle of <number> degrees. What is the torque?",
+"example": "A wrench applies an applied force of 50 N at a lever arm of 0.3 m, at an angle of 90 degrees. What is the torque?",
+"answer": "15 N*m"
+},
+{
+"relation": "torque_lever",
+"name": "Torque of a force",
+"finds": "torque",
+"pattern": "A force of <number> N pushes a door at a distance from the hinge of <number> m at an angle of <number> degrees. What is the torque?",
+"example": "A force of 40 N pushes a door at a distance from the hinge of 0.2 m at an angle of 30 degrees. What is the torque?",
+"answer": "4 N*m"
+},
+{
+"relation": "rotational_kinetic_energy",
+"name": "Rotational kinetic energy",
+"finds": "rotational kinetic energy",
+"pattern": "A flywheel with a moment of inertia of <number> kg*m^<number> rotates at <number> rad/s. What is its rotational kinetic energy?",
+"example": "A flywheel with a moment of inertia of 2 kg*m^2 rotates at 10 rad/s. What is its rotational kinetic energy?",
+"answer": "100 J"
+},
+{
+"relation": "rotational_kinetic_energy",
+"name": "Rotational kinetic energy",
+"finds": "moment of inertia",
+"pattern": "A spinning wheel rotating at <number> rad/s has a rotational kinetic energy of <number> J. What is its moment of inertia?",
+"example": "A spinning wheel rotating at 5 rad/s has a rotational kinetic energy of 50 J. What is its moment of inertia?",
+"answer": "4 kg*m^2"
+},
+{
+"relation": "angular_momentum",
+"name": "Angular momentum of a rotating body",
+"finds": "angular momentum",
+"pattern": "A turntable with a moment of inertia of <number> kg*m^<number> rotates at <number> rad/s. What is its angular momentum?",
+"example": "A turntable with a moment of inertia of 0.5 kg*m^2 rotates at 8 rad/s. What is its angular momentum?",
+"answer": "4 kg*m^2/s"
+},
+{
+"relation": "angular_momentum",
+"name": "Angular momentum of a rotating body",
+"finds": "angular velocity",
+"pattern": "A rotating wheel has an angular momentum of <number> kg*m^<number>/s and a moment of inertia of <number> kg*m^2. What is its angular velocity?",
+"example": "A rotating wheel has an angular momentum of 12 kg*m^2/s and a moment of inertia of 3 kg*m^2. What is its angular velocity?",
+"answer": "4 rad/s"
+},
+{
+"relation": "tangential_acceleration",
+"name": "Tangential acceleration of a point on a rotating body",
+"finds": "tangential acceleration",
+"pattern": "A point on a rotating wheel is at a radius of <number> m. The wheel has an angular acceleration of <number> rad/s^2. What is the tangential acceleration of the point?",
+"example": "A point on a rotating wheel is at a radius of 0.5 m. The wheel has an angular acceleration of 4 rad/s^2. What is the tangential acceleration of the point?",
+"answer": "2 m/s^2"
+},
+{
+"relation": "tangential_acceleration",
+"name": "Tangential acceleration of a point on a rotating body",
+"finds": "tangential acceleration",
+"pattern": "A flywheel of radius <number> m spins up with an angular acceleration of <number> rad/s^2. Find the tangential acceleration at its rim.",
+"example": "A flywheel of radius 0.3 m spins up with an angular acceleration of 10 rad/s^2. Find the tangential acceleration at its rim.",
+"answer": "3 m/s^2"
+},
+{
+"relation": "centripetal_acceleration_omega",
+"name": "Centripetal acceleration from angular velocity",
+"finds": "centripetal acceleration",
+"pattern": "A centrifuge rotates at an angular velocity of <number> rad/s. What is the centripetal acceleration at a radius of <number> m?",
+"example": "A centrifuge rotates at an angular velocity of 3 rad/s. What is the centripetal acceleration at a radius of 2 m?",
+"answer": "18 m/s^2"
+},
+{
+"relation": "centripetal_acceleration_omega",
+"name": "Centripetal acceleration from angular velocity",
+"finds": "centripetal acceleration",
+"pattern": "A sample spins at an angular velocity of <number> rad/s at a radius of <number> m. What is its centripetal acceleration?",
+"example": "A sample spins at an angular velocity of 100 rad/s at a radius of 0.1 m. What is its centripetal acceleration?",
+"answer": "1000 m/s^2"
+},
+{
+"relation": "angular_momentum_point_mass",
+"name": "Angular momentum of a point mass on a circle",
+"finds": "angular momentum",
+"pattern": "A <number> kg satellite moves at <number> m/s in a circular orbit of radius <number> m. What is its angular momentum?",
+"example": "A 2 kg satellite moves at 3 m/s in a circular orbit of radius 4 m. What is its angular momentum?",
+"answer": "24 kg*m^2/s"
+},
+{
+"relation": "angular_momentum_point_mass",
+"name": "Angular momentum of a point mass on a circle",
+"finds": "angular momentum",
+"pattern": "A planet of mass <number> kg orbits at <number> m/s at an orbital radius of <number> m. What is its angular momentum?",
+"example": "A planet of mass 5.97e24 kg orbits at 2.98e4 m/s at an orbital radius of 1.496e11 m. What is its angular momentum?",
+"answer": "2.66147e+40 kg*m^2/s"
+},
+{
+"relation": "absolute_pressure_depth",
+"name": "Absolute pressure at a depth in a fluid",
+"finds": "absolute pressure",
+"pattern": "The atmospheric pressure is <number> Pa. What is the absolute pressure <number> m below the surface of water of density <number> kg/m^<number>?",
+"example": "The atmospheric pressure is 101325 Pa. What is the absolute pressure 10 m below the surface of water of density 1000 kg/m^3?",
+"answer": "199392 Pa"
+},
+{
+"relation": "absolute_pressure_depth",
+"name": "Absolute pressure at a depth in a fluid",
+"finds": "absolute pressure",
+"pattern": "A diver is at a depth of <number> m in sea water of density <number> kg/m^<number> where the atmospheric pressure is <number> Pa. What is the absolute pressure on the diver?",
+"example": "A diver is at a depth of 20 m in sea water of density 1025 kg/m^3 where the atmospheric pressure is 1e5 Pa. What is the absolute pressure on the diver?",
+"answer": "301036 Pa"
+},
+{
+"relation": "flow_rate_volume_time",
+"name": "Flow rate as volume per time",
+"finds": "flow rate",
+"pattern": "A hose fills a <number> L bucket in <number> s with water. What is the flow rate?",
+"example": "A hose fills a 2 L bucket in 10 s with water. What is the flow rate?",
+"answer": "0.0002 m^3/s"
+},
+{
+"relation": "flow_rate_volume_time",
+"name": "Flow rate as volume per time",
+"finds": "volume flow rate",
+"pattern": "Water flows through a pipe and <number> L flows out in <number> s. What is the volume flow rate?",
+"example": "Water flows through a pipe and 300 L flows out in 60 s. What is the volume flow rate?",
+"answer": "0.005 m^3/s"
+},
+{
+"relation": "flow_rate_area_speed",
+"name": "Flow rate through a cross section",
+"finds": "flow rate",
+"pattern": "Water flows through a pipe with a cross-sectional area of <number> m^<number> at a speed of <number> m/s. What is the flow rate?",
+"example": "Water flows through a pipe with a cross-sectional area of 3e-4 m^2 at a speed of 2 m/s. What is the flow rate?",
+"answer": "0.0006 m^3/s"
+},
+{
+"relation": "flow_rate_area_speed",
+"name": "Flow rate through a cross section",
+"finds": "speed",
+"pattern": "Blood is pumped at a flow rate of <number> m^<number>/s into the aorta of cross-sectional area <number> m^2. What is the speed of the blood?",
+"example": "Blood is pumped at a flow rate of 8.3e-5 m^3/s into the aorta of cross-sectional area 3.14e-4 m^2. What is the speed of the blood?",
+"answer": "0.264331 m/s"
+},
+{
+"relation": "volume_expansion",
+"name": "Thermal expansion of volume",
+"finds": "change in volume",
+"pattern": "Water with an original volume of <number> L and a coefficient of volume expansion of <number> <number>/K is heated by <number> K. What is the change in volume as it expands?",
+"example": "Water with an original volume of 1 L and a coefficient of volume expansion of 2.1e-4 1/K is heated by 50 K. What is the change in volume as it expands?",
+"answer": "1.05e-05 m^3"
+},
+{
+"relation": "volume_expansion",
+"name": "Thermal expansion of volume",
+"finds": "increase in volume",
+"pattern": "Gasoline has a coefficient of volume expansion of <number> <number>/K. A tank holds an initial volume of <number> L and is warmed by <number> K so it expands. What is the increase in volume?",
+"example": "Gasoline has a coefficient of volume expansion of 9.5e-4 1/K. A tank holds an initial volume of 60 L and is warmed by 20 K so it expands. What is the increase in volume?",
+"answer": "0.00114 m^3"
+},
+{
+"relation": "engine_efficiency",
+"name": "Efficiency of a heat engine",
+"finds": "efficiency",
+"pattern": "A heat engine takes in a heat input of <number> J and produces a work output of <number> J. What is its efficiency?",
+"example": "A heat engine takes in a heat input of 1000 J and produces a work output of 300 J. What is its efficiency?",
+"answer": "0.3 1"
+},
+{
+"relation": "engine_efficiency",
+"name": "Efficiency of a heat engine",
+"finds": "work output",
+"pattern": "An engine with an efficiency of <number> has a heat input of <number> J. What is its work output?",
+"example": "An engine with an efficiency of 0.25 has a heat input of 4000 J. What is its work output?",
+"answer": "1000 J"
+},
+{
+"relation": "carnot_efficiency",
+"name": "Carnot (maximum) efficiency",
+"finds": "maximum efficiency",
+"pattern": "A heat engine works between a hot reservoir temperature of <number> K and a cold reservoir temperature of <number> K. What is its maximum efficiency?",
+"example": "A heat engine works between a hot reservoir temperature of 600 K and a cold reservoir temperature of 300 K. What is its maximum efficiency?",
+"answer": "0.5 1"
+},
+{
+"relation": "carnot_efficiency",
+"name": "Carnot (maximum) efficiency",
+"finds": "carnot efficiency",
+"pattern": "What is the carnot efficiency of an engine with a hot reservoir temperature of <number> K and a cold reservoir temperature of <number> K?",
+"example": "What is the carnot efficiency of an engine with a hot reservoir temperature of 873 K and a cold reservoir temperature of 293 K?",
+"answer": "0.664376 1"
+},
+{
+"relation": "shm_max_speed",
+"name": "Maximum speed of a mass on a spring",
+"finds": "maximum speed",
+"pattern": "A <number> kg mass oscillates in simple harmonic motion on a spring with a spring constant of <number> N/m and an amplitude of <number> m. What is its maximum speed?",
+"example": "A 1 kg mass oscillates in simple harmonic motion on a spring with a spring constant of 100 N/m and an amplitude of 0.1 m. What is its maximum speed?",
+"answer": "1 m/s"
+},
+{
+"relation": "shm_max_speed",
+"name": "Maximum speed of a mass on a spring",
+"finds": "maximum velocity",
+"pattern": "A <number> kg block on a spring of spring constant <number> N/m oscillates with an amplitude of <number> cm. What is its maximum velocity?",
+"example": "A 0.5 kg block on a spring of spring constant 200 N/m oscillates with an amplitude of 5 cm. What is its maximum velocity?",
+"answer": "1 m/s"
+},
+{
+"relation": "intensity_power_area",
+"name": "Intensity as power per area",
+"finds": "intensity",
+"pattern": "A power of <number> W falls uniformly on an area of <number> m^2. What is the intensity?",
+"example": "A power of 100 W falls uniformly on an area of 2 m^2. What is the intensity?",
+"answer": "50 W/m^2"
+},
+{
+"relation": "intensity_power_area",
+"name": "Intensity as power per area",
+"finds": "power",
+"pattern": "Sunlight with an intensity of <number> W/m^<number> falls on a panel with an area of <number> m^2. What power does it receive?",
+"example": "Sunlight with an intensity of 1000 W/m^2 falls on a panel with an area of 0.5 m^2. What power does it receive?",
+"answer": "500 W"
+},
+{
+"relation": "wavelength_in_medium",
+"name": "Wavelength of light in a medium",
+"finds": "wavelength in the medium",
+"pattern": "Light with a wavelength in vacuum of <number> nm enters glass with an index of refraction of 1.5. What is the wavelength in the medium?",
+"example": "Light with a wavelength in vacuum of 600 nm enters glass with an index of refraction of 1.5. What is the wavelength in the medium?",
+"answer": "4e-07 m"
+},
+{
+"relation": "wavelength_in_medium",
+"name": "Wavelength of light in a medium",
+"finds": "wavelength in the medium",
+"pattern": "Yellow light of wavelength in air <number> nm enters water, refractive index 1.333. What is the wavelength in the medium?",
+"example": "Yellow light of wavelength in air 589 nm enters water, refractive index 1.333. What is the wavelength in the medium?",
+"answer": "4.4186e-07 m"
+},
+{
+"relation": "index_of_refraction",
+"name": "Index of refraction",
+"finds": "index of refraction",
+"pattern": "The speed of light in the medium is <number> m/s for a certain glass. What is the index of refraction of the glass?",
+"example": "The speed of light in the medium is 2e8 m/s for a certain glass. What is the index of refraction of the glass?",
+"answer": "1.49896 1"
+},
+{
+"relation": "index_of_refraction",
+"name": "Index of refraction",
+"finds": "speed of light in the material",
+"pattern": "Diamond has an index of refraction of 2.42. What is the speed of light in the material?",
+"example": "Diamond has an index of refraction of 2.42. What is the speed of light in the material?",
+"answer": "1.23881e+08 m/s"
+},
+{
+"relation": "mirror_focal_length",
+"name": "Focal length of a spherical mirror",
+"finds": "focal length",
+"pattern": "A concave mirror has a radius of curvature of <number> m. What is its focal length?",
+"example": "A concave mirror has a radius of curvature of 0.4 m. What is its focal length?",
+"answer": "0.2 m"
+},
+{
+"relation": "mirror_focal_length",
+"name": "Focal length of a spherical mirror",
+"finds": "radius of curvature",
+"pattern": "A mirror has a focal length of <number> cm. What is its radius of curvature?",
+"example": "A mirror has a focal length of 15 cm. What is its radius of curvature?",
+"answer": "0.3 m"
+},
+{
+"relation": "rms_voltage",
+"name": "Rms voltage of a sinusoidal supply",
+"finds": "rms voltage",
+"pattern": "An AC supply has a peak voltage of <number> V. What is the rms voltage?",
+"example": "An AC supply has a peak voltage of 170 V. What is the rms voltage?",
+"answer": "120.208 V"
+},
+{
+"relation": "rms_voltage",
+"name": "Rms voltage of a sinusoidal supply",
+"finds": "peak voltage",
+"pattern": "Mains AC has an rms voltage of <number> V. What is its peak voltage?",
+"example": "Mains AC has an rms voltage of 230 V. What is its peak voltage?",
+"answer": "325.269 V"
+},
+{
+"relation": "rms_current",
+"name": "Rms current of a sinusoidal supply",
+"finds": "rms current",
+"pattern": "An AC circuit has a peak current of <number> A. What is the rms current?",
+"example": "An AC circuit has a peak current of 10 A. What is the rms current?",
+"answer": "7.07107 A"
+},
+{
+"relation": "rms_current",
+"name": "Rms current of a sinusoidal supply",
+"finds": "peak current",
+"pattern": "An AC appliance draws an rms current of <number> A. What is the peak current?",
+"example": "An AC appliance draws an rms current of 2 A. What is the peak current?",
+"answer": "2.82843 A"
+},
+{
+"relation": "loop_center_field",
+"name": "Magnetic field at the centre of a circular loop",
+"finds": "magnetic field",
+"pattern": "A circular loop of wire with a radius of <number> m carries a current of <number> A. What is the magnetic field at its centre?",
+"example": "A circular loop of wire with a radius of 0.1 m carries a current of 5 A. What is the magnetic field at its centre?",
+"answer": "3.14159e-05 T"
+},
+{
+"relation": "loop_center_field",
+"name": "Magnetic field at the centre of a circular loop",
+"finds": "magnetic field",
+"pattern": "A loop of radius <number> cm carries a current of <number> A. What magnetic field does it produce at the centre?",
+"example": "A loop of radius 5 cm carries a current of 8 A. What magnetic field does it produce at the centre?",
+"answer": "0.000100531 T"
+},
+{
+"relation": "rl_time_constant",
+"name": "Time constant of an RL circuit",
+"finds": "time constant",
+"pattern": "An inductor of inductance <number> H is connected in series with a <number> ohm resistor. What is the time constant?",
+"example": "An inductor of inductance 0.5 H is connected in series with a 100 ohm resistor. What is the time constant?",
+"answer": "0.005 s"
+},
+{
+"relation": "rl_time_constant",
+"name": "Time constant of an RL circuit",
+"finds": "inductance",
+"pattern": "You want a time constant of <number> s using an inductor and a <number> ohm resistor. What inductance is needed?",
+"example": "You want a time constant of 1 s using an inductor and a 500 ohm resistor. What inductance is needed?",
+"answer": "500 H"
+},
+{
+"relation": "inductive_reactance",
+"name": "Reactance of an inductor",
+"finds": "reactance",
+"pattern": "An inductor of inductance <number> H is in an AC circuit at a frequency of <number> Hz. What is its reactance?",
+"example": "An inductor of inductance 0.03 H is in an AC circuit at a frequency of 60 Hz. What is its reactance?",
+"answer": "11.3097 ohm"
+},
+{
+"relation": "inductive_reactance",
+"name": "Reactance of an inductor",
+"finds": "frequency",
+"pattern": "At what frequency will an inductor of inductance <number> mH have a reactance of <number> ohm?",
+"example": "At what frequency will an inductor of inductance 30 mH have a reactance of 100 ohm?",
+"answer": "530.516 Hz"
+},
+{
+"relation": "capacitive_reactance",
+"name": "Reactance of a capacitor",
+"finds": "reactance",
+"pattern": "A capacitor with a capacitance of <number> uF is in an AC circuit at a frequency of <number> Hz. What is its reactance?",
+"example": "A capacitor with a capacitance of 1 uF is in an AC circuit at a frequency of 60 Hz. What is its reactance?",
+"answer": "2652.58 ohm"
+},
+{
+"relation": "capacitive_reactance",
+"name": "Reactance of a capacitor",
+"finds": "capacitance",
+"pattern": "What capacitance should a capacitor have to give a reactance of <number> ohm at <number> Hz?",
+"example": "What capacitance should a capacitor have to give a reactance of 2e6 ohm at 60 Hz?",
+"answer": "1.32629e-09 F"
+},
+{
+"relation": "lc_resonance",
+"name": "Resonant frequency of an LC circuit",
+"finds": "resonant frequency",
+"pattern": "A resonant circuit has an inductance of <number> H and a capacitance of <number> uF. What is the resonant frequency?",
+"example": "A resonant circuit has an inductance of 0.01 H and a capacitance of 1 uF. What is the resonant frequency?",
+"answer": "1591.55 Hz"
+},
+{
+"relation": "lc_resonance",
+"name": "Resonant frequency of an LC circuit",
+"finds": "capacitance",
+"pattern": "What capacitance gives a resonant frequency of <number> GHz with an inductance of <number> nH in an LC circuit?",
+"example": "What capacitance gives a resonant frequency of 1 GHz with an inductance of 8 nH in an LC circuit?",
+"answer": "3.16629e-12 F"
+},
+{
+"relation": "angular_velocity_time",
+"name": "Angular velocity under constant angular acceleration",
+"finds": "final angular velocity",
+"pattern": "A flywheel rotating at an initial angular velocity of <number> rad/s has an angular acceleration of <number> rad/s^<number> for <number> s. What is its final angular velocity?",
+"example": "A flywheel rotating at an initial angular velocity of 2 rad/s has an angular acceleration of 3 rad/s^2 for 4 s. What is its final angular velocity?",
+"answer": "14 rad/s"
+},
+{
+"relation": "angular_velocity_time",
+"name": "Angular velocity under constant angular acceleration",
+"finds": "final angular velocity",
+"pattern": "A turntable starts from rest and spins up with an angular acceleration of <number> rad/s^2. What is its final angular velocity after <number> s?",
+"example": "A turntable starts from rest and spins up with an angular acceleration of 0.5 rad/s^2. What is its final angular velocity after 6 s?",
+"answer": "3 rad/s"
+},
+{
+"relation": "angular_velocity_angle",
+"name": "Angular velocity and angle turned under constant angular acceleration",
+"finds": "final angular velocity",
+"pattern": "A flywheel starts from rest and spins up with an angular acceleration of <number> rad/s^<number> through an angular displacement of <number> rad. What is its final angular velocity?",
+"example": "A flywheel starts from rest and spins up with an angular acceleration of 2 rad/s^2 through an angular displacement of 25 rad. What is its final angular velocity?",
+"answer": "10 rad/s"
+},
+{
+"relation": "angular_velocity_angle",
+"name": "Angular velocity and angle turned under constant angular acceleration",
+"finds": "final angular velocity",
+"pattern": "A wheel rotating with an initial angular velocity of <number> rad/s has an angular acceleration of <number> rad/s^<number> over an angular displacement of <number> rad. What is its final angular velocity?",
+"example": "A wheel rotating with an initial angular velocity of 4 rad/s has an angular acceleration of 1.5 rad/s^2 over an angular displacement of 10 rad. What is its final angular velocity?",
+"answer": "6.78233 rad/s"
+},
+{
+"relation": "engine_energy_balance",
+"name": "Energy balance of a cyclic heat engine",
+"finds": "work output",
+"pattern": "A heat engine takes in a heat input of <number> J and has <number> J of heat rejected per cycle. What is its work output?",
+"example": "A heat engine takes in a heat input of 1000 J and has 700 J of heat rejected per cycle. What is its work output?",
+"answer": "300 J"
+},
+{
+"relation": "engine_energy_balance",
+"name": "Energy balance of a cyclic heat engine",
+"finds": "heat",
+"pattern": "A power plant engine has a heat input of <number> J and a work output of <number> J. How much heat is rejected?",
+"example": "A power plant engine has a heat input of 6e5 J and a work output of 2.5e5 J. How much heat is rejected?",
+"answer": "350000 J"
+},
+{
+"relation": "cop_refrigerator",
+"name": "Coefficient of performance of a refrigerator",
+"finds": "coefficient of performance",
+"pattern": "A refrigerator has <number> J of heat removed using a work input of <number> J. What is its coefficient of performance?",
+"example": "A refrigerator has 1200 J of heat removed using a work input of 400 J. What is its coefficient of performance?",
+"answer": "3 1"
+},
+{
+"relation": "cop_refrigerator",
+"name": "Coefficient of performance of a refrigerator",
+"finds": "heat",
+"pattern": "A freezer with a coefficient of performance of <number> uses a work input of <number> J. How much heat is removed?",
+"example": "A freezer with a coefficient of performance of 4 uses a work input of 250 J. How much heat is removed?",
+"answer": "1000 J"
+},
+{
+"relation": "cop_heat_pump",
+"name": "Coefficient of performance of a heat pump",
+"finds": "coefficient of performance",
+"pattern": "A heat pump delivers <number> J of heat delivered for a work input of <number> J. What is its coefficient of performance?",
+"example": "A heat pump delivers 1500 J of heat delivered for a work input of 500 J. What is its coefficient of performance?",
+"answer": "3 1"
+},
+{
+"relation": "cop_heat_pump",
+"name": "Coefficient of performance of a heat pump",
+"finds": "heat",
+"pattern": "A heat pump with a coefficient of performance of <number> uses a work input of <number> J. How much heat is delivered?",
+"example": "A heat pump with a coefficient of performance of 3.5 uses a work input of 2000 J. How much heat is delivered?",
+"answer": "7000 J"
+},
+{
+"relation": "cyclotron_radius",
+"name": "Radius of a charged particle's circle in a magnetic field",
+"finds": "radius of the circular path",
+"pattern": "A proton of mass <number> kg and charge <number> C moves at <number> m/s perpendicular to a magnetic field of <number> T. What is the radius of the circular path?",
+"example": "A proton of mass 1.67e-27 kg and charge 1.6e-19 C moves at 1e6 m/s perpendicular to a magnetic field of 0.5 T. What is the radius of the circular path?",
+"answer": "0.020875 m"
+},
+{
+"relation": "cyclotron_radius",
+"name": "Radius of a charged particle's circle in a magnetic field",
+"finds": "radius",
+"pattern": "An electron of mass <number> kg and charge <number> C moves at <number> m/s perpendicular to a magnetic field of <number> T. What is the radius of its path?",
+"example": "An electron of mass 9.11e-31 kg and charge 1.6e-19 C moves at 7.5e6 m/s perpendicular to a magnetic field of 1e-5 T. What is the radius of its path?",
+"answer": "4.27031 m"
+},
+{
+"relation": "rc_time_constant",
+"name": "Time constant of an RC circuit",
+"finds": "time constant",
+"pattern": "An RC circuit has a resistor of <number> ohm and a capacitor of <number> uF. What is the time constant?",
+"example": "An RC circuit has a resistor of 1000 ohm and a capacitor of 8 uF. What is the time constant?",
+"answer": "0.008 s"
+},
+{
+"relation": "rc_time_constant",
+"name": "Time constant of an RC circuit",
+"finds": "resistance",
+"pattern": "A capacitor of <number> uF discharges through a resistor in an RC circuit with a time constant of <number> ms. What is the resistance?",
+"example": "A capacitor of 4 uF discharges through a resistor in an RC circuit with a time constant of 2 ms. What is the resistance?",
+"answer": "500 ohm"
+},
+{
+"relation": "rc_discharging",
+"name": "Voltage of a discharging capacitor",
+"finds": "voltage across the capacitor",
+"pattern": "A capacitor of <number> uF with an initial voltage of <number> V discharges through a <number> ohm resistor. What is the voltage across the capacitor after <number> ms?",
+"example": "A capacitor of 8 uF with an initial voltage of 12 V discharges through a 1000 ohm resistor. What is the voltage across the capacitor after 8 ms?",
+"answer": "4.41455 V"
+},
+{
+"relation": "rc_discharging",
+"name": "Voltage of a discharging capacitor",
+"finds": "voltage across the capacitor",
+"pattern": "A <number> uF capacitor discharges through a <number> ohm resistor from an initial voltage of <number> V. What is the voltage across the capacitor after <number> ms?",
+"example": "A 2 uF capacitor discharges through a 500 ohm resistor from an initial voltage of 10 V. What is the voltage across the capacitor after 2 ms?",
+"answer": "1.35335 V"
+},
+{
+"relation": "rc_charging",
+"name": "Voltage of a charging capacitor",
+"finds": "voltage across the capacitor",
+"pattern": "An uncharged <number> uF capacitor starts charging through a <number> ohm resistor from a <number> V emf. What is the voltage across the capacitor after <number> ms?",
+"example": "An uncharged 8 uF capacitor starts charging through a 1000 ohm resistor from a 9 V emf. What is the voltage across the capacitor after 8 ms?",
+"answer": "5.68909 V"
+},
+{
+"relation": "rc_charging",
+"name": "Voltage of a charging capacitor",
+"finds": "voltage across the capacitor",
+"pattern": "A <number> uF capacitor is charged through a <number> ohm resistor by a <number> V emf. What is the voltage across the capacitor after <number> ms?",
+"example": "A 1 uF capacitor is charged through a 1500 ohm resistor by a 20 V emf. What is the voltage across the capacitor after 3 ms?",
+"answer": "17.2933 V"
+},
+{
+"relation": "area_expansion",
+"name": "Thermal expansion of an area",
+"finds": "change in area",
+"pattern": "A steel plate with an original area of <number> m^<number> and a coefficient of linear expansion of <number> <number>/K is heated by <number> K. What is the change in area?",
+"example": "A steel plate with an original area of 2.0 m^2 and a coefficient of linear expansion of 12e-6 1/K is heated by 50 K. What is the change in area?",
+"answer": "0.0024 m^2"
+},
+{
+"relation": "area_expansion",
+"name": "Thermal expansion of an area",
+"finds": "change in area",
+"pattern": "An aluminium sheet has an original area of <number> m^<number> and a coefficient of linear expansion of <number> <number>/K. By how much does its area increase when it warms by <number> K? What is the change in area?",
+"example": "An aluminium sheet has an original area of 0.5 m^2 and a coefficient of linear expansion of 24e-6 1/K. By how much does its area increase when it warms by 100 K? What is the change in area?",
+"answer": "0.0024 m^2"
+},
+{
+"relation": "motional_emf",
+"name": "Emf of a rod moving through a magnetic field",
+"finds": "motional emf",
+"pattern": "A rod of length <number> m slides along rails at <number> m/s through a magnetic field of <number> T. What is the motional emf?",
+"example": "A rod of length 0.2 m slides along rails at 3 m/s through a magnetic field of 0.5 T. What is the motional emf?",
+"answer": "0.3 V"
+},
+{
+"relation": "motional_emf",
+"name": "Emf of a rod moving through a magnetic field",
+"finds": "speed",
+"pattern": "A rod of length <number> m slides along rails through a magnetic field of <number> T and an emf of <number> V is induced. What is its speed?",
+"example": "A rod of length 0.5 m slides along rails through a magnetic field of 0.4 T and an emf of 1.2 V is induced. What is its speed?",
+"answer": "6 m/s"
+},
+{
+"relation": "rl_current_decay",
+"name": "Current dying away in an RL circuit",
+"finds": "current after",
+"pattern": "In an RL circuit with an inductor and a time constant of <number> ms, an initial current of <number> A is switched off. What is the current after <number> ms?",
+"example": "In an RL circuit with an inductor and a time constant of 2.5 ms, an initial current of 10 A is switched off. What is the current after 2.5 ms?",
+"answer": "3.67879 A"
+},
+{
+"relation": "rl_current_decay",
+"name": "Current dying away in an RL circuit",
+"finds": "current after",
+"pattern": "An inductor carries an initial current of <number> A when the circuit is switched off; the time constant is <number> ms. What is the current after <number> ms?",
+"example": "An inductor carries an initial current of 4 A when the circuit is switched off; the time constant is 2 ms. What is the current after 4 ms?",
+"answer": "0.541341 A"
+}
+]

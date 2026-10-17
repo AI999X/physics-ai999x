@@ -1,0 +1,782 @@
+{
+ "electric_force_in_field": [
+  {
+   "q": "A charge of 2 uC is placed in an electric field of 30000 N/C. What is the electric force on it?",
+   "value": 0.06,
+   "unit": "N"
+  },
+  {
+   "q": "A 5 nC charged particle sits in an electric field of 4000 N/C. What electric force acts on it?",
+   "value": 2e-05,
+   "unit": "N"
+  }
+ ],
+ "point_charge_field": [
+  {
+   "q": "What is the electric field 0.3 m from a point charge of 2 uC?",
+   "value": 199723.3731622222,
+   "unit": "N/C"
+  },
+  {
+   "q": "Find the electric field strength at a distance of 10 cm from a charged sphere carrying 1 nC.",
+   "value": 898.75517923,
+   "unit": "N/C"
+  }
+ ],
+ "point_charge_potential": [
+  {
+   "q": "What is the electric potential 0.5 m from a point charge of 3 nC?",
+   "value": 53.9253107538,
+   "unit": "V"
+  },
+  {
+   "q": "Find the electric potential at 2 m from a point charge of 1 uC.",
+   "value": 4493.775896149999,
+   "unit": "V"
+  }
+ ],
+ "uniform_field_potential": [
+  {
+   "q": "Parallel plates are 5 mm apart with a uniform electric field of 2000 V/m between the plates. What is the potential difference?",
+   "value": 10.0,
+   "unit": "V"
+  },
+  {
+   "q": "A 12 V battery is connected across parallel plates with a plate separation of 2 mm. What is the uniform electric field between the plates?",
+   "value": 6000.0,
+   "unit": "V/m"
+  }
+ ],
+ "capacitance_definition": [
+  {
+   "q": "A 10 uF capacitor is charged to 12 V. How much charge does it hold?",
+   "value": 0.00012,
+   "unit": "C"
+  },
+  {
+   "q": "A capacitor holds a charge of 5 uC when connected to 100 V. What is its capacitance?",
+   "value": 5e-08,
+   "unit": "F"
+  }
+ ],
+ "capacitor_energy": [
+  {
+   "q": "A 100 uF capacitor is charged to 20 V. What is the energy stored in the capacitor?",
+   "value": 0.02,
+   "unit": "J"
+  },
+  {
+   "q": "How much energy is stored in a capacitor of 2 uF charged to 300 V?",
+   "value": 0.09,
+   "unit": "J"
+  }
+ ],
+ "parallel_plate_capacitor": [
+  {
+   "q": "A capacitor has parallel plates of area 0.01 m^2 with a plate separation of 1 mm. What is its capacitance?",
+   "value": 8.8541878128e-11,
+   "unit": "F"
+  },
+  {
+   "q": "What is the capacitance of a capacitor with plates of area 2 m^2 and a separation of 5 mm?",
+   "value": 3.54167512512e-09,
+   "unit": "F"
+  }
+ ],
+ "ohm_power_current": [
+  {
+   "q": "A current of 2 A flows through a 5 ohm resistor. What power does it dissipate?",
+   "value": 20.0,
+   "unit": "W"
+  },
+  {
+   "q": "A heater with a resistance of 4 ohm dissipates 100 W. What current flows through it?",
+   "value": 5.0,
+   "unit": "A"
+  }
+ ],
+ "ohm_power_voltage": [
+  {
+   "q": "A 6 ohm resistor is connected across 12 V. What power does it dissipate?",
+   "value": 24.0,
+   "unit": "W"
+  },
+  {
+   "q": "A lamp dissipates 60 W when connected to 120 V. What is its resistance?",
+   "value": 240.0,
+   "unit": "ohm"
+  }
+ ],
+ "resistivity": [
+  {
+   "q": "A copper wire of resistivity 1.68e-8 ohm*m has a wire length of 10 m and a cross-sectional area of 1e-6 m^2. What is its resistance?",
+   "value": 0.168,
+   "unit": "ohm"
+  },
+  {
+   "q": "What is the resistance of a wire with resistivity 5e-7 ohm*m, wire length 0.8 m and area 2e-7 m^2?",
+   "value": 2.0,
+   "unit": "ohm"
+  }
+ ],
+ "magnetic_force_charge": [
+  {
+   "q": "A proton with charge 1.6e-19 C moves at 2e6 m/s perpendicular to the field of a 0.5 T magnetic field. What is the magnetic force on it?",
+   "value": 1.6e-13,
+   "unit": "N"
+  },
+  {
+   "q": "A 3 uC charge moves at 400 m/s at an angle of 30 degrees to a 0.2 T magnetic field. What is the magnetic force?",
+   "value": 0.00012,
+   "unit": "N"
+  }
+ ],
+ "magnetic_force_wire": [
+  {
+   "q": "A wire carrying 5 A has a wire length of 0.2 m perpendicular to the field of a 0.4 T magnetic field. What is the magnetic force on the wire?",
+   "value": 0.4,
+   "unit": "N"
+  },
+  {
+   "q": "A wire length of 0.5 m carries 2 A at an angle of 30 degrees to a 0.1 T magnetic field. What is the magnetic force?",
+   "value": 0.05,
+   "unit": "N"
+  }
+ ],
+ "long_wire_field": [
+  {
+   "q": "What is the magnetic field 5 cm from a long straight wire carrying 10 A?",
+   "value": 4e-05,
+   "unit": "T"
+  },
+  {
+   "q": "A long wire carries 2 A. What is the magnetic field at a distance of 1 cm?",
+   "value": 4.0000000021775025e-05,
+   "unit": "T"
+  }
+ ],
+ "solenoid_field": [
+  {
+   "q": "A solenoid has 1000 turns per meter and carries 2 A. What is the magnetic field inside it?",
+   "value": 0.00251327412424,
+   "unit": "T"
+  },
+  {
+   "q": "What current gives a magnetic field of 0.01 T inside a solenoid with 2000 turns per meter?",
+   "value": 3.9788735751313813,
+   "unit": "A"
+  }
+ ],
+ "surface_gravity": [
+  {
+   "q": "A planet has a mass of 5.97e24 kg and a radius of 6.37e6 m. What is the acceleration due to gravity at its surface?",
+   "value": 9.819767158161417,
+   "unit": "m/s^2"
+  },
+  {
+   "q": "The moon has a mass of 7.35e22 kg and a radius of 1.74e6 m. What is its surface gravity?",
+   "value": 1.620296769718589,
+   "unit": "m/s^2"
+  }
+ ],
+ "orbital_speed": [
+  {
+   "q": "A satellite is in a circular orbit of radius 6.77e6 m around a planet of mass 5.97e24 kg. What is its orbital speed?",
+   "value": 7671.772099664301,
+   "unit": "m/s"
+  },
+  {
+   "q": "A planet orbits a star of mass 1.99e30 kg at an orbital radius of 1.5e11 m. Find its orbital speed.",
+   "value": 29756.631753834863,
+   "unit": "m/s"
+  }
+ ],
+ "orbital_period": [
+  {
+   "q": "A satellite orbits a planet of mass 5.97e24 kg at an orbital radius of 4.22e7 m. What is its orbital period?",
+   "value": 86289.6122408907,
+   "unit": "s"
+  },
+  {
+   "q": "What is the orbital period of a planet that orbits a star of mass 1.99e30 kg at a radius of 1.5e11 m?",
+   "value": 31672865.527042616,
+   "unit": "s"
+  }
+ ],
+ "ideal_gas_moles": [
+  {
+   "q": "2 moles of an ideal gas are held at 300 K in a volume of 0.05 m^3. What is the pressure?",
+   "value": 99773.551416,
+   "unit": "Pa"
+  },
+  {
+   "q": "A gas at a pressure of 200000 Pa occupies 0.01 m^3 at 300 K. How many moles of gas are there?",
+   "value": 0.8018157002996181,
+   "unit": "mol"
+  }
+ ],
+ "latent_heat_fusion": [
+  {
+   "q": "How much heat is needed to melt 2 kg of ice at 0 C? The latent heat of fusion is 334000 J/kg.",
+   "value": 668000.0,
+   "unit": "J"
+  },
+  {
+   "q": "A block of lead melts completely when it absorbs 100000 J. The heat of fusion of lead is 25000 J/kg. What is its mass?",
+   "value": 4.0,
+   "unit": "kg"
+  }
+ ],
+ "latent_heat_vaporization": [
+  {
+   "q": "How much heat is needed to boil 0.5 kg of water at 100 C if the latent heat of vaporization is 2.26e6 J/kg?",
+   "value": 1130000.0,
+   "unit": "J"
+  },
+  {
+   "q": "Steam condenses and releases 4.52e6 J. The heat of vaporization is 2.26e6 J/kg. What mass of steam condenses?",
+   "value": 2.0,
+   "unit": "kg"
+  }
+ ],
+ "linear_expansion": [
+  {
+   "q": "A steel rail with an original length of 100 m expands as it is heated by 30 K. The coefficient of linear expansion is 12e-6 1/K. What is the change in length?",
+   "value": 0.036,
+   "unit": "m"
+  },
+  {
+   "q": "An aluminium rod with an initial length of 2 m expands by 0.002 m. Its coefficient of linear expansion is 2.4e-5 1/K. What temperature change caused the expansion?",
+   "value": 41.666666666666664,
+   "unit": "K"
+  }
+ ],
+ "thin_lens": [
+  {
+   "q": "An object is placed 30 cm from a converging lens with a focal length of 10 cm. What is the image distance?",
+   "value": 0.15,
+   "unit": "m"
+  },
+  {
+   "q": "A lens forms an image at an image distance of 50 cm for an object distance of 50 cm. What is the focal length?",
+   "value": 0.25,
+   "unit": "m"
+  }
+ ],
+ "photon_energy": [
+  {
+   "q": "What is the energy of a photon with a frequency of 5e14 Hz?",
+   "value": 3.313035075e-19,
+   "unit": "J"
+  },
+  {
+   "q": "A photon has an energy of 3.3e-19 J. What is its frequency?",
+   "value": 498032759281910.06,
+   "unit": "Hz"
+  }
+ ],
+ "photon_energy_wavelength": [
+  {
+   "q": "What is the energy of a photon of wavelength 500 nm?",
+   "value": 3.972891714297857e-19,
+   "unit": "J"
+  },
+  {
+   "q": "A photon has an energy of 2e-19 J. What is its wavelength?",
+   "value": 9.932229285744643e-07,
+   "unit": "m"
+  }
+ ],
+ "photon_momentum": [
+  {
+   "q": "What is the momentum of a photon with a wavelength of 500 nm?",
+   "value": 1.32521403e-27,
+   "unit": "kg*m/s"
+  },
+  {
+   "q": "A photon has a momentum of 1e-27 kg*m/s. What is its wavelength?",
+   "value": 6.62607015e-07,
+   "unit": "m"
+  }
+ ],
+ "de_broglie": [
+  {
+   "q": "An electron has a momentum of 1e-24 kg*m/s. What is its de Broglie wavelength?",
+   "value": 6.62607015e-10,
+   "unit": "m"
+  },
+  {
+   "q": "An electron with mass 9.11e-31 kg moves at 2e6 m/s. What is its de Broglie wavelength?",
+   "value": 3.636701509330406e-10,
+   "unit": "m"
+  }
+ ],
+ "rest_energy": [
+  {
+   "q": "What is the rest energy of a 1 g mass?",
+   "value": 89875517873681.77,
+   "unit": "J"
+  },
+  {
+   "q": "A reaction releases 9e13 J when mass is converted entirely into energy. How much mass was converted?",
+   "value": 0.0010013850504482567,
+   "unit": "kg"
+  }
+ ],
+ "pendulum_period": [
+  {
+   "q": "What is the period of a pendulum with a pendulum length of 1 m?",
+   "value": 2.0064092925890407,
+   "unit": "s"
+  },
+  {
+   "q": "A pendulum has a period of 2 s. What is the length of the pendulum?",
+   "value": 0.9936213855661317,
+   "unit": "m"
+  }
+ ],
+ "spring_oscillation_period": [
+  {
+   "q": "A 0.5 kg mass oscillates on a spring with a spring constant of 200 N/m. What is the period?",
+   "value": 0.3141592653589793,
+   "unit": "s"
+  },
+  {
+   "q": "A mass oscillates on a spring of stiffness 40 N/m with a period of 1 s. What is the mass?",
+   "value": 1.0132118364233778,
+   "unit": "kg"
+  }
+ ],
+ "torque_lever": [
+  {
+   "q": "A wrench applies an applied force of 50 N at a lever arm of 0.3 m, at an angle of 90 degrees. What is the torque?",
+   "value": 15.0,
+   "unit": "N*m"
+  },
+  {
+   "q": "A force of 40 N pushes a door at a distance from the hinge of 0.2 m at an angle of 30 degrees. What is the torque?",
+   "value": 4.0,
+   "unit": "N*m"
+  }
+ ],
+ "rotational_kinetic_energy": [
+  {
+   "q": "A flywheel with a moment of inertia of 2 kg*m^2 rotates at 10 rad/s. What is its rotational kinetic energy?",
+   "value": 100.0,
+   "unit": "J"
+  },
+  {
+   "q": "A spinning wheel rotating at 5 rad/s has a rotational kinetic energy of 50 J. What is its moment of inertia?",
+   "value": 4.0,
+   "unit": "kg*m^2"
+  }
+ ],
+ "angular_momentum": [
+  {
+   "q": "A turntable with a moment of inertia of 0.5 kg*m^2 rotates at 8 rad/s. What is its angular momentum?",
+   "value": 4.0,
+   "unit": "kg*m^2/s"
+  },
+  {
+   "q": "A rotating wheel has an angular momentum of 12 kg*m^2/s and a moment of inertia of 3 kg*m^2. What is its angular velocity?",
+   "value": 4.0,
+   "unit": "rad/s"
+  }
+ ],
+ "tangential_acceleration": [
+  {
+   "q": "A point on a rotating wheel is at a radius of 0.5 m. The wheel has an angular acceleration of 4 rad/s^2. What is the tangential acceleration of the point?",
+   "value": 2.0,
+   "unit": "m/s^2"
+  },
+  {
+   "q": "A flywheel of radius 0.3 m spins up with an angular acceleration of 10 rad/s^2. Find the tangential acceleration at its rim.",
+   "value": 3.0,
+   "unit": "m/s^2"
+  }
+ ],
+ "centripetal_acceleration_omega": [
+  {
+   "q": "A centrifuge rotates at an angular velocity of 3 rad/s. What is the centripetal acceleration at a radius of 2 m?",
+   "value": 18.0,
+   "unit": "m/s^2"
+  },
+  {
+   "q": "A sample spins at an angular velocity of 100 rad/s at a radius of 0.1 m. What is its centripetal acceleration?",
+   "value": 1000.0,
+   "unit": "m/s^2"
+  }
+ ],
+ "angular_momentum_point_mass": [
+  {
+   "q": "A 2 kg satellite moves at 3 m/s in a circular orbit of radius 4 m. What is its angular momentum?",
+   "value": 24.0,
+   "unit": "kg*m^2/s"
+  },
+  {
+   "q": "A planet of mass 5.97e24 kg orbits at 2.98e4 m/s at an orbital radius of 1.496e11 m. What is its angular momentum?",
+   "value": 2.6614737600000003e+40,
+   "unit": "kg*m^2/s"
+  }
+ ],
+ "absolute_pressure_depth": [
+  {
+   "q": "The atmospheric pressure is 101325 Pa. What is the absolute pressure 10 m below the surface of water of density 1000 kg/m^3?",
+   "value": 199391.5,
+   "unit": "Pa"
+  },
+  {
+   "q": "A diver is at a depth of 20 m in sea water of density 1025 kg/m^3 where the atmospheric pressure is 1e5 Pa. What is the absolute pressure on the diver?",
+   "value": 301036.325,
+   "unit": "Pa"
+  }
+ ],
+ "flow_rate_volume_time": [
+  {
+   "q": "A hose fills a 2 L bucket in 10 s with water. What is the flow rate?",
+   "value": 0.0002,
+   "unit": "m^3/s"
+  },
+  {
+   "q": "Water flows through a pipe and 300 L flows out in 60 s. What is the volume flow rate?",
+   "value": 0.005,
+   "unit": "m^3/s"
+  }
+ ],
+ "flow_rate_area_speed": [
+  {
+   "q": "Water flows through a pipe with a cross-sectional area of 3e-4 m^2 at a speed of 2 m/s. What is the flow rate?",
+   "value": 0.0006,
+   "unit": "m^3/s"
+  },
+  {
+   "q": "Blood is pumped at a flow rate of 8.3e-5 m^3/s into the aorta of cross-sectional area 3.14e-4 m^2. What is the speed of the blood?",
+   "value": 0.2643312101910828,
+   "unit": "m/s"
+  }
+ ],
+ "volume_expansion": [
+  {
+   "q": "Water with an original volume of 1 L and a coefficient of volume expansion of 2.1e-4 1/K is heated by 50 K. What is the change in volume as it expands?",
+   "value": 1.05e-05,
+   "unit": "m^3"
+  },
+  {
+   "q": "Gasoline has a coefficient of volume expansion of 9.5e-4 1/K. A tank holds an initial volume of 60 L and is warmed by 20 K so it expands. What is the increase in volume?",
+   "value": 0.00114,
+   "unit": "m^3"
+  }
+ ],
+ "engine_efficiency": [
+  {
+   "q": "A heat engine takes in a heat input of 1000 J and produces a work output of 300 J. What is its efficiency?",
+   "value": 0.3,
+   "unit": "1"
+  },
+  {
+   "q": "An engine with an efficiency of 0.25 has a heat input of 4000 J. What is its work output?",
+   "value": 1000.0,
+   "unit": "J"
+  }
+ ],
+ "carnot_efficiency": [
+  {
+   "q": "A heat engine works between a hot reservoir temperature of 600 K and a cold reservoir temperature of 300 K. What is its maximum efficiency?",
+   "value": 0.5,
+   "unit": "1"
+  },
+  {
+   "q": "What is the carnot efficiency of an engine with a hot reservoir temperature of 873 K and a cold reservoir temperature of 293 K?",
+   "value": 0.6643757159221078,
+   "unit": "1"
+  }
+ ],
+ "shm_max_speed": [
+  {
+   "q": "A 1 kg mass oscillates in simple harmonic motion on a spring with a spring constant of 100 N/m and an amplitude of 0.1 m. What is its maximum speed?",
+   "value": 1.0,
+   "unit": "m/s"
+  },
+  {
+   "q": "A 0.5 kg block on a spring of spring constant 200 N/m oscillates with an amplitude of 5 cm. What is its maximum velocity?",
+   "value": 1.0,
+   "unit": "m/s"
+  }
+ ],
+ "intensity_power_area": [
+  {
+   "q": "A power of 100 W falls uniformly on an area of 2 m^2. What is the intensity?",
+   "value": 50.0,
+   "unit": "W/m^2"
+  },
+  {
+   "q": "Sunlight with an intensity of 1000 W/m^2 falls on a panel with an area of 0.5 m^2. What power does it receive?",
+   "value": 500.0,
+   "unit": "W"
+  }
+ ],
+ "wavelength_in_medium": [
+  {
+   "q": "Light with a wavelength in vacuum of 600 nm enters glass with an index of refraction of 1.5. What is the wavelength in the medium?",
+   "value": 4e-07,
+   "unit": "m"
+  },
+  {
+   "q": "Yellow light of wavelength in air 589 nm enters water, refractive index 1.333. What is the wavelength in the medium?",
+   "value": 4.418604651162791e-07,
+   "unit": "m"
+  }
+ ],
+ "index_of_refraction": [
+  {
+   "q": "The speed of light in the medium is 2e8 m/s for a certain glass. What is the index of refraction of the glass?",
+   "value": 1.49896229,
+   "unit": "1"
+  },
+  {
+   "q": "Diamond has an index of refraction of 2.42. What is the speed of light in the material?",
+   "value": 123881180.99173555,
+   "unit": "m/s"
+  }
+ ],
+ "mirror_focal_length": [
+  {
+   "q": "A concave mirror has a radius of curvature of 0.4 m. What is its focal length?",
+   "value": 0.2,
+   "unit": "m"
+  },
+  {
+   "q": "A mirror has a focal length of 15 cm. What is its radius of curvature?",
+   "value": 0.3,
+   "unit": "m"
+  }
+ ],
+ "rms_voltage": [
+  {
+   "q": "An AC supply has a peak voltage of 170 V. What is the rms voltage?",
+   "value": 120.20815280171307,
+   "unit": "V"
+  },
+  {
+   "q": "Mains AC has an rms voltage of 230 V. What is its peak voltage?",
+   "value": 325.2691193458119,
+   "unit": "V"
+  }
+ ],
+ "rms_current": [
+  {
+   "q": "An AC circuit has a peak current of 10 A. What is the rms current?",
+   "value": 7.071067811865475,
+   "unit": "A"
+  },
+  {
+   "q": "An AC appliance draws an rms current of 2 A. What is the peak current?",
+   "value": 2.8284271247461903,
+   "unit": "A"
+  }
+ ],
+ "loop_center_field": [
+  {
+   "q": "A circular loop of wire with a radius of 0.1 m carries a current of 5 A. What is the magnetic field at its centre?",
+   "value": 3.1415926553e-05,
+   "unit": "T"
+  },
+  {
+   "q": "A loop of radius 5 cm carries a current of 8 A. What magnetic field does it produce at the centre?",
+   "value": 0.0001005309649696,
+   "unit": "T"
+  }
+ ],
+ "rl_time_constant": [
+  {
+   "q": "An inductor of inductance 0.5 H is connected in series with a 100 ohm resistor. What is the time constant?",
+   "value": 0.005,
+   "unit": "s"
+  },
+  {
+   "q": "You want a time constant of 1 s using an inductor and a 500 ohm resistor. What inductance is needed?",
+   "value": 500.0,
+   "unit": "H"
+  }
+ ],
+ "inductive_reactance": [
+  {
+   "q": "An inductor of inductance 0.03 H is in an AC circuit at a frequency of 60 Hz. What is its reactance?",
+   "value": 11.309733552923253,
+   "unit": "ohm"
+  },
+  {
+   "q": "At what frequency will an inductor of inductance 30 mH have a reactance of 100 ohm?",
+   "value": 530.5164769729845,
+   "unit": "Hz"
+  }
+ ],
+ "capacitive_reactance": [
+  {
+   "q": "A capacitor with a capacitance of 1 uF is in an AC circuit at a frequency of 60 Hz. What is its reactance?",
+   "value": 2652.5823848649225,
+   "unit": "ohm"
+  },
+  {
+   "q": "What capacitance should a capacitor have to give a reactance of 2e6 ohm at 60 Hz?",
+   "value": 1.3262911924324612e-09,
+   "unit": "F"
+  }
+ ],
+ "lc_resonance": [
+  {
+   "q": "A resonant circuit has an inductance of 0.01 H and a capacitance of 1 uF. What is the resonant frequency?",
+   "value": 1591.5494309189535,
+   "unit": "Hz"
+  },
+  {
+   "q": "What capacitance gives a resonant frequency of 1 GHz with an inductance of 8 nH in an LC circuit?",
+   "value": 3.1662869888230553e-12,
+   "unit": "F"
+  }
+ ],
+ "angular_velocity_time": [
+  {
+   "q": "A flywheel rotating at an initial angular velocity of 2 rad/s has an angular acceleration of 3 rad/s^2 for 4 s. What is its final angular velocity?",
+   "value": 14.0,
+   "unit": "rad/s"
+  },
+  {
+   "q": "A turntable starts from rest and spins up with an angular acceleration of 0.5 rad/s^2. What is its final angular velocity after 6 s?",
+   "value": 3.0,
+   "unit": "rad/s"
+  }
+ ],
+ "angular_velocity_angle": [
+  {
+   "q": "A flywheel starts from rest and spins up with an angular acceleration of 2 rad/s^2 through an angular displacement of 25 rad. What is its final angular velocity?",
+   "value": 10.0,
+   "unit": "rad/s"
+  },
+  {
+   "q": "A wheel rotating with an initial angular velocity of 4 rad/s has an angular acceleration of 1.5 rad/s^2 over an angular displacement of 10 rad. What is its final angular velocity?",
+   "value": 6.782329983125268,
+   "unit": "rad/s"
+  }
+ ],
+ "engine_energy_balance": [
+  {
+   "q": "A heat engine takes in a heat input of 1000 J and has 700 J of heat rejected per cycle. What is its work output?",
+   "value": 300.0,
+   "unit": "J"
+  },
+  {
+   "q": "A power plant engine has a heat input of 6e5 J and a work output of 2.5e5 J. How much heat is rejected?",
+   "value": 350000.0,
+   "unit": "J"
+  }
+ ],
+ "cop_refrigerator": [
+  {
+   "q": "A refrigerator has 1200 J of heat removed using a work input of 400 J. What is its coefficient of performance?",
+   "value": 3.0,
+   "unit": "1"
+  },
+  {
+   "q": "A freezer with a coefficient of performance of 4 uses a work input of 250 J. How much heat is removed?",
+   "value": 1000.0,
+   "unit": "J"
+  }
+ ],
+ "cop_heat_pump": [
+  {
+   "q": "A heat pump delivers 1500 J of heat delivered for a work input of 500 J. What is its coefficient of performance?",
+   "value": 3.0,
+   "unit": "1"
+  },
+  {
+   "q": "A heat pump with a coefficient of performance of 3.5 uses a work input of 2000 J. How much heat is delivered?",
+   "value": 7000.0,
+   "unit": "J"
+  }
+ ],
+ "cyclotron_radius": [
+  {
+   "q": "A proton of mass 1.67e-27 kg and charge 1.6e-19 C moves at 1e6 m/s perpendicular to a magnetic field of 0.5 T. What is the radius of the circular path?",
+   "value": 0.020875000000000005,
+   "unit": "m"
+  },
+  {
+   "q": "An electron of mass 9.11e-31 kg and charge 1.6e-19 C moves at 7.5e6 m/s perpendicular to a magnetic field of 1e-5 T. What is the radius of its path?",
+   "value": 4.2703125,
+   "unit": "m"
+  }
+ ],
+ "rc_time_constant": [
+  {
+   "q": "An RC circuit has a resistor of 1000 ohm and a capacitor of 8 uF. What is the time constant?",
+   "value": 0.008,
+   "unit": "s"
+  },
+  {
+   "q": "A capacitor of 4 uF discharges through a resistor in an RC circuit with a time constant of 2 ms. What is the resistance?",
+   "value": 500.0,
+   "unit": "ohm"
+  }
+ ],
+ "rc_discharging": [
+  {
+   "q": "A capacitor of 8 uF with an initial voltage of 12 V discharges through a 1000 ohm resistor. What is the voltage across the capacitor after 8 ms?",
+   "value": 4.414553294057308,
+   "unit": "V"
+  },
+  {
+   "q": "A 2 uF capacitor discharges through a 500 ohm resistor from an initial voltage of 10 V. What is the voltage across the capacitor after 2 ms?",
+   "value": 1.353352832366127,
+   "unit": "V"
+  }
+ ],
+ "rc_charging": [
+  {
+   "q": "An uncharged 8 uF capacitor starts charging through a 1000 ohm resistor from a 9 V emf. What is the voltage across the capacitor after 8 ms?",
+   "value": 5.6890850294570185,
+   "unit": "V"
+  },
+  {
+   "q": "A 1 uF capacitor is charged through a 1500 ohm resistor by a 20 V emf. What is the voltage across the capacitor after 3 ms?",
+   "value": 17.293294335267746,
+   "unit": "V"
+  }
+ ],
+ "area_expansion": [
+  {
+   "q": "A steel plate with an original area of 2.0 m^2 and a coefficient of linear expansion of 12e-6 1/K is heated by 50 K. What is the change in area?",
+   "value": 0.0024000000000000002,
+   "unit": "m^2"
+  },
+  {
+   "q": "An aluminium sheet has an original area of 0.5 m^2 and a coefficient of linear expansion of 24e-6 1/K. By how much does its area increase when it warms by 100 K? What is the change in area?",
+   "value": 0.0024000000000000002,
+   "unit": "m^2"
+  }
+ ],
+ "motional_emf": [
+  {
+   "q": "A rod of length 0.2 m slides along rails at 3 m/s through a magnetic field of 0.5 T. What is the motional emf?",
+   "value": 0.3,
+   "unit": "V"
+  },
+  {
+   "q": "A rod of length 0.5 m slides along rails through a magnetic field of 0.4 T and an emf of 1.2 V is induced. What is its speed?",
+   "value": 6.0,
+   "unit": "m/s"
+  }
+ ],
+ "rl_current_decay": [
+  {
+   "q": "In an RL circuit with an inductor and a time constant of 2.5 ms, an initial current of 10 A is switched off. What is the current after 2.5 ms?",
+   "value": 3.6787944117144233,
+   "unit": "A"
+  },
+  {
+   "q": "An inductor carries an initial current of 4 A when the circuit is switched off; the time constant is 2 ms. What is the current after 4 ms?",
+   "value": 0.5413411329464508,
+   "unit": "A"
+  }
+ ]
+}

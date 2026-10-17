@@ -1,0 +1,5006 @@
+{
+ "domain": "physics",
+ "version": "0.6.0",
+ "provenance": {
+  "origin": "authored",
+  "author": "AI999X",
+  "note": "Standard relations of introductory physics, written for this pack; no source text is reproduced."
+ },
+ "relations": [
+  {
+   "key": "uniform_motion",
+   "family": "kinematics",
+   "name": "Motion at constant velocity",
+   "equation": "d = v*t",
+   "symbols": {
+    "d": {
+     "kind": "length",
+     "role": "distance",
+     "accepts": [
+      "plain"
+     ],
+     "desc": "distance travelled"
+    },
+    "v": {
+     "kind": "speed",
+     "desc": "constant speed"
+    },
+    "t": {
+     "kind": "time",
+     "sign": "nonnegative",
+     "desc": "elapsed time"
+    }
+   },
+   "assumptions": [
+    "constant velocity"
+   ],
+   "excludes": [
+    "accelerated",
+    "pendulum",
+    "shm"
+   ]
+  },
+  {
+   "key": "velocity_time",
+   "family": "kinematics",
+   "name": "Velocity under constant acceleration",
+   "equation": "v = v0 + a*t",
+   "symbols": {
+    "v": {
+     "kind": "speed",
+     "role": "final",
+     "accepts": [
+      "plain"
+     ],
+     "desc": "final velocity"
+    },
+    "v0": {
+     "kind": "speed",
+     "role": "initial",
+     "accepts": [
+      "plain"
+     ],
+     "latex": "v_0",
+     "desc": "initial velocity"
+    },
+    "a": {
+     "kind": "acceleration",
+     "accepts": [
+      "gravity"
+     ],
+     "desc": "acceleration"
+    },
+    "t": {
+     "kind": "time",
+     "sign": "nonnegative",
+     "desc": "elapsed time"
+    }
+   },
+   "assumptions": [
+    "constant acceleration along a line"
+   ],
+   "excludes": [
+    "pendulum",
+    "shm"
+   ]
+  },
+  {
+   "key": "displacement_time",
+   "family": "kinematics",
+   "name": "Displacement under constant acceleration",
+   "equation": "x = v0*t + a*t**2/2",
+   "symbols": {
+    "x": {
+     "kind": "length",
+     "role": "distance",
+     "accepts": [
+      "plain",
+      "height"
+     ],
+     "desc": "displacement"
+    },
+    "v0": {
+     "kind": "speed",
+     "role": "initial",
+     "accepts": [
+      "plain"
+     ],
+     "latex": "v_0",
+     "desc": "initial velocity"
+    },
+    "a": {
+     "kind": "acceleration",
+     "accepts": [
+      "gravity"
+     ],
+     "desc": "acceleration"
+    },
+    "t": {
+     "kind": "time",
+     "sign": "nonnegative",
+     "desc": "elapsed time"
+    }
+   },
+   "assumptions": [
+    "constant acceleration along a line"
+   ],
+   "excludes": [
+    "pendulum",
+    "shm"
+   ]
+  },
+  {
+   "key": "velocity_displacement",
+   "family": "kinematics",
+   "name": "Speed after a displacement under constant acceleration",
+   "equation": "v**2 = v0**2 + 2*a*x",
+   "symbols": {
+    "v": {
+     "kind": "speed",
+     "role": "final",
+     "accepts": [
+      "plain"
+     ],
+     "sign": "nonnegative",
+     "desc": "final speed"
+    },
+    "v0": {
+     "kind": "speed",
+     "role": "initial",
+     "accepts": [
+      "plain"
+     ],
+     "sign": "nonnegative",
+     "latex": "v_0",
+     "desc": "initial speed"
+    },
+    "a": {
+     "kind": "acceleration",
+     "accepts": [
+      "gravity"
+     ],
+     "desc": "acceleration"
+    },
+    "x": {
+     "kind": "length",
+     "role": "distance",
+     "accepts": [
+      "plain",
+      "height"
+     ],
+     "desc": "displacement"
+    }
+   },
+   "assumptions": [
+    "constant acceleration along a line",
+    "motion does not reverse"
+   ],
+   "excludes": [
+    "pendulum",
+    "shm"
+   ]
+  },
+  {
+   "key": "average_velocity_displacement",
+   "family": "kinematics",
+   "name": "Displacement from the mean of initial and final velocity",
+   "equation": "x = (v0 + v)*t/2",
+   "symbols": {
+    "x": {
+     "kind": "length",
+     "role": "distance",
+     "accepts": [
+      "plain",
+      "height"
+     ],
+     "desc": "displacement"
+    },
+    "v0": {
+     "kind": "speed",
+     "role": "initial",
+     "latex": "v_0",
+     "desc": "initial velocity"
+    },
+    "v": {
+     "kind": "speed",
+     "role": "final",
+     "desc": "final velocity"
+    },
+    "t": {
+     "kind": "time",
+     "sign": "nonnegative",
+     "desc": "elapsed time"
+    }
+   },
+   "assumptions": [
+    "constant acceleration along a line"
+   ]
+  },
+  {
+   "key": "newton_second",
+   "family": "dynamics",
+   "name": "Net force and acceleration",
+   "equation": "F = m*a",
+   "symbols": {
+    "F": {
+     "kind": "force",
+     "role": "net",
+     "accepts": [
+      "plain"
+     ],
+     "desc": "net force"
+    },
+    "m": {
+     "kind": "mass",
+     "sign": "positive",
+     "desc": "mass"
+    },
+    "a": {
+     "kind": "acceleration",
+     "desc": "acceleration"
+    }
+   },
+   "assumptions": [
+    "constant mass",
+    "inertial frame"
+   ]
+  },
+  {
+   "key": "weight",
+   "family": "dynamics",
+   "name": "Weight in a uniform gravitational field",
+   "equation": "W = m*g",
+   "symbols": {
+    "W": {
+     "kind": "force",
+     "role": "weight",
+     "desc": "weight"
+    },
+    "m": {
+     "kind": "mass",
+     "sign": "positive",
+     "desc": "mass"
+    },
+    "g": {
+     "kind": "acceleration",
+     "role": "gravity",
+     "sign": "positive",
+     "desc": "gravitational acceleration",
+     "default": {
+      "value": 9.80665,
+      "unit": "m/s^2",
+      "unless": [
+       "non_earth"
+      ],
+      "assumption": "standard gravity g = 9.80665 m/s^2 near Earth's surface"
+     }
+    }
+   },
+   "assumptions": [
+    "uniform gravitational field"
+   ]
+  },
+  {
+   "key": "net_force_friction",
+   "family": "dynamics",
+   "name": "Net force with an opposing friction force",
+   "equation": "F = P - f",
+   "symbols": {
+    "F": {
+     "kind": "force",
+     "role": "net",
+     "desc": "net force"
+    },
+    "P": {
+     "kind": "force",
+     "role": "applied",
+     "accepts": [
+      "plain"
+     ],
+     "desc": "applied force"
+    },
+    "f": {
+     "kind": "force",
+     "role": "friction",
+     "sign": "nonnegative",
+     "desc": "friction force"
+    }
+   },
+   "assumptions": [
+    "applied force and friction act along the same line, in opposite directions"
+   ]
+  },
+  {
+   "key": "kinetic_friction",
+   "family": "dynamics",
+   "name": "Sliding friction",
+   "equation": "f = mu*N",
+   "symbols": {
+    "f": {
+     "kind": "force",
+     "role": "friction",
+     "sign": "nonnegative",
+     "desc": "friction force"
+    },
+    "mu": {
+     "kind": "friction_coefficient",
+     "sign": "nonnegative",
+     "latex": "\\mu",
+     "desc": "coefficient of friction"
+    },
+    "N": {
+     "kind": "force",
+     "role": "normal",
+     "sign": "nonnegative",
+     "desc": "normal force"
+    }
+   },
+   "assumptions": [
+    "the surfaces slide over each other"
+   ]
+  },
+  {
+   "key": "normal_on_level",
+   "family": "dynamics",
+   "name": "Normal force on a level surface",
+   "equation": "N = W",
+   "symbols": {
+    "N": {
+     "kind": "force",
+     "role": "normal",
+     "desc": "normal force"
+    },
+    "W": {
+     "kind": "force",
+     "role": "weight",
+     "desc": "weight"
+    }
+   },
+   "assumptions": [
+    "level surface",
+    "no other vertical forces"
+   ],
+   "excludes": [
+    "inclined"
+   ]
+  },
+  {
+   "key": "momentum",
+   "family": "dynamics",
+   "name": "Linear momentum",
+   "equation": "p = m*v",
+   "symbols": {
+    "p": {
+     "kind": "momentum",
+     "desc": "momentum"
+    },
+    "m": {
+     "kind": "mass",
+     "sign": "positive",
+     "desc": "mass"
+    },
+    "v": {
+     "kind": "speed",
+     "accepts": [
+      "final",
+      "initial"
+     ],
+     "desc": "velocity"
+    }
+   },
+   "assumptions": [
+    "speeds far below the speed of light"
+   ]
+  },
+  {
+   "key": "impulse",
+   "family": "dynamics",
+   "name": "Impulse of a constant force",
+   "equation": "J = F*t",
+   "symbols": {
+    "J": {
+     "kind": "impulse",
+     "desc": "impulse"
+    },
+    "F": {
+     "kind": "force",
+     "accepts": [
+      "net",
+      "applied"
+     ],
+     "desc": "force"
+    },
+    "t": {
+     "kind": "time",
+     "sign": "nonnegative",
+     "desc": "time the force acts"
+    }
+   },
+   "assumptions": [
+    "constant force"
+   ]
+  },
+  {
+   "key": "work",
+   "family": "energy",
+   "name": "Work by a constant force",
+   "equation": "W = F*d*cos(theta)",
+   "symbols": {
+    "W": {
+     "kind": "energy",
+     "role": "work",
+     "desc": "work done"
+    },
+    "F": {
+     "kind": "force",
+     "accepts": [
+      "applied",
+      "net"
+     ],
+     "desc": "force"
+    },
+    "d": {
+     "kind": "length",
+     "role": "distance",
+     "accepts": [
+      "plain"
+     ],
+     "sign": "nonnegative",
+     "desc": "displacement"
+    },
+    "theta": {
+     "kind": "angle",
+     "latex": "\\theta",
+     "desc": "angle between force and displacement",
+     "default": {
+      "value": 0,
+      "unit": "deg",
+      "assumption": "the force acts along the displacement"
+     }
+    }
+   },
+   "assumptions": [
+    "constant force"
+   ],
+   "fails_when": [
+    "the force is friction and no angle is stated: friction opposes the motion (180 degrees), which must be said, not assumed"
+   ]
+  },
+  {
+   "key": "kinetic_energy",
+   "family": "energy",
+   "name": "Translational kinetic energy",
+   "equation": "K = m*v**2/2",
+   "symbols": {
+    "K": {
+     "kind": "energy",
+     "role": "kinetic",
+     "sign": "nonnegative",
+     "desc": "kinetic energy"
+    },
+    "m": {
+     "kind": "mass",
+     "sign": "positive",
+     "desc": "mass"
+    },
+    "v": {
+     "kind": "speed",
+     "accepts": [
+      "final",
+      "initial"
+     ],
+     "sign": "nonnegative",
+     "desc": "speed"
+    }
+   },
+   "assumptions": [
+    "speeds far below the speed of light"
+   ]
+  },
+  {
+   "key": "gravitational_pe",
+   "family": "energy",
+   "name": "Gravitational potential energy near the surface",
+   "equation": "U = m*g*h",
+   "symbols": {
+    "U": {
+     "kind": "energy",
+     "role": "potential",
+     "desc": "gravitational potential energy"
+    },
+    "m": {
+     "kind": "mass",
+     "sign": "positive",
+     "desc": "mass"
+    },
+    "g": {
+     "kind": "acceleration",
+     "role": "gravity",
+     "sign": "positive",
+     "desc": "gravitational acceleration",
+     "default": {
+      "value": 9.80665,
+      "unit": "m/s^2",
+      "unless": [
+       "non_earth"
+      ],
+      "assumption": "standard gravity g = 9.80665 m/s^2 near Earth's surface"
+     }
+    },
+    "h": {
+     "kind": "length",
+     "role": "height",
+     "accepts": [
+      "plain"
+     ],
+     "desc": "height above the reference level"
+    }
+   },
+   "assumptions": [
+    "uniform gravitational field",
+    "zero of potential energy at h = 0"
+   ]
+  },
+  {
+   "key": "spring_force",
+   "family": "energy",
+   "name": "Force of a linear spring",
+   "equation": "F = k*x",
+   "symbols": {
+    "F": {
+     "kind": "force",
+     "role": "spring",
+     "accepts": [
+      "plain"
+     ],
+     "sign": "nonnegative",
+     "desc": "spring force (magnitude)"
+    },
+    "k": {
+     "kind": "spring_constant",
+     "sign": "positive",
+     "desc": "spring constant"
+    },
+    "x": {
+     "kind": "length",
+     "role": "extension",
+     "accepts": [
+      "plain"
+     ],
+     "sign": "nonnegative",
+     "desc": "extension or compression"
+    }
+   },
+   "assumptions": [
+    "linear elastic spring within its elastic limit"
+   ]
+  },
+  {
+   "key": "spring_energy",
+   "family": "energy",
+   "name": "Energy stored in a linear spring",
+   "equation": "U = k*x**2/2",
+   "symbols": {
+    "U": {
+     "kind": "energy",
+     "role": "elastic",
+     "sign": "nonnegative",
+     "desc": "elastic potential energy"
+    },
+    "k": {
+     "kind": "spring_constant",
+     "sign": "positive",
+     "desc": "spring constant"
+    },
+    "x": {
+     "kind": "length",
+     "role": "extension",
+     "accepts": [
+      "plain"
+     ],
+     "sign": "nonnegative",
+     "desc": "extension or compression"
+    }
+   },
+   "assumptions": [
+    "linear elastic spring within its elastic limit"
+   ]
+  },
+  {
+   "key": "power_energy",
+   "family": "energy",
+   "name": "Average power",
+   "equation": "P = E/t",
+   "symbols": {
+    "P": {
+     "kind": "power",
+     "desc": "average power"
+    },
+    "E": {
+     "kind": "energy",
+     "accepts": [
+      "work",
+      "electrical",
+      "heat",
+      "kinetic",
+      "potential",
+      "elastic"
+     ],
+     "desc": "energy transferred"
+    },
+    "t": {
+     "kind": "time",
+     "sign": "positive",
+     "desc": "elapsed time"
+    }
+   },
+   "assumptions": [
+    "power averaged over the interval"
+   ]
+  },
+  {
+   "key": "power_force_speed",
+   "family": "energy",
+   "name": "Power of a force on a moving body",
+   "equation": "P = F*v",
+   "symbols": {
+    "P": {
+     "kind": "power",
+     "desc": "power"
+    },
+    "F": {
+     "kind": "force",
+     "accepts": [
+      "applied"
+     ],
+     "desc": "force along the motion"
+    },
+    "v": {
+     "kind": "speed",
+     "desc": "speed"
+    }
+   },
+   "assumptions": [
+    "force parallel to the velocity",
+    "constant speed"
+   ],
+   "excludes": [
+    "accelerated",
+    "oblique_force"
+   ]
+  },
+  {
+   "key": "centripetal_acceleration",
+   "family": "circular",
+   "name": "Centripetal acceleration",
+   "equation": "a = v**2/r",
+   "symbols": {
+    "a": {
+     "kind": "acceleration",
+     "role": "centripetal",
+     "sign": "nonnegative",
+     "desc": "centripetal acceleration"
+    },
+    "v": {
+     "kind": "speed",
+     "sign": "nonnegative",
+     "desc": "speed"
+    },
+    "r": {
+     "kind": "length",
+     "role": "radius",
+     "sign": "positive",
+     "desc": "radius of the circle"
+    }
+   },
+   "assumptions": [
+    "uniform circular motion"
+   ]
+  },
+  {
+   "key": "centripetal_force",
+   "family": "circular",
+   "name": "Centripetal force",
+   "equation": "F = m*v**2/r",
+   "symbols": {
+    "F": {
+     "kind": "force",
+     "role": "centripetal",
+     "sign": "nonnegative",
+     "desc": "centripetal force"
+    },
+    "m": {
+     "kind": "mass",
+     "sign": "positive",
+     "desc": "mass"
+    },
+    "v": {
+     "kind": "speed",
+     "sign": "nonnegative",
+     "desc": "speed"
+    },
+    "r": {
+     "kind": "length",
+     "role": "radius",
+     "sign": "positive",
+     "desc": "radius of the circle"
+    }
+   },
+   "assumptions": [
+    "uniform circular motion"
+   ]
+  },
+  {
+   "key": "tangential_speed",
+   "family": "circular",
+   "name": "Speed on a circle from angular speed",
+   "equation": "v = omega*r",
+   "symbols": {
+    "v": {
+     "kind": "speed",
+     "desc": "speed"
+    },
+    "omega": {
+     "kind": "angular_frequency",
+     "latex": "\\omega",
+     "desc": "angular speed"
+    },
+    "r": {
+     "kind": "length",
+     "role": "radius",
+     "sign": "positive",
+     "desc": "radius of the circle"
+    }
+   },
+   "assumptions": [
+    "rotation about a fixed axis"
+   ]
+  },
+  {
+   "key": "angular_frequency",
+   "family": "circular",
+   "name": "Angular frequency and frequency",
+   "equation": "omega = 2*pi*f",
+   "symbols": {
+    "omega": {
+     "kind": "angular_frequency",
+     "latex": "\\omega",
+     "desc": "angular frequency"
+    },
+    "f": {
+     "kind": "frequency",
+     "desc": "frequency"
+    }
+   },
+   "assumptions": []
+  },
+  {
+   "key": "period_frequency",
+   "family": "circular",
+   "name": "Period and frequency",
+   "equation": "T = 1/f",
+   "symbols": {
+    "T": {
+     "kind": "time",
+     "role": "period",
+     "sign": "positive",
+     "desc": "period"
+    },
+    "f": {
+     "kind": "frequency",
+     "sign": "positive",
+     "desc": "frequency"
+    }
+   },
+   "assumptions": [
+    "periodic motion"
+   ]
+  },
+  {
+   "key": "density",
+   "family": "fluids",
+   "name": "Mass density",
+   "equation": "rho = m/V",
+   "symbols": {
+    "rho": {
+     "kind": "density",
+     "latex": "\\rho",
+     "desc": "density"
+    },
+    "m": {
+     "kind": "mass",
+     "sign": "nonnegative",
+     "desc": "mass"
+    },
+    "V": {
+     "kind": "volume",
+     "sign": "positive",
+     "desc": "volume"
+    }
+   },
+   "assumptions": [
+    "uniform material, or mean density"
+   ],
+   "excludes": [
+    "container_contents"
+   ]
+  },
+  {
+   "key": "pressure_force",
+   "family": "fluids",
+   "name": "Pressure of a force on an area",
+   "equation": "P = F/A",
+   "symbols": {
+    "P": {
+     "kind": "pressure",
+     "desc": "pressure"
+    },
+    "F": {
+     "kind": "force",
+     "accepts": [
+      "normal",
+      "weight",
+      "applied"
+     ],
+     "desc": "force normal to the surface"
+    },
+    "A": {
+     "kind": "area",
+     "sign": "positive",
+     "desc": "area"
+    }
+   },
+   "assumptions": [
+    "force spread evenly and normal to the surface"
+   ]
+  },
+  {
+   "key": "hydrostatic_pressure",
+   "family": "fluids",
+   "name": "Pressure of a column of fluid",
+   "equation": "P = rho*g*h",
+   "symbols": {
+    "P": {
+     "kind": "pressure",
+     "desc": "gauge pressure"
+    },
+    "rho": {
+     "kind": "density",
+     "sign": "positive",
+     "latex": "\\rho",
+     "desc": "fluid density"
+    },
+    "g": {
+     "kind": "acceleration",
+     "role": "gravity",
+     "sign": "positive",
+     "desc": "gravitational acceleration",
+     "default": {
+      "value": 9.80665,
+      "unit": "m/s^2",
+      "unless": [
+       "non_earth"
+      ],
+      "assumption": "standard gravity g = 9.80665 m/s^2 near Earth's surface"
+     }
+    },
+    "h": {
+     "kind": "length",
+     "role": "depth",
+     "accepts": [
+      "plain",
+      "height"
+     ],
+     "sign": "nonnegative",
+     "desc": "depth below the surface"
+    }
+   },
+   "assumptions": [
+    "fluid at rest with uniform density",
+    "pressure measured relative to the surface"
+   ]
+  },
+  {
+   "key": "ohm",
+   "family": "electricity",
+   "name": "Voltage across an ohmic resistance",
+   "equation": "V = I*R",
+   "symbols": {
+    "V": {
+     "kind": "voltage",
+     "desc": "voltage"
+    },
+    "I": {
+     "kind": "current",
+     "desc": "current"
+    },
+    "R": {
+     "kind": "resistance",
+     "sign": "positive",
+     "desc": "resistance"
+    }
+   },
+   "assumptions": [
+    "ohmic element at a fixed temperature"
+   ]
+  },
+  {
+   "key": "electric_power",
+   "family": "electricity",
+   "name": "Electric power",
+   "equation": "P = V*I",
+   "symbols": {
+    "P": {
+     "kind": "power",
+     "desc": "electric power"
+    },
+    "V": {
+     "kind": "voltage",
+     "desc": "voltage"
+    },
+    "I": {
+     "kind": "current",
+     "desc": "current"
+    }
+   },
+   "assumptions": [
+    "steady direct current"
+   ],
+   "excludes": [
+    "alternating_current"
+   ]
+  },
+  {
+   "key": "charge_current",
+   "family": "electricity",
+   "name": "Charge carried by a steady current",
+   "equation": "Q = I*t",
+   "symbols": {
+    "Q": {
+     "kind": "charge",
+     "desc": "charge"
+    },
+    "I": {
+     "kind": "current",
+     "desc": "current"
+    },
+    "t": {
+     "kind": "time",
+     "sign": "nonnegative",
+     "desc": "elapsed time"
+    }
+   },
+   "assumptions": [
+    "steady current"
+   ]
+  },
+  {
+   "key": "wave_speed",
+   "family": "waves",
+   "name": "Speed of a periodic wave",
+   "equation": "v = f*lam",
+   "symbols": {
+    "v": {
+     "kind": "speed",
+     "role": "wave",
+     "accepts": [
+      "plain"
+     ],
+     "sign": "nonnegative",
+     "desc": "wave speed"
+    },
+    "f": {
+     "kind": "frequency",
+     "sign": "positive",
+     "desc": "frequency"
+    },
+    "lam": {
+     "kind": "length",
+     "role": "wavelength",
+     "sign": "positive",
+     "latex": "\\lambda",
+     "desc": "wavelength"
+    }
+   },
+   "assumptions": [
+    "periodic wave in a uniform medium"
+   ]
+  },
+  {
+   "key": "heat",
+   "family": "thermal",
+   "name": "Heat for a temperature change",
+   "equation": "Q = m*c*dT",
+   "symbols": {
+    "Q": {
+     "kind": "energy",
+     "role": "heat",
+     "desc": "heat transferred"
+    },
+    "m": {
+     "kind": "mass",
+     "sign": "positive",
+     "desc": "mass"
+    },
+    "c": {
+     "kind": "specific_heat",
+     "sign": "positive",
+     "desc": "specific heat capacity"
+    },
+    "dT": {
+     "kind": "temperature_difference",
+     "latex": "\\Delta T",
+     "desc": "temperature change"
+    }
+   },
+   "assumptions": [
+    "no change of phase",
+    "specific heat constant over the range"
+   ]
+  },
+  {
+   "key": "max_height_vertical_throw",
+   "family": "kinematics",
+   "name": "Maximum height of a vertical throw",
+   "equation": "h = v0**2/(2*g)",
+   "symbols": {
+    "h": {
+     "kind": "length",
+     "role": "max_height",
+     "sign": "nonnegative",
+     "desc": "maximum height above the launch point"
+    },
+    "v0": {
+     "kind": "speed",
+     "role": "initial",
+     "accepts": [
+      "plain"
+     ],
+     "sign": "nonnegative",
+     "latex": "v_0",
+     "desc": "launch speed"
+    },
+    "g": {
+     "kind": "acceleration",
+     "role": "gravity",
+     "sign": "positive",
+     "desc": "gravitational acceleration",
+     "default": {
+      "value": 9.80665,
+      "unit": "m/s^2",
+      "unless": [
+       "non_earth"
+      ],
+      "assumption": "standard gravity g = 9.80665 m/s^2 near Earth's surface"
+     }
+    }
+   },
+   "assumptions": [
+    "thrown straight up",
+    "no air resistance",
+    "uniform gravitational field"
+   ],
+   "requires": [
+    "thrown_up"
+   ],
+   "frame": "vertical axis through the launch point",
+   "conventions": [
+    "speeds and heights are magnitudes; upward is the direction of launch",
+    "h is the height of the highest point only; it is not the displacement at any other moment"
+   ],
+   "applies_when": [
+    "the launch is vertical",
+    "the height is measured from the launch point"
+   ],
+   "fails_when": [
+    "air resistance matters",
+    "the launch is at an angle"
+   ],
+   "derived_from": [
+    "velocity_displacement"
+   ],
+   "certificate": "release/promotion/max_height_vertical_throw.json"
+  },
+  {
+   "key": "time_to_top_vertical_throw",
+   "family": "kinematics",
+   "name": "Time to the top of a vertical throw",
+   "equation": "t = v0/g",
+   "symbols": {
+    "t": {
+     "kind": "time",
+     "role": "rise",
+     "sign": "nonnegative",
+     "desc": "time from launch to the highest point"
+    },
+    "v0": {
+     "kind": "speed",
+     "role": "initial",
+     "accepts": [
+      "plain"
+     ],
+     "sign": "nonnegative",
+     "latex": "v_0",
+     "desc": "launch speed"
+    },
+    "g": {
+     "kind": "acceleration",
+     "role": "gravity",
+     "sign": "positive",
+     "desc": "gravitational acceleration",
+     "default": {
+      "value": 9.80665,
+      "unit": "m/s^2",
+      "unless": [
+       "non_earth"
+      ],
+      "assumption": "standard gravity g = 9.80665 m/s^2 near Earth's surface"
+     }
+    }
+   },
+   "assumptions": [
+    "thrown straight up",
+    "no air resistance",
+    "uniform gravitational field"
+   ],
+   "requires": [
+    "thrown_up"
+   ],
+   "frame": "vertical axis through the launch point",
+   "conventions": [
+    "the launch speed is a magnitude"
+   ],
+   "applies_when": [
+    "the launch is vertical"
+   ],
+   "fails_when": [
+    "air resistance matters",
+    "the time asked for is the whole flight"
+   ],
+   "derived_from": [
+    "velocity_time"
+   ],
+   "certificate": "release/promotion/time_to_top_vertical_throw.json"
+  },
+  {
+   "key": "normal_force_incline",
+   "family": "dynamics",
+   "name": "Normal force on an incline",
+   "equation": "N = m*g*cos(theta)",
+   "symbols": {
+    "N": {
+     "kind": "force",
+     "role": "normal",
+     "sign": "nonnegative",
+     "desc": "normal force from the incline"
+    },
+    "m": {
+     "kind": "mass",
+     "sign": "positive",
+     "desc": "mass"
+    },
+    "g": {
+     "kind": "acceleration",
+     "role": "gravity",
+     "sign": "positive",
+     "desc": "gravitational acceleration",
+     "default": {
+      "value": 9.80665,
+      "unit": "m/s^2",
+      "unless": [
+       "non_earth"
+      ],
+      "assumption": "standard gravity g = 9.80665 m/s^2 near Earth's surface"
+     }
+    },
+    "theta": {
+     "kind": "angle",
+     "role": "incline",
+     "sign": "nonnegative",
+     "latex": "\\theta",
+     "desc": "angle of the incline to the horizontal"
+    }
+   },
+   "assumptions": [
+    "no acceleration perpendicular to the incline",
+    "no other force with a component normal to the surface"
+   ],
+   "requires": [
+    "inclined"
+   ],
+   "frame": "axes along and normal to the incline",
+   "conventions": [
+    "the angle is measured from the horizontal",
+    "forces are magnitudes"
+   ],
+   "applies_when": [
+    "the body rests or slides on a straight incline"
+   ],
+   "fails_when": [
+    "another force pushes into or pulls away from the surface",
+    "the incline itself accelerates"
+   ],
+   "certificate": "release/promotion/normal_force_incline.json"
+  },
+  {
+   "key": "weight_component_along_incline",
+   "family": "dynamics",
+   "name": "Component of the weight along an incline",
+   "equation": "F = m*g*sin(theta)",
+   "symbols": {
+    "F": {
+     "kind": "force",
+     "role": "weight_along_slope",
+     "sign": "nonnegative",
+     "desc": "component of the weight along the incline"
+    },
+    "m": {
+     "kind": "mass",
+     "sign": "positive",
+     "desc": "mass"
+    },
+    "g": {
+     "kind": "acceleration",
+     "role": "gravity",
+     "sign": "positive",
+     "desc": "gravitational acceleration",
+     "default": {
+      "value": 9.80665,
+      "unit": "m/s^2",
+      "unless": [
+       "non_earth"
+      ],
+      "assumption": "standard gravity g = 9.80665 m/s^2 near Earth's surface"
+     }
+    },
+    "theta": {
+     "kind": "angle",
+     "role": "incline",
+     "sign": "nonnegative",
+     "latex": "\\theta",
+     "desc": "angle of the incline to the horizontal"
+    }
+   },
+   "assumptions": [
+    "uniform gravitational field"
+   ],
+   "requires": [
+    "inclined"
+   ],
+   "frame": "axes along and normal to the incline",
+   "conventions": [
+    "the angle is measured from the horizontal",
+    "the component points down the incline; its magnitude is given"
+   ],
+   "applies_when": [
+    "a body is on a straight incline"
+   ],
+   "fails_when": [
+    "the surface is curved"
+   ],
+   "certificate": "release/promotion/weight_component_along_incline.json"
+  },
+  {
+   "key": "acceleration_frictionless_incline",
+   "family": "dynamics",
+   "name": "Acceleration down a frictionless incline",
+   "equation": "a = g*sin(theta)",
+   "symbols": {
+    "a": {
+     "kind": "acceleration",
+     "sign": "nonnegative",
+     "desc": "acceleration down the incline"
+    },
+    "g": {
+     "kind": "acceleration",
+     "role": "gravity",
+     "sign": "positive",
+     "desc": "gravitational acceleration",
+     "default": {
+      "value": 9.80665,
+      "unit": "m/s^2",
+      "unless": [
+       "non_earth"
+      ],
+      "assumption": "standard gravity g = 9.80665 m/s^2 near Earth's surface"
+     }
+    },
+    "theta": {
+     "kind": "angle",
+     "role": "incline",
+     "sign": "nonnegative",
+     "latex": "\\theta",
+     "desc": "angle of the incline to the horizontal"
+    }
+   },
+   "assumptions": [
+    "no friction",
+    "the only forces are gravity and the normal force"
+   ],
+   "requires": [
+    "inclined",
+    "frictionless"
+   ],
+   "excludes": [
+    "friction_present",
+    "force_stated"
+   ],
+   "frame": "axis along the incline, positive downhill",
+   "conventions": [
+    "the acceleration is the magnitude down the incline"
+   ],
+   "applies_when": [
+    "the surface is stated to be frictionless"
+   ],
+   "fails_when": [
+    "friction acts",
+    "another force acts along the incline",
+    "any other force is stated (a push, a pull, a rope)"
+   ],
+   "derived_from": [
+    "newton_second",
+    "weight_component_along_incline"
+   ],
+   "certificate": "release/promotion/acceleration_frictionless_incline.json"
+  },
+  {
+   "key": "spring_launch_speed",
+   "family": "energy",
+   "name": "Speed of a body launched by a spring",
+   "equation": "k*x**2/2 = m*v**2/2",
+   "symbols": {
+    "k": {
+     "kind": "spring_constant",
+     "sign": "positive",
+     "desc": "spring constant"
+    },
+    "x": {
+     "kind": "length",
+     "role": "extension",
+     "accepts": [
+      "plain"
+     ],
+     "sign": "nonnegative",
+     "desc": "compression of the spring before release"
+    },
+    "m": {
+     "kind": "mass",
+     "sign": "positive",
+     "desc": "mass of the body"
+    },
+    "v": {
+     "kind": "speed",
+     "role": "final",
+     "accepts": [
+      "plain"
+     ],
+     "sign": "nonnegative",
+     "desc": "speed when the spring has returned to its natural length"
+    }
+   },
+   "assumptions": [
+    "all the energy stored in the spring becomes kinetic energy of the body",
+    "no friction",
+    "the spring is massless"
+   ],
+   "requires": [
+    "spring_launch",
+    "frictionless"
+   ],
+   "excludes": [
+    "friction_present",
+    "inclined"
+   ],
+   "frame": "motion along the axis of the spring on a level surface",
+   "conventions": [
+    "compression and speed are magnitudes"
+   ],
+   "applies_when": [
+    "the body starts at rest against the compressed spring and is released",
+    "the surface is frictionless and level"
+   ],
+   "fails_when": [
+    "friction acts",
+    "the body is still attached and the spring is not at its natural length",
+    "the motion is vertical or on a slope"
+   ],
+   "derived_from": [
+    "spring_energy",
+    "kinetic_energy"
+   ],
+   "certificate": "release/promotion/spring_launch_speed.json"
+  },
+  {
+   "key": "net_work_kinetic_energy",
+   "family": "energy",
+   "name": "Work-energy theorem",
+   "equation": "W = m*(v**2 - v0**2)/2",
+   "symbols": {
+    "W": {
+     "kind": "energy",
+     "role": "net_work",
+     "desc": "net work done on the body, equal to its change in kinetic energy"
+    },
+    "m": {
+     "kind": "mass",
+     "sign": "positive",
+     "desc": "mass"
+    },
+    "v": {
+     "kind": "speed",
+     "role": "final",
+     "sign": "nonnegative",
+     "desc": "final speed"
+    },
+    "v0": {
+     "kind": "speed",
+     "role": "initial",
+     "accepts": [
+      "plain"
+     ],
+     "sign": "nonnegative",
+     "latex": "v_0",
+     "desc": "initial speed"
+    }
+   },
+   "assumptions": [
+    "W is the work of ALL forces on the body",
+    "constant mass",
+    "speeds far below the speed of light"
+   ],
+   "frame": "any inertial frame",
+   "conventions": [
+    "speeds are magnitudes; the net work is negative when the body slows"
+   ],
+   "applies_when": [
+    "the work stated is the net (total) work on the body"
+   ],
+   "fails_when": [
+    "only the work of one of several forces is known"
+   ],
+   "derived_from": [
+    "newton_second",
+    "velocity_displacement",
+    "work"
+   ],
+   "certificate": "release/promotion/net_work_kinetic_energy.json"
+  },
+  {
+   "key": "tension_hanging_at_rest",
+   "family": "dynamics",
+   "name": "Tension in a rope holding a hanging body",
+   "equation": "T = m*g",
+   "symbols": {
+    "T": {
+     "kind": "force",
+     "role": "tension",
+     "sign": "nonnegative",
+     "desc": "tension in the rope"
+    },
+    "m": {
+     "kind": "mass",
+     "sign": "positive",
+     "desc": "mass of the hanging body"
+    },
+    "g": {
+     "kind": "acceleration",
+     "role": "gravity",
+     "sign": "positive",
+     "desc": "gravitational acceleration",
+     "default": {
+      "value": 9.80665,
+      "unit": "m/s^2",
+      "unless": [
+       "non_earth"
+      ],
+      "assumption": "standard gravity g = 9.80665 m/s^2 near Earth's surface"
+     }
+    }
+   },
+   "assumptions": [
+    "one vertical rope carries the whole weight",
+    "the body is not accelerating"
+   ],
+   "requires": [
+    "hanging"
+   ],
+   "excludes": [
+    "accelerated",
+    "inclined"
+   ],
+   "frame": "vertical axis",
+   "conventions": [
+    "forces are magnitudes"
+   ],
+   "applies_when": [
+    "the body hangs at rest or moves at constant velocity from a single vertical rope"
+   ],
+   "fails_when": [
+    "the body accelerates",
+    "several ropes or ropes at an angle share the load"
+   ],
+   "derived_from": [
+    "newton_second",
+    "weight"
+   ],
+   "certificate": "release/promotion/tension_hanging_at_rest.json"
+  },
+  {
+   "key": "average_force_from_momentum_change",
+   "family": "dynamics",
+   "name": "Average net force from a change of momentum",
+   "equation": "F = (p2 - p1)/t",
+   "symbols": {
+    "F": {
+     "kind": "force",
+     "role": "net",
+     "accepts": [
+      "plain"
+     ],
+     "desc": "average net force"
+    },
+    "p2": {
+     "kind": "momentum",
+     "role": "final",
+     "latex": "p_2",
+     "desc": "final momentum"
+    },
+    "p1": {
+     "kind": "momentum",
+     "role": "initial",
+     "latex": "p_1",
+     "desc": "initial momentum"
+    },
+    "t": {
+     "kind": "time",
+     "sign": "positive",
+     "desc": "time over which the momentum changes"
+    }
+   },
+   "assumptions": [
+    "F is the net force averaged over the interval",
+    "motion along a line"
+   ],
+   "frame": "a line, with one direction taken as positive",
+   "conventions": [
+    "momenta carry signs; a negative force opposes the positive direction"
+   ],
+   "applies_when": [
+    "the momentum before and after is known"
+   ],
+   "fails_when": [
+    "the force asked for is one of several forces"
+   ],
+   "derived_from": [
+    "newton_second",
+    "velocity_time"
+   ],
+   "certificate": "release/promotion/average_force_from_momentum_change.json"
+  },
+  {
+   "key": "speed_after_fall_from_rest",
+   "family": "kinematics",
+   "name": "Speed after falling from rest",
+   "equation": "v = sqrt(2*g*h)",
+   "symbols": {
+    "v": {
+     "kind": "speed",
+     "role": "final",
+     "accepts": [
+      "plain"
+     ],
+     "sign": "nonnegative",
+     "desc": "speed after the fall"
+    },
+    "g": {
+     "kind": "acceleration",
+     "role": "gravity",
+     "sign": "positive",
+     "desc": "gravitational acceleration",
+     "default": {
+      "value": 9.80665,
+      "unit": "m/s^2",
+      "unless": [
+       "non_earth"
+      ],
+      "assumption": "standard gravity g = 9.80665 m/s^2 near Earth's surface"
+     }
+    },
+    "h": {
+     "kind": "length",
+     "role": "height",
+     "accepts": [
+      "plain"
+     ],
+     "sign": "nonnegative",
+     "desc": "height fallen"
+    }
+   },
+   "assumptions": [
+    "released from rest",
+    "no air resistance"
+   ],
+   "requires": [
+    "free_fall",
+    "from_rest"
+   ],
+   "frame": "vertical axis, positive downward",
+   "conventions": [
+    "speed and height are magnitudes"
+   ],
+   "applies_when": [
+    "the body starts from rest and falls freely"
+   ],
+   "fails_when": [
+    "it starts with a speed",
+    "air resistance matters"
+   ],
+   "derived_from": [
+    "velocity_displacement"
+   ],
+   "shortcut": true,
+   "certificate": "release/promotion/speed_after_fall_from_rest.json"
+  },
+  {
+   "key": "electric_force_in_field",
+   "family": "electrostatics",
+   "name": "Force on a charge in an electric field",
+   "equation": "F = q*Ef",
+   "symbols": {
+    "F": {
+     "kind": "force",
+     "role": "electric",
+     "sign": "nonnegative",
+     "desc": "magnitude of the electric force"
+    },
+    "q": {
+     "kind": "charge",
+     "role": "plain",
+     "sign": "positive",
+     "desc": "magnitude of the charge"
+    },
+    "Ef": {
+     "kind": "electric_field",
+     "role": "plain",
+     "sign": "positive",
+     "desc": "electric field strength at the charge"
+    }
+   },
+   "assumptions": [
+    "magnitudes only"
+   ],
+   "requires": [
+    "electric"
+   ],
+   "excludes": [],
+   "frame": "any",
+   "applies_when": [
+    "a charge sits in a known electric field"
+   ],
+   "fails_when": [
+    "the charge's own field is asked for"
+   ],
+   "conventions": [
+    "magnitudes; the direction follows the sign of the charge"
+   ],
+   "certificate": "release/promotion_families/electric_force_in_field.json",
+   "category": "definition",
+   "atlas_key": "electric_field_force"
+  },
+  {
+   "key": "point_charge_field",
+   "family": "electrostatics",
+   "name": "Electric field of a point charge",
+   "equation": "Ef = ke*Q/r**2",
+   "symbols": {
+    "Ef": {
+     "kind": "electric_field",
+     "role": "plain",
+     "sign": "positive",
+     "desc": "field strength at distance r"
+    },
+    "Q": {
+     "kind": "charge",
+     "role": "plain",
+     "sign": "positive",
+     "desc": "magnitude of the source charge"
+    },
+    "r": {
+     "kind": "length",
+     "role": "distance",
+     "sign": "positive",
+     "desc": "distance from the charge"
+    },
+    "ke": {
+     "kind": "coulomb_constant",
+     "role": "constant",
+     "sign": "positive",
+     "default": {
+      "value": 8987551792.3,
+      "unit": "N*m^2/C^2",
+      "assumption": "Coulomb's constant k = 8.99e9 N*m^2/C^2 (charges in vacuum or air)",
+      "unless": [
+       "dielectric"
+      ]
+     }
+    }
+   },
+   "assumptions": [
+    "a point (or spherically symmetric) charge",
+    "vacuum or air"
+   ],
+   "requires": [
+    "electric"
+   ],
+   "excludes": [],
+   "frame": "radial distance from the charge",
+   "applies_when": [
+    "outside a point or spherical charge"
+   ],
+   "fails_when": [
+    "inside a conductor or a dielectric"
+   ],
+   "conventions": [
+    "magnitudes only"
+   ],
+   "certificate": "release/promotion_families/point_charge_field.json",
+   "category": "fundamental_law"
+  },
+  {
+   "key": "point_charge_potential",
+   "family": "electrostatics",
+   "name": "Electric potential of a point charge",
+   "equation": "V = ke*Q/r",
+   "symbols": {
+    "V": {
+     "kind": "voltage",
+     "role": "potential",
+     "sign": "any",
+     "desc": "electric potential relative to infinity"
+    },
+    "Q": {
+     "kind": "charge",
+     "role": "plain",
+     "sign": "positive",
+     "desc": "source charge"
+    },
+    "r": {
+     "kind": "length",
+     "role": "distance",
+     "sign": "positive",
+     "desc": "distance from the charge"
+    },
+    "ke": {
+     "kind": "coulomb_constant",
+     "role": "constant",
+     "sign": "positive",
+     "default": {
+      "value": 8987551792.3,
+      "unit": "N*m^2/C^2",
+      "assumption": "Coulomb's constant k = 8.99e9 N*m^2/C^2 (charges in vacuum or air)",
+      "unless": [
+       "dielectric"
+      ]
+     }
+    }
+   },
+   "assumptions": [
+    "a point charge",
+    "potential zero at infinity",
+    "vacuum or air"
+   ],
+   "requires": [
+    "electric"
+   ],
+   "excludes": [],
+   "frame": "radial distance",
+   "applies_when": [
+    "outside a point or spherical charge"
+   ],
+   "fails_when": [
+    "the reference point is not at infinity"
+   ],
+   "conventions": [
+    "potential relative to infinity; magnitudes of charge"
+   ],
+   "certificate": "release/promotion_families/point_charge_potential.json",
+   "category": "fundamental_law"
+  },
+  {
+   "key": "uniform_field_potential",
+   "family": "electrostatics",
+   "name": "Potential difference in a uniform field",
+   "equation": "V = Ef*d",
+   "symbols": {
+    "V": {
+     "kind": "voltage",
+     "role": "plain",
+     "sign": "positive",
+     "desc": "potential difference between the plates"
+    },
+    "Ef": {
+     "kind": "electric_field",
+     "role": "plain",
+     "sign": "positive",
+     "desc": "uniform field strength"
+    },
+    "d": {
+     "kind": "length",
+     "role": "separation",
+     "sign": "positive",
+     "desc": "separation along the field"
+    }
+   },
+   "assumptions": [
+    "a uniform electric field"
+   ],
+   "requires": [
+    "uniform_field"
+   ],
+   "excludes": [],
+   "frame": "along the field direction",
+   "applies_when": [
+    "between parallel plates far from their edges"
+   ],
+   "fails_when": [
+    "the field is not uniform"
+   ],
+   "conventions": [
+    "magnitudes"
+   ],
+   "certificate": "release/promotion_families/uniform_field_potential.json",
+   "category": "fundamental_law"
+  },
+  {
+   "key": "capacitance_definition",
+   "family": "capacitors",
+   "name": "Charge on a capacitor",
+   "equation": "Q = C*V",
+   "symbols": {
+    "Q": {
+     "kind": "charge",
+     "role": "plain",
+     "sign": "positive",
+     "desc": "charge on either plate"
+    },
+    "C": {
+     "kind": "capacitance",
+     "role": "plain",
+     "sign": "positive",
+     "desc": "capacitance"
+    },
+    "V": {
+     "kind": "voltage",
+     "role": "plain",
+     "sign": "positive",
+     "desc": "voltage across the capacitor"
+    }
+   },
+   "assumptions": [
+    "an ideal capacitor"
+   ],
+   "requires": [
+    "capacitor"
+   ],
+   "excludes": [],
+   "frame": "any",
+   "applies_when": [
+    "a charged capacitor"
+   ],
+   "fails_when": [
+    "the dielectric breaks down"
+   ],
+   "conventions": [
+    "magnitudes"
+   ],
+   "certificate": "release/promotion_families/capacitance_definition.json",
+   "category": "definition",
+   "atlas_key": "capacitance"
+  },
+  {
+   "key": "capacitor_energy",
+   "family": "capacitors",
+   "name": "Energy stored in a capacitor",
+   "equation": "Ecap = C*V**2/2",
+   "symbols": {
+    "Ecap": {
+     "kind": "energy",
+     "role": "capacitor",
+     "sign": "positive",
+     "desc": "energy stored"
+    },
+    "C": {
+     "kind": "capacitance",
+     "role": "plain",
+     "sign": "positive",
+     "desc": ""
+    },
+    "V": {
+     "kind": "voltage",
+     "role": "plain",
+     "sign": "positive",
+     "desc": ""
+    }
+   },
+   "assumptions": [
+    "an ideal capacitor"
+   ],
+   "requires": [
+    "capacitor"
+   ],
+   "excludes": [],
+   "frame": "any",
+   "applies_when": [
+    "a charged capacitor"
+   ],
+   "fails_when": [
+    "the capacitor leaks or breaks down"
+   ],
+   "conventions": [
+    "energy stored in the field between the plates"
+   ],
+   "certificate": "release/promotion_families/capacitor_energy.json",
+   "category": "fundamental_law"
+  },
+  {
+   "key": "parallel_plate_capacitor",
+   "family": "capacitors",
+   "name": "Capacitance of parallel plates",
+   "equation": "C = eps0*A/d",
+   "symbols": {
+    "C": {
+     "kind": "capacitance",
+     "role": "plain",
+     "sign": "positive",
+     "desc": ""
+    },
+    "A": {
+     "kind": "area",
+     "role": "plain",
+     "sign": "positive",
+     "desc": "area of each plate"
+    },
+    "d": {
+     "kind": "length",
+     "role": "separation",
+     "sign": "positive",
+     "desc": "plate separation"
+    },
+    "eps0": {
+     "kind": "permittivity",
+     "role": "constant",
+     "sign": "positive",
+     "default": {
+      "value": 8.8541878128e-12,
+      "unit": "C^2/(N*m^2)",
+      "assumption": "the permittivity of free space e0 = 8.854e-12 C^2/(N*m^2) (vacuum or air between the plates)",
+      "unless": [
+       "dielectric"
+      ]
+     }
+    }
+   },
+   "assumptions": [
+    "plates much wider than their separation",
+    "vacuum or air between the plates"
+   ],
+   "requires": [
+    "capacitor"
+   ],
+   "excludes": [],
+   "frame": "any",
+   "applies_when": [
+    "parallel plates with air or vacuum between them"
+   ],
+   "fails_when": [
+    "a dielectric fills the gap",
+    "the plates are small compared with their separation"
+   ],
+   "conventions": [
+    "edge effects neglected"
+   ],
+   "certificate": "release/promotion_families/parallel_plate_capacitor.json",
+   "category": "fundamental_law",
+   "atlas_special_case": {
+    "kappa": "1"
+   }
+  },
+  {
+   "key": "ohm_power_current",
+   "family": "circuits",
+   "name": "Power from current and resistance",
+   "equation": "P = I**2*R",
+   "symbols": {
+    "P": {
+     "kind": "power",
+     "role": "plain",
+     "sign": "positive",
+     "desc": "power dissipated"
+    },
+    "I": {
+     "kind": "current",
+     "role": "plain",
+     "sign": "positive",
+     "desc": ""
+    },
+    "R": {
+     "kind": "resistance",
+     "role": "plain",
+     "sign": "positive",
+     "desc": ""
+    }
+   },
+   "assumptions": [
+    "an ohmic resistor",
+    "steady direct current"
+   ],
+   "requires": [
+    "resistive"
+   ],
+   "excludes": [
+    "alternating_current"
+   ],
+   "frame": "any",
+   "applies_when": [
+    "a resistor carries a steady current"
+   ],
+   "fails_when": [
+    "alternating current",
+    "a non-ohmic device"
+   ],
+   "conventions": [
+    "power dissipated as heat"
+   ],
+   "derived_from": [
+    "ohm",
+    "electric_power"
+   ],
+   "certificate": "release/promotion_families/ohm_power_current.json",
+   "category": "derived"
+  },
+  {
+   "key": "ohm_power_voltage",
+   "family": "circuits",
+   "name": "Power from voltage and resistance",
+   "equation": "P = V**2/R",
+   "symbols": {
+    "P": {
+     "kind": "power",
+     "role": "plain",
+     "sign": "positive",
+     "desc": "power dissipated"
+    },
+    "V": {
+     "kind": "voltage",
+     "role": "plain",
+     "sign": "positive",
+     "desc": ""
+    },
+    "R": {
+     "kind": "resistance",
+     "role": "plain",
+     "sign": "positive",
+     "desc": ""
+    }
+   },
+   "assumptions": [
+    "an ohmic resistor",
+    "steady direct current"
+   ],
+   "requires": [
+    "resistive"
+   ],
+   "excludes": [
+    "alternating_current"
+   ],
+   "frame": "any",
+   "applies_when": [
+    "a resistor has a steady voltage across it"
+   ],
+   "fails_when": [
+    "alternating current",
+    "a non-ohmic device"
+   ],
+   "conventions": [
+    "power dissipated as heat"
+   ],
+   "derived_from": [
+    "ohm",
+    "electric_power"
+   ],
+   "certificate": "release/promotion_families/ohm_power_voltage.json",
+   "category": "derived"
+  },
+  {
+   "key": "resistivity",
+   "family": "circuits",
+   "name": "Resistance of a uniform wire",
+   "equation": "R = rho_e*L/A",
+   "symbols": {
+    "R": {
+     "kind": "resistance",
+     "role": "plain",
+     "sign": "positive",
+     "desc": ""
+    },
+    "rho_e": {
+     "kind": "resistivity",
+     "role": "plain",
+     "sign": "positive",
+     "desc": "resistivity of the material"
+    },
+    "L": {
+     "kind": "length",
+     "role": "wire_length",
+     "sign": "positive",
+     "desc": "length of the wire"
+    },
+    "A": {
+     "kind": "area",
+     "role": "plain",
+     "sign": "positive",
+     "desc": "cross-sectional area"
+    }
+   },
+   "assumptions": [
+    "a uniform wire",
+    "constant temperature"
+   ],
+   "requires": [
+    "wire"
+   ],
+   "excludes": [],
+   "frame": "any",
+   "applies_when": [
+    "an ohmic conductor of uniform cross-section"
+   ],
+   "fails_when": [
+    "the temperature changes",
+    "non-uniform cross-section"
+   ],
+   "conventions": [
+    "resistance along the length"
+   ],
+   "certificate": "release/promotion_families/resistivity.json",
+   "category": "empirical"
+  },
+  {
+   "key": "magnetic_force_charge",
+   "family": "magnetism",
+   "name": "Magnetic force on a moving charge",
+   "equation": "F = q*v*B*sin(theta)",
+   "symbols": {
+    "F": {
+     "kind": "force",
+     "role": "magnetic",
+     "sign": "nonnegative",
+     "desc": "magnitude of the magnetic force"
+    },
+    "q": {
+     "kind": "charge",
+     "role": "plain",
+     "sign": "positive",
+     "desc": ""
+    },
+    "v": {
+     "kind": "speed",
+     "role": "plain",
+     "sign": "positive",
+     "desc": "speed of the charge"
+    },
+    "B": {
+     "kind": "magnetic_field",
+     "role": "plain",
+     "sign": "positive",
+     "desc": ""
+    },
+    "theta": {
+     "kind": "angle",
+     "role": "plain",
+     "sign": "nonnegative",
+     "desc": "angle between velocity and field"
+    }
+   },
+   "assumptions": [
+    "a uniform magnetic field",
+    "no electric field"
+   ],
+   "requires": [
+    "magnetic"
+   ],
+   "excludes": [],
+   "frame": "angle between the velocity and the field",
+   "applies_when": [
+    "a charge moving in a magnetic field"
+   ],
+   "fails_when": [
+    "relativistic speeds",
+    "an electric field also acts"
+   ],
+   "conventions": [
+    "magnitudes; the direction follows the right-hand rule"
+   ],
+   "certificate": "release/promotion_families/magnetic_force_charge.json",
+   "category": "fundamental_law"
+  },
+  {
+   "key": "magnetic_force_wire",
+   "family": "magnetism",
+   "name": "Magnetic force on a current-carrying wire",
+   "equation": "F = I*L*B*sin(theta)",
+   "symbols": {
+    "F": {
+     "kind": "force",
+     "role": "magnetic",
+     "sign": "nonnegative",
+     "desc": ""
+    },
+    "I": {
+     "kind": "current",
+     "role": "plain",
+     "sign": "positive",
+     "desc": ""
+    },
+    "L": {
+     "kind": "length",
+     "role": "wire_length",
+     "sign": "positive",
+     "desc": "length of wire in the field"
+    },
+    "B": {
+     "kind": "magnetic_field",
+     "role": "plain",
+     "sign": "positive",
+     "desc": ""
+    },
+    "theta": {
+     "kind": "angle",
+     "role": "plain",
+     "sign": "nonnegative",
+     "desc": "angle between the wire and the field"
+    }
+   },
+   "assumptions": [
+    "a straight wire",
+    "a uniform field"
+   ],
+   "requires": [
+    "magnetic",
+    "wire"
+   ],
+   "excludes": [],
+   "frame": "angle between current and field",
+   "applies_when": [
+    "a straight wire in a uniform magnetic field"
+   ],
+   "fails_when": [
+    "the field varies along the wire"
+   ],
+   "conventions": [
+    "magnitudes"
+   ],
+   "certificate": "release/promotion_families/magnetic_force_wire.json",
+   "category": "fundamental_law"
+  },
+  {
+   "key": "long_wire_field",
+   "family": "magnetism",
+   "name": "Magnetic field of a long straight wire",
+   "equation": "B = mu0*I/(2*pi*r)",
+   "symbols": {
+    "B": {
+     "kind": "magnetic_field",
+     "role": "plain",
+     "sign": "positive",
+     "desc": ""
+    },
+    "I": {
+     "kind": "current",
+     "role": "plain",
+     "sign": "positive",
+     "desc": ""
+    },
+    "r": {
+     "kind": "length",
+     "role": "distance",
+     "sign": "positive",
+     "desc": "distance from the wire"
+    },
+    "mu0": {
+     "kind": "permeability",
+     "role": "constant",
+     "sign": "positive",
+     "default": {
+      "value": 1.25663706212e-06,
+      "unit": "T*m/A",
+      "assumption": "the permeability of free space mu0 = 1.2566e-6 T*m/A (vacuum or air)",
+      "unless": []
+     }
+    }
+   },
+   "assumptions": [
+    "a long straight wire",
+    "vacuum or air"
+   ],
+   "requires": [
+    "wire"
+   ],
+   "excludes": [
+    "loop",
+    "solenoid"
+   ],
+   "frame": "perpendicular distance from the wire",
+   "applies_when": [
+    "near a long straight wire, far from its ends"
+   ],
+   "fails_when": [
+    "near the ends of a short wire"
+   ],
+   "conventions": [
+    "magnitudes"
+   ],
+   "certificate": "release/promotion_families/long_wire_field.json",
+   "category": "fundamental_law"
+  },
+  {
+   "key": "solenoid_field",
+   "family": "magnetism",
+   "name": "Magnetic field inside a long solenoid",
+   "equation": "B = mu0*nt*I",
+   "symbols": {
+    "B": {
+     "kind": "magnetic_field",
+     "role": "plain",
+     "sign": "positive",
+     "desc": ""
+    },
+    "nt": {
+     "kind": "turn_density",
+     "role": "plain",
+     "sign": "positive",
+     "desc": "turns per unit length"
+    },
+    "I": {
+     "kind": "current",
+     "role": "plain",
+     "sign": "positive",
+     "desc": ""
+    },
+    "mu0": {
+     "kind": "permeability",
+     "role": "constant",
+     "sign": "positive",
+     "default": {
+      "value": 1.25663706212e-06,
+      "unit": "T*m/A",
+      "assumption": "the permeability of free space mu0 = 1.2566e-6 T*m/A (vacuum or air)",
+      "unless": []
+     }
+    }
+   },
+   "assumptions": [
+    "a long solenoid",
+    "air core"
+   ],
+   "requires": [
+    "solenoid"
+   ],
+   "excludes": [],
+   "frame": "inside the solenoid, far from its ends",
+   "applies_when": [
+    "inside a long solenoid"
+   ],
+   "fails_when": [
+    "near the ends",
+    "an iron core"
+   ],
+   "conventions": [
+    "magnitudes"
+   ],
+   "certificate": "release/promotion_families/solenoid_field.json",
+   "category": "fundamental_law"
+  },
+  {
+   "key": "surface_gravity",
+   "family": "gravitation",
+   "name": "Gravitational acceleration at a distance from a mass",
+   "equation": "g = G*M/r**2",
+   "symbols": {
+    "g": {
+     "kind": "acceleration",
+     "role": "gravity",
+     "sign": "positive",
+     "desc": "gravitational acceleration"
+    },
+    "M": {
+     "kind": "mass",
+     "role": "plain",
+     "sign": "positive",
+     "desc": "mass of the planet or star"
+    },
+    "r": {
+     "kind": "length",
+     "role": "radius",
+     "sign": "positive",
+     "desc": "distance from the centre"
+    },
+    "G": {
+     "kind": "gravitational_constant",
+     "role": "constant",
+     "sign": "positive",
+     "default": {
+      "value": 6.6743e-11,
+      "unit": "N*m^2/kg^2",
+      "assumption": "the gravitational constant G = 6.674e-11 N*m^2/kg^2",
+      "unless": []
+     }
+    }
+   },
+   "assumptions": [
+    "a spherically symmetric body",
+    "outside the body"
+   ],
+   "requires": [
+    "celestial"
+   ],
+   "excludes": [],
+   "frame": "distance from the centre",
+   "applies_when": [
+    "at or above the surface of a planet or star"
+   ],
+   "fails_when": [
+    "inside the body"
+   ],
+   "conventions": [
+    "magnitudes"
+   ],
+   "certificate": "release/promotion_families/surface_gravity.json",
+   "category": "fundamental_law"
+  },
+  {
+   "key": "orbital_speed",
+   "family": "gravitation",
+   "name": "Speed in a circular orbit",
+   "equation": "v = sqrt(G*M/r)",
+   "symbols": {
+    "v": {
+     "kind": "speed",
+     "role": "orbital",
+     "sign": "positive",
+     "desc": "orbital speed"
+    },
+    "M": {
+     "kind": "mass",
+     "role": "plain",
+     "sign": "positive",
+     "desc": "mass of the central body"
+    },
+    "r": {
+     "kind": "length",
+     "role": "radius",
+     "sign": "positive",
+     "desc": "orbital radius"
+    },
+    "G": {
+     "kind": "gravitational_constant",
+     "role": "constant",
+     "sign": "positive",
+     "default": {
+      "value": 6.6743e-11,
+      "unit": "N*m^2/kg^2",
+      "assumption": "the gravitational constant G = 6.674e-11 N*m^2/kg^2",
+      "unless": []
+     }
+    }
+   },
+   "assumptions": [
+    "a circular orbit",
+    "the orbiting body much lighter than the central one"
+   ],
+   "requires": [
+    "orbit"
+   ],
+   "excludes": [],
+   "frame": "centre of the central body",
+   "applies_when": [
+    "a satellite in a circular orbit"
+   ],
+   "fails_when": [
+    "elliptical orbits"
+   ],
+   "conventions": [
+    "magnitudes"
+   ],
+   "certificate": "release/promotion_families/orbital_speed.json",
+   "category": "fundamental_law"
+  },
+  {
+   "key": "orbital_period",
+   "family": "gravitation",
+   "name": "Period of a circular orbit",
+   "equation": "T = 2*pi*sqrt(r**3/(G*M))",
+   "symbols": {
+    "T": {
+     "kind": "time",
+     "role": "period",
+     "sign": "positive",
+     "desc": "orbital period"
+    },
+    "r": {
+     "kind": "length",
+     "role": "radius",
+     "sign": "positive",
+     "desc": "orbital radius"
+    },
+    "M": {
+     "kind": "mass",
+     "role": "plain",
+     "sign": "positive",
+     "desc": "mass of the central body"
+    },
+    "G": {
+     "kind": "gravitational_constant",
+     "role": "constant",
+     "sign": "positive",
+     "default": {
+      "value": 6.6743e-11,
+      "unit": "N*m^2/kg^2",
+      "assumption": "the gravitational constant G = 6.674e-11 N*m^2/kg^2",
+      "unless": []
+     }
+    }
+   },
+   "assumptions": [
+    "a circular orbit",
+    "the orbiting body much lighter than the central one"
+   ],
+   "requires": [
+    "orbit"
+   ],
+   "excludes": [],
+   "frame": "centre of the central body",
+   "applies_when": [
+    "a satellite in a circular orbit"
+   ],
+   "fails_when": [
+    "elliptical orbits"
+   ],
+   "conventions": [
+    "magnitudes"
+   ],
+   "certificate": "release/promotion_families/orbital_period.json",
+   "category": "fundamental_law",
+   "atlas_key": "kepler_third"
+  },
+  {
+   "key": "ideal_gas_moles",
+   "family": "thermal",
+   "name": "Ideal gas law",
+   "equation": "P*V = n*R*T",
+   "symbols": {
+    "P": {
+     "kind": "pressure",
+     "role": "plain",
+     "sign": "positive",
+     "desc": "absolute pressure"
+    },
+    "V": {
+     "kind": "volume",
+     "role": "plain",
+     "sign": "positive",
+     "desc": ""
+    },
+    "n": {
+     "kind": "amount",
+     "role": "plain",
+     "sign": "positive",
+     "desc": "amount of gas"
+    },
+    "T": {
+     "kind": "temperature",
+     "role": "plain",
+     "sign": "positive",
+     "desc": "absolute temperature"
+    },
+    "R": {
+     "kind": "gas_constant",
+     "role": "constant",
+     "sign": "positive",
+     "default": {
+      "value": 8.314462618,
+      "unit": "J/(mol*K)",
+      "assumption": "the gas constant R = 8.314 J/(mol*K)",
+      "unless": []
+     }
+    }
+   },
+   "assumptions": [
+    "an ideal gas",
+    "absolute pressure and temperature"
+   ],
+   "requires": [
+    "gas"
+   ],
+   "excludes": [],
+   "frame": "any",
+   "applies_when": [
+    "a dilute gas far from condensation"
+   ],
+   "fails_when": [
+    "high pressure or near condensation"
+   ],
+   "conventions": [
+    "absolute temperature in kelvin"
+   ],
+   "certificate": "release/promotion_families/ideal_gas_moles.json",
+   "category": "fundamental_law"
+  },
+  {
+   "key": "latent_heat_fusion",
+   "family": "thermal",
+   "name": "Heat to melt or freeze",
+   "equation": "Q = m*Lf",
+   "symbols": {
+    "Q": {
+     "kind": "energy",
+     "role": "heat",
+     "sign": "positive",
+     "desc": "heat absorbed or released"
+    },
+    "m": {
+     "kind": "mass",
+     "role": "plain",
+     "sign": "positive",
+     "desc": ""
+    },
+    "Lf": {
+     "kind": "latent_heat",
+     "role": "fusion",
+     "sign": "positive",
+     "desc": "latent heat of fusion",
+     "accepts": [
+      "plain"
+     ]
+    }
+   },
+   "assumptions": [
+    "at the melting point",
+    "no temperature change during the phase change"
+   ],
+   "requires": [
+    "melting"
+   ],
+   "excludes": [
+    "boiling"
+   ],
+   "frame": "any",
+   "applies_when": [
+    "melting or freezing at the melting point"
+   ],
+   "fails_when": [
+    "the temperature also changes"
+   ],
+   "conventions": [
+    "magnitudes"
+   ],
+   "certificate": "release/promotion_families/latent_heat_fusion.json",
+   "category": "fundamental_law"
+  },
+  {
+   "key": "latent_heat_vaporization",
+   "family": "thermal",
+   "name": "Heat to boil or condense",
+   "equation": "Q = m*Lv",
+   "symbols": {
+    "Q": {
+     "kind": "energy",
+     "role": "heat",
+     "sign": "positive",
+     "desc": ""
+    },
+    "m": {
+     "kind": "mass",
+     "role": "plain",
+     "sign": "positive",
+     "desc": ""
+    },
+    "Lv": {
+     "kind": "latent_heat",
+     "role": "vaporization",
+     "sign": "positive",
+     "desc": "latent heat of vaporization",
+     "accepts": [
+      "plain"
+     ]
+    }
+   },
+   "assumptions": [
+    "at the boiling point",
+    "no temperature change during the phase change"
+   ],
+   "requires": [
+    "boiling"
+   ],
+   "excludes": [
+    "melting"
+   ],
+   "frame": "any",
+   "applies_when": [
+    "boiling or condensing at the boiling point"
+   ],
+   "fails_when": [
+    "the temperature also changes"
+   ],
+   "conventions": [
+    "magnitudes"
+   ],
+   "certificate": "release/promotion_families/latent_heat_vaporization.json",
+   "category": "fundamental_law"
+  },
+  {
+   "key": "linear_expansion",
+   "family": "thermal",
+   "name": "Linear thermal expansion",
+   "equation": "dL = alpha_t*L*dT",
+   "symbols": {
+    "dL": {
+     "kind": "length",
+     "role": "expansion",
+     "sign": "any",
+     "desc": "change in length"
+    },
+    "alpha_t": {
+     "kind": "expansion_coefficient",
+     "role": "plain",
+     "sign": "positive",
+     "desc": "coefficient of linear expansion"
+    },
+    "L": {
+     "kind": "length",
+     "role": "original",
+     "sign": "positive",
+     "desc": "original length"
+    },
+    "dT": {
+     "kind": "temperature_difference",
+     "role": "plain",
+     "sign": "any",
+     "desc": "change in temperature"
+    }
+   },
+   "assumptions": [
+    "a small temperature change",
+    "the coefficient constant over the range"
+   ],
+   "requires": [
+    "thermal_expansion"
+   ],
+   "excludes": [],
+   "frame": "along the length",
+   "applies_when": [
+    "solids over moderate temperature ranges"
+   ],
+   "fails_when": [
+    "phase changes",
+    "very large temperature ranges"
+   ],
+   "conventions": [
+    "a rise in temperature lengthens the object"
+   ],
+   "certificate": "release/promotion_families/linear_expansion.json",
+   "category": "empirical"
+  },
+  {
+   "key": "thin_lens",
+   "family": "optics",
+   "name": "Thin lens equation",
+   "equation": "1/d_o + 1/d_i = 1/f",
+   "symbols": {
+    "d_o": {
+     "kind": "length",
+     "role": "object_distance",
+     "sign": "any",
+     "desc": "object distance"
+    },
+    "d_i": {
+     "kind": "length",
+     "role": "image_distance",
+     "sign": "any",
+     "desc": "image distance"
+    },
+    "f": {
+     "kind": "length",
+     "role": "focal",
+     "sign": "any",
+     "desc": "focal length"
+    }
+   },
+   "assumptions": [
+    "a thin lens",
+    "paraxial rays"
+   ],
+   "requires": [
+    "lens"
+   ],
+   "excludes": [],
+   "frame": "distances from the lens",
+   "applies_when": [
+    "a thin lens"
+   ],
+   "fails_when": [
+    "thick lenses or wide-angle rays"
+   ],
+   "conventions": [
+    "real images positive, virtual negative; converging f > 0"
+   ],
+   "certificate": "release/promotion_families/thin_lens.json",
+   "category": "fundamental_law"
+  },
+  {
+   "key": "photon_energy",
+   "family": "quantum",
+   "name": "Energy of a photon",
+   "equation": "E = h*f",
+   "symbols": {
+    "E": {
+     "kind": "energy",
+     "role": "photon",
+     "sign": "positive",
+     "desc": "photon energy"
+    },
+    "f": {
+     "kind": "frequency",
+     "role": "plain",
+     "sign": "positive",
+     "desc": "frequency of the light"
+    },
+    "h": {
+     "kind": "planck_constant",
+     "role": "constant",
+     "sign": "positive",
+     "default": {
+      "value": 6.62607015e-34,
+      "unit": "J*s",
+      "assumption": "Planck's constant h = 6.626e-34 J*s",
+      "unless": []
+     }
+    }
+   },
+   "assumptions": [
+    "a single photon"
+   ],
+   "requires": [
+    "photon"
+   ],
+   "excludes": [],
+   "frame": "any",
+   "applies_when": [
+    "light or other electromagnetic radiation"
+   ],
+   "fails_when": [
+    "a classical wave energy is asked for"
+   ],
+   "conventions": [
+    "energy per photon"
+   ],
+   "certificate": "release/promotion_families/photon_energy.json",
+   "category": "fundamental_law"
+  },
+  {
+   "key": "photon_energy_wavelength",
+   "family": "quantum",
+   "name": "Photon energy from wavelength",
+   "equation": "E = h*c/lam",
+   "symbols": {
+    "E": {
+     "kind": "energy",
+     "role": "photon",
+     "sign": "positive",
+     "desc": ""
+    },
+    "lam": {
+     "kind": "length",
+     "role": "wavelength",
+     "sign": "positive",
+     "desc": "wavelength in vacuum"
+    },
+    "h": {
+     "kind": "planck_constant",
+     "role": "constant",
+     "sign": "positive",
+     "default": {
+      "value": 6.62607015e-34,
+      "unit": "J*s",
+      "assumption": "Planck's constant h = 6.626e-34 J*s",
+      "unless": []
+     }
+    },
+    "c": {
+     "kind": "speed",
+     "role": "light",
+     "sign": "positive",
+     "default": {
+      "value": 299792458.0,
+      "unit": "m/s",
+      "assumption": "the speed of light in vacuum c = 2.998e8 m/s",
+      "unless": []
+     }
+    }
+   },
+   "assumptions": [
+    "a single photon",
+    "wavelength in vacuum"
+   ],
+   "requires": [
+    "photon"
+   ],
+   "excludes": [],
+   "frame": "any",
+   "applies_when": [
+    "light in vacuum or air"
+   ],
+   "fails_when": [
+    "the wavelength is measured in a medium"
+   ],
+   "conventions": [
+    "energy per photon"
+   ],
+   "certificate": "release/promotion_families/photon_energy_wavelength.json",
+   "category": "fundamental_law"
+  },
+  {
+   "key": "photon_momentum",
+   "family": "quantum",
+   "name": "Momentum of a photon",
+   "equation": "p = h/lam",
+   "symbols": {
+    "p": {
+     "kind": "momentum",
+     "role": "plain",
+     "sign": "positive",
+     "desc": "photon momentum"
+    },
+    "lam": {
+     "kind": "length",
+     "role": "wavelength",
+     "sign": "positive",
+     "desc": ""
+    },
+    "h": {
+     "kind": "planck_constant",
+     "role": "constant",
+     "sign": "positive",
+     "default": {
+      "value": 6.62607015e-34,
+      "unit": "J*s",
+      "assumption": "Planck's constant h = 6.626e-34 J*s",
+      "unless": []
+     }
+    }
+   },
+   "assumptions": [
+    "a single photon"
+   ],
+   "requires": [
+    "photon"
+   ],
+   "excludes": [],
+   "frame": "any",
+   "applies_when": [
+    "light"
+   ],
+   "fails_when": [
+    "massive particles (use the de Broglie relation)"
+   ],
+   "conventions": [
+    "magnitude"
+   ],
+   "certificate": "release/promotion_families/photon_momentum.json",
+   "category": "fundamental_law"
+  },
+  {
+   "key": "de_broglie",
+   "family": "quantum",
+   "name": "De Broglie wavelength",
+   "equation": "lam = h/p",
+   "symbols": {
+    "lam": {
+     "kind": "length",
+     "role": "wavelength",
+     "sign": "positive",
+     "desc": "de Broglie wavelength"
+    },
+    "p": {
+     "kind": "momentum",
+     "role": "plain",
+     "sign": "positive",
+     "desc": "momentum of the particle"
+    },
+    "h": {
+     "kind": "planck_constant",
+     "role": "constant",
+     "sign": "positive",
+     "default": {
+      "value": 6.62607015e-34,
+      "unit": "J*s",
+      "assumption": "Planck's constant h = 6.626e-34 J*s",
+      "unless": []
+     }
+    }
+   },
+   "assumptions": [
+    "a free particle"
+   ],
+   "requires": [
+    "matter_wave"
+   ],
+   "excludes": [
+    "photon"
+   ],
+   "frame": "any",
+   "applies_when": [
+    "electrons, protons, neutrons and other particles"
+   ],
+   "fails_when": [
+    "photons in a medium"
+   ],
+   "conventions": [
+    "magnitudes"
+   ],
+   "certificate": "release/promotion_families/de_broglie.json",
+   "category": "fundamental_law"
+  },
+  {
+   "key": "rest_energy",
+   "family": "relativity",
+   "name": "Rest energy",
+   "equation": "E0 = m*c**2",
+   "symbols": {
+    "E0": {
+     "kind": "energy",
+     "role": "rest",
+     "sign": "positive",
+     "desc": "rest energy"
+    },
+    "m": {
+     "kind": "mass",
+     "role": "plain",
+     "sign": "positive",
+     "desc": "rest mass"
+    },
+    "c": {
+     "kind": "speed",
+     "role": "light",
+     "sign": "positive",
+     "default": {
+      "value": 299792458.0,
+      "unit": "m/s",
+      "assumption": "the speed of light in vacuum c = 2.998e8 m/s",
+      "unless": []
+     }
+    }
+   },
+   "assumptions": [
+    "energy of the mass at rest"
+   ],
+   "requires": [
+    "mass_energy"
+   ],
+   "excludes": [],
+   "frame": "rest frame",
+   "applies_when": [
+    "mass converted entirely into energy, or the rest energy of a body"
+   ],
+   "fails_when": [
+    "the kinetic energy is also wanted"
+   ],
+   "conventions": [
+    "rest mass"
+   ],
+   "certificate": "release/promotion_families/rest_energy.json",
+   "category": "fundamental_law"
+  },
+  {
+   "key": "pendulum_period",
+   "family": "oscillations",
+   "name": "Period of a simple pendulum",
+   "equation": "T = 2*pi*sqrt(Lp/g)",
+   "symbols": {
+    "T": {
+     "kind": "time",
+     "role": "period",
+     "sign": "positive",
+     "desc": "period of the swing"
+    },
+    "Lp": {
+     "kind": "length",
+     "role": "pendulum",
+     "sign": "positive",
+     "desc": "length of the pendulum"
+    },
+    "g": {
+     "kind": "acceleration",
+     "role": "gravity",
+     "sign": "positive",
+     "default": {
+      "value": 9.80665,
+      "unit": "m/s^2",
+      "unless": [
+       "non_earth"
+      ],
+      "assumption": "standard gravity g = 9.80665 m/s^2 near Earth's surface"
+     }
+    }
+   },
+   "assumptions": [
+    "small swings",
+    "a point mass on a light string"
+   ],
+   "requires": [
+    "pendulum"
+   ],
+   "excludes": [],
+   "frame": "any",
+   "applies_when": [
+    "small-angle swings"
+   ],
+   "fails_when": [
+    "large amplitudes",
+    "a heavy rod"
+   ],
+   "conventions": [
+    "one full swing back and forth"
+   ],
+   "certificate": "release/promotion_families/pendulum_period.json",
+   "category": "fundamental_law"
+  },
+  {
+   "key": "spring_oscillation_period",
+   "family": "oscillations",
+   "name": "Period of a mass on a spring",
+   "equation": "T = 2*pi*sqrt(m/k)",
+   "symbols": {
+    "T": {
+     "kind": "time",
+     "role": "period",
+     "sign": "positive",
+     "desc": ""
+    },
+    "m": {
+     "kind": "mass",
+     "role": "plain",
+     "sign": "positive",
+     "desc": ""
+    },
+    "k": {
+     "kind": "spring_constant",
+     "role": "plain",
+     "sign": "positive",
+     "desc": ""
+    }
+   },
+   "assumptions": [
+    "an ideal spring",
+    "small oscillations",
+    "no damping"
+   ],
+   "requires": [
+    "spring_oscillation"
+   ],
+   "excludes": [],
+   "frame": "any",
+   "applies_when": [
+    "a mass oscillating on an ideal spring"
+   ],
+   "fails_when": [
+    "damping or a heavy spring"
+   ],
+   "conventions": [
+    "one full oscillation"
+   ],
+   "certificate": "release/promotion_families/spring_oscillation_period.json",
+   "category": "fundamental_law"
+  },
+  {
+   "key": "torque_lever",
+   "family": "rotation",
+   "name": "Torque of a force",
+   "equation": "tau = r*F*sin(theta)",
+   "symbols": {
+    "tau": {
+     "kind": "torque",
+     "role": "plain",
+     "sign": "positive",
+     "desc": "torque about the pivot"
+    },
+    "r": {
+     "kind": "length",
+     "role": "lever_arm",
+     "sign": "positive",
+     "desc": "distance from the pivot to the point of application"
+    },
+    "F": {
+     "kind": "force",
+     "role": "applied",
+     "sign": "positive",
+     "desc": "applied force"
+    },
+    "theta": {
+     "kind": "angle",
+     "role": "plain",
+     "sign": "nonnegative",
+     "desc": "angle between r and F"
+    }
+   },
+   "assumptions": [
+    "a rigid body",
+    "a fixed pivot"
+   ],
+   "requires": [
+    "pivot"
+   ],
+   "excludes": [],
+   "frame": "about the pivot",
+   "applies_when": [
+    "a force applied at a distance from a pivot"
+   ],
+   "fails_when": [
+    "the pivot moves"
+   ],
+   "conventions": [
+    "magnitudes"
+   ],
+   "certificate": "release/promotion_families/torque_lever.json",
+   "category": "definition",
+   "atlas_key": "torque"
+  },
+  {
+   "key": "rotational_kinetic_energy",
+   "family": "rotation",
+   "name": "Rotational kinetic energy",
+   "equation": "KR = Ir*omega**2/2",
+   "symbols": {
+    "KR": {
+     "kind": "energy",
+     "role": "rotational",
+     "sign": "positive",
+     "desc": "rotational kinetic energy"
+    },
+    "Ir": {
+     "kind": "moment_of_inertia",
+     "role": "plain",
+     "sign": "positive",
+     "desc": ""
+    },
+    "omega": {
+     "kind": "angular_frequency",
+     "role": "plain",
+     "sign": "positive",
+     "desc": "angular velocity"
+    }
+   },
+   "assumptions": [
+    "a rigid body rotating about a fixed axis"
+   ],
+   "requires": [
+    "rotating"
+   ],
+   "excludes": [],
+   "frame": "about the axis",
+   "applies_when": [
+    "a rotating rigid body"
+   ],
+   "fails_when": [
+    "the axis moves"
+   ],
+   "conventions": [
+    "magnitudes"
+   ],
+   "certificate": "release/promotion_families/rotational_kinetic_energy.json",
+   "category": "definition"
+  },
+  {
+   "key": "angular_momentum",
+   "family": "rotation",
+   "name": "Angular momentum of a rotating body",
+   "equation": "L = Ir*omega",
+   "symbols": {
+    "L": {
+     "kind": "angular_momentum",
+     "role": "plain",
+     "sign": "positive",
+     "desc": ""
+    },
+    "Ir": {
+     "kind": "moment_of_inertia",
+     "role": "plain",
+     "sign": "positive",
+     "desc": ""
+    },
+    "omega": {
+     "kind": "angular_frequency",
+     "role": "plain",
+     "sign": "positive",
+     "desc": "angular velocity"
+    }
+   },
+   "assumptions": [
+    "a rigid body rotating about a fixed axis"
+   ],
+   "requires": [
+    "rotating"
+   ],
+   "excludes": [],
+   "frame": "about the axis",
+   "applies_when": [
+    "a rotating rigid body"
+   ],
+   "fails_when": [
+    "the axis moves"
+   ],
+   "conventions": [
+    "magnitudes"
+   ],
+   "certificate": "release/promotion_families/angular_momentum.json",
+   "category": "definition"
+  },
+  {
+   "key": "tangential_acceleration",
+   "family": "rotation",
+   "name": "Tangential acceleration of a point on a rotating body",
+   "equation": "a = r*alpha",
+   "symbols": {
+    "a": {
+     "kind": "acceleration",
+     "role": "tangential",
+     "sign": "any",
+     "desc": "tangential acceleration"
+    },
+    "r": {
+     "kind": "length",
+     "role": "radius",
+     "sign": "positive",
+     "desc": "distance from the axis"
+    },
+    "alpha": {
+     "kind": "angular_acceleration",
+     "role": "plain",
+     "sign": "any",
+     "desc": "angular acceleration"
+    }
+   },
+   "assumptions": [
+    "a rigid body about a fixed axis"
+   ],
+   "requires": [
+    "rotating"
+   ],
+   "excludes": [],
+   "frame": "any",
+   "applies_when": [
+    "a point on a rotating rigid body"
+   ],
+   "fails_when": [
+    "the radius changes"
+   ],
+   "conventions": [
+    "magnitudes"
+   ],
+   "certificate": "release/promotion_families/tangential_acceleration.json",
+   "category": "definition"
+  },
+  {
+   "key": "centripetal_acceleration_omega",
+   "family": "rotation",
+   "name": "Centripetal acceleration from angular velocity",
+   "equation": "a = r*omega**2",
+   "symbols": {
+    "a": {
+     "kind": "acceleration",
+     "role": "centripetal",
+     "sign": "positive",
+     "desc": "centripetal acceleration"
+    },
+    "r": {
+     "kind": "length",
+     "role": "radius",
+     "sign": "positive",
+     "desc": "radius of the circle"
+    },
+    "omega": {
+     "kind": "angular_frequency",
+     "role": "plain",
+     "sign": "nonnegative",
+     "desc": "angular velocity"
+    }
+   },
+   "assumptions": [
+    "uniform circular motion"
+   ],
+   "requires": [
+    "rotating"
+   ],
+   "excludes": [],
+   "frame": "any",
+   "applies_when": [
+    "motion on a circle at constant angular velocity"
+   ],
+   "fails_when": [
+    "the radius changes"
+   ],
+   "conventions": [
+    "magnitudes"
+   ],
+   "derived_from": [
+    "centripetal_acceleration",
+    "tangential_speed"
+   ],
+   "certificate": "release/promotion_families/centripetal_acceleration_omega.json",
+   "category": "derived"
+  },
+  {
+   "key": "angular_momentum_point_mass",
+   "family": "rotation",
+   "name": "Angular momentum of a point mass on a circle",
+   "equation": "L = m*v*r",
+   "symbols": {
+    "L": {
+     "kind": "angular_momentum",
+     "role": "plain",
+     "sign": "positive",
+     "desc": "angular momentum about the centre"
+    },
+    "m": {
+     "kind": "mass",
+     "role": "plain",
+     "sign": "positive",
+     "desc": ""
+    },
+    "v": {
+     "kind": "speed",
+     "role": "plain",
+     "sign": "positive",
+     "desc": "speed on the circle"
+    },
+    "r": {
+     "kind": "length",
+     "role": "radius",
+     "sign": "positive",
+     "desc": "radius of the circle"
+    }
+   },
+   "assumptions": [
+    "a point mass moving perpendicular to the radius"
+   ],
+   "requires": [
+    "orbit"
+   ],
+   "excludes": [],
+   "frame": "any",
+   "applies_when": [
+    "a small body moving on a circle"
+   ],
+   "fails_when": [
+    "an extended body"
+   ],
+   "conventions": [
+    "magnitudes"
+   ],
+   "certificate": "release/promotion_families/angular_momentum_point_mass.json",
+   "category": "definition",
+   "atlas_key": "angular_momentum_point"
+  },
+  {
+   "key": "absolute_pressure_depth",
+   "family": "fluids",
+   "name": "Absolute pressure at a depth in a fluid",
+   "equation": "P = P0 + rho*g*h",
+   "symbols": {
+    "P": {
+     "kind": "pressure",
+     "role": "absolute",
+     "sign": "positive",
+     "desc": "absolute pressure at the depth"
+    },
+    "P0": {
+     "kind": "pressure",
+     "role": "atmospheric",
+     "sign": "positive",
+     "desc": "pressure at the surface"
+    },
+    "rho": {
+     "kind": "density",
+     "role": "plain",
+     "sign": "positive",
+     "desc": "density of the fluid"
+    },
+    "g": {
+     "kind": "acceleration",
+     "role": "gravity",
+     "sign": "positive",
+     "default": {
+      "value": 9.80665,
+      "unit": "m/s^2",
+      "unless": [
+       "non_earth"
+      ],
+      "assumption": "standard gravity g = 9.80665 m/s^2 near Earth's surface"
+     }
+    },
+    "h": {
+     "kind": "length",
+     "role": "depth",
+     "sign": "positive",
+     "desc": "depth below the surface"
+    }
+   },
+   "assumptions": [
+    "an incompressible fluid at rest",
+    "uniform gravity"
+   ],
+   "requires": [
+    "fluid_depth"
+   ],
+   "excludes": [],
+   "frame": "depth measured down from the surface",
+   "applies_when": [
+    "a liquid at rest"
+   ],
+   "fails_when": [
+    "the fluid is accelerating or compressible over the depth"
+   ],
+   "conventions": [
+    "magnitudes"
+   ],
+   "certificate": "release/promotion_families/absolute_pressure_depth.json",
+   "category": "fundamental_law",
+   "atlas_key": "absolute_pressure_at_depth"
+  },
+  {
+   "key": "flow_rate_volume_time",
+   "family": "fluids",
+   "name": "Flow rate as volume per time",
+   "equation": "Q = V/t",
+   "symbols": {
+    "Q": {
+     "kind": "flow_rate",
+     "role": "plain",
+     "sign": "positive",
+     "desc": "volume flow rate"
+    },
+    "V": {
+     "kind": "volume",
+     "role": "plain",
+     "sign": "positive",
+     "desc": "volume delivered"
+    },
+    "t": {
+     "kind": "time",
+     "role": "plain",
+     "sign": "positive",
+     "desc": "time taken"
+    }
+   },
+   "assumptions": [
+    "a steady flow"
+   ],
+   "requires": [
+    "flow"
+   ],
+   "excludes": [],
+   "frame": "any",
+   "applies_when": [
+    "a fluid flows through a pipe or opening"
+   ],
+   "fails_when": [
+    "the flow is unsteady and an instantaneous rate is asked"
+   ],
+   "conventions": [
+    "magnitudes"
+   ],
+   "certificate": "release/promotion_families/flow_rate_volume_time.json",
+   "category": "definition",
+   "atlas_key": "flow_rate"
+  },
+  {
+   "key": "flow_rate_area_speed",
+   "family": "fluids",
+   "name": "Flow rate through a cross section",
+   "equation": "Q = A*v",
+   "symbols": {
+    "Q": {
+     "kind": "flow_rate",
+     "role": "plain",
+     "sign": "positive",
+     "desc": "volume flow rate"
+    },
+    "A": {
+     "kind": "area",
+     "role": "plain",
+     "sign": "positive",
+     "desc": "cross-sectional area"
+    },
+    "v": {
+     "kind": "speed",
+     "role": "plain",
+     "sign": "positive",
+     "desc": "average speed of the fluid"
+    }
+   },
+   "assumptions": [
+    "a steady flow",
+    "the average speed over the cross section"
+   ],
+   "requires": [
+    "flow"
+   ],
+   "excludes": [],
+   "frame": "any",
+   "applies_when": [
+    "a fluid flows through a pipe"
+   ],
+   "fails_when": [
+    "the flow is not along the pipe"
+   ],
+   "conventions": [
+    "magnitudes"
+   ],
+   "certificate": "release/promotion_families/flow_rate_area_speed.json",
+   "category": "definition",
+   "atlas_key": "flow_rate_velocity"
+  },
+  {
+   "key": "volume_expansion",
+   "family": "thermal",
+   "name": "Thermal expansion of volume",
+   "equation": "dV = beta*V0*dT",
+   "symbols": {
+    "dV": {
+     "kind": "volume",
+     "role": "expansion",
+     "sign": "any",
+     "desc": "change in volume"
+    },
+    "beta": {
+     "kind": "expansion_coefficient",
+     "role": "volume",
+     "sign": "positive",
+     "desc": "coefficient of volume expansion"
+    },
+    "V0": {
+     "kind": "volume",
+     "role": "original",
+     "sign": "positive",
+     "desc": "original volume"
+    },
+    "dT": {
+     "kind": "temperature_difference",
+     "role": "plain",
+     "sign": "any",
+     "desc": "temperature change"
+    }
+   },
+   "assumptions": [
+    "a small temperature change",
+    "a constant coefficient"
+   ],
+   "requires": [
+    "thermal_expansion"
+   ],
+   "excludes": [],
+   "frame": "any",
+   "applies_when": [
+    "solids and liquids over moderate temperature changes"
+   ],
+   "fails_when": [
+    "phase changes or large temperature ranges"
+   ],
+   "conventions": [
+    "magnitudes"
+   ],
+   "certificate": "release/promotion_families/volume_expansion.json",
+   "category": "empirical"
+  },
+  {
+   "key": "engine_efficiency",
+   "family": "thermal",
+   "name": "Efficiency of a heat engine",
+   "equation": "eff = W/Qh",
+   "symbols": {
+    "eff": {
+     "kind": "efficiency",
+     "role": "plain",
+     "sign": "positive",
+     "desc": "efficiency (a fraction)"
+    },
+    "W": {
+     "kind": "energy",
+     "role": "work",
+     "sign": "positive",
+     "desc": "work output per cycle"
+    },
+    "Qh": {
+     "kind": "energy",
+     "role": "heat_hot",
+     "sign": "positive",
+     "desc": "heat taken in from the hot reservoir"
+    }
+   },
+   "assumptions": [
+    "a cyclic engine",
+    "efficiency as a fraction, not a percentage"
+   ],
+   "requires": [
+    "heat_engine"
+   ],
+   "excludes": [],
+   "frame": "any",
+   "applies_when": [
+    "a heat engine over whole cycles"
+   ],
+   "fails_when": [
+    "a single non-cyclic process"
+   ],
+   "conventions": [
+    "magnitudes"
+   ],
+   "certificate": "release/promotion_families/engine_efficiency.json",
+   "category": "definition"
+  },
+  {
+   "key": "carnot_efficiency",
+   "family": "thermal",
+   "name": "Carnot (maximum) efficiency",
+   "equation": "eff = 1 - Tc/Th",
+   "symbols": {
+    "eff": {
+     "kind": "efficiency",
+     "role": "carnot",
+     "sign": "positive",
+     "desc": "maximum efficiency"
+    },
+    "Tc": {
+     "kind": "temperature",
+     "role": "cold",
+     "sign": "positive",
+     "desc": "cold reservoir temperature (absolute)"
+    },
+    "Th": {
+     "kind": "temperature",
+     "role": "hot",
+     "sign": "positive",
+     "desc": "hot reservoir temperature (absolute)"
+    }
+   },
+   "assumptions": [
+    "a reversible engine between two reservoirs",
+    "absolute temperatures"
+   ],
+   "requires": [
+    "heat_engine"
+   ],
+   "excludes": [],
+   "frame": "any",
+   "applies_when": [
+    "an ideal engine between two reservoirs"
+   ],
+   "fails_when": [
+    "temperatures in degrees Celsius used as absolute"
+   ],
+   "conventions": [
+    "magnitudes"
+   ],
+   "certificate": "release/promotion_families/carnot_efficiency.json",
+   "category": "fundamental_law"
+  },
+  {
+   "key": "shm_max_speed",
+   "family": "oscillations",
+   "name": "Maximum speed of a mass on a spring",
+   "equation": "v = X*sqrt(k/m)",
+   "symbols": {
+    "v": {
+     "kind": "speed",
+     "role": "max",
+     "sign": "positive",
+     "desc": "maximum speed (at equilibrium)"
+    },
+    "X": {
+     "kind": "length",
+     "role": "amplitude",
+     "sign": "positive",
+     "desc": "amplitude"
+    },
+    "k": {
+     "kind": "spring_constant",
+     "role": "plain",
+     "sign": "positive",
+     "desc": "spring constant"
+    },
+    "m": {
+     "kind": "mass",
+     "role": "plain",
+     "sign": "positive",
+     "desc": "oscillating mass"
+    }
+   },
+   "assumptions": [
+    "undamped simple harmonic motion",
+    "an ideal massless spring"
+   ],
+   "requires": [
+    "shm"
+   ],
+   "excludes": [],
+   "frame": "any",
+   "applies_when": [
+    "a mass oscillating on a spring"
+   ],
+   "fails_when": [
+    "damped or driven motion"
+   ],
+   "conventions": [
+    "magnitudes"
+   ],
+   "certificate": "release/promotion_families/shm_max_speed.json",
+   "category": "fundamental_law"
+  },
+  {
+   "key": "intensity_power_area",
+   "family": "waves",
+   "name": "Intensity as power per area",
+   "equation": "I = P/A",
+   "symbols": {
+    "I": {
+     "kind": "intensity",
+     "role": "plain",
+     "sign": "positive",
+     "desc": "intensity"
+    },
+    "P": {
+     "kind": "power",
+     "role": "plain",
+     "sign": "positive",
+     "desc": "power crossing the area"
+    },
+    "A": {
+     "kind": "area",
+     "role": "plain",
+     "sign": "positive",
+     "desc": "area perpendicular to the flow of energy"
+    }
+   },
+   "assumptions": [
+    "power spread uniformly over the area"
+   ],
+   "requires": [
+    "radiation"
+   ],
+   "excludes": [],
+   "frame": "any",
+   "applies_when": [
+    "waves or radiation falling on a surface"
+   ],
+   "fails_when": [
+    "non-uniform beams"
+   ],
+   "conventions": [
+    "magnitudes"
+   ],
+   "certificate": "release/promotion_families/intensity_power_area.json",
+   "category": "definition",
+   "atlas_key": "intensity"
+  },
+  {
+   "key": "wavelength_in_medium",
+   "family": "optics",
+   "name": "Wavelength of light in a medium",
+   "equation": "lam_n = lam/n",
+   "symbols": {
+    "lam_n": {
+     "kind": "length",
+     "role": "wavelength_medium",
+     "sign": "positive",
+     "desc": "wavelength in the medium"
+    },
+    "lam": {
+     "kind": "length",
+     "role": "wavelength",
+     "sign": "positive",
+     "desc": "wavelength in vacuum"
+    },
+    "n": {
+     "kind": "refractive_index",
+     "role": "plain",
+     "sign": "positive",
+     "desc": "index of refraction"
+    }
+   },
+   "assumptions": [
+    "the frequency is unchanged across the boundary"
+   ],
+   "requires": [
+    "medium"
+   ],
+   "excludes": [],
+   "frame": "any",
+   "applies_when": [
+    "light entering a transparent medium"
+   ],
+   "fails_when": [
+    "absorbing media"
+   ],
+   "conventions": [
+    "magnitudes"
+   ],
+   "certificate": "release/promotion_families/wavelength_in_medium.json",
+   "category": "definition"
+  },
+  {
+   "key": "index_of_refraction",
+   "family": "optics",
+   "name": "Index of refraction",
+   "equation": "n = c/v",
+   "symbols": {
+    "n": {
+     "kind": "refractive_index",
+     "role": "plain",
+     "sign": "positive",
+     "desc": "index of refraction"
+    },
+    "c": {
+     "kind": "speed",
+     "role": "light",
+     "sign": "positive",
+     "default": {
+      "value": 299792458.0,
+      "unit": "m/s",
+      "unless": [],
+      "assumption": "the speed of light in vacuum c = 2.998e8 m/s"
+     }
+    },
+    "v": {
+     "kind": "speed",
+     "role": "medium",
+     "sign": "positive",
+     "desc": "speed of light in the medium"
+    }
+   },
+   "assumptions": [
+    "light in a transparent medium"
+   ],
+   "requires": [
+    "medium"
+   ],
+   "excludes": [],
+   "frame": "any",
+   "applies_when": [
+    "transparent materials"
+   ],
+   "fails_when": [
+    "absorbing media"
+   ],
+   "conventions": [
+    "magnitudes"
+   ],
+   "certificate": "release/promotion_families/index_of_refraction.json",
+   "category": "definition",
+   "atlas_key": "refractive_index"
+  },
+  {
+   "key": "mirror_focal_length",
+   "family": "optics",
+   "name": "Focal length of a spherical mirror",
+   "equation": "f = R/2",
+   "symbols": {
+    "f": {
+     "kind": "length",
+     "role": "focal",
+     "sign": "positive",
+     "desc": "focal length"
+    },
+    "R": {
+     "kind": "length",
+     "role": "curvature",
+     "sign": "positive",
+     "desc": "radius of curvature"
+    }
+   },
+   "assumptions": [
+    "paraxial rays"
+   ],
+   "requires": [
+    "mirror"
+   ],
+   "excludes": [],
+   "frame": "any",
+   "applies_when": [
+    "spherical mirrors with small apertures"
+   ],
+   "fails_when": [
+    "rays far from the axis"
+   ],
+   "conventions": [
+    "magnitudes"
+   ],
+   "certificate": "release/promotion_families/mirror_focal_length.json",
+   "category": "fundamental_law",
+   "atlas_key": "mirror_focal"
+  },
+  {
+   "key": "rms_voltage",
+   "family": "ac_circuits",
+   "name": "Rms voltage of a sinusoidal supply",
+   "equation": "Vrms = V0/sqrt(2)",
+   "symbols": {
+    "Vrms": {
+     "kind": "voltage",
+     "role": "rms",
+     "sign": "positive",
+     "desc": "rms voltage"
+    },
+    "V0": {
+     "kind": "voltage",
+     "role": "peak",
+     "sign": "positive",
+     "desc": "peak voltage"
+    }
+   },
+   "assumptions": [
+    "a sinusoidal waveform"
+   ],
+   "requires": [
+    "alternating_current"
+   ],
+   "excludes": [],
+   "frame": "any",
+   "applies_when": [
+    "sinusoidal AC"
+   ],
+   "fails_when": [
+    "square or other waveforms"
+   ],
+   "conventions": [
+    "magnitudes"
+   ],
+   "certificate": "release/promotion_families/rms_voltage.json",
+   "category": "definition"
+  },
+  {
+   "key": "rms_current",
+   "family": "ac_circuits",
+   "name": "Rms current of a sinusoidal supply",
+   "equation": "Irms = I0/sqrt(2)",
+   "symbols": {
+    "Irms": {
+     "kind": "current",
+     "role": "rms",
+     "sign": "positive",
+     "desc": "rms current"
+    },
+    "I0": {
+     "kind": "current",
+     "role": "peak",
+     "sign": "positive",
+     "desc": "peak current"
+    }
+   },
+   "assumptions": [
+    "a sinusoidal waveform"
+   ],
+   "requires": [
+    "alternating_current"
+   ],
+   "excludes": [],
+   "frame": "any",
+   "applies_when": [
+    "sinusoidal AC"
+   ],
+   "fails_when": [
+    "square or other waveforms"
+   ],
+   "conventions": [
+    "magnitudes"
+   ],
+   "certificate": "release/promotion_families/rms_current.json",
+   "category": "definition"
+  },
+  {
+   "key": "loop_center_field",
+   "family": "magnetism",
+   "name": "Magnetic field at the centre of a circular loop",
+   "equation": "B = mu0*I/(2*r)",
+   "symbols": {
+    "B": {
+     "kind": "magnetic_field",
+     "role": "plain",
+     "sign": "positive",
+     "desc": "field at the centre"
+    },
+    "I": {
+     "kind": "current",
+     "role": "plain",
+     "sign": "positive",
+     "desc": ""
+    },
+    "r": {
+     "kind": "length",
+     "role": "radius",
+     "sign": "positive",
+     "desc": "radius of the loop"
+    },
+    "mu0": {
+     "kind": "permeability",
+     "role": "constant",
+     "sign": "positive",
+     "default": {
+      "value": 1.25663706212e-06,
+      "unit": "T*m/A",
+      "unless": [],
+      "assumption": "the permeability of free space mu0 = 1.2566e-6 T*m/A (vacuum or air)"
+     }
+    }
+   },
+   "assumptions": [
+    "a single circular loop",
+    "vacuum or air"
+   ],
+   "requires": [
+    "loop"
+   ],
+   "excludes": [],
+   "frame": "any",
+   "applies_when": [
+    "the centre of a circular current loop"
+   ],
+   "fails_when": [
+    "points off the centre"
+   ],
+   "conventions": [
+    "magnitudes"
+   ],
+   "certificate": "release/promotion_families/loop_center_field.json",
+   "category": "fundamental_law",
+   "atlas_special_case": {
+    "Nt": "1"
+   }
+  },
+  {
+   "key": "rl_time_constant",
+   "family": "induction",
+   "name": "Time constant of an RL circuit",
+   "equation": "tau = L/R",
+   "symbols": {
+    "tau": {
+     "kind": "time",
+     "role": "time_constant",
+     "sign": "positive",
+     "desc": "time constant"
+    },
+    "L": {
+     "kind": "inductance",
+     "role": "plain",
+     "sign": "positive",
+     "desc": "inductance"
+    },
+    "R": {
+     "kind": "resistance",
+     "role": "plain",
+     "sign": "positive",
+     "desc": "resistance"
+    }
+   },
+   "assumptions": [
+    "a single inductor and resistor"
+   ],
+   "requires": [
+    "inductor"
+   ],
+   "excludes": [],
+   "frame": "any",
+   "applies_when": [
+    "an RL circuit switched on or off"
+   ],
+   "fails_when": [
+    "other elements present"
+   ],
+   "conventions": [
+    "magnitudes"
+   ],
+   "certificate": "release/promotion_families/rl_time_constant.json",
+   "category": "definition"
+  },
+  {
+   "key": "inductive_reactance",
+   "family": "ac_circuits",
+   "name": "Reactance of an inductor",
+   "equation": "X = 2*pi*f*L",
+   "symbols": {
+    "X": {
+     "kind": "resistance",
+     "role": "reactance",
+     "sign": "positive",
+     "desc": "inductive reactance"
+    },
+    "f": {
+     "kind": "frequency",
+     "role": "plain",
+     "sign": "positive",
+     "desc": ""
+    },
+    "L": {
+     "kind": "inductance",
+     "role": "plain",
+     "sign": "positive",
+     "desc": ""
+    }
+   },
+   "assumptions": [
+    "sinusoidal AC"
+   ],
+   "requires": [
+    "inductor"
+   ],
+   "excludes": [
+    "capacitor"
+   ],
+   "frame": "any",
+   "applies_when": [
+    "an inductor in an AC circuit"
+   ],
+   "fails_when": [
+    "DC"
+   ],
+   "conventions": [
+    "magnitudes"
+   ],
+   "certificate": "release/promotion_families/inductive_reactance.json",
+   "category": "definition"
+  },
+  {
+   "key": "capacitive_reactance",
+   "family": "ac_circuits",
+   "name": "Reactance of a capacitor",
+   "equation": "X = 1/(2*pi*f*C)",
+   "symbols": {
+    "X": {
+     "kind": "resistance",
+     "role": "reactance",
+     "sign": "positive",
+     "desc": "capacitive reactance"
+    },
+    "f": {
+     "kind": "frequency",
+     "role": "plain",
+     "sign": "positive",
+     "desc": ""
+    },
+    "C": {
+     "kind": "capacitance",
+     "role": "plain",
+     "sign": "positive",
+     "desc": ""
+    }
+   },
+   "assumptions": [
+    "sinusoidal AC"
+   ],
+   "requires": [
+    "capacitor"
+   ],
+   "excludes": [
+    "inductor"
+   ],
+   "frame": "any",
+   "applies_when": [
+    "a capacitor in an AC circuit"
+   ],
+   "fails_when": [
+    "DC"
+   ],
+   "conventions": [
+    "magnitudes"
+   ],
+   "certificate": "release/promotion_families/capacitive_reactance.json",
+   "category": "definition"
+  },
+  {
+   "key": "lc_resonance",
+   "family": "ac_circuits",
+   "name": "Resonant frequency of an LC circuit",
+   "equation": "f = 1/(2*pi*sqrt(L*C))",
+   "symbols": {
+    "f": {
+     "kind": "frequency",
+     "role": "resonant",
+     "sign": "positive",
+     "desc": "resonant frequency"
+    },
+    "L": {
+     "kind": "inductance",
+     "role": "plain",
+     "sign": "positive",
+     "desc": ""
+    },
+    "C": {
+     "kind": "capacitance",
+     "role": "plain",
+     "sign": "positive",
+     "desc": ""
+    }
+   },
+   "assumptions": [
+    "ideal components",
+    "negligible resistance for the frequency"
+   ],
+   "requires": [
+    "lc_circuit"
+   ],
+   "excludes": [],
+   "frame": "any",
+   "applies_when": [
+    "LC and series RLC circuits"
+   ],
+   "fails_when": [
+    "strong damping"
+   ],
+   "conventions": [
+    "magnitudes"
+   ],
+   "certificate": "release/promotion_families/lc_resonance.json",
+   "category": "fundamental_law",
+   "atlas_key": "resonant_frequency"
+  },
+  {
+   "key": "angular_velocity_time",
+   "family": "rotation",
+   "name": "Angular velocity under constant angular acceleration",
+   "equation": "omega = omega0 + alpha*t",
+   "symbols": {
+    "omega": {
+     "kind": "angular_frequency",
+     "role": "final",
+     "sign": "any",
+     "desc": "final angular velocity"
+    },
+    "omega0": {
+     "kind": "angular_frequency",
+     "role": "initial",
+     "sign": "any",
+     "desc": "initial angular velocity"
+    },
+    "alpha": {
+     "kind": "angular_acceleration",
+     "role": "plain",
+     "sign": "any",
+     "desc": "constant angular acceleration"
+    },
+    "t": {
+     "kind": "time",
+     "role": "plain",
+     "sign": "positive",
+     "desc": "elapsed time"
+    }
+   },
+   "assumptions": [
+    "constant angular acceleration",
+    "a fixed axis"
+   ],
+   "requires": [
+    "rotating"
+   ],
+   "excludes": [],
+   "frame": "any",
+   "applies_when": [
+    "a body spins up or down about a fixed axis"
+   ],
+   "fails_when": [
+    "the angular acceleration varies"
+   ],
+   "conventions": [
+    "magnitudes"
+   ],
+   "certificate": "release/promotion_families/angular_velocity_time.json",
+   "category": "definition",
+   "atlas_key": "rot_velocity_time"
+  },
+  {
+   "key": "angular_velocity_angle",
+   "family": "rotation",
+   "name": "Angular velocity and angle turned under constant angular acceleration",
+   "equation": "omega**2 = omega0**2 + 2*alpha*theta",
+   "symbols": {
+    "omega": {
+     "kind": "angular_frequency",
+     "role": "final",
+     "sign": "nonnegative",
+     "desc": "final angular speed"
+    },
+    "omega0": {
+     "kind": "angular_frequency",
+     "role": "initial",
+     "sign": "nonnegative",
+     "desc": "initial angular speed"
+    },
+    "alpha": {
+     "kind": "angular_acceleration",
+     "role": "plain",
+     "sign": "any",
+     "desc": "constant angular acceleration"
+    },
+    "theta": {
+     "kind": "angle",
+     "role": "angular_displacement",
+     "sign": "any",
+     "desc": "angle turned"
+    }
+   },
+   "assumptions": [
+    "constant angular acceleration",
+    "a fixed axis"
+   ],
+   "requires": [
+    "rotating"
+   ],
+   "excludes": [],
+   "frame": "any",
+   "applies_when": [
+    "a body spins up or down about a fixed axis"
+   ],
+   "fails_when": [
+    "the angular acceleration varies"
+   ],
+   "conventions": [
+    "magnitudes"
+   ],
+   "certificate": "release/promotion_families/angular_velocity_angle.json",
+   "category": "fundamental_law",
+   "atlas_key": "rot_velocity_angle"
+  },
+  {
+   "key": "engine_energy_balance",
+   "family": "thermal",
+   "name": "Energy balance of a cyclic heat engine",
+   "equation": "W = Qh - Qc",
+   "symbols": {
+    "W": {
+     "kind": "energy",
+     "role": "work",
+     "sign": "positive",
+     "desc": "net work output per cycle"
+    },
+    "Qh": {
+     "kind": "energy",
+     "role": "heat_hot",
+     "sign": "positive",
+     "desc": "heat in from the hot reservoir"
+    },
+    "Qc": {
+     "kind": "energy",
+     "role": "heat_cold",
+     "sign": "positive",
+     "desc": "heat out to the cold reservoir"
+    }
+   },
+   "assumptions": [
+    "a cyclic engine (no net change in internal energy)"
+   ],
+   "requires": [
+    "heat_engine"
+   ],
+   "excludes": [],
+   "frame": "any",
+   "applies_when": [
+    "a heat engine over whole cycles"
+   ],
+   "fails_when": [
+    "a single non-cyclic process"
+   ],
+   "conventions": [
+    "magnitudes"
+   ],
+   "certificate": "release/promotion_families/engine_energy_balance.json",
+   "category": "fundamental_law"
+  },
+  {
+   "key": "cop_refrigerator",
+   "family": "thermal",
+   "name": "Coefficient of performance of a refrigerator",
+   "equation": "cop = Qc/W",
+   "symbols": {
+    "cop": {
+     "kind": "efficiency",
+     "role": "cop",
+     "sign": "positive",
+     "desc": "coefficient of performance"
+    },
+    "Qc": {
+     "kind": "energy",
+     "role": "heat_cold",
+     "sign": "positive",
+     "desc": "heat removed from the cold space"
+    },
+    "W": {
+     "kind": "energy",
+     "role": "work",
+     "sign": "positive",
+     "desc": "work input"
+    }
+   },
+   "assumptions": [
+    "a cyclic refrigerator"
+   ],
+   "requires": [
+    "refrigerator"
+   ],
+   "excludes": [
+    "heat_pump"
+   ],
+   "frame": "any",
+   "applies_when": [
+    "refrigerators and air conditioners"
+   ],
+   "fails_when": [
+    "a heat pump (heat delivered is the benefit)"
+   ],
+   "conventions": [
+    "magnitudes"
+   ],
+   "certificate": "release/promotion_families/cop_refrigerator.json",
+   "category": "definition"
+  },
+  {
+   "key": "cop_heat_pump",
+   "family": "thermal",
+   "name": "Coefficient of performance of a heat pump",
+   "equation": "cop = Qh/W",
+   "symbols": {
+    "cop": {
+     "kind": "efficiency",
+     "role": "cop",
+     "sign": "positive",
+     "desc": "coefficient of performance"
+    },
+    "Qh": {
+     "kind": "energy",
+     "role": "heat_hot",
+     "sign": "positive",
+     "desc": "heat delivered to the warm space"
+    },
+    "W": {
+     "kind": "energy",
+     "role": "work",
+     "sign": "positive",
+     "desc": "work input"
+    }
+   },
+   "assumptions": [
+    "a cyclic heat pump"
+   ],
+   "requires": [
+    "heat_pump"
+   ],
+   "excludes": [
+    "refrigerator"
+   ],
+   "frame": "any",
+   "applies_when": [
+    "heat pumps heating a building"
+   ],
+   "fails_when": [
+    "a refrigerator"
+   ],
+   "conventions": [
+    "magnitudes"
+   ],
+   "certificate": "release/promotion_families/cop_heat_pump.json",
+   "category": "definition"
+  },
+  {
+   "key": "cyclotron_radius",
+   "family": "magnetism",
+   "name": "Radius of a charged particle's circle in a magnetic field",
+   "equation": "r = m*v/(q*B*sin(theta))",
+   "symbols": {
+    "r": {
+     "kind": "length",
+     "role": "radius",
+     "sign": "positive",
+     "desc": "radius of the circular path"
+    },
+    "m": {
+     "kind": "mass",
+     "role": "plain",
+     "sign": "positive",
+     "desc": "mass of the particle"
+    },
+    "v": {
+     "kind": "speed",
+     "role": "plain",
+     "sign": "positive",
+     "desc": "speed perpendicular to the field"
+    },
+    "q": {
+     "kind": "charge",
+     "role": "plain",
+     "sign": "positive",
+     "desc": "magnitude of the charge"
+    },
+    "B": {
+     "kind": "magnetic_field",
+     "role": "plain",
+     "sign": "positive",
+     "desc": "field strength"
+    },
+    "theta": {
+     "kind": "angle",
+     "role": "plain",
+     "sign": "positive",
+     "desc": "angle between the velocity and the field"
+    }
+   },
+   "assumptions": [
+    "a uniform field",
+    "non-relativistic speed",
+    "the path is the circle traced by the perpendicular velocity component"
+   ],
+   "requires": [
+    "magnetic",
+    "charged_particle"
+   ],
+   "excludes": [],
+   "frame": "any",
+   "applies_when": [
+    "a charged particle in a uniform magnetic field"
+   ],
+   "fails_when": [
+    "relativistic speeds or a velocity component along the field"
+   ],
+   "conventions": [
+    "magnitudes"
+   ],
+   "derived_from": [
+    "magnetic_force_charge",
+    "centripetal_force"
+   ],
+   "certificate": "release/promotion_families/cyclotron_radius.json",
+   "category": "derived",
+   "atlas_at": {
+    "theta": "pi/2"
+   }
+  },
+  {
+   "key": "rc_time_constant",
+   "family": "rc_circuits",
+   "name": "Time constant of an RC circuit",
+   "equation": "tau = R*C",
+   "symbols": {
+    "tau": {
+     "kind": "time",
+     "role": "time_constant",
+     "sign": "positive",
+     "desc": "time constant"
+    },
+    "R": {
+     "kind": "resistance",
+     "role": "plain",
+     "sign": "positive",
+     "desc": "resistance"
+    },
+    "C": {
+     "kind": "capacitance",
+     "role": "plain",
+     "sign": "positive",
+     "desc": "capacitance"
+    }
+   },
+   "assumptions": [
+    "a single resistor and capacitor"
+   ],
+   "requires": [
+    "rc_circuit"
+   ],
+   "excludes": [
+    "inductor"
+   ],
+   "frame": "any",
+   "applies_when": [
+    "an RC circuit charging or discharging"
+   ],
+   "fails_when": [
+    "other elements present"
+   ],
+   "conventions": [
+    "magnitudes"
+   ],
+   "certificate": "release/promotion_families/rc_time_constant.json",
+   "category": "definition"
+  },
+  {
+   "key": "rc_discharging",
+   "family": "rc_circuits",
+   "name": "Voltage of a discharging capacitor",
+   "equation": "V = V0*exp(-t/(R*C))",
+   "symbols": {
+    "V": {
+     "kind": "voltage",
+     "role": "capacitor",
+     "sign": "positive",
+     "desc": "voltage across the capacitor at time t"
+    },
+    "V0": {
+     "kind": "voltage",
+     "role": "initial",
+     "sign": "positive",
+     "desc": "initial voltage across the capacitor"
+    },
+    "t": {
+     "kind": "time",
+     "role": "plain",
+     "sign": "positive",
+     "desc": "time since the discharge began"
+    },
+    "R": {
+     "kind": "resistance",
+     "role": "plain",
+     "sign": "positive",
+     "desc": "resistance"
+    },
+    "C": {
+     "kind": "capacitance",
+     "role": "plain",
+     "sign": "positive",
+     "desc": "capacitance"
+    }
+   },
+   "assumptions": [
+    "a single resistor and capacitor",
+    "the discharge starts at t = 0"
+   ],
+   "requires": [
+    "rc_circuit",
+    "discharging"
+   ],
+   "excludes": [
+    "charging",
+    "inductor"
+   ],
+   "frame": "any",
+   "applies_when": [
+    "a charged capacitor discharging through a resistor"
+   ],
+   "fails_when": [
+    "a source keeps charging it"
+   ],
+   "conventions": [
+    "magnitudes"
+   ],
+   "certificate": "release/promotion_families/rc_discharging.json",
+   "category": "fundamental_law"
+  },
+  {
+   "key": "rc_charging",
+   "family": "rc_circuits",
+   "name": "Voltage of a charging capacitor",
+   "equation": "V = emf*(1 - exp(-t/(R*C)))",
+   "symbols": {
+    "V": {
+     "kind": "voltage",
+     "role": "capacitor",
+     "sign": "positive",
+     "desc": "voltage across the capacitor at time t"
+    },
+    "emf": {
+     "kind": "voltage",
+     "role": "emf",
+     "sign": "positive",
+     "desc": "emf of the source"
+    },
+    "t": {
+     "kind": "time",
+     "role": "plain",
+     "sign": "positive",
+     "desc": "time since charging began"
+    },
+    "R": {
+     "kind": "resistance",
+     "role": "plain",
+     "sign": "positive",
+     "desc": "resistance"
+    },
+    "C": {
+     "kind": "capacitance",
+     "role": "plain",
+     "sign": "positive",
+     "desc": "capacitance"
+    }
+   },
+   "assumptions": [
+    "a single resistor and capacitor",
+    "the capacitor is uncharged at t = 0"
+   ],
+   "requires": [
+    "rc_circuit",
+    "charging"
+   ],
+   "excludes": [
+    "discharging",
+    "inductor"
+   ],
+   "frame": "any",
+   "applies_when": [
+    "an uncharged capacitor charged through a resistor by a constant emf"
+   ],
+   "fails_when": [
+    "the capacitor starts charged"
+   ],
+   "conventions": [
+    "magnitudes"
+   ],
+   "certificate": "release/promotion_families/rc_charging.json",
+   "category": "fundamental_law"
+  },
+  {
+   "key": "area_expansion",
+   "family": "thermal",
+   "name": "Thermal expansion of an area",
+   "equation": "dA = 2*alpha_t*A*dT",
+   "symbols": {
+    "dA": {
+     "kind": "area",
+     "role": "expansion",
+     "sign": "any",
+     "desc": "change in area"
+    },
+    "alpha_t": {
+     "kind": "expansion_coefficient",
+     "role": "plain",
+     "sign": "positive",
+     "desc": "coefficient of linear expansion"
+    },
+    "A": {
+     "kind": "area",
+     "role": "original",
+     "sign": "positive",
+     "desc": "original area"
+    },
+    "dT": {
+     "kind": "temperature_difference",
+     "role": "plain",
+     "sign": "any",
+     "desc": "change in temperature"
+    }
+   },
+   "assumptions": [
+    "a small temperature change",
+    "an isotropic material",
+    "the coefficient constant over the range"
+   ],
+   "requires": [
+    "area_expansion"
+   ],
+   "excludes": [],
+   "frame": "any",
+   "applies_when": [
+    "flat solids over moderate temperature ranges"
+   ],
+   "fails_when": [
+    "phase changes",
+    "very large temperature ranges"
+   ],
+   "conventions": [
+    "a rise in temperature enlarges the area"
+   ],
+   "certificate": "release/promotion_families/area_expansion.json",
+   "category": "empirical"
+  },
+  {
+   "key": "motional_emf",
+   "family": "induction",
+   "name": "Emf of a rod moving through a magnetic field",
+   "equation": "emf = B*l*v",
+   "symbols": {
+    "emf": {
+     "kind": "voltage",
+     "role": "emf",
+     "sign": "positive",
+     "desc": "induced emf"
+    },
+    "B": {
+     "kind": "magnetic_field",
+     "role": "plain",
+     "sign": "positive",
+     "desc": "magnetic field"
+    },
+    "l": {
+     "kind": "length",
+     "role": "wire_length",
+     "sign": "positive",
+     "desc": "length of the rod"
+    },
+    "v": {
+     "kind": "speed",
+     "role": "plain",
+     "sign": "positive",
+     "desc": "speed of the rod"
+    }
+   },
+   "assumptions": [
+    "B, the rod and its velocity mutually perpendicular",
+    "a uniform field"
+   ],
+   "requires": [
+    "moving_rod"
+   ],
+   "excludes": [],
+   "frame": "any",
+   "applies_when": [
+    "a straight rod moving through a uniform magnetic field"
+   ],
+   "fails_when": [
+    "the motion is not perpendicular"
+   ],
+   "conventions": [
+    "magnitudes"
+   ],
+   "certificate": "release/promotion_families/motional_emf.json",
+   "category": "fundamental_law"
+  },
+  {
+   "key": "rl_current_decay",
+   "family": "induction",
+   "name": "Current dying away in an RL circuit",
+   "equation": "I = I0*exp(-t/tau)",
+   "symbols": {
+    "I": {
+     "kind": "current",
+     "role": "plain",
+     "sign": "positive",
+     "desc": "current at time t"
+    },
+    "I0": {
+     "kind": "current",
+     "role": "initial",
+     "sign": "positive",
+     "desc": "initial current"
+    },
+    "t": {
+     "kind": "time",
+     "role": "plain",
+     "sign": "positive",
+     "desc": "time since the circuit was switched off"
+    },
+    "tau": {
+     "kind": "time",
+     "role": "time_constant",
+     "sign": "positive",
+     "desc": "time constant"
+    }
+   },
+   "assumptions": [
+    "a single inductor and resistor",
+    "the source is removed at t = 0"
+   ],
+   "requires": [
+    "inductor",
+    "current_decay"
+   ],
+   "excludes": [],
+   "frame": "any",
+   "applies_when": [
+    "an RL circuit after the source is switched off"
+   ],
+   "fails_when": [
+    "the source is still connected"
+   ],
+   "conventions": [
+    "magnitudes"
+   ],
+   "certificate": "release/promotion_families/rl_current_decay.json",
+   "category": "fundamental_law",
+   "atlas_at": {
+    "tau": "L/R"
+   }
+  }
+ ]
+}

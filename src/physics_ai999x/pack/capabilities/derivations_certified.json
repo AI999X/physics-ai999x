@@ -1,0 +1,1252 @@
+{
+ "domain": "physics",
+ "generated": "2026-10-16",
+ "tool": "tools/certify_derivations.py",
+ "derivations": [
+  {
+   "id": "acceleration_with_friction_level",
+   "kind": "derivation",
+   "title": "acceleration with friction level",
+   "equation": "a = (P - mu*W)/m",
+   "topic": null,
+   "hypotheses": [],
+   "premises": [
+    {
+     "equation": "N = W",
+     "is": "relation:normal_on_level"
+    },
+    {
+     "equation": "f = mu*N",
+     "is": "relation:kinetic_friction"
+    },
+    {
+     "equation": "F = P - f",
+     "is": "relation:net_force_friction"
+    },
+    {
+     "equation": "F = m*a",
+     "is": "relation:newton_second"
+    }
+   ],
+   "steps": [
+    {
+     "equation": "f = mu*W",
+     "reason": "substitute the normal force from the first premise into the second premise"
+    },
+    {
+     "equation": "F = P - mu*W",
+     "reason": "substitute the friction force from the previous step into the third premise"
+    },
+    {
+     "equation": "m*a = P - mu*W",
+     "reason": "equate the net force expressions from the fourth and previous steps"
+    },
+    {
+     "equation": "a = (P - mu*W)/m",
+     "reason": "divide by mass to solve for acceleration"
+    }
+   ],
+   "conditions": [],
+   "questions": [
+    "Prove that a = (P - mu*W)/m.",
+    "Derive a = (P - mu*W)/m.",
+    "Show that a = (P - mu*W)/m.",
+    "Prove the acceleration with friction level."
+   ],
+   "record": "derivation.acceleration_with_friction_level",
+   "run": "physics-batch-1",
+   "certificate": {
+    "gates": {
+     "steps": true,
+     "result": true,
+     "premises": true,
+     "control": true,
+     "wording": true
+    },
+    "date": "2026-10-16",
+    "tool": "tools/certify_derivations.py"
+   }
+  },
+  {
+   "id": "angular_acceleration_from_tangential",
+   "kind": "derivation",
+   "title": "angular acceleration from tangential",
+   "equation": "alpha = at / r",
+   "topic": null,
+   "hypotheses": [],
+   "premises": [
+    {
+     "equation": "at = r * alpha",
+     "is": "relation:tangential_acceleration"
+    }
+   ],
+   "steps": [
+    {
+     "equation": "alpha = at / r",
+     "reason": "solve for angular acceleration by dividing both sides by radius r"
+    }
+   ],
+   "conditions": [],
+   "questions": [
+    "Prove that alpha = at / r.",
+    "Derive alpha = at / r.",
+    "Show that alpha = at / r.",
+    "Prove the angular acceleration from tangential."
+   ],
+   "record": "derivation.angular_acceleration_from_tangential",
+   "run": "physics-atlas-1",
+   "certificate": {
+    "gates": {
+     "steps": true,
+     "result": true,
+     "premises": true,
+     "control": true,
+     "wording": true
+    },
+    "date": "2026-10-16",
+    "tool": "tools/certify_derivations.py"
+   }
+  },
+  {
+   "id": "centripetal_acceleration_from_period",
+   "kind": "derivation",
+   "title": "centripetal acceleration from period",
+   "equation": "a = 4*pi**2*r/T**2",
+   "topic": null,
+   "hypotheses": [],
+   "premises": [
+    {
+     "equation": "a = v**2/r",
+     "is": "relation:centripetal_acceleration"
+    },
+    {
+     "equation": "v = omega*r",
+     "is": "relation:tangential_speed"
+    },
+    {
+     "equation": "T = 1/f",
+     "is": "relation:period_frequency"
+    },
+    {
+     "equation": "omega = 2*pi*f",
+     "is": "relation:angular_frequency"
+    }
+   ],
+   "steps": [
+    {
+     "equation": "f = 1/T",
+     "reason": "solve the period-frequency relation for frequency"
+    },
+    {
+     "equation": "omega = 2*pi*(1/T)",
+     "reason": "substitute f into the angular frequency equation"
+    },
+    {
+     "equation": "v = (2*pi/T)*r",
+     "reason": "substitute omega into the tangential speed equation"
+    },
+    {
+     "equation": "a = ((2*pi*r)/T)**2 / r",
+     "reason": "substitute v into the centripetal acceleration equation"
+    },
+    {
+     "equation": "a = (4*pi**2*r**2/T**2) / r",
+     "reason": "expand the square in the numerator"
+    },
+    {
+     "equation": "a = 4*pi**2*r/T**2",
+     "reason": "cancel one factor of r from numerator and denominator"
+    }
+   ],
+   "conditions": [],
+   "questions": [
+    "Prove that a = 4*pi**2*r/T**2.",
+    "Derive a = 4*pi**2*r/T**2.",
+    "Show that a = 4*pi**2*r/T**2.",
+    "Prove the centripetal acceleration from period."
+   ],
+   "record": "derivation.centripetal_acceleration_from_period",
+   "run": "physics-batch-1",
+   "certificate": {
+    "gates": {
+     "steps": true,
+     "result": true,
+     "premises": true,
+     "control": true,
+     "wording": true
+    },
+    "date": "2026-10-16",
+    "tool": "tools/certify_derivations.py"
+   }
+  },
+  {
+   "id": "displacement_from_velocity_time",
+   "kind": "derivation",
+   "title": "displacement from velocity time",
+   "equation": "x = (v0 + v)*t/2",
+   "topic": null,
+   "hypotheses": [],
+   "premises": [
+    {
+     "equation": "v = v0 + a*t",
+     "is": "relation:velocity_time"
+    },
+    {
+     "equation": "x = v0*t + a*t**2/2",
+     "is": "relation:displacement_time"
+    }
+   ],
+   "steps": [
+    {
+     "equation": "a = (v - v0)/t",
+     "reason": "solve the first premise for acceleration"
+    },
+    {
+     "equation": "x = v0*t + ((v - v0)/t)*t**2/2",
+     "reason": "substitute the expression for a into the second premise"
+    },
+    {
+     "equation": "x = v0*t + (v - v0)*t/2",
+     "reason": "simplify the term with t**2/t to t"
+    },
+    {
+     "equation": "x = 2*v0*t/2 + v*t/2 - v0*t/2",
+     "reason": "distribute t/2 and write v0*t as 2*v0*t/2"
+    },
+    {
+     "equation": "x = (v0*t + v*t)/2",
+     "reason": "combine like terms in the numerator"
+    },
+    {
+     "equation": "x = (v0 + v)*t/2",
+     "reason": "factor out t in the numerator"
+    }
+   ],
+   "conditions": [],
+   "questions": [
+    "Prove that x = (v0 + v)*t/2.",
+    "Derive x = (v0 + v)*t/2.",
+    "Show that x = (v0 + v)*t/2.",
+    "Prove the displacement from velocity time."
+   ],
+   "record": "derivation.displacement_from_velocity_time",
+   "run": "physics-batch-1",
+   "certificate": {
+    "gates": {
+     "steps": true,
+     "result": true,
+     "premises": true,
+     "control": true,
+     "wording": true
+    },
+    "date": "2026-10-16",
+    "tool": "tools/certify_derivations.py"
+   }
+  },
+  {
+   "id": "distance_fallen_time",
+   "kind": "derivation",
+   "title": "distance fallen time",
+   "equation": "d = g*t**2/2",
+   "topic": null,
+   "hypotheses": [
+    "v0 = 0"
+   ],
+   "premises": [
+    {
+     "equation": "x = v0*t + a*t**2/2",
+     "is": "relation:displacement_time"
+    },
+    {
+     "equation": "a = g",
+     "is": "definition"
+    },
+    {
+     "equation": "x = d",
+     "is": "definition"
+    },
+    {
+     "equation": "v0 = 0",
+     "is": "condition"
+    }
+   ],
+   "steps": [
+    {
+     "equation": "d = 0*t + g*t**2/2",
+     "reason": "substitute initial speed, acceleration, and displacement variable"
+    },
+    {
+     "equation": "d = g*t**2/2",
+     "reason": "simplify multiplication by zero"
+    }
+   ],
+   "conditions": [
+    "v0 = 0"
+   ],
+   "questions": [
+    "Prove that if v0 = 0 then d = g*t**2/2.",
+    "Given v0 = 0, show that d = g*t**2/2.",
+    "Given v0 = 0, derive d = g*t**2/2."
+   ],
+   "record": "derivation.distance_fallen_time",
+   "run": "physics-batch-1",
+   "certificate": {
+    "gates": {
+     "steps": true,
+     "result": true,
+     "premises": true,
+     "control": true,
+     "wording": true
+    },
+    "date": "2026-10-16",
+    "tool": "tools/certify_derivations.py"
+   }
+  },
+  {
+   "id": "final_speed_from_work",
+   "kind": "derivation",
+   "title": "final speed from work",
+   "equation": "v_f = sqrt(v_i**2 + 2*W_net/m)",
+   "topic": null,
+   "hypotheses": [],
+   "premises": [
+    {
+     "equation": "W_net = (1/2)*m*v_f**2 - (1/2)*m*v_i**2",
+     "is": "relation:net_work_kinetic_energy"
+    }
+   ],
+   "steps": [
+    {
+     "equation": "W_net = (1/2)*m*(v_f**2 - v_i**2)",
+     "reason": "factor out half mass"
+    },
+    {
+     "equation": "2*W_net/m = v_f**2 - v_i**2",
+     "reason": "multiply by 2 and divide by m"
+    },
+    {
+     "equation": "v_f**2 = v_i**2 + 2*W_net/m",
+     "reason": "add initial kinetic energy term to both sides"
+    },
+    {
+     "equation": "v_f = sqrt(v_i**2 + 2*W_net/m)",
+     "reason": "take the square root for positive speed"
+    }
+   ],
+   "conditions": [],
+   "questions": [
+    "Prove that v_f = sqrt(v_i**2 + 2*W_net/m).",
+    "Derive v_f = sqrt(v_i**2 + 2*W_net/m).",
+    "Show that v_f = sqrt(v_i**2 + 2*W_net/m).",
+    "Prove the final speed from work."
+   ],
+   "record": "derivation.final_speed_from_work",
+   "run": "physics-batch-1",
+   "certificate": {
+    "gates": {
+     "steps": true,
+     "result": true,
+     "premises": true,
+     "control": true,
+     "wording": true
+    },
+    "date": "2026-10-16",
+    "tool": "tools/certify_derivations.py"
+   }
+  },
+  {
+   "id": "max_height_from_velocity_displacement",
+   "kind": "derivation",
+   "title": "max height from velocity displacement",
+   "equation": "h = v0**2/(2*g)",
+   "topic": null,
+   "hypotheses": [
+    "v = 0"
+   ],
+   "premises": [
+    {
+     "equation": "v**2 = v0**2 + 2*a*x",
+     "is": "relation:velocity_displacement"
+    },
+    {
+     "equation": "a = -g",
+     "is": "definition"
+    },
+    {
+     "equation": "x = h",
+     "is": "definition"
+    },
+    {
+     "equation": "v = 0",
+     "is": "condition"
+    }
+   ],
+   "steps": [
+    {
+     "equation": "0**2 = v0**2 + 2*(-g)*h",
+     "reason": "substitute the condition, acceleration, and displacement into the kinematic equation"
+    },
+    {
+     "equation": "0 = v0**2 - 2*g*h",
+     "reason": "simplify the left side and multiply terms on the right"
+    },
+    {
+     "equation": "2*g*h = v0**2",
+     "reason": "add 2*g*h to both sides"
+    },
+    {
+     "equation": "h = v0**2/(2*g)",
+     "reason": "divide by 2*g"
+    }
+   ],
+   "conditions": [
+    "v = 0"
+   ],
+   "questions": [
+    "Prove that if v = 0 then h = v0**2/(2*g).",
+    "Given v = 0, show that h = v0**2/(2*g).",
+    "Given v = 0, derive h = v0**2/(2*g)."
+   ],
+   "record": "derivation.max_height_from_velocity_displacement",
+   "run": "physics-batch-1",
+   "certificate": {
+    "gates": {
+     "steps": true,
+     "result": true,
+     "premises": true,
+     "control": true,
+     "wording": true
+    },
+    "date": "2026-10-16",
+    "tool": "tools/certify_derivations.py"
+   }
+  },
+  {
+   "id": "net_work_to_speed",
+   "kind": "derivation",
+   "title": "net work to speed",
+   "equation": "v = sqrt(v0**2 + 2*W_net/m)",
+   "topic": null,
+   "hypotheses": [],
+   "premises": [
+    {
+     "equation": "W_net = m*(v**2 - v0**2)/2",
+     "is": "relation:net_work_kinetic_energy"
+    }
+   ],
+   "steps": [
+    {
+     "equation": "2*W_net = m*v**2 - m*v0**2",
+     "reason": "multiply both sides by 2"
+    },
+    {
+     "equation": "m*v**2 = 2*W_net + m*v0**2",
+     "reason": "add m*v0**2 to both sides"
+    },
+    {
+     "equation": "v**2 = (2*W_net)/m + v0**2",
+     "reason": "divide by mass m"
+    },
+    {
+     "equation": "v = sqrt(v0**2 + 2*W_net/m)",
+     "reason": "take the square root of both sides"
+    }
+   ],
+   "conditions": [],
+   "questions": [
+    "Prove that v = sqrt(v0**2 + 2*W_net/m).",
+    "Derive v = sqrt(v0**2 + 2*W_net/m).",
+    "Show that v = sqrt(v0**2 + 2*W_net/m).",
+    "Prove the net work to speed."
+   ],
+   "record": "derivation.net_work_to_speed",
+   "run": "physics-pilot-2-as-batch",
+   "certificate": {
+    "gates": {
+     "steps": true,
+     "result": true,
+     "premises": true,
+     "control": true,
+     "wording": true
+    },
+    "date": "2026-10-16",
+    "tool": "tools/certify_derivations.py"
+   }
+  },
+  {
+   "id": "period_from_wave_speed",
+   "kind": "derivation",
+   "title": "period from wave speed",
+   "equation": "T = lam / v",
+   "topic": null,
+   "hypotheses": [],
+   "premises": [
+    {
+     "equation": "v = f*lam",
+     "is": "relation:wave_speed"
+    },
+    {
+     "equation": "T = 1/f",
+     "is": "relation:period_frequency"
+    }
+   ],
+   "steps": [
+    {
+     "equation": "f = v / lam",
+     "reason": "solve the first premise for frequency"
+    },
+    {
+     "equation": "T = 1 / (v / lam)",
+     "reason": "put that frequency into the second premise"
+    },
+    {
+     "equation": "T = lam / v",
+     "reason": "simplify the complex fraction"
+    }
+   ],
+   "conditions": [],
+   "questions": [
+    "Prove that T = lam / v.",
+    "Derive T = lam / v.",
+    "Show that T = lam / v.",
+    "Prove the period from wave speed."
+   ],
+   "record": "derivation.period_from_wave_speed",
+   "run": "physics-batch-1",
+   "certificate": {
+    "gates": {
+     "steps": true,
+     "result": true,
+     "premises": true,
+     "control": true,
+     "wording": true
+    },
+    "date": "2026-10-16",
+    "tool": "tools/certify_derivations.py"
+   }
+  },
+  {
+   "id": "power_from_voltage_and_resistance",
+   "kind": "derivation",
+   "title": "power from voltage and resistance",
+   "equation": "P = V**2 / R",
+   "topic": null,
+   "hypotheses": [],
+   "premises": [
+    {
+     "equation": "P = V*I",
+     "is": "relation:electric_power"
+    },
+    {
+     "equation": "V = I*R",
+     "is": "relation:ohm"
+    }
+   ],
+   "steps": [
+    {
+     "equation": "I = V/R",
+     "reason": "solve the second premise for current"
+    },
+    {
+     "equation": "P = V*(V/R)",
+     "reason": "substitute that expression for current into the first premise"
+    },
+    {
+     "equation": "P = V**2 / R",
+     "reason": "multiply the terms"
+    }
+   ],
+   "conditions": [],
+   "questions": [
+    "Prove that P = V**2 / R.",
+    "Derive P = V**2 / R.",
+    "Show that P = V**2 / R.",
+    "Prove the power from voltage and resistance."
+   ],
+   "record": "derivation.power_from_voltage_and_resistance",
+   "run": "physics-batch-1",
+   "certificate": {
+    "gates": {
+     "steps": true,
+     "result": true,
+     "premises": true,
+     "control": true,
+     "wording": true
+    },
+    "date": "2026-10-16",
+    "tool": "tools/certify_derivations.py"
+   }
+  },
+  {
+   "id": "solve_for_g",
+   "kind": "derivation",
+   "title": "solve for g",
+   "equation": "g = 4*pi**2*L/T**2",
+   "topic": null,
+   "hypotheses": [],
+   "premises": [
+    {
+     "equation": "T = 2*pi*sqrt(L/g)",
+     "is": "relation:pendulum_period"
+    }
+   ],
+   "steps": [
+    {
+     "equation": "T/(2*pi) = sqrt(L/g)",
+     "reason": "divide both sides by 2*pi"
+    },
+    {
+     "equation": "(T/(2*pi))**2 = L/g",
+     "reason": "square both sides"
+    },
+    {
+     "equation": "T**2/(4*pi**2) = L/g",
+     "reason": "expand the square on the left side"
+    },
+    {
+     "equation": "g*T**2/(4*pi**2) = L",
+     "reason": "multiply both sides by g"
+    },
+    {
+     "equation": "g = 4*pi**2*L/T**2",
+     "reason": "isolate g by multiplying by 4*pi**2 and dividing by T**2"
+    }
+   ],
+   "conditions": [],
+   "questions": [
+    "Prove that g = 4*pi**2*L/T**2.",
+    "Derive g = 4*pi**2*L/T**2.",
+    "Show that g = 4*pi**2*L/T**2.",
+    "Prove the solve for g."
+   ],
+   "record": "derivation.solve_for_g",
+   "run": "physics-atlas-1",
+   "certificate": {
+    "gates": {
+     "steps": true,
+     "result": true,
+     "premises": true,
+     "control": true,
+     "wording": true
+    },
+    "date": "2026-10-16",
+    "tool": "tools/certify_derivations.py"
+   }
+  },
+  {
+   "id": "speed_after_height",
+   "kind": "derivation",
+   "title": "speed after height",
+   "equation": "v = sqrt(2*g*h)",
+   "topic": null,
+   "hypotheses": [
+    "v0 = 0"
+   ],
+   "premises": [
+    {
+     "equation": "v**2 = v0**2 + 2*a*x",
+     "is": "relation:velocity_displacement"
+    },
+    {
+     "equation": "a = g",
+     "is": "definition"
+    },
+    {
+     "equation": "x = h",
+     "is": "definition"
+    },
+    {
+     "equation": "v0 = 0",
+     "is": "condition"
+    }
+   ],
+   "steps": [
+    {
+     "equation": "v**2 = 0 + 2*g*h",
+     "reason": "substitute the assumed initial speed and defined acceleration and displacement into the premise"
+    },
+    {
+     "equation": "v**2 = 2*g*h",
+     "reason": "simplify the addition of zero"
+    },
+    {
+     "equation": "v = sqrt(2*g*h)",
+     "reason": "take the positive square root for final speed"
+    }
+   ],
+   "conditions": [
+    "v0 = 0"
+   ],
+   "questions": [
+    "Prove that if v0 = 0 then v = sqrt(2*g*h).",
+    "Given v0 = 0, show that v = sqrt(2*g*h).",
+    "Given v0 = 0, derive v = sqrt(2*g*h)."
+   ],
+   "record": "derivation.speed_after_height",
+   "run": "physics-batch-1",
+   "certificate": {
+    "gates": {
+     "steps": true,
+     "result": true,
+     "premises": true,
+     "control": true,
+     "wording": true
+    },
+    "date": "2026-10-16",
+    "tool": "tools/certify_derivations.py"
+   }
+  },
+  {
+   "id": "speed_after_time_dropped",
+   "kind": "derivation",
+   "title": "speed after time dropped",
+   "equation": "v = g*t",
+   "topic": null,
+   "hypotheses": [
+    "v0 = 0"
+   ],
+   "premises": [
+    {
+     "equation": "v = v0 + a*t",
+     "is": "relation:velocity_time"
+    },
+    {
+     "equation": "a = g",
+     "is": "definition"
+    },
+    {
+     "equation": "v0 = 0",
+     "is": "condition"
+    }
+   ],
+   "steps": [
+    {
+     "equation": "v = 0 + g*t",
+     "reason": "substitute initial speed and acceleration into velocity equation"
+    },
+    {
+     "equation": "v = g*t",
+     "reason": "simplify addition"
+    }
+   ],
+   "conditions": [
+    "v0 = 0"
+   ],
+   "questions": [
+    "Prove that if v0 = 0 then v = g*t.",
+    "Given v0 = 0, show that v = g*t.",
+    "Given v0 = 0, derive v = g*t."
+   ],
+   "record": "derivation.speed_after_time_dropped",
+   "run": "physics-batch-1",
+   "certificate": {
+    "gates": {
+     "steps": true,
+     "result": true,
+     "premises": true,
+     "control": true,
+     "wording": true
+    },
+    "date": "2026-10-16",
+    "tool": "tools/certify_derivations.py"
+   }
+  },
+  {
+   "id": "speed_from_uniform_motion",
+   "kind": "derivation",
+   "title": "speed from uniform motion",
+   "equation": "v = d/t",
+   "topic": null,
+   "hypotheses": [],
+   "premises": [
+    {
+     "equation": "d = v*t",
+     "is": "relation:uniform_motion"
+    }
+   ],
+   "steps": [
+    {
+     "equation": "t*v = d",
+     "reason": "commute the product on the right side of the premise"
+    },
+    {
+     "equation": "v = d/t",
+     "reason": "divide both sides by time t"
+    }
+   ],
+   "conditions": [],
+   "questions": [
+    "Prove that v = d/t.",
+    "Derive v = d/t.",
+    "Show that v = d/t.",
+    "Prove the speed from uniform motion."
+   ],
+   "record": "derivation.speed_from_uniform_motion",
+   "run": "physics-batch-1",
+   "certificate": {
+    "gates": {
+     "steps": true,
+     "result": true,
+     "premises": true,
+     "control": true,
+     "wording": true
+    },
+    "date": "2026-10-16",
+    "tool": "tools/certify_derivations.py"
+   }
+  },
+  {
+   "id": "time_to_stop",
+   "kind": "derivation",
+   "title": "time to stop",
+   "equation": "t = -v0/a",
+   "topic": null,
+   "hypotheses": [
+    "v = 0"
+   ],
+   "premises": [
+    {
+     "equation": "v = v0 + a*t",
+     "is": "relation:velocity_time"
+    },
+    {
+     "equation": "v = 0",
+     "is": "condition"
+    }
+   ],
+   "steps": [
+    {
+     "equation": "0 = v0 + a*t",
+     "reason": "substitute the assumed final velocity into the premise"
+    },
+    {
+     "equation": "a*t = -v0",
+     "reason": "subtract v0 from both sides"
+    },
+    {
+     "equation": "t = -v0/a",
+     "reason": "divide by acceleration"
+    }
+   ],
+   "conditions": [
+    "v = 0"
+   ],
+   "questions": [
+    "Prove that if v = 0 then t = -v0/a.",
+    "Given v = 0, show that t = -v0/a.",
+    "Given v = 0, derive t = -v0/a."
+   ],
+   "record": "derivation.time_to_stop",
+   "run": "physics-batch-1",
+   "certificate": {
+    "gates": {
+     "steps": true,
+     "result": true,
+     "premises": true,
+     "control": true,
+     "wording": true
+    },
+    "date": "2026-10-16",
+    "tool": "tools/certify_derivations.py"
+   }
+  },
+  {
+   "id": "work_to_speed_rest",
+   "kind": "derivation",
+   "title": "work to speed rest",
+   "equation": "v = sqrt(2*W/m)",
+   "topic": null,
+   "hypotheses": [
+    "v0 = 0"
+   ],
+   "premises": [
+    {
+     "equation": "W = m*(v**2 - v0**2)/2",
+     "is": "relation:net_work_kinetic_energy"
+    },
+    {
+     "equation": "v0 = 0",
+     "is": "condition"
+    }
+   ],
+   "steps": [
+    {
+     "equation": "W = m*v**2/2",
+     "reason": "substitute the assumed initial speed into the premise"
+    },
+    {
+     "equation": "v**2 = 2*W/m",
+     "reason": "multiply both sides by 2 and divide by mass"
+    },
+    {
+     "equation": "v = sqrt(2*W/m)",
+     "reason": "take the square root of both sides"
+    }
+   ],
+   "conditions": [
+    "v0 = 0"
+   ],
+   "questions": [
+    "Prove that if v0 = 0 then v = sqrt(2*W/m).",
+    "Given v0 = 0, show that v = sqrt(2*W/m).",
+    "Given v0 = 0, derive v = sqrt(2*W/m)."
+   ],
+   "record": "derivation.work_to_speed_rest",
+   "run": "physics-batch-1",
+   "certificate": {
+    "gates": {
+     "steps": true,
+     "result": true,
+     "premises": true,
+     "control": true,
+     "wording": true
+    },
+    "date": "2026-10-16",
+    "tool": "tools/certify_derivations.py"
+   }
+  },
+  {
+   "id": "angular_frequency_period",
+   "kind": "proof",
+   "title": "angular frequency period",
+   "equation": "omega * T = 2*pi",
+   "topic": null,
+   "hypotheses": [],
+   "premises": [
+    {
+     "equation": "omega = 2*pi*f",
+     "is": "relation:angular_frequency"
+    },
+    {
+     "equation": "T = 1/f",
+     "is": "relation:period_frequency"
+    }
+   ],
+   "steps": [
+    {
+     "equation": "omega * T = (2*pi*f) * (1/f)",
+     "reason": "multiply the two premises together"
+    },
+    {
+     "equation": "omega * T = 2*pi * (f/f)",
+     "reason": "group terms"
+    },
+    {
+     "equation": "omega * T = 2*pi",
+     "reason": "cancel f/f to 1"
+    }
+   ],
+   "conditions": [],
+   "questions": [
+    "Prove that omega * T = 2*pi.",
+    "Derive omega * T = 2*pi.",
+    "Show that omega * T = 2*pi.",
+    "Prove the angular frequency period."
+   ],
+   "record": "proof.angular_frequency_period_proof",
+   "run": "physics-batch-1",
+   "certificate": {
+    "gates": {
+     "steps": true,
+     "result": true,
+     "premises": true,
+     "control": true,
+     "wording": true
+    },
+    "date": "2026-10-16",
+    "tool": "tools/certify_derivations.py"
+   }
+  },
+  {
+   "id": "average_speed_equal_instantaneous",
+   "kind": "proof",
+   "title": "average speed equal instantaneous",
+   "equation": "v_avg = v",
+   "topic": null,
+   "hypotheses": [],
+   "premises": [
+    {
+     "equation": "v_avg = d_total / t_total",
+     "is": "relation:uniform_motion"
+    },
+    {
+     "equation": "d_total = v * t_total",
+     "is": "relation:uniform_motion"
+    }
+   ],
+   "steps": [
+    {
+     "equation": "v_avg = (v * t_total) / t_total",
+     "reason": "substitute the expression for total distance into the definition of average speed"
+    },
+    {
+     "equation": "v_avg = v",
+     "reason": "cancel t_total from numerator and denominator"
+    }
+   ],
+   "conditions": [],
+   "questions": [
+    "Prove that v_avg = v.",
+    "Derive v_avg = v.",
+    "Show that v_avg = v.",
+    "Prove the average speed equal instantaneous."
+   ],
+   "record": "proof.average_speed_equal_instantaneous_proof",
+   "run": "physics-batch-1",
+   "certificate": {
+    "gates": {
+     "steps": true,
+     "result": true,
+     "premises": true,
+     "control": true,
+     "wording": true
+    },
+    "date": "2026-10-16",
+    "tool": "tools/certify_derivations.py"
+   }
+  },
+  {
+   "id": "dielectric_increases_capacitance",
+   "kind": "proof",
+   "title": "dielectric increases capacitance",
+   "equation": "C_d = K * C_0",
+   "topic": null,
+   "hypotheses": [],
+   "premises": [
+    {
+     "equation": "C_0 = epsilon_0 * A / d",
+     "is": "relation:parallel_plate_capacitor"
+    },
+    {
+     "equation": "C_d = epsilon * A / d",
+     "is": "relation:parallel_plate_capacitor"
+    },
+    {
+     "equation": "K = epsilon / epsilon_0",
+     "is": "definition"
+    }
+   ],
+   "steps": [
+    {
+     "equation": "epsilon = K * epsilon_0",
+     "reason": "rearrange definition of dielectric constant"
+    },
+    {
+     "equation": "C_d = (K * epsilon_0) * A / d",
+     "reason": "substitute epsilon into dielectric capacitance equation"
+    },
+    {
+     "equation": "C_d = K * (epsilon_0 * A / d)",
+     "reason": "factor out K"
+    },
+    {
+     "equation": "C_d = K * C_0",
+     "reason": "substitute vacuum capacitance definition"
+    }
+   ],
+   "conditions": [],
+   "questions": [
+    "Prove that C_d = K * C_0.",
+    "Derive C_d = K * C_0.",
+    "Show that C_d = K * C_0.",
+    "Prove the dielectric increases capacitance."
+   ],
+   "record": "proof.dielectric_increases_capacitance_proof",
+   "run": "physics-atlas-1",
+   "certificate": {
+    "gates": {
+     "steps": true,
+     "result": true,
+     "premises": true,
+     "control": true,
+     "wording": true
+    },
+    "date": "2026-10-16",
+    "tool": "tools/certify_derivations.py"
+   }
+  },
+  {
+   "id": "energy_via_resistance",
+   "kind": "proof",
+   "title": "energy via resistance",
+   "equation": "E = (V**2 * t) / R",
+   "topic": null,
+   "hypotheses": [],
+   "premises": [
+    {
+     "equation": "E = P*t",
+     "is": "relation:power_energy"
+    },
+    {
+     "equation": "P = V**2 / R",
+     "is": "relation:ohm_power_voltage"
+    }
+   ],
+   "steps": [
+    {
+     "equation": "E = (V**2 / R)*t",
+     "reason": "substitute the power equation into the energy equation"
+    },
+    {
+     "equation": "E = (V**2 * t) / R",
+     "reason": "rearrange terms to group numerator and denominator"
+    }
+   ],
+   "conditions": [],
+   "questions": [
+    "Prove that E = (V**2 * t) / R.",
+    "Derive E = (V**2 * t) / R.",
+    "Show that E = (V**2 * t) / R.",
+    "Prove the energy via resistance."
+   ],
+   "record": "proof.energy_via_resistance_proof",
+   "run": "physics-batch-1",
+   "certificate": {
+    "gates": {
+     "steps": true,
+     "result": true,
+     "premises": true,
+     "control": true,
+     "wording": true
+    },
+    "date": "2026-10-16",
+    "tool": "tools/certify_derivations.py"
+   }
+  },
+  {
+   "id": "focal_length",
+   "kind": "proof",
+   "title": "focal length",
+   "equation": "f = R/2",
+   "topic": null,
+   "hypotheses": [],
+   "premises": [
+    {
+     "equation": "f = R/2",
+     "is": "relation:mirror_focal_length"
+    }
+   ],
+   "steps": [
+    {
+     "equation": "f = R/2",
+     "reason": "identity"
+    }
+   ],
+   "conditions": [],
+   "questions": [
+    "Prove that f = R/2.",
+    "Derive f = R/2.",
+    "Show that f = R/2.",
+    "Prove the focal length."
+   ],
+   "record": "proof.focal_length_proof",
+   "run": "physics-atlas-1",
+   "certificate": {
+    "gates": {
+     "steps": true,
+     "result": true,
+     "premises": true,
+     "control": true,
+     "wording": true
+    },
+    "date": "2026-10-16",
+    "tool": "tools/certify_derivations.py"
+   }
+  },
+  {
+   "id": "temp_change_inverse_mass",
+   "kind": "proof",
+   "title": "temp change inverse mass",
+   "equation": "dT * m = Q / c",
+   "topic": null,
+   "hypotheses": [],
+   "premises": [
+    {
+     "equation": "dT = Q / (m * c)",
+     "is": "relation:heat"
+    }
+   ],
+   "steps": [
+    {
+     "equation": "dT * m = Q / c",
+     "reason": "multiply both sides by mass m"
+    }
+   ],
+   "conditions": [],
+   "questions": [
+    "Prove that dT * m = Q / c.",
+    "Derive dT * m = Q / c.",
+    "Show that dT * m = Q / c.",
+    "Prove the temp change inverse mass."
+   ],
+   "record": "proof.temp_change_inverse_mass_proof",
+   "run": "physics-atlas-1",
+   "certificate": {
+    "gates": {
+     "steps": true,
+     "result": true,
+     "premises": true,
+     "control": true,
+     "wording": true
+    },
+    "date": "2026-10-16",
+    "tool": "tools/certify_derivations.py"
+   }
+  },
+  {
+   "id": "zero_initial_speed",
+   "kind": "proof",
+   "title": "zero initial speed",
+   "equation": "v_f**2 = 2*W_net/m",
+   "topic": null,
+   "hypotheses": [
+    "v_i = 0"
+   ],
+   "premises": [
+    {
+     "equation": "W_net = (1/2)*m*v_f**2 - (1/2)*m*v_i**2",
+     "is": "relation:net_work_kinetic_energy"
+    },
+    {
+     "equation": "v_i = 0",
+     "is": "condition"
+    }
+   ],
+   "steps": [
+    {
+     "equation": "W_net = (1/2)*m*v_f**2 - 0",
+     "reason": "substitute v_i = 0 into the premise"
+    },
+    {
+     "equation": "W_net = (1/2)*m*v_f**2",
+     "reason": "simplify the right side"
+    },
+    {
+     "equation": "2*W_net/m = v_f**2",
+     "reason": "multiply by 2 and divide by m"
+    }
+   ],
+   "conditions": [
+    "v_i = 0"
+   ],
+   "questions": [
+    "Prove that if v_i = 0 then v_f**2 = 2*W_net/m.",
+    "Given v_i = 0, show that v_f**2 = 2*W_net/m.",
+    "Given v_i = 0, derive v_f**2 = 2*W_net/m."
+   ],
+   "record": "proof.zero_initial_speed_proof",
+   "run": "physics-batch-1",
+   "certificate": {
+    "gates": {
+     "steps": true,
+     "result": true,
+     "premises": true,
+     "control": true,
+     "wording": true
+    },
+    "date": "2026-10-16",
+    "tool": "tools/certify_derivations.py"
+   }
+  }
+ ]
+}

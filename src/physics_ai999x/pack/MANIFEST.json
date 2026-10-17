@@ -1,0 +1,43 @@
+{
+ "package": "1.2.0",
+ "pack": "0.6.0",
+ "knowledge_db": "1.6.0",
+ "files": {
+  "dictionary/kinds.json": "b8d94331a3206e58049738790ecc6004c77c86b3160bca4dc69d6c4305267b79",
+  "dictionary/terms.json": "1bef2e38612eb43d9d228b87ea570eb141ac0933b75543096a008cd035d3f058",
+  "knowledge/relations.json": "a821d77b5fc9681c844599e43770f8448c83bf5a1df5a3bb9645ad67788a0869",
+  "knowledge/reference_cases.json": "182dccfd0855ac4333a155f2f96116b7c347053ae2fdc4b7e9e826f809a69ac0",
+  "knowledge/question_examples.json": "db926b6930c6ead992a1b5e29f646df8fa93d21a82f942c34e4fbf279440c81c",
+  "capabilities/families.py": "59f3c9f858036cfbd19e9d5ab1148a67bf00809977a1bff604373f7efa878aa2",
+  "capabilities/procedures_certified.json": "cc0609aa3c9a91ed8a192a77733a38cf568e487fd1c3cdcff675a7d703a23838",
+  "capabilities/procedures_compiled.json": "d7943aa9a77a7b6d313c3e1b3c2ef3a96f0844ac310afd749260b514e2188f55",
+  "capabilities/derivations_certified.json": "e212074402750dcd81147777a40d5b7810b9cd086b498e5ba9430c80de0960d7",
+  "templates.json": "0e6d6afb4fed12fa9c035334a0cfecc2e367821cb6f92a8f4620aa98237c43e3",
+  "topics.json": "e49da6ae57720b57ecb881d354084401e776f71f72fca035b807f707a26688e5",
+  "knowledge.sqlite": "cd4275eecec045b56db0c5c414174becc34b53d882cb2027fd1112f3ffa3393c"
+ },
+ "engine": [
+  "__init__.py",
+  "answer.py",
+  "compiler.py",
+  "decision_reader.py",
+  "derivations.py",
+  "engine.py",
+  "expr.py",
+  "identity.py",
+  "knowledge_store.py",
+  "pack.py",
+  "planner.py",
+  "policy.py",
+  "precision.py",
+  "procedure_spec.py",
+  "product.py",
+  "quantity.py",
+  "relation.py",
+  "retrieval.py",
+  "student_gate.py",
+  "systems/__init__.py",
+  "systems/reader.py",
+  "systems/solver.py"
+ ]
+}
