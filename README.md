@@ -4,7 +4,7 @@
 
 **[Install](https://pypi.org/project/physics-ai999x/)** · **[Capability guide](https://huggingface.co/AI999X/physics-ai999x/tree/main/docs)** · **[Evaluation](https://huggingface.co/AI999X/physics-ai999x/tree/main/evaluation)** · **[AI999X on Hugging Face](https://huggingface.co/AI999X)** · **[Website](https://ai999x.com)** · **[Support: Buy Me a Coffee](https://buymeacoffee.com/ibnuljaiffarabi)**
 
-License: Apache-2.0 · Author: Ibnul Jaif Farabi (creator and engineer) · Organization: AI999X · Version 1.3.0
+License: Apache-2.0 · Author: Ibnul Jaif Farabi (creator and engineer) · Organization: AI999X · Version 1.3.1
 
 physics-ai999x is an offline, deterministic Python solver that answers physics questions with verified results from 148 certified capabilities, gives 859 documented answers identically on Windows and Linux, and refuses rather than guesses when an answer cannot be verified.
 
@@ -25,7 +25,7 @@ physics-ai999x is an offline, deterministic Python solver that answers physics q
 
 | Property | Value |
 |---|---|
-| Package | `physics-ai999x` 1.3.0 (import `physics_ai999x`) |
+| Package | `physics-ai999x` 1.3.1 (import `physics_ai999x`) |
 | Type | Deterministic neuro-symbolic physics engine (rule-based reading + certified symbolic capabilities) |
 | Capabilities | 23 certified derivations, 16 certified model_familys, 2 certified procedures, 107 certified relations |
 | Knowledge pack | version 0.6.0 |
@@ -59,7 +59,7 @@ physics.ask("Who created you?").message
 # -> physics-ai999x was created and engineered by Ibnul Jaif Farabi at AI999X.
 ```
 
-Command line: `physics-ai999x "<question>"`, `physics-ai999x --capabilities`. The outputs above were produced by running this exact code on physics-ai999x 1.3.0.
+Command line: `physics-ai999x "<question>"`, `physics-ai999x --capabilities`. The outputs above were produced by running this exact code on physics-ai999x 1.3.1.
 
 ## How every answer is verified
 
@@ -139,10 +139,10 @@ Why the gate: the engine verifies a computation, not a reading. A copied number 
 ## Citation
 
 ```bibtex
-@software{physics_ai999x_1_3_0,
+@software{physics_ai999x_1_3_1,
   title  = {physics-ai999x: an offline, verified physics solver},
   author = {Farabi, Ibnul Jaif}, organization = {AI999X},
-  year   = {2026}, version = {1.3.0},
+  year   = {2026}, version = {1.3.1},
   url    = {https://huggingface.co/AI999X/physics-ai999x}
 }
 ```

@@ -22,7 +22,7 @@ except ImportError:                        # the factory's source tree, during d
     from ai999x_factory.runtime import Answer, Pack
     from ai999x_factory.runtime.product import Product
 
-__version__ = "1.3.0"     # release 1.3.0 (2026-10-17): the decision model (gated auto + suggest), reader fixes; 1.2.0 ONNX formula pack; 1.1.0 reader fixes; 1.0.0 on 2026-10-16
+__version__ = "1.3.1"     # release 1.3.1 (2026-10-21): reader fixes (spelled units, shared vocabulary); 1.3.0 (2026-10-17): the decision model (gated auto + suggest), reader fixes; 1.2.0 ONNX formula pack; 1.1.0 reader fixes; 1.0.0 on 2026-10-16
 __all__ = ["ask", "solve", "formula", "formulas", "quantities", "conditions", "capabilities", "compile_problem",
            "plot", "plot_relation", "Answer", "pack", "topics", "templates", "suggest", "explain", "prove", "derivations", "about", "DecisionReader", "__version__"]
 # the shared domain API (ai999x_factory.runtime.product): the pack built into the package, else the source tree's

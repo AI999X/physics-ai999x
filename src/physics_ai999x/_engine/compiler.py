@@ -173,6 +173,32 @@ def _occurrences(text: str, entries: list) -> list:
     return sorted(out, key=lambda o: o[0])
 
 
+def _symbol_uses(text: str, terms: dict, spans: list, tags: set) -> tuple:
+    """A pack's declared symbols written as NOTATION: `zeta=0.5`, `I 0.01 kg*m^2`, `b?`. Matched case-sensitively and
+    never inside a measurement; a symbol that is also an English word (`"word": true`, e.g. "a") counts as a given
+    only with '=' or ':'. Returns ({position the number must start at: [entries]}, [(start, end, entry) asked])."""
+    given, asked = {}, []
+    for e in terms.get("symbols", []):
+        if (e.get("when_tag") and e["when_tag"] not in tags) or (e.get("unless_tag") and e["unless_tag"] in tags):
+            continue
+        for m in re.finditer(r"(?<![\w.^*/])" + re.escape(e["symbol"]) + r"(?![\w^])", text):
+            if any(a <= m.start() < b for a, b in spans):
+                continue
+            after = text[m.end():]
+            sep = re.match(r"[ \t]*([=:])?[ \t]*", after)
+            if sep.group(1) or not e.get("word"):
+                given.setdefault(m.end() + sep.end(), []).append(e)
+            if re.match(r"\s*(?:=\s*)?(?:in\s+[^\s?]+\s*)?\?", after):
+                asked.append((m.start(), m.end(), e))
+    return given, asked
+
+
+def _one_reading(entries: list):
+    """The entry when all entries agree on kind and role, else None (a symbol with two meanings is not read)."""
+    readings = {(e["kind"], e.get("role", "plain")) for e in entries}
+    return entries[0] if len(readings) == 1 else None
+
+
 def _sentence(text: str, pos: int) -> tuple:
     cuts = [0] + [m.end() for m in _SENT.finditer(text)] + [len(text)]
     for a, b in zip(cuts, cuts[1:]):
@@ -319,9 +345,15 @@ def compile_problem(question: str, pack: Pack) -> Problem:
     labels = _occurrences(text, terms.get("labels", []))
     claimed: set = set()
     givens: list = []
+    pre_tags = {c["tag"] for c in terms.get("context", []) if _word(c["phrase"]).search(low)}
+    sym_given, sym_asked = _symbol_uses(text, terms, [(a, b) for a, b, *_ in measures], pre_tags)
 
     # 2. a bare number is accepted only as a labelled pure number (a coefficient); otherwise we refuse
     for s, e, value in bare:
+        sym = _one_reading([x for x in sym_given.get(s, []) if pack.kinds[x["kind"]].unit == "1"])
+        if sym is not None:                            # "zeta=0.5": a declared symbol of a pure number
+            givens.append(Given(len(givens), sym["kind"], sym.get("role", "plain"), value, text[s:e]))
+            continue
         hit = None
         for i, (ls, le, entry) in enumerate(labels):
             if i in claimed or pack.kinds[entry["kind"]].unit != "1":
@@ -346,6 +378,10 @@ def compile_problem(question: str, pack: Pack) -> Problem:
             if {"initial", "final"} <= pack.roles_of(k):
                 forced[i], forced[i + 1] = {"kind": k, "role": "initial"}, {"kind": k, "role": "final"}
                 break
+    for mi, (s, _e, _v, unit, _sp) in enumerate(measures):    # "I 0.01 kg*m^2", "d=1 m": the symbol names it
+        sym = _one_reading([x for x in sym_given.get(s, []) if x["kind"] in pack.kinds_for(unit.dim)])
+        if sym is not None and mi not in forced:
+            forced[mi] = sym
     # 3. each measurement gets a kind (from its unit) and a role (from the nearest free label of that kind)
     pairs = []
     for mi, (s, e, value, unit, spelled) in enumerate(measures):
@@ -422,9 +458,19 @@ def compile_problem(question: str, pack: Pack) -> Problem:
                        message="I could not find what the question asks for.", code="no_question")
     qa, qb = asking[-1]
     target = None
+    # a label marked `"asked": false` names a given only ("exhaust 3000 m/s"), never the quantity asked for
     asked = [(ls, -(le - ls), entry, text[ls:le]) for li, (ls, le, entry) in enumerate(labels)
-             if li not in claimed and qa <= ls < qb]
+             if li not in claimed and qa <= ls < qb and entry.get("asked", True)]
     idioms = []
+    by_pos: dict = {}
+    for ss, se, e in sym_asked:                         # "b?", "I in kg*m^2?": the symbol is what is asked
+        if qa <= ss < qb:
+            by_pos.setdefault((ss, se), []).append(e)
+    for (ss, se), entries in by_pos.items():
+        sym = _one_reading(entries)
+        if sym is not None:
+            asked.append((ss, -(se - ss), sym, text[ss:se]))
+            idioms.append(ss)
     for idiom in terms.get("ask_idioms", []):          # "how long", "how high": as good a sign as a label
         m = _word(idiom["phrase"]).search(low[qa:qb])
         if m:
@@ -454,7 +500,7 @@ def compile_problem(question: str, pack: Pack) -> Problem:
         elif "initial" in roles and _INITIAL.search(text[qa:qb]):
             target = Target(target.kind, "initial", target.phrase)
     for ref in terms.get("target_refinements", []):   # "how long ... to reach the top": which time is meant
-        if ref.get("when_tag") and ref["when_tag"] not in tags:
+        if (ref.get("when_tag") and ref["when_tag"] not in tags) or (ref.get("unless_tag") and ref["unless_tag"] in tags):
             continue
         if target.kind == ref["kind"] and target.role == ref.get("from", "plain") and any(
                 _word(p).search(low[qa:qb]) for p in ref["phrases"]):
@@ -466,7 +512,8 @@ def compile_problem(question: str, pack: Pack) -> Problem:
     for rd in terms.get("role_defaults", []):
         # the one UNLABELLED stated quantity of this kind takes the context's role; labelled ones keep theirs
         same = [g for g in givens if g.kind == rd["kind"] and g.role == "plain"]
-        if not (rd["when_tag"] in tags and len(same) == 1 and same[0].source == "stated"):
+        # without `when_tag` the role holds in every context (a stated gravitational constant is the constant G)
+        if not ((not rd.get("when_tag") or rd["when_tag"] in tags) and len(same) == 1 and same[0].source == "stated"):
             continue
         if "asked" in rd:
             if not (target.kind == rd["kind"] and target.role == "plain"):

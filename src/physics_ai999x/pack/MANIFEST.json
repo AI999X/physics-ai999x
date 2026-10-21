@@ -1,10 +1,10 @@
 {
- "package": "1.3.0",
+ "package": "1.3.1",
  "pack": "0.6.0",
  "knowledge_db": "1.6.0",
  "files": {
   "dictionary/kinds.json": "b8d94331a3206e58049738790ecc6004c77c86b3160bca4dc69d6c4305267b79",
-  "dictionary/terms.json": "81ae5663af35bb0bdbb1c873d51d55d19d56ab0d4f22f0727e201d8e85c7fe0a",
+  "dictionary/terms.json": "6d33f6a72fe635f9bc2d91e3753556fa6dbca5dc05584c442eb1a49834d8b7a0",
   "knowledge/relations.json": "a821d77b5fc9681c844599e43770f8448c83bf5a1df5a3bb9645ad67788a0869",
   "knowledge/reference_cases.json": "182dccfd0855ac4333a155f2f96116b7c347053ae2fdc4b7e9e826f809a69ac0",
   "knowledge/question_examples.json": "db926b6930c6ead992a1b5e29f646df8fa93d21a82f942c34e4fbf279440c81c",

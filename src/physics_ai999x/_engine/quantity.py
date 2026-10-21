@@ -116,6 +116,10 @@ _WORDS = {
     "foot": "ft", "feet": "ft", "mile": "mi", "miles": "mi", "yard": "yd", "yards": "yd",
     "calorie": "cal", "calories": "cal", "kilocalorie": "kcal", "kilocalories": "kcal",
     "horsepower": "hp", "year": "yr", "years": "yr", "milliliter": "mL", "milliliters": "mL", "millilitre": "mL",
+    "milligram": "mg", "milligrams": "mg", "microgram": "µg", "micrograms": "µg", "nanogram": "ng", "nanograms": "ng",
+    "micrometer": "µm", "micrometers": "µm", "micrometre": "µm", "micrometres": "µm", "micron": "µm", "microns": "µm",
+    "nanometer": "nm", "nanometers": "nm", "nanometre": "nm", "nanometres": "nm",
+    "microsecond": "µs", "microseconds": "µs", "nanosecond": "ns", "nanoseconds": "ns",
 }
 _SUPER = str.maketrans({"²": "^2", "³": "^3", "·": "*", "⋅": "*", "−": "-"})
 _TOKEN = re.compile(r"\s*(\^-?\d+|[*/()]|1(?![\w.])|[A-Za-zμµΩ°]+)")
@@ -196,7 +200,11 @@ def parse_unit(text: str) -> Unit:
 def words_to_unit(tokens: list[str]) -> str | None:
     """Turn spelled-out unit words ('meters per second squared') into a unit spelling, or None."""
     out = []
-    for tok in tokens:
+    expanded = []
+    for tok in tokens:                                 # "kilogram-meters squared": a hyphen joins two unit words
+        parts = tok.lower().split("-")
+        expanded.extend(parts if len(parts) > 1 and all(p in _WORDS for p in parts) else [tok])
+    for tok in expanded:
         low = tok.lower()
         if low in _WORDS:
             out.append(_WORDS[low])

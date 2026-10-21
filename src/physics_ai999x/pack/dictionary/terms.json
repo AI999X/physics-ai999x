@@ -1381,6 +1381,64 @@
    "phrase": "centre-seeking force",
    "kind": "force",
    "role": "centripetal"
+  },
+  {
+   "phrase": "steady-state amplitude",
+   "kind": "length",
+   "role": "amplitude"
+  },
+  {
+   "phrase": "steady state amplitude",
+   "kind": "length",
+   "role": "amplitude"
+  },
+  {
+   "phrase": "amplitude of the steady-state motion",
+   "kind": "length",
+   "role": "amplitude"
+  },
+  {
+   "phrase": "length of each arm",
+   "kind": "length",
+   "role": "pendulum"
+  },
+  {
+   "phrase": "arm length",
+   "kind": "length",
+   "role": "pendulum"
+  },
+  {
+   "phrase": "each arm",
+   "kind": "length",
+   "role": "pendulum"
+  },
+  {
+   "phrase": "speed in the orbit",
+   "kind": "speed",
+   "role": "orbital"
+  },
+  {
+   "phrase": "moment of inertia of the pulley",
+   "kind": "moment_of_inertia",
+   "role": "plain"
+  },
+  {
+   "phrase": "radius of the pulley",
+   "kind": "length",
+   "role": "radius"
+  },
+  {
+   "phrase": "pulley radius",
+   "kind": "length",
+   "role": "radius"
+  },
+  {
+   "phrase": "inertia",
+   "kind": "moment_of_inertia"
+  },
+  {
+   "phrase": "linear acceleration",
+   "kind": "acceleration"
   }
  ],
  "ask_idioms": [
@@ -3380,6 +3438,10 @@
   {
    "phrase": "throws it directly upwards",
    "tag": "thrown_up"
+  },
+  {
+   "tag": "orbit",
+   "phrase": "elliptical orbit"
   }
  ],
  "kind_tags": {
