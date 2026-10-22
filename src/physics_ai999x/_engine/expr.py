@@ -99,4 +99,132 @@ def dims(expr: sp.Expr, symbol_dims: dict) -> Dim:
 
 def latex(expr, names: dict | None = None) -> str:
     """LaTeX from the canonical expression; `names` maps a symbol to its display form."""
-    return sp.latex(expr, symbol_names={k: v for k, v in (names or {}).items()})
+    return sp.latex(expr, symbol_names={k: v for k, v in (names or {}).items()}, ln_notation=True)
+
+
+# ----------------------------------------------------------------------------------- textbook typesetting
+_GREEK = ["alpha", "beta", "gamma", "delta", "epsilon", "varepsilon", "zeta", "eta", "theta", "vartheta", "iota",
+          "kappa", "lambda", "lam", "mu", "nu", "xi", "pi", "rho", "sigma", "tau", "upsilon", "phi", "varphi", "chi",
+          "psi", "omega"]
+_GREEK_TEX = {g: ("\\lambda" if g == "lam" else "\\" + g) for g in _GREEK}
+_GREEK_TEX["eps"] = "\\varepsilon"
+_GREEK_TEX.update({g.capitalize(): "\\" + g.capitalize() for g in
+                   ("gamma", "delta", "theta", "lambda", "xi", "pi", "sigma", "upsilon", "phi", "psi", "omega")})
+_UPRIGHT = {"Re", "Fr", "Ma", "Nu", "Pr", "Gr", "We", "Bi", "Sc", "Sh", "Pe", "St", "Kn", "Ra", "Eu", "Ca"}  # numbers
+
+
+def _sub(text: str) -> str:
+    """A subscript: greek letters, short labels italic, words upright."""
+    t = text.strip("_")
+    if not t:
+        return ""
+    if t in _GREEK_TEX:
+        return _GREEK_TEX[t]
+    if len(t) > 2 and t.isalpha():
+        return "\\text{" + t.replace("_", " ") + "}"
+    return t.replace("_", ",")
+
+
+def symbol_latex(name: str, kind: str = "", role: str = "") -> str:
+    """Textbook form of a symbol name: rho -> \\rho, P0 -> P_{0}, v1f -> v_{1f}, R_h -> R_{h}, delta_p -> \\Delta p,
+    rho_f -> \\rho_{f}, wd -> \\omega_{d} for an angular frequency, Re -> \\mathrm{Re}, left_limit -> \\text{left limit}."""
+    import re
+    if role.startswith("delta") and len(name) == 2 and name[0] == "d":   # dv for a change in v
+        return "\\Delta " + name[1]
+    base, _, sub = name.partition("_")
+    if base.lower() == "delta" and sub:                  # delta_p: a change
+        return "\\Delta " + symbol_latex(sub, kind, "")
+    if base in _UPRIGHT and not sub:
+        return "\\mathrm{" + base + "}"
+    if base in ("re", "im") and not sub:                 # real and imaginary parts
+        return "\\operatorname{" + base.capitalize() + "}"
+    w = re.match(r"^([A-Za-z]{3,})(\d+)$", base)          # num1 -> num_1, a word with a number
+    if w and w.group(1) not in _GREEK_TEX:
+        return "\\text{" + w.group(1) + "}_{" + w.group(2) + (("," + _sub(sub)) if sub else "") + "}"
+    # a Greek name alone or with a number (omega0, theta1); "num1" is not nu + m1
+    m = re.match(r"^(" + "|".join(sorted(_GREEK_TEX, key=len, reverse=True)) + r")(\d*)$", base)
+    if m:                                                # rho, omega0, theta1
+        head, rest = _GREEK_TEX[m.group(1)], m.group(2) + (("_" + sub) if sub else "")
+        return head + ("_{" + _sub(rest) + "}" if rest.strip("_") else "")
+    tail = re.match(r"^([A-Za-z])(rms|max|min|net|avg|eff|tot|ext|int|cm|out|in|ref|crit|sat)$", base)
+    if tail and not sub:                                 # Irms -> I_rms, vmax -> v_max
+        return tail.group(1) + "_{\\text{" + tail.group(2) + "}}"
+    if len(base) > 2 and base.isalpha() and (not sub or len(sub) > 2):   # a word: left_limit, total
+        return "\\text{" + name.replace("_", " ") + "}"
+    head, rest = base[0], base[1:]
+    if kind == "angular_frequency" and head in "wW":    # w is the usual ASCII stand-in for omega
+        head = "\\omega" if head == "w" else "\\Omega"
+    rest = rest + (("_" + sub) if sub else "") if rest else sub
+    return head + ("_{" + _sub(rest) + "}" if rest else "")
+
+
+_PREC = {ast.Add: 1, ast.Sub: 1, ast.Mult: 2, ast.Div: 2, ast.Pow: 4}
+_FN = {"sqrt": None, "sin": "\\sin", "cos": "\\cos", "tan": "\\tan", "asin": "\\arcsin", "acos": "\\arccos",
+       "atan": "\\arctan", "log": "\\ln", "exp": None}
+
+
+def _num(v) -> str:
+    if isinstance(v, int) or float(v).is_integer() and abs(v) < 1e15:
+        return str(int(v))
+    s = repr(float(v))
+    if "e" in s:
+        mant, ex = s.split("e")
+        return f"{mant} \\times 10^{{{int(ex)}}}"
+    return s
+
+
+def latex_written(text: str, names: dict | None = None) -> str:
+    """Typeset an allowlisted expression or equation IN THE ORDER IT IS WRITTEN (rho*g*h stays rho g h; sympy's
+    printer would sort it to g h rho): fractions, roots, functions, minimal parentheses. `names` maps a symbol name
+    to its LaTeX (symbol_latex by default). Only the allowlisted syntax is accepted, as in parse()."""
+    names = names or {}
+    if "=" in text:
+        lhs, rhs = text.split("=", 1)
+        return latex_written(lhs, names) + " = " + latex_written(rhs, names)
+    tree = ast.parse(text.strip(), mode="eval").body
+
+    def prec(n):
+        if isinstance(n, ast.BinOp):
+            return _PREC.get(type(n.op), 5)
+        if isinstance(n, ast.UnaryOp):
+            return 3
+        return 5
+
+    def wrap(n, need):
+        s = walk(n)
+        return f"\\left({s}\\right)" if prec(n) < need else s
+
+    def walk(n):
+        if isinstance(n, ast.Constant) and type(n.value) in (int, float):
+            return _num(n.value)
+        if isinstance(n, ast.Name):
+            if n.id in CONSTS:
+                return "\\pi"
+            return names.get(n.id) or symbol_latex(n.id)
+        if isinstance(n, ast.UnaryOp) and isinstance(n.op, (ast.USub, ast.UAdd)):
+            return ("-" if isinstance(n.op, ast.USub) else "") + wrap(n.operand, 3)
+        if isinstance(n, ast.BinOp):
+            op = type(n.op)
+            if op is ast.Div:
+                return f"\\frac{{{walk(n.left)}}}{{{walk(n.right)}}}"
+            if op is ast.Pow:
+                if isinstance(n.right, ast.Constant) and n.right.value == 0.5:
+                    return f"\\sqrt{{{walk(n.left)}}}"
+                base = wrap(n.left, 5) if not (isinstance(n.left, ast.Call) and n.left.func.id == "sqrt") else f"\\left({walk(n.left)}\\right)"
+                return f"{base}^{{{walk(n.right)}}}"
+            if op is ast.Mult:
+                l, r = wrap(n.left, 2), wrap(n.right, 3)
+                numeric = isinstance(n.right, ast.Constant) or (isinstance(n.right, ast.UnaryOp))
+                return f"{l} \\cdot {r}" if numeric else f"{l} {r}"
+            sym = " + " if op is ast.Add else " - "
+            return walk(n.left) + sym + (wrap(n.right, 2) if op is ast.Sub else walk(n.right))
+        if isinstance(n, ast.Call) and isinstance(n.func, ast.Name) and n.func.id in _FN and len(n.args) == 1:
+            arg = walk(n.args[0])
+            if n.func.id == "sqrt":
+                return f"\\sqrt{{{arg}}}"
+            if n.func.id == "exp":
+                return f"e^{{{arg}}}"
+            return f"{_FN[n.func.id]}\\left({arg}\\right)"
+        raise ExpressionError("unsupported syntax")
+
+    return walk(tree)

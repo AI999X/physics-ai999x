@@ -1,6 +1,6 @@
 # physics-ai999x: ONNX formula pack guide
 
-Version 1.3.0. 365 exact formula graphs — every certified closed-form capability of physics-ai999x, compiled from its exact formula (nothing learned, nothing approximate). Float64, standard ONNX operators; run them with onnxruntime in Python, C++, C#, Java or the browser. Creator / engineer: Ibnul Jaif Farabi · AI999X · Apache-2.0.
+Version 1.3.1. 365 exact formula graphs — every certified closed-form capability of physics-ai999x, compiled from its exact formula (nothing learned, nothing approximate). Float64, standard ONNX operators; run them with onnxruntime in Python, C++, C#, Java or the browser. Creator / engineer: Ibnul Jaif Farabi · AI999X · Apache-2.0.
 
 ## Find the right formula (autocomplete)
 
@@ -45,7 +45,7 @@ using var r = s.Run(inputs);
 ### Absolute pressure at a depth in a fluid — solve for absolute pressure at the depth — `absolute_pressure_depth.P`
 
 $$
-P = P0 + g h rho
+P = P_{0} + \rho g h
 $$
 
 | input | meaning | unit |
@@ -69,7 +69,7 @@ inputs {'P0': 2.0, 'rho': 2.1, 'g': 2.2, 'h': 2.3}
 ### Absolute pressure at a depth in a fluid — solve for pressure at the surface — `absolute_pressure_depth.P0`
 
 $$
-P = P0 + g h rho
+P = P_{0} + \rho g h
 $$
 
 | input | meaning | unit |
@@ -93,7 +93,7 @@ inputs {'P': 0.5, 'rho': 0.6, 'g': 0.7, 'h': 0.8}
 ### Absolute pressure at a depth in a fluid — solve for gravity — `absolute_pressure_depth.g`
 
 $$
-P = P0 + g h rho
+P = P_{0} + \rho g h
 $$
 
 | input | meaning | unit |
@@ -112,7 +112,7 @@ $$
 ### Absolute pressure at a depth in a fluid — solve for depth below the surface — `absolute_pressure_depth.h`
 
 $$
-P = P0 + g h rho
+P = P_{0} + \rho g h
 $$
 
 | input | meaning | unit |
@@ -131,7 +131,7 @@ $$
 ### Absolute pressure at a depth in a fluid — solve for density of the fluid — `absolute_pressure_depth.rho`
 
 $$
-P = P0 + g h rho
+P = P_{0} + \rho g h
 $$
 
 | input | meaning | unit |
@@ -150,7 +150,7 @@ $$
 ### Acceleration down a frictionless incline — solve for acceleration down the incline — `acceleration_frictionless_incline.a`
 
 $$
-a = g \sin{\left(\theta \right)}
+a = g \sin\left(\theta\right)
 $$
 
 | input | meaning | unit |
@@ -172,7 +172,7 @@ inputs {'g': 2.0, 'theta': 2.1}
 ### Acceleration down a frictionless incline — solve for gravitational acceleration — `acceleration_frictionless_incline.g`
 
 $$
-a = g \sin{\left(\theta \right)}
+a = g \sin\left(\theta\right)
 $$
 
 | input | meaning | unit |
@@ -194,7 +194,7 @@ inputs {'a': 2.0, 'theta': 2.1}
 ### Acceleration down a frictionless incline — solve for angle of the incline to the horizontal — `acceleration_frictionless_incline.theta`
 
 $$
-a = g \sin{\left(\theta \right)}
+a = g \sin\left(\theta\right)
 $$
 
 | input | meaning | unit |
@@ -252,12 +252,12 @@ inputs {'f': 2.0}
 ### Angular momentum of a rotating body — solve for moment of inertia — `angular_momentum.Ir`
 
 $$
-L = Ir omega
+L = I_{r} \omega
 $$
 
 | input | meaning | unit |
 |---|---|---|
-| `L` | angular_momentum | `kg*m^2/s` |
+| `L` | angular momentum | `kg*m^2/s` |
 | `omega` | angular velocity | `rad/s` |
 
 - **Output unit:** `kg*m^2`
@@ -274,12 +274,12 @@ inputs {'L': 2.0, 'omega': 2.1}
 ### Angular momentum of a rotating body — solve for angular momentum — `angular_momentum.L`
 
 $$
-L = Ir omega
+L = I_{r} \omega
 $$
 
 | input | meaning | unit |
 |---|---|---|
-| `Ir` | moment_of_inertia | `kg*m^2` |
+| `Ir` | moment of inertia | `kg*m^2` |
 | `omega` | angular velocity | `rad/s` |
 
 - **Output unit:** `kg*m^2/s`
@@ -296,13 +296,13 @@ inputs {'Ir': 2.0, 'omega': 2.1}
 ### Angular momentum of a rotating body — solve for angular velocity — `angular_momentum.omega`
 
 $$
-L = Ir omega
+L = I_{r} \omega
 $$
 
 | input | meaning | unit |
 |---|---|---|
-| `L` | angular_momentum | `kg*m^2/s` |
-| `Ir` | moment_of_inertia | `kg*m^2` |
+| `L` | angular momentum | `kg*m^2/s` |
+| `Ir` | moment of inertia | `kg*m^2` |
 
 - **Output unit:** `rad/s`
 - **File:** `angular_momentum__omega.onnx`
@@ -318,7 +318,7 @@ inputs {'L': 2.0, 'Ir': 2.1}
 ### Angular momentum of a point mass on a circle — solve for angular momentum about the centre — `angular_momentum_point_mass.L`
 
 $$
-L = m r v
+L = m v r
 $$
 
 | input | meaning | unit |
@@ -341,7 +341,7 @@ inputs {'m': 2.0, 'v': 2.1, 'r': 2.2}
 ### Angular momentum of a point mass on a circle — solve for mass — `angular_momentum_point_mass.m`
 
 $$
-L = m r v
+L = m v r
 $$
 
 | input | meaning | unit |
@@ -364,7 +364,7 @@ inputs {'L': 2.0, 'v': 2.1, 'r': 2.2}
 ### Angular momentum of a point mass on a circle — solve for radius of the circle — `angular_momentum_point_mass.r`
 
 $$
-L = m r v
+L = m v r
 $$
 
 | input | meaning | unit |
@@ -387,7 +387,7 @@ inputs {'L': 2.0, 'm': 2.1, 'v': 2.2}
 ### Angular momentum of a point mass on a circle — solve for speed on the circle — `angular_momentum_point_mass.v`
 
 $$
-L = m r v
+L = m v r
 $$
 
 | input | meaning | unit |
@@ -410,7 +410,7 @@ inputs {'L': 2.0, 'm': 2.1, 'r': 2.2}
 ### Angular velocity and angle turned under constant angular acceleration — solve for constant angular acceleration — `angular_velocity_angle.alpha`
 
 $$
-omega^{2} = 2 alpha theta + omega0^{2}
+\omega^{2} = \omega_{0}^{2} + 2 \alpha \theta
 $$
 
 | input | meaning | unit |
@@ -433,7 +433,7 @@ inputs {'omega': 2.0, 'omega0': 2.1, 'theta': 2.2}
 ### Angular velocity and angle turned under constant angular acceleration — solve for final angular speed — `angular_velocity_angle.omega`
 
 $$
-omega^{2} = 2 alpha theta + omega0^{2}
+\omega^{2} = \omega_{0}^{2} + 2 \alpha \theta
 $$
 
 | input | meaning | unit |
@@ -457,7 +457,7 @@ inputs {'omega0': 2.0, 'alpha': 2.1, 'theta': 2.2}
 ### Angular velocity and angle turned under constant angular acceleration — solve for initial angular speed — `angular_velocity_angle.omega0`
 
 $$
-omega^{2} = 2 alpha theta + omega0^{2}
+\omega^{2} = \omega_{0}^{2} + 2 \alpha \theta
 $$
 
 | input | meaning | unit |
@@ -476,7 +476,7 @@ $$
 ### Angular velocity and angle turned under constant angular acceleration — solve for angle turned — `angular_velocity_angle.theta`
 
 $$
-omega^{2} = 2 alpha theta + omega0^{2}
+\omega^{2} = \omega_{0}^{2} + 2 \alpha \theta
 $$
 
 | input | meaning | unit |
@@ -499,7 +499,7 @@ inputs {'omega': 2.0, 'omega0': 2.1, 'alpha': 2.2}
 ### Angular velocity under constant angular acceleration — solve for constant angular acceleration — `angular_velocity_time.alpha`
 
 $$
-omega = alpha t + omega0
+\omega = \omega_{0} + \alpha t
 $$
 
 | input | meaning | unit |
@@ -522,7 +522,7 @@ inputs {'omega': 2.0, 'omega0': 2.1, 't': 2.2}
 ### Angular velocity under constant angular acceleration — solve for final angular velocity — `angular_velocity_time.omega`
 
 $$
-omega = alpha t + omega0
+\omega = \omega_{0} + \alpha t
 $$
 
 | input | meaning | unit |
@@ -545,7 +545,7 @@ inputs {'omega0': 2.0, 'alpha': 2.1, 't': 2.2}
 ### Angular velocity under constant angular acceleration — solve for initial angular velocity — `angular_velocity_time.omega0`
 
 $$
-omega = alpha t + omega0
+\omega = \omega_{0} + \alpha t
 $$
 
 | input | meaning | unit |
@@ -568,7 +568,7 @@ inputs {'omega': 2.0, 'alpha': 2.1, 't': 2.2}
 ### Angular velocity under constant angular acceleration — solve for elapsed time — `angular_velocity_time.t`
 
 $$
-omega = alpha t + omega0
+\omega = \omega_{0} + \alpha t
 $$
 
 | input | meaning | unit |
@@ -586,7 +586,7 @@ $$
 ### Thermal expansion of an area — solve for original area — `area_expansion.A`
 
 $$
-dA = 2 A alpha_t dT
+d_{A} = 2 \alpha_{t} A d_{T}
 $$
 
 | input | meaning | unit |
@@ -609,7 +609,7 @@ inputs {'dA': 2.0, 'alpha_t': 2.1, 'dT': 2.2}
 ### Thermal expansion of an area — solve for coefficient of linear expansion — `area_expansion.alpha_t`
 
 $$
-dA = 2 A alpha_t dT
+d_{A} = 2 \alpha_{t} A d_{T}
 $$
 
 | input | meaning | unit |
@@ -632,7 +632,7 @@ inputs {'dA': 2.0, 'A': 2.1, 'dT': 2.2}
 ### Thermal expansion of an area — solve for change in area — `area_expansion.dA`
 
 $$
-dA = 2 A alpha_t dT
+d_{A} = 2 \alpha_{t} A d_{T}
 $$
 
 | input | meaning | unit |
@@ -655,7 +655,7 @@ inputs {'alpha_t': 2.0, 'A': 2.1, 'dT': 2.2}
 ### Thermal expansion of an area — solve for change in temperature — `area_expansion.dT`
 
 $$
-dA = 2 A alpha_t dT
+d_{A} = 2 \alpha_{t} A d_{T}
 $$
 
 | input | meaning | unit |
@@ -678,7 +678,7 @@ inputs {'dA': 2.0, 'alpha_t': 2.1, 'A': 2.2}
 ### Average net force from a change of momentum — solve for average net force — `average_force_from_momentum_change.F`
 
 $$
-F = \frac{- p_1 + p_2}{t}
+F = \frac{p_2 - p_1}{t}
 $$
 
 | input | meaning | unit |
@@ -700,7 +700,7 @@ inputs {'p2': 2.0, 'p1': 2.1, 't': 2.2}
 ### Average net force from a change of momentum — solve for initial momentum — `average_force_from_momentum_change.p1`
 
 $$
-F = \frac{- p_1 + p_2}{t}
+F = \frac{p_2 - p_1}{t}
 $$
 
 | input | meaning | unit |
@@ -722,7 +722,7 @@ inputs {'F': 2.0, 'p2': 2.1, 't': 2.2}
 ### Average net force from a change of momentum — solve for final momentum — `average_force_from_momentum_change.p2`
 
 $$
-F = \frac{- p_1 + p_2}{t}
+F = \frac{p_2 - p_1}{t}
 $$
 
 | input | meaning | unit |
@@ -744,7 +744,7 @@ inputs {'F': 2.0, 'p1': 2.1, 't': 2.2}
 ### Average net force from a change of momentum — solve for time over which the momentum changes — `average_force_from_momentum_change.t`
 
 $$
-F = \frac{- p_1 + p_2}{t}
+F = \frac{p_2 - p_1}{t}
 $$
 
 | input | meaning | unit |
@@ -761,7 +761,7 @@ $$
 ### Displacement from the mean of initial and final velocity — solve for elapsed time — `average_velocity_displacement.t`
 
 $$
-x = \frac{t \left(v + v_0\right)}{2}
+x = \frac{\left(v_0 + v\right) t}{2}
 $$
 
 | input | meaning | unit |
@@ -783,7 +783,7 @@ inputs {'x': 2.0, 'v0': 2.1, 'v': 2.2}
 ### Displacement from the mean of initial and final velocity — solve for final velocity — `average_velocity_displacement.v`
 
 $$
-x = \frac{t \left(v + v_0\right)}{2}
+x = \frac{\left(v_0 + v\right) t}{2}
 $$
 
 | input | meaning | unit |
@@ -805,7 +805,7 @@ inputs {'x': 2.0, 'v0': 2.1, 't': 2.2}
 ### Displacement from the mean of initial and final velocity — solve for initial velocity — `average_velocity_displacement.v0`
 
 $$
-x = \frac{t \left(v + v_0\right)}{2}
+x = \frac{\left(v_0 + v\right) t}{2}
 $$
 
 | input | meaning | unit |
@@ -827,7 +827,7 @@ inputs {'x': 2.0, 'v': 2.1, 't': 2.2}
 ### Displacement from the mean of initial and final velocity — solve for displacement — `average_velocity_displacement.x`
 
 $$
-x = \frac{t \left(v + v_0\right)}{2}
+x = \frac{\left(v_0 + v\right) t}{2}
 $$
 
 | input | meaning | unit |
@@ -915,7 +915,7 @@ inputs {'Q': 2.0, 'C': 2.1}
 ### Reactance of a capacitor — solve for capacitance — `capacitive_reactance.C`
 
 $$
-X = \frac{1}{2 \pi C f}
+X = \frac{1}{2 \pi f C}
 $$
 
 | input | meaning | unit |
@@ -937,7 +937,7 @@ inputs {'X': 2.0, 'f': 2.1}
 ### Reactance of a capacitor — solve for capacitive reactance — `capacitive_reactance.X`
 
 $$
-X = \frac{1}{2 \pi C f}
+X = \frac{1}{2 \pi f C}
 $$
 
 | input | meaning | unit |
@@ -959,7 +959,7 @@ inputs {'f': 2.0, 'C': 2.1}
 ### Reactance of a capacitor — solve for frequency — `capacitive_reactance.f`
 
 $$
-X = \frac{1}{2 \pi C f}
+X = \frac{1}{2 \pi f C}
 $$
 
 | input | meaning | unit |
@@ -981,7 +981,7 @@ inputs {'X': 2.0, 'C': 2.1}
 ### Energy stored in a capacitor — solve for capacitance — `capacitor_energy.C`
 
 $$
-Ecap = \frac{C V^{2}}{2}
+\text{Ecap} = \frac{C V^{2}}{2}
 $$
 
 | input | meaning | unit |
@@ -1003,7 +1003,7 @@ inputs {'Ecap': 2.0, 'V': 2.1}
 ### Energy stored in a capacitor — solve for energy stored — `capacitor_energy.Ecap`
 
 $$
-Ecap = \frac{C V^{2}}{2}
+\text{Ecap} = \frac{C V^{2}}{2}
 $$
 
 | input | meaning | unit |
@@ -1025,7 +1025,7 @@ inputs {'C': 2.0, 'V': 2.1}
 ### Energy stored in a capacitor — solve for voltage — `capacitor_energy.V`
 
 $$
-Ecap = \frac{C V^{2}}{2}
+\text{Ecap} = \frac{C V^{2}}{2}
 $$
 
 | input | meaning | unit |
@@ -1047,7 +1047,7 @@ inputs {'Ecap': 2.0, 'C': 2.1}
 ### Carnot (maximum) efficiency — solve for cold reservoir temperature (absolute) — `carnot_efficiency.Tc`
 
 $$
-eff = - \frac{Tc}{Th} + 1
+\text{eff} = 1 - \frac{T_{c}}{T_{h}}
 $$
 
 | input | meaning | unit |
@@ -1069,7 +1069,7 @@ inputs {'eff': 0.5, 'Th': 0.6}
 ### Carnot (maximum) efficiency — solve for hot reservoir temperature (absolute) — `carnot_efficiency.Th`
 
 $$
-eff = - \frac{Tc}{Th} + 1
+\text{eff} = 1 - \frac{T_{c}}{T_{h}}
 $$
 
 | input | meaning | unit |
@@ -1091,7 +1091,7 @@ inputs {'eff': 0.5, 'Tc': 0.6}
 ### Carnot (maximum) efficiency — solve for maximum efficiency — `carnot_efficiency.eff`
 
 $$
-eff = - \frac{Tc}{Th} + 1
+\text{eff} = 1 - \frac{T_{c}}{T_{h}}
 $$
 
 | input | meaning | unit |
@@ -1177,7 +1177,7 @@ inputs {'a': 2.0, 'r': 2.1}
 ### Centripetal acceleration from angular velocity — solve for centripetal acceleration — `centripetal_acceleration_omega.a`
 
 $$
-a = omega^{2} r
+a = r \omega^{2}
 $$
 
 | input | meaning | unit |
@@ -1199,7 +1199,7 @@ inputs {'r': 2.0, 'omega': 2.1}
 ### Centripetal acceleration from angular velocity — solve for angular velocity — `centripetal_acceleration_omega.omega`
 
 $$
-a = omega^{2} r
+a = r \omega^{2}
 $$
 
 | input | meaning | unit |
@@ -1221,7 +1221,7 @@ inputs {'a': 2.0, 'r': 2.1}
 ### Centripetal acceleration from angular velocity — solve for radius of the circle — `centripetal_acceleration_omega.r`
 
 $$
-a = omega^{2} r
+a = r \omega^{2}
 $$
 
 | input | meaning | unit |
@@ -1395,7 +1395,7 @@ inputs {'Q': 2.0, 'I': 2.1}
 ### Coefficient of performance of a heat pump — solve for heat delivered to the warm space — `cop_heat_pump.Qh`
 
 $$
-cop = \frac{Qh}{W}
+\text{cop} = \frac{Q_{h}}{W}
 $$
 
 | input | meaning | unit |
@@ -1417,7 +1417,7 @@ inputs {'cop': 2.0, 'W': 2.1}
 ### Coefficient of performance of a heat pump — solve for work input — `cop_heat_pump.W`
 
 $$
-cop = \frac{Qh}{W}
+\text{cop} = \frac{Q_{h}}{W}
 $$
 
 | input | meaning | unit |
@@ -1439,7 +1439,7 @@ inputs {'cop': 2.0, 'Qh': 2.1}
 ### Coefficient of performance of a heat pump — solve for coefficient of performance — `cop_heat_pump.cop`
 
 $$
-cop = \frac{Qh}{W}
+\text{cop} = \frac{Q_{h}}{W}
 $$
 
 | input | meaning | unit |
@@ -1461,7 +1461,7 @@ inputs {'Qh': 2.0, 'W': 2.1}
 ### Coefficient of performance of a refrigerator — solve for heat removed from the cold space — `cop_refrigerator.Qc`
 
 $$
-cop = \frac{Qc}{W}
+\text{cop} = \frac{Q_{c}}{W}
 $$
 
 | input | meaning | unit |
@@ -1483,7 +1483,7 @@ inputs {'cop': 2.0, 'W': 2.1}
 ### Coefficient of performance of a refrigerator — solve for work input — `cop_refrigerator.W`
 
 $$
-cop = \frac{Qc}{W}
+\text{cop} = \frac{Q_{c}}{W}
 $$
 
 | input | meaning | unit |
@@ -1505,7 +1505,7 @@ inputs {'cop': 2.0, 'Qc': 2.1}
 ### Coefficient of performance of a refrigerator — solve for coefficient of performance — `cop_refrigerator.cop`
 
 $$
-cop = \frac{Qc}{W}
+\text{cop} = \frac{Q_{c}}{W}
 $$
 
 | input | meaning | unit |
@@ -1527,7 +1527,7 @@ inputs {'Qc': 2.0, 'W': 2.1}
 ### Radius of a charged particle's circle in a magnetic field — solve for field strength — `cyclotron_radius.B`
 
 $$
-r = \frac{m v}{B q \sin{\left(theta \right)}}
+r = \frac{m v}{q B \sin\left(\theta\right)}
 $$
 
 | input | meaning | unit |
@@ -1552,7 +1552,7 @@ inputs {'r': 2.0, 'm': 2.1, 'v': 2.2, 'q': 2.3, 'theta': 2.4}
 ### Radius of a charged particle's circle in a magnetic field — solve for mass of the particle — `cyclotron_radius.m`
 
 $$
-r = \frac{m v}{B q \sin{\left(theta \right)}}
+r = \frac{m v}{q B \sin\left(\theta\right)}
 $$
 
 | input | meaning | unit |
@@ -1577,7 +1577,7 @@ inputs {'r': 2.0, 'v': 2.1, 'q': 2.2, 'B': 2.3, 'theta': 2.4}
 ### Radius of a charged particle's circle in a magnetic field — solve for magnitude of the charge — `cyclotron_radius.q`
 
 $$
-r = \frac{m v}{B q \sin{\left(theta \right)}}
+r = \frac{m v}{q B \sin\left(\theta\right)}
 $$
 
 | input | meaning | unit |
@@ -1602,7 +1602,7 @@ inputs {'r': 2.0, 'm': 2.1, 'v': 2.2, 'B': 2.3, 'theta': 2.4}
 ### Radius of a charged particle's circle in a magnetic field — solve for radius of the circular path — `cyclotron_radius.r`
 
 $$
-r = \frac{m v}{B q \sin{\left(theta \right)}}
+r = \frac{m v}{q B \sin\left(\theta\right)}
 $$
 
 | input | meaning | unit |
@@ -1627,7 +1627,7 @@ inputs {'m': 2.0, 'v': 2.1, 'q': 2.2, 'B': 2.3, 'theta': 2.4}
 ### Radius of a charged particle's circle in a magnetic field — solve for angle between the velocity and the field — `cyclotron_radius.theta`
 
 $$
-r = \frac{m v}{B q \sin{\left(theta \right)}}
+r = \frac{m v}{q B \sin\left(\theta\right)}
 $$
 
 | input | meaning | unit |
@@ -1648,7 +1648,7 @@ $$
 ### Radius of a charged particle's circle in a magnetic field — solve for speed perpendicular to the field — `cyclotron_radius.v`
 
 $$
-r = \frac{m v}{B q \sin{\left(theta \right)}}
+r = \frac{m v}{q B \sin\left(\theta\right)}
 $$
 
 | input | meaning | unit |
@@ -1673,7 +1673,7 @@ inputs {'r': 2.0, 'm': 2.1, 'q': 2.2, 'B': 2.3, 'theta': 2.4}
 ### De Broglie wavelength — solve for constant — `de_broglie.h`
 
 $$
-lam = \frac{h}{p}
+\lambda = \frac{h}{p}
 $$
 
 | input | meaning | unit |
@@ -1695,13 +1695,13 @@ inputs {'lam': 2.0, 'p': 2.1}
 ### De Broglie wavelength — solve for de Broglie wavelength — `de_broglie.lam`
 
 $$
-lam = \frac{h}{p}
+\lambda = \frac{h}{p}
 $$
 
 | input | meaning | unit |
 |---|---|---|
 | `p` | momentum of the particle | `kg*m/s` |
-| `h` | planck_constant | `J*s` |
+| `h` | planck constant | `J*s` |
 
 - **Output unit:** `m`
 - **File:** `de_broglie__lam.onnx`
@@ -1717,13 +1717,13 @@ inputs {'p': 2.0, 'h': 2.1}
 ### De Broglie wavelength — solve for momentum of the particle — `de_broglie.p`
 
 $$
-lam = \frac{h}{p}
+\lambda = \frac{h}{p}
 $$
 
 | input | meaning | unit |
 |---|---|---|
 | `lam` | de Broglie wavelength | `m` |
-| `h` | planck_constant | `J*s` |
+| `h` | planck constant | `J*s` |
 
 - **Output unit:** `kg*m/s`
 - **File:** `de_broglie__p.onnx`
@@ -1802,7 +1802,7 @@ inputs {'m': 2.0, 'V': 2.1}
 ### Displacement under constant acceleration — solve for acceleration — `displacement_time.a`
 
 $$
-x = \frac{a t^{2}}{2} + t v_0
+x = v_0 t + \frac{a t^{2}}{2}
 $$
 
 | input | meaning | unit |
@@ -1824,7 +1824,7 @@ inputs {'x': 2.0, 'v0': 2.1, 't': 2.2}
 ### Displacement under constant acceleration — solve for elapsed time — `displacement_time.t`
 
 $$
-x = \frac{a t^{2}}{2} + t v_0
+x = v_0 t + \frac{a t^{2}}{2}
 $$
 
 | input | meaning | unit |
@@ -1847,7 +1847,7 @@ inputs {'x': 2.0, 'v0': 2.1, 'a': 2.2}
 ### Displacement under constant acceleration — solve for initial velocity — `displacement_time.v0`
 
 $$
-x = \frac{a t^{2}}{2} + t v_0
+x = v_0 t + \frac{a t^{2}}{2}
 $$
 
 | input | meaning | unit |
@@ -1869,7 +1869,7 @@ inputs {'x': 2.0, 'a': 2.1, 't': 2.2}
 ### Displacement under constant acceleration — solve for displacement — `displacement_time.x`
 
 $$
-x = \frac{a t^{2}}{2} + t v_0
+x = v_0 t + \frac{a t^{2}}{2}
 $$
 
 | input | meaning | unit |
@@ -1891,7 +1891,7 @@ inputs {'v0': 2.0, 'a': 2.1, 't': 2.2}
 ### Force on a charge in an electric field — solve for electric field strength at the charge — `electric_force_in_field.Ef`
 
 $$
-F = Ef q
+F = q E_{f}
 $$
 
 | input | meaning | unit |
@@ -1913,7 +1913,7 @@ inputs {'F': 2.0, 'q': 2.1}
 ### Force on a charge in an electric field — solve for magnitude of the electric force — `electric_force_in_field.F`
 
 $$
-F = Ef q
+F = q E_{f}
 $$
 
 | input | meaning | unit |
@@ -1935,7 +1935,7 @@ inputs {'q': 2.0, 'Ef': 2.1}
 ### Force on a charge in an electric field — solve for magnitude of the charge — `electric_force_in_field.q`
 
 $$
-F = Ef q
+F = q E_{f}
 $$
 
 | input | meaning | unit |
@@ -1957,7 +1957,7 @@ inputs {'F': 2.0, 'Ef': 2.1}
 ### Electric power — solve for current — `electric_power.I`
 
 $$
-P = I V
+P = V I
 $$
 
 | input | meaning | unit |
@@ -1978,7 +1978,7 @@ inputs {'P': 2.0, 'V': 2.1}
 ### Electric power — solve for electric power — `electric_power.P`
 
 $$
-P = I V
+P = V I
 $$
 
 | input | meaning | unit |
@@ -1999,7 +1999,7 @@ inputs {'V': 2.0, 'I': 2.1}
 ### Electric power — solve for voltage — `electric_power.V`
 
 $$
-P = I V
+P = V I
 $$
 
 | input | meaning | unit |
@@ -2020,7 +2020,7 @@ inputs {'P': 2.0, 'I': 2.1}
 ### Efficiency of a heat engine — solve for heat taken in from the hot reservoir — `engine_efficiency.Qh`
 
 $$
-eff = \frac{W}{Qh}
+\text{eff} = \frac{W}{Q_{h}}
 $$
 
 | input | meaning | unit |
@@ -2042,7 +2042,7 @@ inputs {'eff': 2.0, 'W': 2.1}
 ### Efficiency of a heat engine — solve for work output per cycle — `engine_efficiency.W`
 
 $$
-eff = \frac{W}{Qh}
+\text{eff} = \frac{W}{Q_{h}}
 $$
 
 | input | meaning | unit |
@@ -2064,7 +2064,7 @@ inputs {'eff': 2.0, 'Qh': 2.1}
 ### Efficiency of a heat engine — solve for efficiency (a fraction) — `engine_efficiency.eff`
 
 $$
-eff = \frac{W}{Qh}
+\text{eff} = \frac{W}{Q_{h}}
 $$
 
 | input | meaning | unit |
@@ -2086,7 +2086,7 @@ inputs {'W': 2.0, 'Qh': 2.1}
 ### Energy balance of a cyclic heat engine — solve for heat out to the cold reservoir — `engine_energy_balance.Qc`
 
 $$
-W = - Qc + Qh
+W = Q_{h} - Q_{c}
 $$
 
 | input | meaning | unit |
@@ -2108,7 +2108,7 @@ inputs {'W': 2.0, 'Qh': 2.1}
 ### Energy balance of a cyclic heat engine — solve for heat in from the hot reservoir — `engine_energy_balance.Qh`
 
 $$
-W = - Qc + Qh
+W = Q_{h} - Q_{c}
 $$
 
 | input | meaning | unit |
@@ -2130,7 +2130,7 @@ inputs {'W': 2.0, 'Qc': 2.1}
 ### Energy balance of a cyclic heat engine — solve for net work output per cycle — `engine_energy_balance.W`
 
 $$
-W = - Qc + Qh
+W = Q_{h} - Q_{c}
 $$
 
 | input | meaning | unit |
@@ -2279,7 +2279,7 @@ inputs {'Q': 2.0, 'V': 2.1}
 ### Gravitational potential energy near the surface — solve for gravitational potential energy — `gravitational_pe.U`
 
 $$
-U = g h m
+U = m g h
 $$
 
 | input | meaning | unit |
@@ -2301,7 +2301,7 @@ inputs {'m': 2.0, 'g': 2.1, 'h': 2.2}
 ### Gravitational potential energy near the surface — solve for gravitational acceleration — `gravitational_pe.g`
 
 $$
-U = g h m
+U = m g h
 $$
 
 | input | meaning | unit |
@@ -2323,7 +2323,7 @@ inputs {'U': 2.0, 'm': 2.1, 'h': 2.2}
 ### Gravitational potential energy near the surface — solve for height above the reference level — `gravitational_pe.h`
 
 $$
-U = g h m
+U = m g h
 $$
 
 | input | meaning | unit |
@@ -2345,7 +2345,7 @@ inputs {'U': 2.0, 'm': 2.1, 'g': 2.2}
 ### Gravitational potential energy near the surface — solve for mass — `gravitational_pe.m`
 
 $$
-U = g h m
+U = m g h
 $$
 
 | input | meaning | unit |
@@ -2367,7 +2367,7 @@ inputs {'U': 2.0, 'g': 2.1, 'h': 2.2}
 ### Heat for a temperature change — solve for heat transferred — `heat.Q`
 
 $$
-Q = c \Delta T m
+Q = m c \Delta T
 $$
 
 | input | meaning | unit |
@@ -2389,7 +2389,7 @@ inputs {'m': 2.0, 'c': 2.1, 'dT': 2.2}
 ### Heat for a temperature change — solve for specific heat capacity — `heat.c`
 
 $$
-Q = c \Delta T m
+Q = m c \Delta T
 $$
 
 | input | meaning | unit |
@@ -2411,7 +2411,7 @@ inputs {'Q': 2.0, 'm': 2.1, 'dT': 2.2}
 ### Heat for a temperature change — solve for temperature change — `heat.dT`
 
 $$
-Q = c \Delta T m
+Q = m c \Delta T
 $$
 
 | input | meaning | unit |
@@ -2433,7 +2433,7 @@ inputs {'Q': 2.0, 'm': 2.1, 'c': 2.2}
 ### Heat for a temperature change — solve for mass — `heat.m`
 
 $$
-Q = c \Delta T m
+Q = m c \Delta T
 $$
 
 | input | meaning | unit |
@@ -2455,7 +2455,7 @@ inputs {'Q': 2.0, 'c': 2.1, 'dT': 2.2}
 ### Pressure of a column of fluid — solve for gauge pressure — `hydrostatic_pressure.P`
 
 $$
-P = g h \rho
+P = \rho g h
 $$
 
 | input | meaning | unit |
@@ -2477,7 +2477,7 @@ inputs {'rho': 2.0, 'g': 2.1, 'h': 2.2}
 ### Pressure of a column of fluid — solve for gravitational acceleration — `hydrostatic_pressure.g`
 
 $$
-P = g h \rho
+P = \rho g h
 $$
 
 | input | meaning | unit |
@@ -2499,7 +2499,7 @@ inputs {'P': 2.0, 'rho': 2.1, 'h': 2.2}
 ### Pressure of a column of fluid — solve for depth below the surface — `hydrostatic_pressure.h`
 
 $$
-P = g h \rho
+P = \rho g h
 $$
 
 | input | meaning | unit |
@@ -2521,7 +2521,7 @@ inputs {'P': 2.0, 'rho': 2.1, 'g': 2.2}
 ### Pressure of a column of fluid — solve for fluid density — `hydrostatic_pressure.rho`
 
 $$
-P = g h \rho
+P = \rho g h
 $$
 
 | input | meaning | unit |
@@ -2543,7 +2543,7 @@ inputs {'P': 2.0, 'g': 2.1, 'h': 2.2}
 ### Ideal gas law — solve for absolute pressure — `ideal_gas_moles.P`
 
 $$
-P V = R T n
+P V = n R T
 $$
 
 | input | meaning | unit |
@@ -2551,7 +2551,7 @@ $$
 | `V` | volume | `m^3` |
 | `n` | amount of gas | `mol` |
 | `T` | absolute temperature | `K` |
-| `R` | gas_constant | `J/(mol*K)` |
+| `R` | gas constant | `J/(mol*K)` |
 
 - **Output unit:** `Pa`
 - **File:** `ideal_gas_moles__P.onnx`
@@ -2567,7 +2567,7 @@ inputs {'V': 2.0, 'n': 2.1, 'T': 2.2, 'R': 2.3}
 ### Ideal gas law — solve for constant — `ideal_gas_moles.R`
 
 $$
-P V = R T n
+P V = n R T
 $$
 
 | input | meaning | unit |
@@ -2591,7 +2591,7 @@ inputs {'P': 2.0, 'V': 2.1, 'n': 2.2, 'T': 2.3}
 ### Ideal gas law — solve for absolute temperature — `ideal_gas_moles.T`
 
 $$
-P V = R T n
+P V = n R T
 $$
 
 | input | meaning | unit |
@@ -2599,7 +2599,7 @@ $$
 | `P` | absolute pressure | `Pa` |
 | `V` | volume | `m^3` |
 | `n` | amount of gas | `mol` |
-| `R` | gas_constant | `J/(mol*K)` |
+| `R` | gas constant | `J/(mol*K)` |
 
 - **Output unit:** `K`
 - **File:** `ideal_gas_moles__T.onnx`
@@ -2615,7 +2615,7 @@ inputs {'P': 2.0, 'V': 2.1, 'n': 2.2, 'R': 2.3}
 ### Ideal gas law — solve for volume — `ideal_gas_moles.V`
 
 $$
-P V = R T n
+P V = n R T
 $$
 
 | input | meaning | unit |
@@ -2623,7 +2623,7 @@ $$
 | `P` | absolute pressure | `Pa` |
 | `n` | amount of gas | `mol` |
 | `T` | absolute temperature | `K` |
-| `R` | gas_constant | `J/(mol*K)` |
+| `R` | gas constant | `J/(mol*K)` |
 
 - **Output unit:** `m^3`
 - **File:** `ideal_gas_moles__V.onnx`
@@ -2639,7 +2639,7 @@ inputs {'P': 2.0, 'n': 2.1, 'T': 2.2, 'R': 2.3}
 ### Ideal gas law — solve for amount of gas — `ideal_gas_moles.n`
 
 $$
-P V = R T n
+P V = n R T
 $$
 
 | input | meaning | unit |
@@ -2647,7 +2647,7 @@ $$
 | `P` | absolute pressure | `Pa` |
 | `V` | volume | `m^3` |
 | `T` | absolute temperature | `K` |
-| `R` | gas_constant | `J/(mol*K)` |
+| `R` | gas constant | `J/(mol*K)` |
 
 - **Output unit:** `mol`
 - **File:** `ideal_gas_moles__n.onnx`
@@ -2792,7 +2792,7 @@ inputs {'n': 2.0, 'c': 2.1}
 ### Reactance of an inductor — solve for inductance — `inductive_reactance.L`
 
 $$
-X = 2 \pi L f
+X = 2 \pi f L
 $$
 
 | input | meaning | unit |
@@ -2814,7 +2814,7 @@ inputs {'X': 2.0, 'f': 2.1}
 ### Reactance of an inductor — solve for inductive reactance — `inductive_reactance.X`
 
 $$
-X = 2 \pi L f
+X = 2 \pi f L
 $$
 
 | input | meaning | unit |
@@ -2836,7 +2836,7 @@ inputs {'f': 2.0, 'L': 2.1}
 ### Reactance of an inductor — solve for frequency — `inductive_reactance.f`
 
 $$
-X = 2 \pi L f
+X = 2 \pi f L
 $$
 
 | input | meaning | unit |
@@ -2988,7 +2988,7 @@ inputs {'K': 2.0, 'm': 2.1}
 ### Sliding friction — solve for normal force — `kinetic_friction.N`
 
 $$
-f = N \mu
+f = \mu N
 $$
 
 | input | meaning | unit |
@@ -3009,7 +3009,7 @@ inputs {'f': 2.0, 'mu': 2.1}
 ### Sliding friction — solve for friction force — `kinetic_friction.f`
 
 $$
-f = N \mu
+f = \mu N
 $$
 
 | input | meaning | unit |
@@ -3030,7 +3030,7 @@ inputs {'mu': 2.0, 'N': 2.1}
 ### Sliding friction — solve for coefficient of friction — `kinetic_friction.mu`
 
 $$
-f = N \mu
+f = \mu N
 $$
 
 | input | meaning | unit |
@@ -3051,7 +3051,7 @@ inputs {'f': 2.0, 'N': 2.1}
 ### Heat to melt or freeze — solve for latent heat of fusion — `latent_heat_fusion.Lf`
 
 $$
-Q = Lf m
+Q = m L_{f}
 $$
 
 | input | meaning | unit |
@@ -3073,7 +3073,7 @@ inputs {'Q': 2.0, 'm': 2.1}
 ### Heat to melt or freeze — solve for heat absorbed or released — `latent_heat_fusion.Q`
 
 $$
-Q = Lf m
+Q = m L_{f}
 $$
 
 | input | meaning | unit |
@@ -3095,7 +3095,7 @@ inputs {'m': 2.0, 'Lf': 2.1}
 ### Heat to melt or freeze — solve for mass — `latent_heat_fusion.m`
 
 $$
-Q = Lf m
+Q = m L_{f}
 $$
 
 | input | meaning | unit |
@@ -3117,7 +3117,7 @@ inputs {'Q': 2.0, 'Lf': 2.1}
 ### Heat to boil or condense — solve for latent heat of vaporization — `latent_heat_vaporization.Lv`
 
 $$
-Q = Lv m
+Q = m L_{v}
 $$
 
 | input | meaning | unit |
@@ -3139,7 +3139,7 @@ inputs {'Q': 2.0, 'm': 2.1}
 ### Heat to boil or condense — solve for heat — `latent_heat_vaporization.Q`
 
 $$
-Q = Lv m
+Q = m L_{v}
 $$
 
 | input | meaning | unit |
@@ -3161,7 +3161,7 @@ inputs {'m': 2.0, 'Lv': 2.1}
 ### Heat to boil or condense — solve for mass — `latent_heat_vaporization.m`
 
 $$
-Q = Lv m
+Q = m L_{v}
 $$
 
 | input | meaning | unit |
@@ -3183,7 +3183,7 @@ inputs {'Q': 2.0, 'Lv': 2.1}
 ### Resonant frequency of an LC circuit — solve for capacitance — `lc_resonance.C`
 
 $$
-f = \frac{1}{2 \pi \sqrt{C} \sqrt{L}}
+f = \frac{1}{2 \pi \sqrt{L C}}
 $$
 
 | input | meaning | unit |
@@ -3205,7 +3205,7 @@ inputs {'f': 2.0, 'L': 2.1}
 ### Resonant frequency of an LC circuit — solve for inductance — `lc_resonance.L`
 
 $$
-f = \frac{1}{2 \pi \sqrt{C} \sqrt{L}}
+f = \frac{1}{2 \pi \sqrt{L C}}
 $$
 
 | input | meaning | unit |
@@ -3227,7 +3227,7 @@ inputs {'f': 2.0, 'C': 2.1}
 ### Resonant frequency of an LC circuit — solve for resonant frequency — `lc_resonance.f`
 
 $$
-f = \frac{1}{2 \pi \sqrt{C} \sqrt{L}}
+f = \frac{1}{2 \pi \sqrt{L C}}
 $$
 
 | input | meaning | unit |
@@ -3249,7 +3249,7 @@ inputs {'L': 2.0, 'C': 2.1}
 ### Linear thermal expansion — solve for original length — `linear_expansion.L`
 
 $$
-dL = L alpha_t dT
+d_{L} = \alpha_{t} L d_{T}
 $$
 
 | input | meaning | unit |
@@ -3272,7 +3272,7 @@ inputs {'dL': 2.0, 'alpha_t': 2.1, 'dT': 2.2}
 ### Linear thermal expansion — solve for coefficient of linear expansion — `linear_expansion.alpha_t`
 
 $$
-dL = L alpha_t dT
+d_{L} = \alpha_{t} L d_{T}
 $$
 
 | input | meaning | unit |
@@ -3295,7 +3295,7 @@ inputs {'dL': 2.0, 'L': 2.1, 'dT': 2.2}
 ### Linear thermal expansion — solve for change in length — `linear_expansion.dL`
 
 $$
-dL = L alpha_t dT
+d_{L} = \alpha_{t} L d_{T}
 $$
 
 | input | meaning | unit |
@@ -3318,7 +3318,7 @@ inputs {'alpha_t': 2.0, 'L': 2.1, 'dT': 2.2}
 ### Linear thermal expansion — solve for change in temperature — `linear_expansion.dT`
 
 $$
-dL = L alpha_t dT
+d_{L} = \alpha_{t} L d_{T}
 $$
 
 | input | meaning | unit |
@@ -3341,7 +3341,7 @@ inputs {'dL': 2.0, 'alpha_t': 2.1, 'L': 2.2}
 ### Magnetic field of a long straight wire — solve for magnetic field — `long_wire_field.B`
 
 $$
-B = \frac{I mu0}{2 \pi r}
+B = \frac{\mu_{0} I}{2 \pi r}
 $$
 
 | input | meaning | unit |
@@ -3364,12 +3364,12 @@ inputs {'I': 2.0, 'r': 2.1, 'mu0': 2.2}
 ### Magnetic field of a long straight wire — solve for current — `long_wire_field.I`
 
 $$
-B = \frac{I mu0}{2 \pi r}
+B = \frac{\mu_{0} I}{2 \pi r}
 $$
 
 | input | meaning | unit |
 |---|---|---|
-| `B` | magnetic_field | `T` |
+| `B` | magnetic field | `T` |
 | `r` | distance from the wire | `m` |
 | `mu0` | permeability | `T*m/A` |
 
@@ -3387,12 +3387,12 @@ inputs {'B': 2.0, 'r': 2.1, 'mu0': 2.2}
 ### Magnetic field of a long straight wire — solve for constant — `long_wire_field.mu0`
 
 $$
-B = \frac{I mu0}{2 \pi r}
+B = \frac{\mu_{0} I}{2 \pi r}
 $$
 
 | input | meaning | unit |
 |---|---|---|
-| `B` | magnetic_field | `T` |
+| `B` | magnetic field | `T` |
 | `I` | current | `A` |
 | `r` | distance from the wire | `m` |
 
@@ -3410,12 +3410,12 @@ inputs {'B': 2.0, 'I': 2.1, 'r': 2.2}
 ### Magnetic field of a long straight wire — solve for distance from the wire — `long_wire_field.r`
 
 $$
-B = \frac{I mu0}{2 \pi r}
+B = \frac{\mu_{0} I}{2 \pi r}
 $$
 
 | input | meaning | unit |
 |---|---|---|
-| `B` | magnetic_field | `T` |
+| `B` | magnetic field | `T` |
 | `I` | current | `A` |
 | `mu0` | permeability | `T*m/A` |
 
@@ -3433,7 +3433,7 @@ inputs {'B': 2.0, 'I': 2.1, 'mu0': 2.2}
 ### Magnetic field at the centre of a circular loop — solve for field at the centre — `loop_center_field.B`
 
 $$
-B = \frac{I mu0}{2 r}
+B = \frac{\mu_{0} I}{2 r}
 $$
 
 | input | meaning | unit |
@@ -3456,7 +3456,7 @@ inputs {'I': 2.0, 'r': 2.1, 'mu0': 2.2}
 ### Magnetic field at the centre of a circular loop — solve for current — `loop_center_field.I`
 
 $$
-B = \frac{I mu0}{2 r}
+B = \frac{\mu_{0} I}{2 r}
 $$
 
 | input | meaning | unit |
@@ -3479,7 +3479,7 @@ inputs {'B': 2.0, 'r': 2.1, 'mu0': 2.2}
 ### Magnetic field at the centre of a circular loop — solve for constant — `loop_center_field.mu0`
 
 $$
-B = \frac{I mu0}{2 r}
+B = \frac{\mu_{0} I}{2 r}
 $$
 
 | input | meaning | unit |
@@ -3502,7 +3502,7 @@ inputs {'B': 2.0, 'I': 2.1, 'r': 2.2}
 ### Magnetic field at the centre of a circular loop — solve for radius of the loop — `loop_center_field.r`
 
 $$
-B = \frac{I mu0}{2 r}
+B = \frac{\mu_{0} I}{2 r}
 $$
 
 | input | meaning | unit |
@@ -3525,7 +3525,7 @@ inputs {'B': 2.0, 'I': 2.1, 'mu0': 2.2}
 ### Magnetic force on a moving charge — solve for magnetic field — `magnetic_force_charge.B`
 
 $$
-F = B q v \sin{\left(theta \right)}
+F = q v B \sin\left(\theta\right)
 $$
 
 | input | meaning | unit |
@@ -3549,14 +3549,14 @@ inputs {'F': 2.0, 'q': 2.1, 'v': 2.2, 'theta': 2.3}
 ### Magnetic force on a moving charge — solve for magnitude of the magnetic force — `magnetic_force_charge.F`
 
 $$
-F = B q v \sin{\left(theta \right)}
+F = q v B \sin\left(\theta\right)
 $$
 
 | input | meaning | unit |
 |---|---|---|
 | `q` | charge | `C` |
 | `v` | speed of the charge | `m/s` |
-| `B` | magnetic_field | `T` |
+| `B` | magnetic field | `T` |
 | `theta` | angle between velocity and field | `rad` |
 
 - **Output unit:** `N`
@@ -3573,14 +3573,14 @@ inputs {'q': 2.0, 'v': 2.1, 'B': 2.2, 'theta': 2.3}
 ### Magnetic force on a moving charge — solve for charge — `magnetic_force_charge.q`
 
 $$
-F = B q v \sin{\left(theta \right)}
+F = q v B \sin\left(\theta\right)
 $$
 
 | input | meaning | unit |
 |---|---|---|
 | `F` | magnitude of the magnetic force | `N` |
 | `v` | speed of the charge | `m/s` |
-| `B` | magnetic_field | `T` |
+| `B` | magnetic field | `T` |
 | `theta` | angle between velocity and field | `rad` |
 
 - **Output unit:** `C`
@@ -3597,7 +3597,7 @@ inputs {'F': 2.0, 'v': 2.1, 'B': 2.2, 'theta': 2.3}
 ### Magnetic force on a moving charge — solve for angle between velocity and field — `magnetic_force_charge.theta`
 
 $$
-F = B q v \sin{\left(theta \right)}
+F = q v B \sin\left(\theta\right)
 $$
 
 | input | meaning | unit |
@@ -3605,7 +3605,7 @@ $$
 | `F` | magnitude of the magnetic force | `N` |
 | `q` | charge | `C` |
 | `v` | speed of the charge | `m/s` |
-| `B` | magnetic_field | `T` |
+| `B` | magnetic field | `T` |
 
 - **Output unit:** `rad`
 - **File:** `magnetic_force_charge__theta.onnx`
@@ -3617,14 +3617,14 @@ $$
 ### Magnetic force on a moving charge — solve for speed of the charge — `magnetic_force_charge.v`
 
 $$
-F = B q v \sin{\left(theta \right)}
+F = q v B \sin\left(\theta\right)
 $$
 
 | input | meaning | unit |
 |---|---|---|
 | `F` | magnitude of the magnetic force | `N` |
 | `q` | charge | `C` |
-| `B` | magnetic_field | `T` |
+| `B` | magnetic field | `T` |
 | `theta` | angle between velocity and field | `rad` |
 
 - **Output unit:** `m/s`
@@ -3641,7 +3641,7 @@ inputs {'F': 2.0, 'q': 2.1, 'B': 2.2, 'theta': 2.3}
 ### Magnetic force on a current-carrying wire — solve for magnetic field — `magnetic_force_wire.B`
 
 $$
-F = B I L \sin{\left(theta \right)}
+F = I L B \sin\left(\theta\right)
 $$
 
 | input | meaning | unit |
@@ -3665,14 +3665,14 @@ inputs {'F': 2.0, 'I': 2.1, 'L': 2.2, 'theta': 2.3}
 ### Magnetic force on a current-carrying wire — solve for magnetic — `magnetic_force_wire.F`
 
 $$
-F = B I L \sin{\left(theta \right)}
+F = I L B \sin\left(\theta\right)
 $$
 
 | input | meaning | unit |
 |---|---|---|
 | `I` | current | `A` |
 | `L` | length of wire in the field | `m` |
-| `B` | magnetic_field | `T` |
+| `B` | magnetic field | `T` |
 | `theta` | angle between the wire and the field | `rad` |
 
 - **Output unit:** `N`
@@ -3689,14 +3689,14 @@ inputs {'I': 2.0, 'L': 2.1, 'B': 2.2, 'theta': 2.3}
 ### Magnetic force on a current-carrying wire — solve for current — `magnetic_force_wire.I`
 
 $$
-F = B I L \sin{\left(theta \right)}
+F = I L B \sin\left(\theta\right)
 $$
 
 | input | meaning | unit |
 |---|---|---|
 | `F` | force | `N` |
 | `L` | length of wire in the field | `m` |
-| `B` | magnetic_field | `T` |
+| `B` | magnetic field | `T` |
 | `theta` | angle between the wire and the field | `rad` |
 
 - **Output unit:** `A`
@@ -3713,14 +3713,14 @@ inputs {'F': 2.0, 'L': 2.1, 'B': 2.2, 'theta': 2.3}
 ### Magnetic force on a current-carrying wire — solve for length of wire in the field — `magnetic_force_wire.L`
 
 $$
-F = B I L \sin{\left(theta \right)}
+F = I L B \sin\left(\theta\right)
 $$
 
 | input | meaning | unit |
 |---|---|---|
 | `F` | force | `N` |
 | `I` | current | `A` |
-| `B` | magnetic_field | `T` |
+| `B` | magnetic field | `T` |
 | `theta` | angle between the wire and the field | `rad` |
 
 - **Output unit:** `m`
@@ -3737,7 +3737,7 @@ inputs {'F': 2.0, 'I': 2.1, 'B': 2.2, 'theta': 2.3}
 ### Magnetic force on a current-carrying wire — solve for angle between the wire and the field — `magnetic_force_wire.theta`
 
 $$
-F = B I L \sin{\left(theta \right)}
+F = I L B \sin\left(\theta\right)
 $$
 
 | input | meaning | unit |
@@ -3745,7 +3745,7 @@ $$
 | `F` | force | `N` |
 | `I` | current | `A` |
 | `L` | length of wire in the field | `m` |
-| `B` | magnetic_field | `T` |
+| `B` | magnetic field | `T` |
 
 - **Output unit:** `rad`
 - **File:** `magnetic_force_wire__theta.onnx`
@@ -3929,7 +3929,7 @@ inputs {'p': 2.0, 'm': 2.1}
 ### Emf of a rod moving through a magnetic field — solve for magnetic field — `motional_emf.B`
 
 $$
-emf = B l v
+\text{emf} = B l v
 $$
 
 | input | meaning | unit |
@@ -3952,7 +3952,7 @@ inputs {'emf': 2.0, 'l': 2.1, 'v': 2.2}
 ### Emf of a rod moving through a magnetic field — solve for induced emf — `motional_emf.emf`
 
 $$
-emf = B l v
+\text{emf} = B l v
 $$
 
 | input | meaning | unit |
@@ -3975,7 +3975,7 @@ inputs {'B': 2.0, 'l': 2.1, 'v': 2.2}
 ### Emf of a rod moving through a magnetic field — solve for length of the rod — `motional_emf.l`
 
 $$
-emf = B l v
+\text{emf} = B l v
 $$
 
 | input | meaning | unit |
@@ -3998,7 +3998,7 @@ inputs {'emf': 2.0, 'B': 2.1, 'v': 2.2}
 ### Emf of a rod moving through a magnetic field — solve for speed of the rod — `motional_emf.v`
 
 $$
-emf = B l v
+\text{emf} = B l v
 $$
 
 | input | meaning | unit |
@@ -4169,7 +4169,7 @@ inputs {'W': 2.0, 'm': 2.1, 'v': 2.2}
 ### Net force and acceleration — solve for net force — `newton_second.F`
 
 $$
-F = a m
+F = m a
 $$
 
 | input | meaning | unit |
@@ -4190,7 +4190,7 @@ inputs {'m': 2.0, 'a': 2.1}
 ### Net force and acceleration — solve for acceleration — `newton_second.a`
 
 $$
-F = a m
+F = m a
 $$
 
 | input | meaning | unit |
@@ -4211,7 +4211,7 @@ inputs {'F': 2.0, 'm': 2.1}
 ### Net force and acceleration — solve for mass — `newton_second.m`
 
 $$
-F = a m
+F = m a
 $$
 
 | input | meaning | unit |
@@ -4232,7 +4232,7 @@ inputs {'F': 2.0, 'a': 2.1}
 ### Normal force on an incline — solve for normal force from the incline — `normal_force_incline.N`
 
 $$
-N = g m \cos{\left(\theta \right)}
+N = m g \cos\left(\theta\right)
 $$
 
 | input | meaning | unit |
@@ -4255,7 +4255,7 @@ inputs {'m': 0.5, 'g': 0.6, 'theta': 0.7}
 ### Normal force on an incline — solve for gravitational acceleration — `normal_force_incline.g`
 
 $$
-N = g m \cos{\left(\theta \right)}
+N = m g \cos\left(\theta\right)
 $$
 
 | input | meaning | unit |
@@ -4278,7 +4278,7 @@ inputs {'N': 0.5, 'm': 0.6, 'theta': 0.7}
 ### Normal force on an incline — solve for mass — `normal_force_incline.m`
 
 $$
-N = g m \cos{\left(\theta \right)}
+N = m g \cos\left(\theta\right)
 $$
 
 | input | meaning | unit |
@@ -4301,7 +4301,7 @@ inputs {'N': 0.5, 'g': 0.6, 'theta': 0.7}
 ### Normal force on an incline — solve for angle of the incline to the horizontal — `normal_force_incline.theta`
 
 $$
-N = g m \cos{\left(\theta \right)}
+N = m g \cos\left(\theta\right)
 $$
 
 | input | meaning | unit |
@@ -4555,7 +4555,7 @@ inputs {'P': 2.0, 'R': 2.1}
 ### Period of a circular orbit — solve for constant — `orbital_period.G`
 
 $$
-T = \frac{2 \pi r^{\frac{3}{2}}}{\sqrt{G} \sqrt{M}}
+T = 2 \pi \sqrt{\frac{r^{3}}{G M}}
 $$
 
 | input | meaning | unit |
@@ -4578,14 +4578,14 @@ inputs {'T': 2.0, 'r': 2.1, 'M': 2.2}
 ### Period of a circular orbit — solve for mass of the central body — `orbital_period.M`
 
 $$
-T = \frac{2 \pi r^{\frac{3}{2}}}{\sqrt{G} \sqrt{M}}
+T = 2 \pi \sqrt{\frac{r^{3}}{G M}}
 $$
 
 | input | meaning | unit |
 |---|---|---|
 | `T` | orbital period | `s` |
 | `r` | orbital radius | `m` |
-| `G` | gravitational_constant | `N*m^2/kg^2` |
+| `G` | gravitational constant | `N*m^2/kg^2` |
 
 - **Output unit:** `kg`
 - **File:** `orbital_period__M.onnx`
@@ -4601,14 +4601,14 @@ inputs {'T': 2.0, 'r': 2.1, 'G': 2.2}
 ### Period of a circular orbit — solve for orbital period — `orbital_period.T`
 
 $$
-T = \frac{2 \pi r^{\frac{3}{2}}}{\sqrt{G} \sqrt{M}}
+T = 2 \pi \sqrt{\frac{r^{3}}{G M}}
 $$
 
 | input | meaning | unit |
 |---|---|---|
 | `r` | orbital radius | `m` |
 | `M` | mass of the central body | `kg` |
-| `G` | gravitational_constant | `N*m^2/kg^2` |
+| `G` | gravitational constant | `N*m^2/kg^2` |
 
 - **Output unit:** `s`
 - **File:** `orbital_period__T.onnx`
@@ -4624,14 +4624,14 @@ inputs {'r': 2.0, 'M': 2.1, 'G': 2.2}
 ### Period of a circular orbit — solve for orbital radius — `orbital_period.r`
 
 $$
-T = \frac{2 \pi r^{\frac{3}{2}}}{\sqrt{G} \sqrt{M}}
+T = 2 \pi \sqrt{\frac{r^{3}}{G M}}
 $$
 
 | input | meaning | unit |
 |---|---|---|
 | `T` | orbital period | `s` |
 | `M` | mass of the central body | `kg` |
-| `G` | gravitational_constant | `N*m^2/kg^2` |
+| `G` | gravitational constant | `N*m^2/kg^2` |
 
 - **Output unit:** `m`
 - **File:** `orbital_period__r.onnx`
@@ -4647,7 +4647,7 @@ inputs {'T': 2.0, 'M': 2.1, 'G': 2.2}
 ### Speed in a circular orbit — solve for constant — `orbital_speed.G`
 
 $$
-v = \frac{\sqrt{G} \sqrt{M}}{\sqrt{r}}
+v = \sqrt{\frac{G M}{r}}
 $$
 
 | input | meaning | unit |
@@ -4670,14 +4670,14 @@ inputs {'v': 2.0, 'M': 2.1, 'r': 2.2}
 ### Speed in a circular orbit — solve for mass of the central body — `orbital_speed.M`
 
 $$
-v = \frac{\sqrt{G} \sqrt{M}}{\sqrt{r}}
+v = \sqrt{\frac{G M}{r}}
 $$
 
 | input | meaning | unit |
 |---|---|---|
 | `v` | orbital speed | `m/s` |
 | `r` | orbital radius | `m` |
-| `G` | gravitational_constant | `N*m^2/kg^2` |
+| `G` | gravitational constant | `N*m^2/kg^2` |
 
 - **Output unit:** `kg`
 - **File:** `orbital_speed__M.onnx`
@@ -4693,14 +4693,14 @@ inputs {'v': 2.0, 'r': 2.1, 'G': 2.2}
 ### Speed in a circular orbit — solve for orbital radius — `orbital_speed.r`
 
 $$
-v = \frac{\sqrt{G} \sqrt{M}}{\sqrt{r}}
+v = \sqrt{\frac{G M}{r}}
 $$
 
 | input | meaning | unit |
 |---|---|---|
 | `v` | orbital speed | `m/s` |
 | `M` | mass of the central body | `kg` |
-| `G` | gravitational_constant | `N*m^2/kg^2` |
+| `G` | gravitational constant | `N*m^2/kg^2` |
 
 - **Output unit:** `m`
 - **File:** `orbital_speed__r.onnx`
@@ -4716,14 +4716,14 @@ inputs {'v': 2.0, 'M': 2.1, 'G': 2.2}
 ### Speed in a circular orbit — solve for orbital speed — `orbital_speed.v`
 
 $$
-v = \frac{\sqrt{G} \sqrt{M}}{\sqrt{r}}
+v = \sqrt{\frac{G M}{r}}
 $$
 
 | input | meaning | unit |
 |---|---|---|
 | `M` | mass of the central body | `kg` |
 | `r` | orbital radius | `m` |
-| `G` | gravitational_constant | `N*m^2/kg^2` |
+| `G` | gravitational constant | `N*m^2/kg^2` |
 
 - **Output unit:** `m/s`
 - **File:** `orbital_speed__v.onnx`
@@ -4739,7 +4739,7 @@ inputs {'M': 2.0, 'r': 2.1, 'G': 2.2}
 ### Capacitance of parallel plates — solve for area of each plate — `parallel_plate_capacitor.A`
 
 $$
-C = \frac{A eps0}{d}
+C = \frac{\varepsilon_{0} A}{d}
 $$
 
 | input | meaning | unit |
@@ -4762,7 +4762,7 @@ inputs {'C': 2.0, 'd': 2.1, 'eps0': 2.2}
 ### Capacitance of parallel plates — solve for capacitance — `parallel_plate_capacitor.C`
 
 $$
-C = \frac{A eps0}{d}
+C = \frac{\varepsilon_{0} A}{d}
 $$
 
 | input | meaning | unit |
@@ -4785,7 +4785,7 @@ inputs {'A': 2.0, 'd': 2.1, 'eps0': 2.2}
 ### Capacitance of parallel plates — solve for plate separation — `parallel_plate_capacitor.d`
 
 $$
-C = \frac{A eps0}{d}
+C = \frac{\varepsilon_{0} A}{d}
 $$
 
 | input | meaning | unit |
@@ -4808,7 +4808,7 @@ inputs {'C': 2.0, 'A': 2.1, 'eps0': 2.2}
 ### Capacitance of parallel plates — solve for constant — `parallel_plate_capacitor.eps0`
 
 $$
-C = \frac{A eps0}{d}
+C = \frac{\varepsilon_{0} A}{d}
 $$
 
 | input | meaning | unit |
@@ -4831,7 +4831,7 @@ inputs {'C': 2.0, 'A': 2.1, 'd': 2.2}
 ### Period of a simple pendulum — solve for length of the pendulum — `pendulum_period.Lp`
 
 $$
-T = \frac{2 \pi \sqrt{Lp}}{\sqrt{g}}
+T = 2 \pi \sqrt{\frac{L_{p}}{g}}
 $$
 
 | input | meaning | unit |
@@ -4853,7 +4853,7 @@ inputs {'T': 2.0, 'g': 2.1}
 ### Period of a simple pendulum — solve for period of the swing — `pendulum_period.T`
 
 $$
-T = \frac{2 \pi \sqrt{Lp}}{\sqrt{g}}
+T = 2 \pi \sqrt{\frac{L_{p}}{g}}
 $$
 
 | input | meaning | unit |
@@ -4875,7 +4875,7 @@ inputs {'Lp': 2.0, 'g': 2.1}
 ### Period of a simple pendulum — solve for gravity — `pendulum_period.g`
 
 $$
-T = \frac{2 \pi \sqrt{Lp}}{\sqrt{g}}
+T = 2 \pi \sqrt{\frac{L_{p}}{g}}
 $$
 
 | input | meaning | unit |
@@ -4937,13 +4937,13 @@ inputs {'T': 2.0}
 ### Energy of a photon — solve for photon energy — `photon_energy.E`
 
 $$
-E = f h
+E = h f
 $$
 
 | input | meaning | unit |
 |---|---|---|
 | `f` | frequency of the light | `Hz` |
-| `h` | planck_constant | `J*s` |
+| `h` | planck constant | `J*s` |
 
 - **Output unit:** `J`
 - **File:** `photon_energy__E.onnx`
@@ -4959,13 +4959,13 @@ inputs {'f': 2.0, 'h': 2.1}
 ### Energy of a photon — solve for frequency of the light — `photon_energy.f`
 
 $$
-E = f h
+E = h f
 $$
 
 | input | meaning | unit |
 |---|---|---|
 | `E` | photon energy | `J` |
-| `h` | planck_constant | `J*s` |
+| `h` | planck constant | `J*s` |
 
 - **Output unit:** `Hz`
 - **File:** `photon_energy__f.onnx`
@@ -4981,7 +4981,7 @@ inputs {'E': 2.0, 'h': 2.1}
 ### Energy of a photon — solve for constant — `photon_energy.h`
 
 $$
-E = f h
+E = h f
 $$
 
 | input | meaning | unit |
@@ -5003,13 +5003,13 @@ inputs {'E': 2.0, 'f': 2.1}
 ### Photon energy from wavelength — solve for photon — `photon_energy_wavelength.E`
 
 $$
-E = \frac{c h}{lam}
+E = \frac{h c}{\lambda}
 $$
 
 | input | meaning | unit |
 |---|---|---|
 | `lam` | wavelength in vacuum | `m` |
-| `h` | planck_constant | `J*s` |
+| `h` | planck constant | `J*s` |
 | `c` | speed | `m/s` |
 
 - **Output unit:** `J`
@@ -5026,14 +5026,14 @@ inputs {'lam': 2.0, 'h': 2.1, 'c': 2.2}
 ### Photon energy from wavelength — solve for light — `photon_energy_wavelength.c`
 
 $$
-E = \frac{c h}{lam}
+E = \frac{h c}{\lambda}
 $$
 
 | input | meaning | unit |
 |---|---|---|
 | `E` | energy | `J` |
 | `lam` | wavelength in vacuum | `m` |
-| `h` | planck_constant | `J*s` |
+| `h` | planck constant | `J*s` |
 
 - **Output unit:** `m/s`
 - **File:** `photon_energy_wavelength__c.onnx`
@@ -5049,7 +5049,7 @@ inputs {'E': 2.0, 'lam': 2.1, 'h': 2.2}
 ### Photon energy from wavelength — solve for constant — `photon_energy_wavelength.h`
 
 $$
-E = \frac{c h}{lam}
+E = \frac{h c}{\lambda}
 $$
 
 | input | meaning | unit |
@@ -5072,13 +5072,13 @@ inputs {'E': 2.0, 'lam': 2.1, 'c': 2.2}
 ### Photon energy from wavelength — solve for wavelength in vacuum — `photon_energy_wavelength.lam`
 
 $$
-E = \frac{c h}{lam}
+E = \frac{h c}{\lambda}
 $$
 
 | input | meaning | unit |
 |---|---|---|
 | `E` | energy | `J` |
-| `h` | planck_constant | `J*s` |
+| `h` | planck constant | `J*s` |
 | `c` | speed | `m/s` |
 
 - **Output unit:** `m`
@@ -5095,7 +5095,7 @@ inputs {'E': 2.0, 'h': 2.1, 'c': 2.2}
 ### Momentum of a photon — solve for constant — `photon_momentum.h`
 
 $$
-p = \frac{h}{lam}
+p = \frac{h}{\lambda}
 $$
 
 | input | meaning | unit |
@@ -5117,13 +5117,13 @@ inputs {'p': 2.0, 'lam': 2.1}
 ### Momentum of a photon — solve for wavelength — `photon_momentum.lam`
 
 $$
-p = \frac{h}{lam}
+p = \frac{h}{\lambda}
 $$
 
 | input | meaning | unit |
 |---|---|---|
 | `p` | photon momentum | `kg*m/s` |
-| `h` | planck_constant | `J*s` |
+| `h` | planck constant | `J*s` |
 
 - **Output unit:** `m`
 - **File:** `photon_momentum__lam.onnx`
@@ -5139,13 +5139,13 @@ inputs {'p': 2.0, 'h': 2.1}
 ### Momentum of a photon — solve for photon momentum — `photon_momentum.p`
 
 $$
-p = \frac{h}{lam}
+p = \frac{h}{\lambda}
 $$
 
 | input | meaning | unit |
 |---|---|---|
 | `lam` | length | `m` |
-| `h` | planck_constant | `J*s` |
+| `h` | planck constant | `J*s` |
 
 - **Output unit:** `kg*m/s`
 - **File:** `photon_momentum__p.onnx`
@@ -5161,14 +5161,14 @@ inputs {'lam': 2.0, 'h': 2.1}
 ### Electric field of a point charge — solve for field strength at distance r — `point_charge_field.Ef`
 
 $$
-Ef = \frac{Q ke}{r^{2}}
+E_{f} = \frac{k_{e} Q}{r^{2}}
 $$
 
 | input | meaning | unit |
 |---|---|---|
 | `Q` | magnitude of the source charge | `C` |
 | `r` | distance from the charge | `m` |
-| `ke` | coulomb_constant | `N*m^2/C^2` |
+| `ke` | coulomb constant | `N*m^2/C^2` |
 
 - **Output unit:** `N/C`
 - **File:** `point_charge_field__Ef.onnx`
@@ -5184,14 +5184,14 @@ inputs {'Q': 2.0, 'r': 2.1, 'ke': 2.2}
 ### Electric field of a point charge — solve for magnitude of the source charge — `point_charge_field.Q`
 
 $$
-Ef = \frac{Q ke}{r^{2}}
+E_{f} = \frac{k_{e} Q}{r^{2}}
 $$
 
 | input | meaning | unit |
 |---|---|---|
 | `Ef` | field strength at distance r | `N/C` |
 | `r` | distance from the charge | `m` |
-| `ke` | coulomb_constant | `N*m^2/C^2` |
+| `ke` | coulomb constant | `N*m^2/C^2` |
 
 - **Output unit:** `C`
 - **File:** `point_charge_field__Q.onnx`
@@ -5207,7 +5207,7 @@ inputs {'Ef': 2.0, 'r': 2.1, 'ke': 2.2}
 ### Electric field of a point charge — solve for constant — `point_charge_field.ke`
 
 $$
-Ef = \frac{Q ke}{r^{2}}
+E_{f} = \frac{k_{e} Q}{r^{2}}
 $$
 
 | input | meaning | unit |
@@ -5230,14 +5230,14 @@ inputs {'Ef': 2.0, 'Q': 2.1, 'r': 2.2}
 ### Electric field of a point charge — solve for distance from the charge — `point_charge_field.r`
 
 $$
-Ef = \frac{Q ke}{r^{2}}
+E_{f} = \frac{k_{e} Q}{r^{2}}
 $$
 
 | input | meaning | unit |
 |---|---|---|
 | `Ef` | field strength at distance r | `N/C` |
 | `Q` | magnitude of the source charge | `C` |
-| `ke` | coulomb_constant | `N*m^2/C^2` |
+| `ke` | coulomb constant | `N*m^2/C^2` |
 
 - **Output unit:** `m`
 - **File:** `point_charge_field__r.onnx`
@@ -5253,14 +5253,14 @@ inputs {'Ef': 2.0, 'Q': 2.1, 'ke': 2.2}
 ### Electric potential of a point charge — solve for source charge — `point_charge_potential.Q`
 
 $$
-V = \frac{Q ke}{r}
+V = \frac{k_{e} Q}{r}
 $$
 
 | input | meaning | unit |
 |---|---|---|
 | `V` | electric potential relative to infinity | `V` |
 | `r` | distance from the charge | `m` |
-| `ke` | coulomb_constant | `N*m^2/C^2` |
+| `ke` | coulomb constant | `N*m^2/C^2` |
 
 - **Output unit:** `C`
 - **File:** `point_charge_potential__Q.onnx`
@@ -5276,14 +5276,14 @@ inputs {'V': 2.0, 'r': 2.1, 'ke': 2.2}
 ### Electric potential of a point charge — solve for electric potential relative to infinity — `point_charge_potential.V`
 
 $$
-V = \frac{Q ke}{r}
+V = \frac{k_{e} Q}{r}
 $$
 
 | input | meaning | unit |
 |---|---|---|
 | `Q` | source charge | `C` |
 | `r` | distance from the charge | `m` |
-| `ke` | coulomb_constant | `N*m^2/C^2` |
+| `ke` | coulomb constant | `N*m^2/C^2` |
 
 - **Output unit:** `V`
 - **File:** `point_charge_potential__V.onnx`
@@ -5299,7 +5299,7 @@ inputs {'Q': 2.0, 'r': 2.1, 'ke': 2.2}
 ### Electric potential of a point charge — solve for constant — `point_charge_potential.ke`
 
 $$
-V = \frac{Q ke}{r}
+V = \frac{k_{e} Q}{r}
 $$
 
 | input | meaning | unit |
@@ -5322,14 +5322,14 @@ inputs {'V': 2.0, 'Q': 2.1, 'r': 2.2}
 ### Electric potential of a point charge — solve for distance from the charge — `point_charge_potential.r`
 
 $$
-V = \frac{Q ke}{r}
+V = \frac{k_{e} Q}{r}
 $$
 
 | input | meaning | unit |
 |---|---|---|
 | `V` | electric potential relative to infinity | `V` |
 | `Q` | source charge | `C` |
-| `ke` | coulomb_constant | `N*m^2/C^2` |
+| `ke` | coulomb constant | `N*m^2/C^2` |
 
 - **Output unit:** `m`
 - **File:** `point_charge_potential__r.onnx`
@@ -5534,7 +5534,7 @@ inputs {'F': 2.0, 'A': 2.1}
 ### Voltage of a charging capacitor — solve for capacitance — `rc_charging.C`
 
 $$
-V = emf \left(1 - e^{- \frac{t}{C R}}\right)
+V = \text{emf} \left(1 - e^{\frac{-t}{R C}}\right)
 $$
 
 | input | meaning | unit |
@@ -5558,7 +5558,7 @@ inputs {'V': 2.0, 'emf': 2.1, 't': 2.2, 'R': 2.3}
 ### Voltage of a charging capacitor — solve for resistance — `rc_charging.R`
 
 $$
-V = emf \left(1 - e^{- \frac{t}{C R}}\right)
+V = \text{emf} \left(1 - e^{\frac{-t}{R C}}\right)
 $$
 
 | input | meaning | unit |
@@ -5582,7 +5582,7 @@ inputs {'V': 2.0, 'emf': 2.1, 't': 2.2, 'C': 2.3}
 ### Voltage of a charging capacitor — solve for voltage across the capacitor at time t — `rc_charging.V`
 
 $$
-V = emf \left(1 - e^{- \frac{t}{C R}}\right)
+V = \text{emf} \left(1 - e^{\frac{-t}{R C}}\right)
 $$
 
 | input | meaning | unit |
@@ -5606,7 +5606,7 @@ inputs {'emf': 2.0, 't': 2.1, 'R': 2.2, 'C': 2.3}
 ### Voltage of a charging capacitor — solve for emf of the source — `rc_charging.emf`
 
 $$
-V = emf \left(1 - e^{- \frac{t}{C R}}\right)
+V = \text{emf} \left(1 - e^{\frac{-t}{R C}}\right)
 $$
 
 | input | meaning | unit |
@@ -5630,7 +5630,7 @@ inputs {'V': 2.0, 't': 2.1, 'R': 2.2, 'C': 2.3}
 ### Voltage of a charging capacitor — solve for time since charging began — `rc_charging.t`
 
 $$
-V = emf \left(1 - e^{- \frac{t}{C R}}\right)
+V = \text{emf} \left(1 - e^{\frac{-t}{R C}}\right)
 $$
 
 | input | meaning | unit |
@@ -5654,7 +5654,7 @@ inputs {'V': 2.0, 'emf': 2.1, 'R': 2.2, 'C': 2.3}
 ### Voltage of a discharging capacitor — solve for capacitance — `rc_discharging.C`
 
 $$
-V = V0 e^{- \frac{t}{C R}}
+V = V_{0} e^{\frac{-t}{R C}}
 $$
 
 | input | meaning | unit |
@@ -5678,7 +5678,7 @@ inputs {'V': 2.0, 'V0': 2.1, 't': 2.2, 'R': 2.3}
 ### Voltage of a discharging capacitor — solve for resistance — `rc_discharging.R`
 
 $$
-V = V0 e^{- \frac{t}{C R}}
+V = V_{0} e^{\frac{-t}{R C}}
 $$
 
 | input | meaning | unit |
@@ -5702,7 +5702,7 @@ inputs {'V': 2.0, 'V0': 2.1, 't': 2.2, 'C': 2.3}
 ### Voltage of a discharging capacitor — solve for voltage across the capacitor at time t — `rc_discharging.V`
 
 $$
-V = V0 e^{- \frac{t}{C R}}
+V = V_{0} e^{\frac{-t}{R C}}
 $$
 
 | input | meaning | unit |
@@ -5726,7 +5726,7 @@ inputs {'V0': 2.0, 't': 2.1, 'R': 2.2, 'C': 2.3}
 ### Voltage of a discharging capacitor — solve for initial voltage across the capacitor — `rc_discharging.V0`
 
 $$
-V = V0 e^{- \frac{t}{C R}}
+V = V_{0} e^{\frac{-t}{R C}}
 $$
 
 | input | meaning | unit |
@@ -5750,7 +5750,7 @@ inputs {'V': 2.0, 't': 2.1, 'R': 2.2, 'C': 2.3}
 ### Voltage of a discharging capacitor — solve for time since the discharge began — `rc_discharging.t`
 
 $$
-V = V0 e^{- \frac{t}{C R}}
+V = V_{0} e^{\frac{-t}{R C}}
 $$
 
 | input | meaning | unit |
@@ -5774,7 +5774,7 @@ inputs {'V': 2.0, 'V0': 2.1, 'R': 2.2, 'C': 2.3}
 ### Time constant of an RC circuit — solve for capacitance — `rc_time_constant.C`
 
 $$
-tau = C R
+\tau = R C
 $$
 
 | input | meaning | unit |
@@ -5796,7 +5796,7 @@ inputs {'tau': 2.0, 'R': 2.1}
 ### Time constant of an RC circuit — solve for resistance — `rc_time_constant.R`
 
 $$
-tau = C R
+\tau = R C
 $$
 
 | input | meaning | unit |
@@ -5818,7 +5818,7 @@ inputs {'tau': 2.0, 'C': 2.1}
 ### Time constant of an RC circuit — solve for time constant — `rc_time_constant.tau`
 
 $$
-tau = C R
+\tau = R C
 $$
 
 | input | meaning | unit |
@@ -5840,7 +5840,7 @@ inputs {'R': 2.0, 'C': 2.1}
 ### Resistance of a uniform wire — solve for cross-sectional area — `resistivity.A`
 
 $$
-R = \frac{L rho_e}{A}
+R = \frac{\rho_{e} L}{A}
 $$
 
 | input | meaning | unit |
@@ -5863,7 +5863,7 @@ inputs {'R': 2.0, 'rho_e': 2.1, 'L': 2.2}
 ### Resistance of a uniform wire — solve for length of the wire — `resistivity.L`
 
 $$
-R = \frac{L rho_e}{A}
+R = \frac{\rho_{e} L}{A}
 $$
 
 | input | meaning | unit |
@@ -5886,7 +5886,7 @@ inputs {'R': 2.0, 'rho_e': 2.1, 'A': 2.2}
 ### Resistance of a uniform wire — solve for resistance — `resistivity.R`
 
 $$
-R = \frac{L rho_e}{A}
+R = \frac{\rho_{e} L}{A}
 $$
 
 | input | meaning | unit |
@@ -5909,7 +5909,7 @@ inputs {'rho_e': 2.0, 'L': 2.1, 'A': 2.2}
 ### Resistance of a uniform wire — solve for resistivity of the material — `resistivity.rho_e`
 
 $$
-R = \frac{L rho_e}{A}
+R = \frac{\rho_{e} L}{A}
 $$
 
 | input | meaning | unit |
@@ -5932,7 +5932,7 @@ inputs {'R': 2.0, 'L': 2.1, 'A': 2.2}
 ### Rest energy — solve for rest energy — `rest_energy.E0`
 
 $$
-E0 = c^{2} m
+E_{0} = m c^{2}
 $$
 
 | input | meaning | unit |
@@ -5954,7 +5954,7 @@ inputs {'m': 2.0, 'c': 2.1}
 ### Rest energy — solve for light — `rest_energy.c`
 
 $$
-E0 = c^{2} m
+E_{0} = m c^{2}
 $$
 
 | input | meaning | unit |
@@ -5976,7 +5976,7 @@ inputs {'E0': 2.0, 'm': 2.1}
 ### Rest energy — solve for rest mass — `rest_energy.m`
 
 $$
-E0 = c^{2} m
+E_{0} = m c^{2}
 $$
 
 | input | meaning | unit |
@@ -5998,7 +5998,7 @@ inputs {'E0': 2.0, 'c': 2.1}
 ### Current dying away in an RL circuit — solve for current at time t — `rl_current_decay.I`
 
 $$
-I = I0 e^{- \frac{t}{tau}}
+I = I_{0} e^{\frac{-t}{\tau}}
 $$
 
 | input | meaning | unit |
@@ -6021,7 +6021,7 @@ inputs {'I0': 2.0, 't': 2.1, 'tau': 2.2}
 ### Current dying away in an RL circuit — solve for initial current — `rl_current_decay.I0`
 
 $$
-I = I0 e^{- \frac{t}{tau}}
+I = I_{0} e^{\frac{-t}{\tau}}
 $$
 
 | input | meaning | unit |
@@ -6044,7 +6044,7 @@ inputs {'I': 2.0, 't': 2.1, 'tau': 2.2}
 ### Current dying away in an RL circuit — solve for time since the circuit was switched off — `rl_current_decay.t`
 
 $$
-I = I0 e^{- \frac{t}{tau}}
+I = I_{0} e^{\frac{-t}{\tau}}
 $$
 
 | input | meaning | unit |
@@ -6067,7 +6067,7 @@ inputs {'I': 2.0, 'I0': 2.1, 'tau': 2.2}
 ### Current dying away in an RL circuit — solve for time constant — `rl_current_decay.tau`
 
 $$
-I = I0 e^{- \frac{t}{tau}}
+I = I_{0} e^{\frac{-t}{\tau}}
 $$
 
 | input | meaning | unit |
@@ -6090,7 +6090,7 @@ inputs {'I': 2.0, 'I0': 2.1, 't': 2.2}
 ### Time constant of an RL circuit — solve for inductance — `rl_time_constant.L`
 
 $$
-tau = \frac{L}{R}
+\tau = \frac{L}{R}
 $$
 
 | input | meaning | unit |
@@ -6112,7 +6112,7 @@ inputs {'tau': 2.0, 'R': 2.1}
 ### Time constant of an RL circuit — solve for resistance — `rl_time_constant.R`
 
 $$
-tau = \frac{L}{R}
+\tau = \frac{L}{R}
 $$
 
 | input | meaning | unit |
@@ -6134,7 +6134,7 @@ inputs {'tau': 2.0, 'L': 2.1}
 ### Time constant of an RL circuit — solve for time constant — `rl_time_constant.tau`
 
 $$
-tau = \frac{L}{R}
+\tau = \frac{L}{R}
 $$
 
 | input | meaning | unit |
@@ -6156,7 +6156,7 @@ inputs {'L': 2.0, 'R': 2.1}
 ### Rms current of a sinusoidal supply — solve for peak current — `rms_current.I0`
 
 $$
-Irms = \frac{\sqrt{2} I0}{2}
+I_{\text{rms}} = \frac{I_{0}}{\sqrt{2}}
 $$
 
 | input | meaning | unit |
@@ -6177,7 +6177,7 @@ inputs {'Irms': 2.0}
 ### Rms current of a sinusoidal supply — solve for rms current — `rms_current.Irms`
 
 $$
-Irms = \frac{\sqrt{2} I0}{2}
+I_{\text{rms}} = \frac{I_{0}}{\sqrt{2}}
 $$
 
 | input | meaning | unit |
@@ -6198,7 +6198,7 @@ inputs {'I0': 2.0}
 ### Rms voltage of a sinusoidal supply — solve for peak voltage — `rms_voltage.V0`
 
 $$
-Vrms = \frac{\sqrt{2} V0}{2}
+V_{\text{rms}} = \frac{V_{0}}{\sqrt{2}}
 $$
 
 | input | meaning | unit |
@@ -6219,7 +6219,7 @@ inputs {'Vrms': 2.0}
 ### Rms voltage of a sinusoidal supply — solve for rms voltage — `rms_voltage.Vrms`
 
 $$
-Vrms = \frac{\sqrt{2} V0}{2}
+V_{\text{rms}} = \frac{V_{0}}{\sqrt{2}}
 $$
 
 | input | meaning | unit |
@@ -6240,7 +6240,7 @@ inputs {'V0': 2.0}
 ### Rotational kinetic energy — solve for moment of inertia — `rotational_kinetic_energy.Ir`
 
 $$
-KR = \frac{Ir omega^{2}}{2}
+K_{R} = \frac{I_{r} \omega^{2}}{2}
 $$
 
 | input | meaning | unit |
@@ -6262,12 +6262,12 @@ inputs {'KR': 2.0, 'omega': 2.1}
 ### Rotational kinetic energy — solve for rotational kinetic energy — `rotational_kinetic_energy.KR`
 
 $$
-KR = \frac{Ir omega^{2}}{2}
+K_{R} = \frac{I_{r} \omega^{2}}{2}
 $$
 
 | input | meaning | unit |
 |---|---|---|
-| `Ir` | moment_of_inertia | `kg*m^2` |
+| `Ir` | moment of inertia | `kg*m^2` |
 | `omega` | angular velocity | `rad/s` |
 
 - **Output unit:** `J`
@@ -6284,13 +6284,13 @@ inputs {'Ir': 2.0, 'omega': 2.1}
 ### Rotational kinetic energy — solve for angular velocity — `rotational_kinetic_energy.omega`
 
 $$
-KR = \frac{Ir omega^{2}}{2}
+K_{R} = \frac{I_{r} \omega^{2}}{2}
 $$
 
 | input | meaning | unit |
 |---|---|---|
 | `KR` | rotational kinetic energy | `J` |
-| `Ir` | moment_of_inertia | `kg*m^2` |
+| `Ir` | moment of inertia | `kg*m^2` |
 
 - **Output unit:** `rad/s`
 - **File:** `rotational_kinetic_energy__omega.onnx`
@@ -6306,7 +6306,7 @@ inputs {'KR': 2.0, 'Ir': 2.1}
 ### Maximum speed of a mass on a spring — solve for amplitude — `shm_max_speed.X`
 
 $$
-v = \frac{X \sqrt{k}}{\sqrt{m}}
+v = X \sqrt{\frac{k}{m}}
 $$
 
 | input | meaning | unit |
@@ -6329,7 +6329,7 @@ inputs {'v': 2.0, 'k': 2.1, 'm': 2.2}
 ### Maximum speed of a mass on a spring — solve for spring constant — `shm_max_speed.k`
 
 $$
-v = \frac{X \sqrt{k}}{\sqrt{m}}
+v = X \sqrt{\frac{k}{m}}
 $$
 
 | input | meaning | unit |
@@ -6352,7 +6352,7 @@ inputs {'v': 2.0, 'X': 2.1, 'm': 2.2}
 ### Maximum speed of a mass on a spring — solve for oscillating mass — `shm_max_speed.m`
 
 $$
-v = \frac{X \sqrt{k}}{\sqrt{m}}
+v = X \sqrt{\frac{k}{m}}
 $$
 
 | input | meaning | unit |
@@ -6375,7 +6375,7 @@ inputs {'v': 2.0, 'X': 2.1, 'k': 2.2}
 ### Maximum speed of a mass on a spring — solve for maximum speed (at equilibrium) — `shm_max_speed.v`
 
 $$
-v = \frac{X \sqrt{k}}{\sqrt{m}}
+v = X \sqrt{\frac{k}{m}}
 $$
 
 | input | meaning | unit |
@@ -6398,7 +6398,7 @@ inputs {'X': 2.0, 'k': 2.1, 'm': 2.2}
 ### Magnetic field inside a long solenoid — solve for magnetic field — `solenoid_field.B`
 
 $$
-B = I mu0 nt
+B = \mu_{0} n_{t} I
 $$
 
 | input | meaning | unit |
@@ -6421,12 +6421,12 @@ inputs {'nt': 2.0, 'I': 2.1, 'mu0': 2.2}
 ### Magnetic field inside a long solenoid — solve for current — `solenoid_field.I`
 
 $$
-B = I mu0 nt
+B = \mu_{0} n_{t} I
 $$
 
 | input | meaning | unit |
 |---|---|---|
-| `B` | magnetic_field | `T` |
+| `B` | magnetic field | `T` |
 | `nt` | turns per unit length | `1/m` |
 | `mu0` | permeability | `T*m/A` |
 
@@ -6444,12 +6444,12 @@ inputs {'B': 2.0, 'nt': 2.1, 'mu0': 2.2}
 ### Magnetic field inside a long solenoid — solve for constant — `solenoid_field.mu0`
 
 $$
-B = I mu0 nt
+B = \mu_{0} n_{t} I
 $$
 
 | input | meaning | unit |
 |---|---|---|
-| `B` | magnetic_field | `T` |
+| `B` | magnetic field | `T` |
 | `nt` | turns per unit length | `1/m` |
 | `I` | current | `A` |
 
@@ -6467,12 +6467,12 @@ inputs {'B': 2.0, 'nt': 2.1, 'I': 2.2}
 ### Magnetic field inside a long solenoid — solve for turns per unit length — `solenoid_field.nt`
 
 $$
-B = I mu0 nt
+B = \mu_{0} n_{t} I
 $$
 
 | input | meaning | unit |
 |---|---|---|
-| `B` | magnetic_field | `T` |
+| `B` | magnetic field | `T` |
 | `I` | current | `A` |
 | `mu0` | permeability | `T*m/A` |
 
@@ -6490,7 +6490,7 @@ inputs {'B': 2.0, 'I': 2.1, 'mu0': 2.2}
 ### Speed after falling from rest — solve for gravitational acceleration — `speed_after_fall_from_rest.g`
 
 $$
-v = \sqrt{2} \sqrt{g} \sqrt{h}
+v = \sqrt{2 g h}
 $$
 
 | input | meaning | unit |
@@ -6512,7 +6512,7 @@ inputs {'v': 2.0, 'h': 2.1}
 ### Speed after falling from rest — solve for height fallen — `speed_after_fall_from_rest.h`
 
 $$
-v = \sqrt{2} \sqrt{g} \sqrt{h}
+v = \sqrt{2 g h}
 $$
 
 | input | meaning | unit |
@@ -6534,7 +6534,7 @@ inputs {'v': 2.0, 'g': 2.1}
 ### Speed after falling from rest — solve for speed after the fall — `speed_after_fall_from_rest.v`
 
 $$
-v = \sqrt{2} \sqrt{g} \sqrt{h}
+v = \sqrt{2 g h}
 $$
 
 | input | meaning | unit |
@@ -6777,13 +6777,13 @@ inputs {'k': 2.0, 'm': 2.1, 'v': 2.2}
 ### Period of a mass on a spring — solve for period — `spring_oscillation_period.T`
 
 $$
-T = \frac{2 \pi \sqrt{m}}{\sqrt{k}}
+T = 2 \pi \sqrt{\frac{m}{k}}
 $$
 
 | input | meaning | unit |
 |---|---|---|
 | `m` | mass | `kg` |
-| `k` | spring_constant | `N/m` |
+| `k` | spring constant | `N/m` |
 
 - **Output unit:** `s`
 - **File:** `spring_oscillation_period__T.onnx`
@@ -6799,7 +6799,7 @@ inputs {'m': 2.0, 'k': 2.1}
 ### Period of a mass on a spring — solve for spring constant — `spring_oscillation_period.k`
 
 $$
-T = \frac{2 \pi \sqrt{m}}{\sqrt{k}}
+T = 2 \pi \sqrt{\frac{m}{k}}
 $$
 
 | input | meaning | unit |
@@ -6821,13 +6821,13 @@ inputs {'T': 2.0, 'm': 2.1}
 ### Period of a mass on a spring — solve for mass — `spring_oscillation_period.m`
 
 $$
-T = \frac{2 \pi \sqrt{m}}{\sqrt{k}}
+T = 2 \pi \sqrt{\frac{m}{k}}
 $$
 
 | input | meaning | unit |
 |---|---|---|
 | `T` | time | `s` |
-| `k` | spring_constant | `N/m` |
+| `k` | spring constant | `N/m` |
 
 - **Output unit:** `kg`
 - **File:** `spring_oscillation_period__m.onnx`
@@ -6873,7 +6873,7 @@ $$
 |---|---|---|
 | `g` | gravitational acceleration | `m/s^2` |
 | `r` | distance from the centre | `m` |
-| `G` | gravitational_constant | `N*m^2/kg^2` |
+| `G` | gravitational constant | `N*m^2/kg^2` |
 
 - **Output unit:** `kg`
 - **File:** `surface_gravity__M.onnx`
@@ -6896,7 +6896,7 @@ $$
 |---|---|---|
 | `M` | mass of the planet or star | `kg` |
 | `r` | distance from the centre | `m` |
-| `G` | gravitational_constant | `N*m^2/kg^2` |
+| `G` | gravitational constant | `N*m^2/kg^2` |
 
 - **Output unit:** `m/s^2`
 - **File:** `surface_gravity__g.onnx`
@@ -6919,7 +6919,7 @@ $$
 |---|---|---|
 | `g` | gravitational acceleration | `m/s^2` |
 | `M` | mass of the planet or star | `kg` |
-| `G` | gravitational_constant | `N*m^2/kg^2` |
+| `G` | gravitational constant | `N*m^2/kg^2` |
 
 - **Output unit:** `m`
 - **File:** `surface_gravity__r.onnx`
@@ -6935,7 +6935,7 @@ inputs {'g': 2.0, 'M': 2.1, 'G': 2.2}
 ### Tangential acceleration of a point on a rotating body — solve for tangential acceleration — `tangential_acceleration.a`
 
 $$
-a = alpha r
+a = r \alpha
 $$
 
 | input | meaning | unit |
@@ -6957,7 +6957,7 @@ inputs {'r': 2.0, 'alpha': 2.1}
 ### Tangential acceleration of a point on a rotating body — solve for angular acceleration — `tangential_acceleration.alpha`
 
 $$
-a = alpha r
+a = r \alpha
 $$
 
 | input | meaning | unit |
@@ -6979,7 +6979,7 @@ inputs {'a': 2.0, 'r': 2.1}
 ### Tangential acceleration of a point on a rotating body — solve for distance from the axis — `tangential_acceleration.r`
 
 $$
-a = alpha r
+a = r \alpha
 $$
 
 | input | meaning | unit |
@@ -7064,7 +7064,7 @@ inputs {'omega': 2.0, 'r': 2.1}
 ### Tension in a rope holding a hanging body — solve for tension in the rope — `tension_hanging_at_rest.T`
 
 $$
-T = g m
+T = m g
 $$
 
 | input | meaning | unit |
@@ -7086,7 +7086,7 @@ inputs {'m': 2.0, 'g': 2.1}
 ### Tension in a rope holding a hanging body — solve for gravitational acceleration — `tension_hanging_at_rest.g`
 
 $$
-T = g m
+T = m g
 $$
 
 | input | meaning | unit |
@@ -7108,7 +7108,7 @@ inputs {'T': 2.0, 'm': 2.1}
 ### Tension in a rope holding a hanging body — solve for mass of the hanging body — `tension_hanging_at_rest.m`
 
 $$
-T = g m
+T = m g
 $$
 
 | input | meaning | unit |
@@ -7130,7 +7130,7 @@ inputs {'T': 2.0, 'g': 2.1}
 ### Thin lens equation — solve for image distance — `thin_lens.d_i`
 
 $$
-\frac{1}{d_o} + \frac{1}{d_i} = \frac{1}{f}
+\frac{1}{d_{o}} + \frac{1}{d_{i}} = \frac{1}{f}
 $$
 
 | input | meaning | unit |
@@ -7152,7 +7152,7 @@ inputs {'d_o': 2.0, 'f': 2.1}
 ### Thin lens equation — solve for object distance — `thin_lens.d_o`
 
 $$
-\frac{1}{d_o} + \frac{1}{d_i} = \frac{1}{f}
+\frac{1}{d_{o}} + \frac{1}{d_{i}} = \frac{1}{f}
 $$
 
 | input | meaning | unit |
@@ -7174,7 +7174,7 @@ inputs {'d_i': 2.0, 'f': 2.1}
 ### Thin lens equation — solve for focal length — `thin_lens.f`
 
 $$
-\frac{1}{d_o} + \frac{1}{d_i} = \frac{1}{f}
+\frac{1}{d_{o}} + \frac{1}{d_{i}} = \frac{1}{f}
 $$
 
 | input | meaning | unit |
@@ -7262,7 +7262,7 @@ inputs {'t': 2.0, 'g': 2.1}
 ### Torque of a force — solve for applied force — `torque_lever.F`
 
 $$
-tau = F r \sin{\left(theta \right)}
+\tau = r F \sin\left(\theta\right)
 $$
 
 | input | meaning | unit |
@@ -7285,7 +7285,7 @@ inputs {'tau': 2.0, 'r': 2.1, 'theta': 2.2}
 ### Torque of a force — solve for distance from the pivot to the point of application — `torque_lever.r`
 
 $$
-tau = F r \sin{\left(theta \right)}
+\tau = r F \sin\left(\theta\right)
 $$
 
 | input | meaning | unit |
@@ -7308,7 +7308,7 @@ inputs {'tau': 2.0, 'F': 2.1, 'theta': 2.2}
 ### Torque of a force — solve for torque about the pivot — `torque_lever.tau`
 
 $$
-tau = F r \sin{\left(theta \right)}
+\tau = r F \sin\left(\theta\right)
 $$
 
 | input | meaning | unit |
@@ -7331,7 +7331,7 @@ inputs {'r': 2.0, 'F': 2.1, 'theta': 2.2}
 ### Torque of a force — solve for angle between r and F — `torque_lever.theta`
 
 $$
-tau = F r \sin{\left(theta \right)}
+\tau = r F \sin\left(\theta\right)
 $$
 
 | input | meaning | unit |
@@ -7350,7 +7350,7 @@ $$
 ### Potential difference in a uniform field — solve for uniform field strength — `uniform_field_potential.Ef`
 
 $$
-V = Ef d
+V = E_{f} d
 $$
 
 | input | meaning | unit |
@@ -7372,7 +7372,7 @@ inputs {'V': 2.0, 'd': 2.1}
 ### Potential difference in a uniform field — solve for potential difference between the plates — `uniform_field_potential.V`
 
 $$
-V = Ef d
+V = E_{f} d
 $$
 
 | input | meaning | unit |
@@ -7394,7 +7394,7 @@ inputs {'Ef': 2.0, 'd': 2.1}
 ### Potential difference in a uniform field — solve for separation along the field — `uniform_field_potential.d`
 
 $$
-V = Ef d
+V = E_{f} d
 $$
 
 | input | meaning | unit |
@@ -7416,7 +7416,7 @@ inputs {'V': 2.0, 'Ef': 2.1}
 ### Motion at constant velocity — solve for distance travelled — `uniform_motion.d`
 
 $$
-d = t v
+d = v t
 $$
 
 | input | meaning | unit |
@@ -7437,7 +7437,7 @@ inputs {'v': 2.0, 't': 2.1}
 ### Motion at constant velocity — solve for elapsed time — `uniform_motion.t`
 
 $$
-d = t v
+d = v t
 $$
 
 | input | meaning | unit |
@@ -7458,7 +7458,7 @@ inputs {'d': 2.0, 'v': 2.1}
 ### Motion at constant velocity — solve for constant speed — `uniform_motion.v`
 
 $$
-d = t v
+d = v t
 $$
 
 | input | meaning | unit |
@@ -7479,7 +7479,7 @@ inputs {'d': 2.0, 't': 2.1}
 ### Speed after a displacement under constant acceleration — solve for acceleration — `velocity_displacement.a`
 
 $$
-v^{2} = 2 a x + v_0^{2}
+v^{2} = v_0^{2} + 2 a x
 $$
 
 | input | meaning | unit |
@@ -7501,7 +7501,7 @@ inputs {'v': 2.0, 'v0': 2.1, 'x': 2.2}
 ### Speed after a displacement under constant acceleration — solve for final speed — `velocity_displacement.v`
 
 $$
-v^{2} = 2 a x + v_0^{2}
+v^{2} = v_0^{2} + 2 a x
 $$
 
 | input | meaning | unit |
@@ -7524,7 +7524,7 @@ inputs {'v0': 2.0, 'a': 2.1, 'x': 2.2}
 ### Speed after a displacement under constant acceleration — solve for initial speed — `velocity_displacement.v0`
 
 $$
-v^{2} = 2 a x + v_0^{2}
+v^{2} = v_0^{2} + 2 a x
 $$
 
 | input | meaning | unit |
@@ -7542,7 +7542,7 @@ $$
 ### Speed after a displacement under constant acceleration — solve for displacement — `velocity_displacement.x`
 
 $$
-v^{2} = 2 a x + v_0^{2}
+v^{2} = v_0^{2} + 2 a x
 $$
 
 | input | meaning | unit |
@@ -7564,7 +7564,7 @@ inputs {'v': 2.0, 'v0': 2.1, 'a': 2.2}
 ### Velocity under constant acceleration — solve for acceleration — `velocity_time.a`
 
 $$
-v = a t + v_0
+v = v_0 + a t
 $$
 
 | input | meaning | unit |
@@ -7586,7 +7586,7 @@ inputs {'v': 2.0, 'v0': 2.1, 't': 2.2}
 ### Velocity under constant acceleration — solve for elapsed time — `velocity_time.t`
 
 $$
-v = a t + v_0
+v = v_0 + a t
 $$
 
 | input | meaning | unit |
@@ -7603,7 +7603,7 @@ $$
 ### Velocity under constant acceleration — solve for final velocity — `velocity_time.v`
 
 $$
-v = a t + v_0
+v = v_0 + a t
 $$
 
 | input | meaning | unit |
@@ -7625,7 +7625,7 @@ inputs {'v0': 2.0, 'a': 2.1, 't': 2.2}
 ### Velocity under constant acceleration — solve for initial velocity — `velocity_time.v0`
 
 $$
-v = a t + v_0
+v = v_0 + a t
 $$
 
 | input | meaning | unit |
@@ -7647,7 +7647,7 @@ inputs {'v': 2.0, 'a': 2.1, 't': 2.2}
 ### Thermal expansion of volume — solve for original volume — `volume_expansion.V0`
 
 $$
-dV = V0 beta dT
+d_{V} = \beta V_{0} d_{T}
 $$
 
 | input | meaning | unit |
@@ -7670,7 +7670,7 @@ inputs {'dV': 2.0, 'beta': 2.1, 'dT': 2.2}
 ### Thermal expansion of volume — solve for coefficient of volume expansion — `volume_expansion.beta`
 
 $$
-dV = V0 beta dT
+d_{V} = \beta V_{0} d_{T}
 $$
 
 | input | meaning | unit |
@@ -7693,7 +7693,7 @@ inputs {'dV': 2.0, 'V0': 2.1, 'dT': 2.2}
 ### Thermal expansion of volume — solve for temperature change — `volume_expansion.dT`
 
 $$
-dV = V0 beta dT
+d_{V} = \beta V_{0} d_{T}
 $$
 
 | input | meaning | unit |
@@ -7716,7 +7716,7 @@ inputs {'dV': 2.0, 'beta': 2.1, 'V0': 2.2}
 ### Thermal expansion of volume — solve for change in volume — `volume_expansion.dV`
 
 $$
-dV = V0 beta dT
+d_{V} = \beta V_{0} d_{T}
 $$
 
 | input | meaning | unit |
@@ -7802,7 +7802,7 @@ inputs {'f': 2.0, 'lam': 2.1}
 ### Wavelength of light in a medium — solve for wavelength in vacuum — `wavelength_in_medium.lam`
 
 $$
-lam_n = \frac{lam}{n}
+\lambda_{n} = \frac{\lambda}{n}
 $$
 
 | input | meaning | unit |
@@ -7824,7 +7824,7 @@ inputs {'lam_n': 2.0, 'n': 2.1}
 ### Wavelength of light in a medium — solve for wavelength in the medium — `wavelength_in_medium.lam_n`
 
 $$
-lam_n = \frac{lam}{n}
+\lambda_{n} = \frac{\lambda}{n}
 $$
 
 | input | meaning | unit |
@@ -7846,7 +7846,7 @@ inputs {'lam': 2.0, 'n': 2.1}
 ### Wavelength of light in a medium — solve for index of refraction — `wavelength_in_medium.n`
 
 $$
-lam_n = \frac{lam}{n}
+\lambda_{n} = \frac{\lambda}{n}
 $$
 
 | input | meaning | unit |
@@ -7868,7 +7868,7 @@ inputs {'lam_n': 2.0, 'lam': 2.1}
 ### Weight in a uniform gravitational field — solve for weight — `weight.W`
 
 $$
-W = g m
+W = m g
 $$
 
 | input | meaning | unit |
@@ -7889,7 +7889,7 @@ inputs {'m': 2.0, 'g': 2.1}
 ### Weight in a uniform gravitational field — solve for gravitational acceleration — `weight.g`
 
 $$
-W = g m
+W = m g
 $$
 
 | input | meaning | unit |
@@ -7910,7 +7910,7 @@ inputs {'W': 2.0, 'm': 2.1}
 ### Weight in a uniform gravitational field — solve for mass — `weight.m`
 
 $$
-W = g m
+W = m g
 $$
 
 | input | meaning | unit |
@@ -7931,7 +7931,7 @@ inputs {'W': 2.0, 'g': 2.1}
 ### Component of the weight along an incline — solve for component of the weight along the incline — `weight_component_along_incline.F`
 
 $$
-F = g m \sin{\left(\theta \right)}
+F = m g \sin\left(\theta\right)
 $$
 
 | input | meaning | unit |
@@ -7954,7 +7954,7 @@ inputs {'m': 2.0, 'g': 2.1, 'theta': 2.2}
 ### Component of the weight along an incline — solve for gravitational acceleration — `weight_component_along_incline.g`
 
 $$
-F = g m \sin{\left(\theta \right)}
+F = m g \sin\left(\theta\right)
 $$
 
 | input | meaning | unit |
@@ -7977,7 +7977,7 @@ inputs {'F': 2.0, 'm': 2.1, 'theta': 2.2}
 ### Component of the weight along an incline — solve for mass — `weight_component_along_incline.m`
 
 $$
-F = g m \sin{\left(\theta \right)}
+F = m g \sin\left(\theta\right)
 $$
 
 | input | meaning | unit |
@@ -8000,7 +8000,7 @@ inputs {'F': 2.0, 'g': 2.1, 'theta': 2.2}
 ### Component of the weight along an incline — solve for angle of the incline to the horizontal — `weight_component_along_incline.theta`
 
 $$
-F = g m \sin{\left(\theta \right)}
+F = m g \sin\left(\theta\right)
 $$
 
 | input | meaning | unit |
@@ -8019,7 +8019,7 @@ $$
 ### Work by a constant force — solve for force — `work.F`
 
 $$
-W = F d \cos{\left(\theta \right)}
+W = F d \cos\left(\theta\right)
 $$
 
 | input | meaning | unit |
@@ -8041,7 +8041,7 @@ inputs {'W': 2.0, 'd': 2.1, 'theta': 2.2}
 ### Work by a constant force — solve for work done — `work.W`
 
 $$
-W = F d \cos{\left(\theta \right)}
+W = F d \cos\left(\theta\right)
 $$
 
 | input | meaning | unit |
@@ -8063,7 +8063,7 @@ inputs {'F': 2.0, 'd': 2.1, 'theta': 2.2}
 ### Work by a constant force — solve for displacement — `work.d`
 
 $$
-W = F d \cos{\left(\theta \right)}
+W = F d \cos\left(\theta\right)
 $$
 
 | input | meaning | unit |
@@ -8085,7 +8085,7 @@ inputs {'W': 0.5, 'F': 0.6, 'theta': 0.7}
 ### Work by a constant force — solve for angle between force and displacement — `work.theta`
 
 $$
-W = F d \cos{\left(\theta \right)}
+W = F d \cos\left(\theta\right)
 $$
 
 | input | meaning | unit |

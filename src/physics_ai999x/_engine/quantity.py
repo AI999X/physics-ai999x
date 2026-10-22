@@ -122,7 +122,8 @@ _WORDS = {
     "microsecond": "µs", "microseconds": "µs", "nanosecond": "ns", "nanoseconds": "ns",
 }
 _SUPER = str.maketrans({"²": "^2", "³": "^3", "·": "*", "⋅": "*", "−": "-"})
-_TOKEN = re.compile(r"\s*(\^-?\d+|[*/()]|1(?![\w.])|[A-Za-zμµΩ°]+)")
+# an exponent: ^2, ^-1, ^(1/3), ^(-1/2), ^1.5 (fractional exponents occur in empirical laws: Manning's n is s/m^(1/3))
+_TOKEN = re.compile(r"\s*(\^\(\s*-?\d+(?:\s*/\s*\d+)?\s*\)|\^-?\d+(?:\.\d+)?|[*/()]|1(?![\w.])|[A-Za-zμµΩ°]+)")
 
 
 def _atom(name: str) -> Unit:
@@ -172,7 +173,8 @@ def parse_unit(text: str) -> Unit:
         else:
             u = _atom(tok)
         if i < len(tokens) and tokens[i].startswith("^"):
-            n = int(tokens[i][1:])
+            raw = tokens[i][1:].strip("() ").replace(" ", "")
+            n = Fraction(raw) if ("/" in raw or "." in raw) else int(raw)
             i += 1
             if u.offset:
                 raise UnitError("an offset unit cannot be raised to a power")

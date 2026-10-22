@@ -32,7 +32,7 @@ def help(name: CapabilityId | str | None = None) -> str:     # noqa: A001 (the p
 
 def absolute_pressure_depth(P=None, P0=None, rho=None, g=None, h=None, *, target: str | None = None):
     """Absolute pressure at a depth in a fluid: P = P0 + rho*g*h
-    Formula: P = P0 + g h rho
+    Formula: P = P_{0} + \\rho g h
     Give every quantity but the one to find, as a number with a unit (e.g. '3 kg'); target= picks the unknown.
     Quantities:
         P: absolute pressure at the depth [Pa]
@@ -48,7 +48,7 @@ def absolute_pressure_depth(P=None, P0=None, rho=None, g=None, h=None, *, target
 
 def acceleration_frictionless_incline(a=None, g=None, theta=None, *, target: str | None = None):
     """Acceleration down a frictionless incline: a = g*sin(theta)
-    Formula: a = g \\sin{\\left(\\theta \\right)}
+    Formula: a = g \\sin\\left(\\theta\\right)
     Give every quantity but the one to find, as a number with a unit (e.g. '3 kg'); target= picks the unknown.
     Quantities:
         a: acceleration down the incline [m/s^2]
@@ -74,7 +74,7 @@ def angular_frequency(omega=None, f=None, *, target: str | None = None):
 
 def angular_momentum(L=None, Ir=None, omega=None, *, target: str | None = None):
     """Angular momentum of a rotating body: L = Ir*omega
-    Formula: L = Ir omega
+    Formula: L = I_{r} \\omega
     Give every quantity but the one to find, as a number with a unit (e.g. '3 kg'); target= picks the unknown.
     Quantities:
         L: angular momentum [kg*m^2/s]
@@ -88,7 +88,7 @@ def angular_momentum(L=None, Ir=None, omega=None, *, target: str | None = None):
 
 def angular_momentum_point_mass(L=None, m=None, v=None, r=None, *, target: str | None = None):
     """Angular momentum of a point mass on a circle: L = m*v*r
-    Formula: L = m r v
+    Formula: L = m v r
     Give every quantity but the one to find, as a number with a unit (e.g. '3 kg'); target= picks the unknown.
     Quantities:
         L: angular momentum about the centre [kg*m^2/s]
@@ -103,7 +103,7 @@ def angular_momentum_point_mass(L=None, m=None, v=None, r=None, *, target: str |
 
 def angular_velocity_angle(omega=None, omega0=None, alpha=None, theta=None, *, target: str | None = None):
     """Angular velocity and angle turned under constant angular acceleration: omega**2 = omega0**2 + 2*alpha*theta
-    Formula: omega^{2} = 2 alpha theta + omega0^{2}
+    Formula: \\omega^{2} = \\omega_{0}^{2} + 2 \\alpha \\theta
     Give every quantity but the one to find, as a number with a unit (e.g. '3 kg'); target= picks the unknown.
     Quantities:
         omega: final angular speed [rad/s]
@@ -118,7 +118,7 @@ def angular_velocity_angle(omega=None, omega0=None, alpha=None, theta=None, *, t
 
 def angular_velocity_time(omega=None, omega0=None, alpha=None, t=None, *, target: str | None = None):
     """Angular velocity under constant angular acceleration: omega = omega0 + alpha*t
-    Formula: omega = alpha t + omega0
+    Formula: \\omega = \\omega_{0} + \\alpha t
     Give every quantity but the one to find, as a number with a unit (e.g. '3 kg'); target= picks the unknown.
     Quantities:
         omega: final angular velocity [rad/s]
@@ -133,7 +133,7 @@ def angular_velocity_time(omega=None, omega0=None, alpha=None, t=None, *, target
 
 def area_expansion(dA=None, alpha_t=None, A=None, dT=None, *, target: str | None = None):
     """Thermal expansion of an area: dA = 2*alpha_t*A*dT
-    Formula: dA = 2 A alpha_t dT
+    Formula: d_{A} = 2 \\alpha_{t} A d_{T}
     Give every quantity but the one to find, as a number with a unit (e.g. '3 kg'); target= picks the unknown.
     Quantities:
         dA: change in area [m^2]
@@ -148,7 +148,7 @@ def area_expansion(dA=None, alpha_t=None, A=None, dT=None, *, target: str | None
 
 def average_force_from_momentum_change(F=None, p2=None, p1=None, t=None, *, target: str | None = None):
     """Average net force from a change of momentum: F = (p2 - p1)/t
-    Formula: F = \\frac{- p_1 + p_2}{t}
+    Formula: F = \\frac{p_2 - p_1}{t}
     Give every quantity but the one to find, as a number with a unit (e.g. '3 kg'); target= picks the unknown.
     Quantities:
         F: average net force [N]
@@ -163,7 +163,7 @@ def average_force_from_momentum_change(F=None, p2=None, p1=None, t=None, *, targ
 
 def average_velocity_displacement(x=None, v0=None, v=None, t=None, *, target: str | None = None):
     """Displacement from the mean of initial and final velocity: x = (v0 + v)*t/2
-    Formula: x = \\frac{t \\left(v + v_0\\right)}{2}
+    Formula: x = \\frac{\\left(v_0 + v\\right) t}{2}
     Give every quantity but the one to find, as a number with a unit (e.g. '3 kg'); target= picks the unknown.
     Quantities:
         x: displacement [m]
@@ -191,7 +191,7 @@ def capacitance_definition(Q=None, C=None, V=None, *, target: str | None = None)
 
 def capacitive_reactance(X=None, f=None, C=None, *, target: str | None = None):
     """Reactance of a capacitor: X = 1/(2*pi*f*C)
-    Formula: X = \\frac{1}{2 \\pi C f}
+    Formula: X = \\frac{1}{2 \\pi f C}
     Give every quantity but the one to find, as a number with a unit (e.g. '3 kg'); target= picks the unknown.
     Quantities:
         X: capacitive reactance [ohm]
@@ -205,7 +205,7 @@ def capacitive_reactance(X=None, f=None, C=None, *, target: str | None = None):
 
 def capacitor_energy(Ecap=None, C=None, V=None, *, target: str | None = None):
     """Energy stored in a capacitor: Ecap = C*V**2/2
-    Formula: Ecap = \\frac{C V^{2}}{2}
+    Formula: \\text{Ecap} = \\frac{C V^{2}}{2}
     Give every quantity but the one to find, as a number with a unit (e.g. '3 kg'); target= picks the unknown.
     Quantities:
         Ecap: energy stored [J]
@@ -219,7 +219,7 @@ def capacitor_energy(Ecap=None, C=None, V=None, *, target: str | None = None):
 
 def carnot_efficiency(eff=None, Tc=None, Th=None, *, target: str | None = None):
     """Carnot (maximum) efficiency: eff = 1 - Tc/Th
-    Formula: eff = - \\frac{Tc}{Th} + 1
+    Formula: \\text{eff} = 1 - \\frac{T_{c}}{T_{h}}
     Give every quantity but the one to find, as a number with a unit (e.g. '3 kg'); target= picks the unknown.
     Quantities:
         eff: maximum efficiency [1]
@@ -246,7 +246,7 @@ def centripetal_acceleration(a=None, v=None, r=None, *, target: str | None = Non
 
 def centripetal_acceleration_omega(a=None, r=None, omega=None, *, target: str | None = None):
     """Centripetal acceleration from angular velocity: a = r*omega**2
-    Formula: a = omega^{2} r
+    Formula: a = r \\omega^{2}
     Give every quantity but the one to find, as a number with a unit (e.g. '3 kg'); target= picks the unknown.
     Quantities:
         a: centripetal acceleration [m/s^2]
@@ -287,7 +287,7 @@ def charge_current(Q=None, I=None, t=None, *, target: str | None = None):
 
 def cop_heat_pump(cop=None, Qh=None, W=None, *, target: str | None = None):
     """Coefficient of performance of a heat pump: cop = Qh/W
-    Formula: cop = \\frac{Qh}{W}
+    Formula: \\text{cop} = \\frac{Q_{h}}{W}
     Give every quantity but the one to find, as a number with a unit (e.g. '3 kg'); target= picks the unknown.
     Quantities:
         cop: coefficient of performance [1]
@@ -301,7 +301,7 @@ def cop_heat_pump(cop=None, Qh=None, W=None, *, target: str | None = None):
 
 def cop_refrigerator(cop=None, Qc=None, W=None, *, target: str | None = None):
     """Coefficient of performance of a refrigerator: cop = Qc/W
-    Formula: cop = \\frac{Qc}{W}
+    Formula: \\text{cop} = \\frac{Q_{c}}{W}
     Give every quantity but the one to find, as a number with a unit (e.g. '3 kg'); target= picks the unknown.
     Quantities:
         cop: coefficient of performance [1]
@@ -315,7 +315,7 @@ def cop_refrigerator(cop=None, Qc=None, W=None, *, target: str | None = None):
 
 def cyclotron_radius(r=None, m=None, v=None, q=None, B=None, theta=None, *, target: str | None = None):
     """Radius of a charged particle's circle in a magnetic field: r = m*v/(q*B*sin(theta))
-    Formula: r = \\frac{m v}{B q \\sin{\\left(theta \\right)}}
+    Formula: r = \\frac{m v}{q B \\sin\\left(\\theta\\right)}
     Give every quantity but the one to find, as a number with a unit (e.g. '3 kg'); target= picks the unknown.
     Quantities:
         r: radius of the circular path [m]
@@ -332,7 +332,7 @@ def cyclotron_radius(r=None, m=None, v=None, q=None, B=None, theta=None, *, targ
 
 def de_broglie(lam=None, p=None, h=None, *, target: str | None = None):
     """De Broglie wavelength: lam = h/p
-    Formula: lam = \\frac{h}{p}
+    Formula: \\lambda = \\frac{h}{p}
     Give every quantity but the one to find, as a number with a unit (e.g. '3 kg'); target= picks the unknown.
     Quantities:
         lam: de Broglie wavelength [m]
@@ -359,7 +359,7 @@ def density(rho=None, m=None, V=None, *, target: str | None = None):
 
 def displacement_time(x=None, v0=None, a=None, t=None, *, target: str | None = None):
     """Displacement under constant acceleration: x = v0*t + a*t**2/2
-    Formula: x = \\frac{a t^{2}}{2} + t v_0
+    Formula: x = v_0 t + \\frac{a t^{2}}{2}
     Give every quantity but the one to find, as a number with a unit (e.g. '3 kg'); target= picks the unknown.
     Quantities:
         x: displacement [m]
@@ -373,7 +373,7 @@ def displacement_time(x=None, v0=None, a=None, t=None, *, target: str | None = N
 
 def electric_force_in_field(F=None, q=None, Ef=None, *, target: str | None = None):
     """Force on a charge in an electric field: F = q*Ef
-    Formula: F = Ef q
+    Formula: F = q E_{f}
     Give every quantity but the one to find, as a number with a unit (e.g. '3 kg'); target= picks the unknown.
     Quantities:
         F: magnitude of the electric force [N]
@@ -387,7 +387,7 @@ def electric_force_in_field(F=None, q=None, Ef=None, *, target: str | None = Non
 
 def electric_power(P=None, V=None, I=None, *, target: str | None = None):
     """Electric power: P = V*I
-    Formula: P = I V
+    Formula: P = V I
     Give every quantity but the one to find, as a number with a unit (e.g. '3 kg'); target= picks the unknown.
     Quantities:
         P: electric power [W]
@@ -400,7 +400,7 @@ def electric_power(P=None, V=None, I=None, *, target: str | None = None):
 
 def engine_efficiency(eff=None, W=None, Qh=None, *, target: str | None = None):
     """Efficiency of a heat engine: eff = W/Qh
-    Formula: eff = \\frac{W}{Qh}
+    Formula: \\text{eff} = \\frac{W}{Q_{h}}
     Give every quantity but the one to find, as a number with a unit (e.g. '3 kg'); target= picks the unknown.
     Quantities:
         eff: efficiency (a fraction) [1]
@@ -414,7 +414,7 @@ def engine_efficiency(eff=None, W=None, Qh=None, *, target: str | None = None):
 
 def engine_energy_balance(W=None, Qh=None, Qc=None, *, target: str | None = None):
     """Energy balance of a cyclic heat engine: W = Qh - Qc
-    Formula: W = - Qc + Qh
+    Formula: W = Q_{h} - Q_{c}
     Give every quantity but the one to find, as a number with a unit (e.g. '3 kg'); target= picks the unknown.
     Quantities:
         W: net work output per cycle [J]
@@ -456,7 +456,7 @@ def flow_rate_volume_time(Q=None, V=None, t=None, *, target: str | None = None):
 
 def gravitational_pe(U=None, m=None, g=None, h=None, *, target: str | None = None):
     """Gravitational potential energy near the surface: U = m*g*h
-    Formula: U = g h m
+    Formula: U = m g h
     Give every quantity but the one to find, as a number with a unit (e.g. '3 kg'); target= picks the unknown.
     Quantities:
         U: gravitational potential energy [J]
@@ -470,7 +470,7 @@ def gravitational_pe(U=None, m=None, g=None, h=None, *, target: str | None = Non
 
 def heat(Q=None, m=None, c=None, dT=None, *, target: str | None = None):
     """Heat for a temperature change: Q = m*c*dT
-    Formula: Q = c \\Delta T m
+    Formula: Q = m c \\Delta T
     Give every quantity but the one to find, as a number with a unit (e.g. '3 kg'); target= picks the unknown.
     Quantities:
         Q: heat transferred [J]
@@ -484,7 +484,7 @@ def heat(Q=None, m=None, c=None, dT=None, *, target: str | None = None):
 
 def hydrostatic_pressure(P=None, rho=None, g=None, h=None, *, target: str | None = None):
     """Pressure of a column of fluid: P = rho*g*h
-    Formula: P = g h \\rho
+    Formula: P = \\rho g h
     Give every quantity but the one to find, as a number with a unit (e.g. '3 kg'); target= picks the unknown.
     Quantities:
         P: gauge pressure [Pa]
@@ -498,7 +498,7 @@ def hydrostatic_pressure(P=None, rho=None, g=None, h=None, *, target: str | None
 
 def ideal_gas_moles(P=None, V=None, n=None, T=None, R=None, *, target: str | None = None):
     """Ideal gas law: P*V = n*R*T
-    Formula: P V = R T n
+    Formula: P V = n R T
     Give every quantity but the one to find, as a number with a unit (e.g. '3 kg'); target= picks the unknown.
     Quantities:
         P: absolute pressure [Pa]
@@ -541,7 +541,7 @@ def index_of_refraction(n=None, c=None, v=None, *, target: str | None = None):
 
 def inductive_reactance(X=None, f=None, L=None, *, target: str | None = None):
     """Reactance of an inductor: X = 2*pi*f*L
-    Formula: X = 2 \\pi L f
+    Formula: X = 2 \\pi f L
     Give every quantity but the one to find, as a number with a unit (e.g. '3 kg'); target= picks the unknown.
     Quantities:
         X: inductive reactance [ohm]
@@ -582,7 +582,7 @@ def kinetic_energy(K=None, m=None, v=None, *, target: str | None = None):
 
 def kinetic_friction(f=None, mu=None, N=None, *, target: str | None = None):
     """Sliding friction: f = mu*N
-    Formula: f = N \\mu
+    Formula: f = \\mu N
     Give every quantity but the one to find, as a number with a unit (e.g. '3 kg'); target= picks the unknown.
     Quantities:
         f: friction force [N]
@@ -595,7 +595,7 @@ def kinetic_friction(f=None, mu=None, N=None, *, target: str | None = None):
 
 def latent_heat_fusion(Q=None, m=None, Lf=None, *, target: str | None = None):
     """Heat to melt or freeze: Q = m*Lf
-    Formula: Q = Lf m
+    Formula: Q = m L_{f}
     Give every quantity but the one to find, as a number with a unit (e.g. '3 kg'); target= picks the unknown.
     Quantities:
         Q: heat absorbed or released [J]
@@ -609,7 +609,7 @@ def latent_heat_fusion(Q=None, m=None, Lf=None, *, target: str | None = None):
 
 def latent_heat_vaporization(Q=None, m=None, Lv=None, *, target: str | None = None):
     """Heat to boil or condense: Q = m*Lv
-    Formula: Q = Lv m
+    Formula: Q = m L_{v}
     Give every quantity but the one to find, as a number with a unit (e.g. '3 kg'); target= picks the unknown.
     Quantities:
         Q: energy [J]
@@ -623,7 +623,7 @@ def latent_heat_vaporization(Q=None, m=None, Lv=None, *, target: str | None = No
 
 def lc_resonance(f=None, L=None, C=None, *, target: str | None = None):
     """Resonant frequency of an LC circuit: f = 1/(2*pi*sqrt(L*C))
-    Formula: f = \\frac{1}{2 \\pi \\sqrt{C} \\sqrt{L}}
+    Formula: f = \\frac{1}{2 \\pi \\sqrt{L C}}
     Give every quantity but the one to find, as a number with a unit (e.g. '3 kg'); target= picks the unknown.
     Quantities:
         f: resonant frequency [Hz]
@@ -637,7 +637,7 @@ def lc_resonance(f=None, L=None, C=None, *, target: str | None = None):
 
 def linear_expansion(dL=None, alpha_t=None, L=None, dT=None, *, target: str | None = None):
     """Linear thermal expansion: dL = alpha_t*L*dT
-    Formula: dL = L alpha_t dT
+    Formula: d_{L} = \\alpha_{t} L d_{T}
     Give every quantity but the one to find, as a number with a unit (e.g. '3 kg'); target= picks the unknown.
     Quantities:
         dL: change in length [m]
@@ -652,7 +652,7 @@ def linear_expansion(dL=None, alpha_t=None, L=None, dT=None, *, target: str | No
 
 def long_wire_field(B=None, I=None, r=None, mu0=None, *, target: str | None = None):
     """Magnetic field of a long straight wire: B = mu0*I/(2*pi*r)
-    Formula: B = \\frac{I mu0}{2 \\pi r}
+    Formula: B = \\frac{\\mu_{0} I}{2 \\pi r}
     Give every quantity but the one to find, as a number with a unit (e.g. '3 kg'); target= picks the unknown.
     Quantities:
         B: magnetic field [T]
@@ -667,7 +667,7 @@ def long_wire_field(B=None, I=None, r=None, mu0=None, *, target: str | None = No
 
 def loop_center_field(B=None, I=None, r=None, mu0=None, *, target: str | None = None):
     """Magnetic field at the centre of a circular loop: B = mu0*I/(2*r)
-    Formula: B = \\frac{I mu0}{2 r}
+    Formula: B = \\frac{\\mu_{0} I}{2 r}
     Give every quantity but the one to find, as a number with a unit (e.g. '3 kg'); target= picks the unknown.
     Quantities:
         B: field at the centre [T]
@@ -682,7 +682,7 @@ def loop_center_field(B=None, I=None, r=None, mu0=None, *, target: str | None = 
 
 def magnetic_force_charge(F=None, q=None, v=None, B=None, theta=None, *, target: str | None = None):
     """Magnetic force on a moving charge: F = q*v*B*sin(theta)
-    Formula: F = B q v \\sin{\\left(theta \\right)}
+    Formula: F = q v B \\sin\\left(\\theta\\right)
     Give every quantity but the one to find, as a number with a unit (e.g. '3 kg'); target= picks the unknown.
     Quantities:
         F: magnitude of the magnetic force [N]
@@ -698,7 +698,7 @@ def magnetic_force_charge(F=None, q=None, v=None, B=None, theta=None, *, target:
 
 def magnetic_force_wire(F=None, I=None, L=None, B=None, theta=None, *, target: str | None = None):
     """Magnetic force on a current-carrying wire: F = I*L*B*sin(theta)
-    Formula: F = B I L \\sin{\\left(theta \\right)}
+    Formula: F = I L B \\sin\\left(\\theta\\right)
     Give every quantity but the one to find, as a number with a unit (e.g. '3 kg'); target= picks the unknown.
     Quantities:
         F: force [N]
@@ -754,7 +754,7 @@ def momentum(p=None, m=None, v=None, *, target: str | None = None):
 
 def motional_emf(emf=None, B=None, l=None, v=None, *, target: str | None = None):
     """Emf of a rod moving through a magnetic field: emf = B*l*v
-    Formula: emf = B l v
+    Formula: \\text{emf} = B l v
     Give every quantity but the one to find, as a number with a unit (e.g. '3 kg'); target= picks the unknown.
     Quantities:
         emf: induced emf [V]
@@ -797,7 +797,7 @@ def net_work_kinetic_energy(W=None, m=None, v=None, v0=None, *, target: str | No
 
 def newton_second(F=None, m=None, a=None, *, target: str | None = None):
     """Net force and acceleration: F = m*a
-    Formula: F = a m
+    Formula: F = m a
     Give every quantity but the one to find, as a number with a unit (e.g. '3 kg'); target= picks the unknown.
     Quantities:
         F: net force [N]
@@ -810,7 +810,7 @@ def newton_second(F=None, m=None, a=None, *, target: str | None = None):
 
 def normal_force_incline(N=None, m=None, g=None, theta=None, *, target: str | None = None):
     """Normal force on an incline: N = m*g*cos(theta)
-    Formula: N = g m \\cos{\\left(\\theta \\right)}
+    Formula: N = m g \\cos\\left(\\theta\\right)
     Give every quantity but the one to find, as a number with a unit (e.g. '3 kg'); target= picks the unknown.
     Quantities:
         N: normal force from the incline [N]
@@ -878,7 +878,7 @@ def ohm_power_voltage(P=None, V=None, R=None, *, target: str | None = None):
 
 def orbital_period(T=None, r=None, M=None, G=None, *, target: str | None = None):
     """Period of a circular orbit: T = 2*pi*sqrt(r**3/(G*M))
-    Formula: T = \\frac{2 \\pi r^{\\frac{3}{2}}}{\\sqrt{G} \\sqrt{M}}
+    Formula: T = 2 \\pi \\sqrt{\\frac{r^{3}}{G M}}
     Give every quantity but the one to find, as a number with a unit (e.g. '3 kg'); target= picks the unknown.
     Quantities:
         T: orbital period [s]
@@ -893,7 +893,7 @@ def orbital_period(T=None, r=None, M=None, G=None, *, target: str | None = None)
 
 def orbital_speed(v=None, M=None, r=None, G=None, *, target: str | None = None):
     """Speed in a circular orbit: v = sqrt(G*M/r)
-    Formula: v = \\frac{\\sqrt{G} \\sqrt{M}}{\\sqrt{r}}
+    Formula: v = \\sqrt{\\frac{G M}{r}}
     Give every quantity but the one to find, as a number with a unit (e.g. '3 kg'); target= picks the unknown.
     Quantities:
         v: orbital speed [m/s]
@@ -908,7 +908,7 @@ def orbital_speed(v=None, M=None, r=None, G=None, *, target: str | None = None):
 
 def parallel_plate_capacitor(C=None, A=None, d=None, eps0=None, *, target: str | None = None):
     """Capacitance of parallel plates: C = eps0*A/d
-    Formula: C = \\frac{A eps0}{d}
+    Formula: C = \\frac{\\varepsilon_{0} A}{d}
     Give every quantity but the one to find, as a number with a unit (e.g. '3 kg'); target= picks the unknown.
     Quantities:
         C: capacitance [F]
@@ -923,7 +923,7 @@ def parallel_plate_capacitor(C=None, A=None, d=None, eps0=None, *, target: str |
 
 def pendulum_period(T=None, Lp=None, g=None, *, target: str | None = None):
     """Period of a simple pendulum: T = 2*pi*sqrt(Lp/g)
-    Formula: T = \\frac{2 \\pi \\sqrt{Lp}}{\\sqrt{g}}
+    Formula: T = 2 \\pi \\sqrt{\\frac{L_{p}}{g}}
     Give every quantity but the one to find, as a number with a unit (e.g. '3 kg'); target= picks the unknown.
     Quantities:
         T: period of the swing [s]
@@ -949,7 +949,7 @@ def period_frequency(T=None, f=None, *, target: str | None = None):
 
 def photon_energy(E=None, f=None, h=None, *, target: str | None = None):
     """Energy of a photon: E = h*f
-    Formula: E = f h
+    Formula: E = h f
     Give every quantity but the one to find, as a number with a unit (e.g. '3 kg'); target= picks the unknown.
     Quantities:
         E: photon energy [J]
@@ -963,7 +963,7 @@ def photon_energy(E=None, f=None, h=None, *, target: str | None = None):
 
 def photon_energy_wavelength(E=None, lam=None, h=None, c=None, *, target: str | None = None):
     """Photon energy from wavelength: E = h*c/lam
-    Formula: E = \\frac{c h}{lam}
+    Formula: E = \\frac{h c}{\\lambda}
     Give every quantity but the one to find, as a number with a unit (e.g. '3 kg'); target= picks the unknown.
     Quantities:
         E: energy [J]
@@ -978,7 +978,7 @@ def photon_energy_wavelength(E=None, lam=None, h=None, c=None, *, target: str | 
 
 def photon_momentum(p=None, lam=None, h=None, *, target: str | None = None):
     """Momentum of a photon: p = h/lam
-    Formula: p = \\frac{h}{lam}
+    Formula: p = \\frac{h}{\\lambda}
     Give every quantity but the one to find, as a number with a unit (e.g. '3 kg'); target= picks the unknown.
     Quantities:
         p: photon momentum [kg*m/s]
@@ -992,7 +992,7 @@ def photon_momentum(p=None, lam=None, h=None, *, target: str | None = None):
 
 def point_charge_field(Ef=None, Q=None, r=None, ke=None, *, target: str | None = None):
     """Electric field of a point charge: Ef = ke*Q/r**2
-    Formula: Ef = \\frac{Q ke}{r^{2}}
+    Formula: E_{f} = \\frac{k_{e} Q}{r^{2}}
     Give every quantity but the one to find, as a number with a unit (e.g. '3 kg'); target= picks the unknown.
     Quantities:
         Ef: field strength at distance r [N/C]
@@ -1007,7 +1007,7 @@ def point_charge_field(Ef=None, Q=None, r=None, ke=None, *, target: str | None =
 
 def point_charge_potential(V=None, Q=None, r=None, ke=None, *, target: str | None = None):
     """Electric potential of a point charge: V = ke*Q/r
-    Formula: V = \\frac{Q ke}{r}
+    Formula: V = \\frac{k_{e} Q}{r}
     Give every quantity but the one to find, as a number with a unit (e.g. '3 kg'); target= picks the unknown.
     Quantities:
         V: electric potential relative to infinity [V]
@@ -1061,7 +1061,7 @@ def pressure_force(P=None, F=None, A=None, *, target: str | None = None):
 
 def rc_charging(V=None, emf=None, t=None, R=None, C=None, *, target: str | None = None):
     """Voltage of a charging capacitor: V = emf*(1 - exp(-t/(R*C)))
-    Formula: V = emf \\left(1 - e^{- \\frac{t}{C R}}\\right)
+    Formula: V = \\text{emf} \\left(1 - e^{\\frac{-t}{R C}}\\right)
     Give every quantity but the one to find, as a number with a unit (e.g. '3 kg'); target= picks the unknown.
     Quantities:
         V: voltage across the capacitor at time t [V]
@@ -1077,7 +1077,7 @@ def rc_charging(V=None, emf=None, t=None, R=None, C=None, *, target: str | None 
 
 def rc_discharging(V=None, V0=None, t=None, R=None, C=None, *, target: str | None = None):
     """Voltage of a discharging capacitor: V = V0*exp(-t/(R*C))
-    Formula: V = V0 e^{- \\frac{t}{C R}}
+    Formula: V = V_{0} e^{\\frac{-t}{R C}}
     Give every quantity but the one to find, as a number with a unit (e.g. '3 kg'); target= picks the unknown.
     Quantities:
         V: voltage across the capacitor at time t [V]
@@ -1093,7 +1093,7 @@ def rc_discharging(V=None, V0=None, t=None, R=None, C=None, *, target: str | Non
 
 def rc_time_constant(tau=None, R=None, C=None, *, target: str | None = None):
     """Time constant of an RC circuit: tau = R*C
-    Formula: tau = C R
+    Formula: \\tau = R C
     Give every quantity but the one to find, as a number with a unit (e.g. '3 kg'); target= picks the unknown.
     Quantities:
         tau: time constant [s]
@@ -1107,7 +1107,7 @@ def rc_time_constant(tau=None, R=None, C=None, *, target: str | None = None):
 
 def resistivity(R=None, rho_e=None, L=None, A=None, *, target: str | None = None):
     """Resistance of a uniform wire: R = rho_e*L/A
-    Formula: R = \\frac{L rho_e}{A}
+    Formula: R = \\frac{\\rho_{e} L}{A}
     Give every quantity but the one to find, as a number with a unit (e.g. '3 kg'); target= picks the unknown.
     Quantities:
         R: resistance [ohm]
@@ -1122,7 +1122,7 @@ def resistivity(R=None, rho_e=None, L=None, A=None, *, target: str | None = None
 
 def rest_energy(E0=None, m=None, c=None, *, target: str | None = None):
     """Rest energy: E0 = m*c**2
-    Formula: E0 = c^{2} m
+    Formula: E_{0} = m c^{2}
     Give every quantity but the one to find, as a number with a unit (e.g. '3 kg'); target= picks the unknown.
     Quantities:
         E0: rest energy [J]
@@ -1136,7 +1136,7 @@ def rest_energy(E0=None, m=None, c=None, *, target: str | None = None):
 
 def rl_current_decay(I=None, I0=None, t=None, tau=None, *, target: str | None = None):
     """Current dying away in an RL circuit: I = I0*exp(-t/tau)
-    Formula: I = I0 e^{- \\frac{t}{tau}}
+    Formula: I = I_{0} e^{\\frac{-t}{\\tau}}
     Give every quantity but the one to find, as a number with a unit (e.g. '3 kg'); target= picks the unknown.
     Quantities:
         I: current at time t [A]
@@ -1151,7 +1151,7 @@ def rl_current_decay(I=None, I0=None, t=None, tau=None, *, target: str | None = 
 
 def rl_time_constant(tau=None, L=None, R=None, *, target: str | None = None):
     """Time constant of an RL circuit: tau = L/R
-    Formula: tau = \\frac{L}{R}
+    Formula: \\tau = \\frac{L}{R}
     Give every quantity but the one to find, as a number with a unit (e.g. '3 kg'); target= picks the unknown.
     Quantities:
         tau: time constant [s]
@@ -1165,7 +1165,7 @@ def rl_time_constant(tau=None, L=None, R=None, *, target: str | None = None):
 
 def rms_current(Irms=None, I0=None, *, target: str | None = None):
     """Rms current of a sinusoidal supply: Irms = I0/sqrt(2)
-    Formula: Irms = \\frac{\\sqrt{2} I0}{2}
+    Formula: I_{\\text{rms}} = \\frac{I_{0}}{\\sqrt{2}}
     Give every quantity but the one to find, as a number with a unit (e.g. '3 kg'); target= picks the unknown.
     Quantities:
         Irms: rms current [A]
@@ -1178,7 +1178,7 @@ def rms_current(Irms=None, I0=None, *, target: str | None = None):
 
 def rms_voltage(Vrms=None, V0=None, *, target: str | None = None):
     """Rms voltage of a sinusoidal supply: Vrms = V0/sqrt(2)
-    Formula: Vrms = \\frac{\\sqrt{2} V0}{2}
+    Formula: V_{\\text{rms}} = \\frac{V_{0}}{\\sqrt{2}}
     Give every quantity but the one to find, as a number with a unit (e.g. '3 kg'); target= picks the unknown.
     Quantities:
         Vrms: rms voltage [V]
@@ -1191,7 +1191,7 @@ def rms_voltage(Vrms=None, V0=None, *, target: str | None = None):
 
 def rotational_kinetic_energy(KR=None, Ir=None, omega=None, *, target: str | None = None):
     """Rotational kinetic energy: KR = Ir*omega**2/2
-    Formula: KR = \\frac{Ir omega^{2}}{2}
+    Formula: K_{R} = \\frac{I_{r} \\omega^{2}}{2}
     Give every quantity but the one to find, as a number with a unit (e.g. '3 kg'); target= picks the unknown.
     Quantities:
         KR: rotational kinetic energy [J]
@@ -1205,7 +1205,7 @@ def rotational_kinetic_energy(KR=None, Ir=None, omega=None, *, target: str | Non
 
 def shm_max_speed(v=None, X=None, k=None, m=None, *, target: str | None = None):
     """Maximum speed of a mass on a spring: v = X*sqrt(k/m)
-    Formula: v = \\frac{X \\sqrt{k}}{\\sqrt{m}}
+    Formula: v = X \\sqrt{\\frac{k}{m}}
     Give every quantity but the one to find, as a number with a unit (e.g. '3 kg'); target= picks the unknown.
     Quantities:
         v: maximum speed (at equilibrium) [m/s]
@@ -1220,7 +1220,7 @@ def shm_max_speed(v=None, X=None, k=None, m=None, *, target: str | None = None):
 
 def solenoid_field(B=None, nt=None, I=None, mu0=None, *, target: str | None = None):
     """Magnetic field inside a long solenoid: B = mu0*nt*I
-    Formula: B = I mu0 nt
+    Formula: B = \\mu_{0} n_{t} I
     Give every quantity but the one to find, as a number with a unit (e.g. '3 kg'); target= picks the unknown.
     Quantities:
         B: magnetic field [T]
@@ -1235,7 +1235,7 @@ def solenoid_field(B=None, nt=None, I=None, mu0=None, *, target: str | None = No
 
 def speed_after_fall_from_rest(v=None, g=None, h=None, *, target: str | None = None):
     """Speed after falling from rest: v = sqrt(2*g*h)
-    Formula: v = \\sqrt{2} \\sqrt{g} \\sqrt{h}
+    Formula: v = \\sqrt{2 g h}
     Give every quantity but the one to find, as a number with a unit (e.g. '3 kg'); target= picks the unknown.
     Quantities:
         v: speed after the fall [m/s]
@@ -1290,7 +1290,7 @@ def spring_launch_speed(k=None, x=None, m=None, v=None, *, target: str | None = 
 
 def spring_oscillation_period(T=None, m=None, k=None, *, target: str | None = None):
     """Period of a mass on a spring: T = 2*pi*sqrt(m/k)
-    Formula: T = \\frac{2 \\pi \\sqrt{m}}{\\sqrt{k}}
+    Formula: T = 2 \\pi \\sqrt{\\frac{m}{k}}
     Give every quantity but the one to find, as a number with a unit (e.g. '3 kg'); target= picks the unknown.
     Quantities:
         T: time [s]
@@ -1319,7 +1319,7 @@ def surface_gravity(g=None, M=None, r=None, G=None, *, target: str | None = None
 
 def tangential_acceleration(a=None, r=None, alpha=None, *, target: str | None = None):
     """Tangential acceleration of a point on a rotating body: a = r*alpha
-    Formula: a = alpha r
+    Formula: a = r \\alpha
     Give every quantity but the one to find, as a number with a unit (e.g. '3 kg'); target= picks the unknown.
     Quantities:
         a: tangential acceleration [m/s^2]
@@ -1346,7 +1346,7 @@ def tangential_speed(v=None, omega=None, r=None, *, target: str | None = None):
 
 def tension_hanging_at_rest(T=None, m=None, g=None, *, target: str | None = None):
     """Tension in a rope holding a hanging body: T = m*g
-    Formula: T = g m
+    Formula: T = m g
     Give every quantity but the one to find, as a number with a unit (e.g. '3 kg'); target= picks the unknown.
     Quantities:
         T: tension in the rope [N]
@@ -1360,7 +1360,7 @@ def tension_hanging_at_rest(T=None, m=None, g=None, *, target: str | None = None
 
 def thin_lens(d_o=None, d_i=None, f=None, *, target: str | None = None):
     """Thin lens equation: 1/d_o + 1/d_i = 1/f
-    Formula: \\frac{1}{d_o} + \\frac{1}{d_i} = \\frac{1}{f}
+    Formula: \\frac{1}{d_{o}} + \\frac{1}{d_{i}} = \\frac{1}{f}
     Give every quantity but the one to find, as a number with a unit (e.g. '3 kg'); target= picks the unknown.
     Quantities:
         d_o: object distance [m]
@@ -1388,7 +1388,7 @@ def time_to_top_vertical_throw(t=None, v0=None, g=None, *, target: str | None = 
 
 def torque_lever(tau=None, r=None, F=None, theta=None, *, target: str | None = None):
     """Torque of a force: tau = r*F*sin(theta)
-    Formula: tau = F r \\sin{\\left(theta \\right)}
+    Formula: \\tau = r F \\sin\\left(\\theta\\right)
     Give every quantity but the one to find, as a number with a unit (e.g. '3 kg'); target= picks the unknown.
     Quantities:
         tau: torque about the pivot [N*m]
@@ -1403,7 +1403,7 @@ def torque_lever(tau=None, r=None, F=None, theta=None, *, target: str | None = N
 
 def two_resistors_series_parallel(r1=None, r2=None):
     """Two resistors in series and in parallel. The equivalent resistance of two resistors connected in series and connected in parallel.
-    Formula: rs = r_{1} + r_{2},\\quad rp \\left(r_{1} + r_{2}\\right) = r_{1} r_{2}
+    Formula: r_{s} = r_{1} + r_{2},\\quad r_{p} \\left(r_{1} + r_{2}\\right) = r_{1} r_{2}
     Inputs:
         r1: first resistance (condition: r1 > 0)
         r2: second resistance (condition: r2 > 0)
@@ -1415,7 +1415,7 @@ def two_resistors_series_parallel(r1=None, r2=None):
 
 def uniform_acceleration_state(u=None, a=None, t=None):
     """Velocity and displacement after constant acceleration. The final velocity and the displacement of a body that starts at velocity u and accelerates uniformly at a for a time t.
-    Formula: v = a t + u,\\quad 2 s = t \\left(u + v\\right)
+    Formula: v = u + a t,\\quad 2 s = \\left(u + v\\right) t
     Inputs:
         u: initial velocity
         a: constant acceleration
@@ -1428,7 +1428,7 @@ def uniform_acceleration_state(u=None, a=None, t=None):
 
 def uniform_field_potential(V=None, Ef=None, d=None, *, target: str | None = None):
     """Potential difference in a uniform field: V = Ef*d
-    Formula: V = Ef d
+    Formula: V = E_{f} d
     Give every quantity but the one to find, as a number with a unit (e.g. '3 kg'); target= picks the unknown.
     Quantities:
         V: potential difference between the plates [V]
@@ -1442,7 +1442,7 @@ def uniform_field_potential(V=None, Ef=None, d=None, *, target: str | None = Non
 
 def uniform_motion(d=None, v=None, t=None, *, target: str | None = None):
     """Motion at constant velocity: d = v*t
-    Formula: d = t v
+    Formula: d = v t
     Give every quantity but the one to find, as a number with a unit (e.g. '3 kg'); target= picks the unknown.
     Quantities:
         d: distance travelled [m]
@@ -1455,7 +1455,7 @@ def uniform_motion(d=None, v=None, t=None, *, target: str | None = None):
 
 def velocity_displacement(v=None, v0=None, a=None, x=None, *, target: str | None = None):
     """Speed after a displacement under constant acceleration: v**2 = v0**2 + 2*a*x
-    Formula: v^{2} = 2 a x + v_0^{2}
+    Formula: v^{2} = v_0^{2} + 2 a x
     Give every quantity but the one to find, as a number with a unit (e.g. '3 kg'); target= picks the unknown.
     Quantities:
         v: final speed [m/s]
@@ -1469,7 +1469,7 @@ def velocity_displacement(v=None, v0=None, a=None, x=None, *, target: str | None
 
 def velocity_time(v=None, v0=None, a=None, t=None, *, target: str | None = None):
     """Velocity under constant acceleration: v = v0 + a*t
-    Formula: v = a t + v_0
+    Formula: v = v_0 + a t
     Give every quantity but the one to find, as a number with a unit (e.g. '3 kg'); target= picks the unknown.
     Quantities:
         v: final velocity [m/s]
@@ -1483,7 +1483,7 @@ def velocity_time(v=None, v0=None, a=None, t=None, *, target: str | None = None)
 
 def volume_expansion(dV=None, beta=None, V0=None, dT=None, *, target: str | None = None):
     """Thermal expansion of volume: dV = beta*V0*dT
-    Formula: dV = V0 beta dT
+    Formula: d_{V} = \\beta V_{0} d_{T}
     Give every quantity but the one to find, as a number with a unit (e.g. '3 kg'); target= picks the unknown.
     Quantities:
         dV: change in volume [m^3]
@@ -1511,7 +1511,7 @@ def wave_speed(v=None, f=None, lam=None, *, target: str | None = None):
 
 def wavelength_in_medium(lam_n=None, lam=None, n=None, *, target: str | None = None):
     """Wavelength of light in a medium: lam_n = lam/n
-    Formula: lam_n = \\frac{lam}{n}
+    Formula: \\lambda_{n} = \\frac{\\lambda}{n}
     Give every quantity but the one to find, as a number with a unit (e.g. '3 kg'); target= picks the unknown.
     Quantities:
         lam_n: wavelength in the medium [m]
@@ -1525,7 +1525,7 @@ def wavelength_in_medium(lam_n=None, lam=None, n=None, *, target: str | None = N
 
 def weight(W=None, m=None, g=None, *, target: str | None = None):
     """Weight in a uniform gravitational field: W = m*g
-    Formula: W = g m
+    Formula: W = m g
     Give every quantity but the one to find, as a number with a unit (e.g. '3 kg'); target= picks the unknown.
     Quantities:
         W: weight [N]
@@ -1538,7 +1538,7 @@ def weight(W=None, m=None, g=None, *, target: str | None = None):
 
 def weight_component_along_incline(F=None, m=None, g=None, theta=None, *, target: str | None = None):
     """Component of the weight along an incline: F = m*g*sin(theta)
-    Formula: F = g m \\sin{\\left(\\theta \\right)}
+    Formula: F = m g \\sin\\left(\\theta\\right)
     Give every quantity but the one to find, as a number with a unit (e.g. '3 kg'); target= picks the unknown.
     Quantities:
         F: component of the weight along the incline [N]
@@ -1553,7 +1553,7 @@ def weight_component_along_incline(F=None, m=None, g=None, theta=None, *, target
 
 def work(W=None, F=None, d=None, theta=None, *, target: str | None = None):
     """Work by a constant force: W = F*d*cos(theta)
-    Formula: W = F d \\cos{\\left(\\theta \\right)}
+    Formula: W = F d \\cos\\left(\\theta\\right)
     Give every quantity but the one to find, as a number with a unit (e.g. '3 kg'); target= picks the unknown.
     Quantities:
         W: work done [J]

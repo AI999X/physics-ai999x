@@ -132,7 +132,11 @@ class Answer:
     def _repr_markdown_(self) -> str:
         if not self.solved:
             hint = (self.uncertainty or {}).get("try")
-            return f"**{self.outcome}** — {self.message}" + (f"\n\n*Try:* `{hint}`" if hint else "")
+            text = f"**{self.outcome}** — {self.message}" + (f"\n\n*Try:* `{hint}`" if hint else "")
+            for s in getattr(self, "suggestions", None) or []:   # ask(..., suggest=True): pointers, never answers
+                where = "" if s.get("here") else f" (`pip install {s['package']}`)"
+                text += f"\n\n*Perhaps:* **{s['name']}**{where}" + (f" — e.g. “{s['example']}”" if s.get("example") else "")
+            return text
         what = (self.target or {}).get("phrase", "answer")
         head = self._values_line() if self.values else f"{what} = {_fmt(self.value)} {self.unit}"
         out = [f"**{head}**", "", f"$$ {self.latex()} $$"]
@@ -163,6 +167,8 @@ class Answer:
         d["outcome"] = self.outcome
         if getattr(self, "suggestion", None):          # the optional decision model's suggestion (suggest mode only)
             d["suggestion"] = self.suggestion
+        if getattr(self, "suggestions", None):         # capability search (ask(..., suggest=True))
+            d["suggestions"] = self.suggestions
         enc = lambda v: {"re": v.real + 0.0, "im": v.imag + 0.0} if isinstance(v, complex) else v
         d["values"] = {k: enc(v) for k, v in self.values.items()}
         for s in d["steps"]:

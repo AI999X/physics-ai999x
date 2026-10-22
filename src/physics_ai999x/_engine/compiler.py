@@ -120,8 +120,8 @@ def _number(text: str) -> float:
 
 def _strip(tok: str) -> str:
     tok = tok.rstrip(".,;:?!")
-    if tok.endswith(")") and "(" not in tok:
-        tok = tok[:-1]
+    while tok.endswith(")") and tok.count(")") > tok.count("("):     # "(n=0.035 s/m^(1/3))": the sentence's bracket
+        tok = tok[:-1].rstrip(".,;:?!")
     if tok.startswith("(") and ")" not in tok:
         tok = tok[1:]
     return tok

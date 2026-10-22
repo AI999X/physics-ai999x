@@ -273,5 +273,12 @@ def to_procedure(spec: dict) -> dict:
     c = CompiledProcedure(spec)
     keep = ("name", "topic", "purpose", "inputs", "outputs", "primary", "conditions", "method", "latex", "templates",
             "examples", "questions", "provenance", "keywords", "output_conditions")
-    return {**{k: spec[k] for k in keep if k in spec}, "run": c.run, "verify": c.verify, "parse": c.parse, "parse_ranked": c.parse_ranked,
+    out = {k: spec[k] for k in keep if k in spec}
+    eqs = spec.get("equations") or []
+    if eqs:                                              # typeset from the equations, as written, symbols in textbook form
+        try:
+            out["latex"] = ",\\quad ".join(E.latex_written(e) for e in eqs)
+        except (E.ExpressionError, SyntaxError):
+            pass                                         # keep the stored LaTeX
+    return {**out, "run": c.run, "verify": c.verify, "parse": c.parse, "parse_ranked": c.parse_ranked,
             "reference": c.reference, "wrong": c.wrong, "random_inputs": c.random_inputs, "compiled": True}

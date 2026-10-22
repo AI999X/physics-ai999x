@@ -22,7 +22,7 @@ except ImportError:                        # the factory's source tree, during d
     from ai999x_factory.runtime import Answer, Pack
     from ai999x_factory.runtime.product import Product
 
-__version__ = "1.3.1"     # release 1.3.1 (2026-10-21): reader fixes (spelled units, shared vocabulary); 1.3.0 (2026-10-17): the decision model (gated auto + suggest), reader fixes; 1.2.0 ONNX formula pack; 1.1.0 reader fixes; 1.0.0 on 2026-10-16
+__version__ = "2.0.0"     # release 2.0.0 (2026-10-21): capability search, figures, textbook LaTeX; 1.3.1 (2026-10-21): reader fixes (spelled units, shared vocabulary); 1.3.0 (2026-10-17): the decision model (gated auto + suggest), reader fixes; 1.2.0 ONNX formula pack; 1.1.0 reader fixes; 1.0.0 on 2026-10-16
 __all__ = ["ask", "solve", "formula", "formulas", "quantities", "conditions", "capabilities", "compile_problem",
            "plot", "plot_relation", "Answer", "pack", "topics", "templates", "suggest", "explain", "prove", "derivations", "about", "DecisionReader", "__version__"]
 # the shared domain API (ai999x_factory.runtime.product): the pack built into the package, else the source tree's
@@ -34,15 +34,16 @@ def pack() -> Pack:
     return _P.pack()
 
 
-def ask(question, *, reader=None) -> Answer:
+def ask(question, *, reader=None, suggest=False) -> Answer:
     """Answer a physics question written in words (or a typed problem given as a dictionary).
 
     The question is read by the deterministic rule-based reader (and, for several bodies or stages, the model
     families). Pass `reader=` (see `physics_ai999x.reader`) to let an optional trained reader try questions the
     rule-based reader refuses; its reading must pass the verification gate and is never used against a rule-based
-    answer."""
+    answer. With suggest=True an unanswered question also lists the capabilities it is most likely about
+    (`answer.suggestions`, needs pip install "physics-ai999x[search]")."""
     if reader is None or not isinstance(question, str):
-        return _P.ask(question)
+        return _P.ask(question, suggest=suggest)
     if hasattr(reader, "ask"):                     # the earlier trained reader (physics_ai999x.reader)
         return reader.ask(question, pack())
     answer = _P.ask(question)                      # the decision model: only where the rule-based reader refuses
@@ -71,7 +72,7 @@ def compile_problem(question: str):
 
 
 from .structured import conditions, formula, formulas, quantities, solve  # noqa: E402
-from .plotting import plot, plot_relation  # noqa: E402
+plot, plot_relation, search = _P.plot, _P.plot_relation, _P.search   # noqa: E305  shared: SVG figures, capability search
 from .assistant import explain, suggest, templates, topics  # noqa: E402
 
 

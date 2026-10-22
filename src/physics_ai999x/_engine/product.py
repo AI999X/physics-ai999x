@@ -78,7 +78,30 @@ class Product:
         return unknown(question, entries) if entry is None else answer(entry, question, missing)
 
     # --- answering ----------------------------------------------------------------------------------------------
-    def ask(self, question) -> Answer:
+    def search(self, question: str, k: int = 5, domain: str | None = None) -> list:
+        """The certified capabilities a question is most likely about, across every domain in the shared index
+        (runtime/search.py). It never answers; with `pip install <package>[search]`."""
+        from .search import CapabilitySearch, SearchUnavailable
+        if not hasattr(self, "_search"):
+            pkg = self.domain.replace("_", "-") + "-ai999x"
+            self._search = CapabilitySearch.find(self._folders, self.domain, pkg)
+        if self._search is None:
+            raise SearchUnavailable("this installation has no capability search index")
+        return self._search.search(question, k=k, domain=domain)
+
+    def ask(self, question, suggest: bool = False) -> Answer:
+        """As _ask; with suggest=True a question that is not answered also carries the capabilities it is most likely
+        about (`answer.suggestions`), from the shared search index when it is installed. The answer itself never
+        changes: a suggestion is a pointer, not a result."""
+        a = self._ask(question)
+        if suggest and not a.solved and isinstance(question, str):
+            try:
+                a.suggestions = self.search(question, k=3)
+            except ImportError:
+                a.suggestions = []
+        return a
+
+    def _ask(self, question) -> Answer:
         """Answer a question in words (or a typed problem as a dictionary), within the documented question formats.
         Every answer carries an `outcome` (SOLVED, NEEDS_INPUT, AMBIGUOUS, INVALID_INPUT, OUT_OF_SCOPE,
         UNRECOGNIZED_FORMAT, INTERNAL_ERROR); a format the reader does not recognise comes back with a copyable
@@ -481,6 +504,43 @@ class Product:
         inputs = [n for n in rel.symbols if n != lhs and not rel.symbols[n].default]
         unit = lambda n: self.pack().kinds[rel.symbols[n].kind].unit   # noqa: E731
         return f"solve({key!r}, " + ", ".join(f"{n}='1 {unit(n)}'" for n in inputs) + ")"
+
+    def _si_value(self, v):
+        """'6.371e6 m' or [6.371e6, 'm'] -> SI float; a bare number is taken as SI."""
+        from .quantity import parse_unit, to_si
+        if isinstance(v, (int, float)):
+            return float(v)
+        if isinstance(v, (list, tuple)):
+            return to_si(float(v[0]), parse_unit(str(v[1])))
+        num, _, unit = str(v).strip().partition(" ")
+        return to_si(float(num), parse_unit(unit.strip())) if unit.strip() else float(num)
+
+    def plot_relation(self, key: str, x: str, over, fixed: dict | None = None, y: str | None = None, points: int = 101):
+        """A deterministic plot of one certified relation (see runtime/visual.py): `y` against `x` over `over`,
+        the other symbols `fixed` (values with units, or SI numbers); constants take their declared values."""
+        from .visual import relation_plot
+        p = self.pack()
+        r = p.by_key[key]
+        fx = {k: self._si_value(v) for k, v in (fixed or {}).items()}
+        for n, s in r.symbols.items():                     # a declared constant (G, g) fills itself in
+            if n not in fx and n != x and n != (y or r.equation.split("=")[0].strip()) and s.default:
+                fx[n] = self._si_value([s.default["value"], s.default["unit"]])
+        return relation_plot(p, key, x, (self._si_value(over[0]), self._si_value(over[1])), fx, y=y, points=points)
+
+    def plot(self, answer, span: float = 1.0, points: int = 101):
+        """The answer's last step around its own result: its result against its first input, ±span × that input."""
+        from .visual import relation_plot
+        if not answer.solved or not answer.steps:
+            raise ValueError("only a solved answer can be plotted")
+        s = answer.steps[-1]
+        stated = [k for k, v in s["inputs"].items() if v.get("source") not in ("default", "implied")]
+        x = (stated or list(s["inputs"]))[0]            # a stated value, never a declared constant like G
+        xv = float(s["inputs"][x]["value"])
+        fixed = {k: float(v["value"]) for k, v in s["inputs"].items() if k != x}
+        lo, hi = (xv - span * abs(xv), xv + span * abs(xv)) if xv else (-1.0, 1.0)
+        lo = max(lo, xv * 1e-3) if xv > 0 else lo
+        return relation_plot(self.pack(), s["relation"], x, (lo, hi), fixed, y=s["target"], points=points,
+                             marker=(xv, float(s["result"])))
 
     def to_si(self, value, unit, contract=None, symbol=None) -> float:
         from .quantity import parse_unit, to_si

@@ -100,11 +100,15 @@ class Relation:
 
     @property
     def names(self) -> dict:
-        return {self.sp_symbols[n]: (s.latex or n) for n, s in self.symbols.items()}
+        return {self.sp_symbols[n]: (s.latex or E.symbol_latex(n, s.kind, s.role)) for n, s in self.symbols.items()}
 
     def latex(self) -> str:
-        l, r = self.sides
-        return f"{E.latex(l, self.names)} = {E.latex(r, self.names)}"
+        """The equation typeset as written (rho*g*h stays rho g h), symbols in textbook form."""
+        try:
+            return E.latex_written(self.equation, {n: self.names[self.sp_symbols[n]] for n in self.symbols})
+        except (E.ExpressionError, SyntaxError, KeyError):
+            l, r = self.sides
+            return f"{E.latex(l, self.names)} = {E.latex(r, self.names)}"
 
     def solved_forms(self, target: str) -> list:
         if target not in self._cache:

@@ -1,5 +1,5 @@
 {
- "package": "1.3.1",
+ "package": "2.0.0",
  "pack": "0.6.0",
  "knowledge_db": "1.6.0",
  "files": {
@@ -12,6 +12,9 @@
   "capabilities/procedures_certified.json": "cc0609aa3c9a91ed8a192a77733a38cf568e487fd1c3cdcff675a7d703a23838",
   "capabilities/procedures_compiled.json": "d7943aa9a77a7b6d313c3e1b3c2ef3a96f0844ac310afd749260b514e2188f55",
   "capabilities/derivations_certified.json": "e212074402750dcd81147777a40d5b7810b9cd086b498e5ba9430c80de0960d7",
+  "search/encoder.int8.onnx": "8dfdc64b74a689092588fa02d7b7c90a09c478de71f1a4003e18dce5cd0980bd",
+  "search/tokenizer.json": "22814b2533272c7a139d477e6d514d35989c4abe3a2195b40942bc527a1e1d15",
+  "search/index.json": "a4efb354b436ecd9ea3aaf36cbdaa1e2562e557336b3c68183b1ad3355d49f70",
   "templates.json": "0e6d6afb4fed12fa9c035334a0cfecc2e367821cb6f92a8f4620aa98237c43e3",
   "topics.json": "e49da6ae57720b57ecb881d354084401e776f71f72fca035b807f707a26688e5",
   "knowledge.sqlite": "cd4275eecec045b56db0c5c414174becc34b53d882cb2027fd1112f3ffa3393c"
@@ -35,9 +38,11 @@
   "quantity.py",
   "relation.py",
   "retrieval.py",
+  "search.py",
   "student_gate.py",
   "systems/__init__.py",
   "systems/reader.py",
-  "systems/solver.py"
+  "systems/solver.py",
+  "visual.py"
  ]
 }

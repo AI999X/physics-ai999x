@@ -4,7 +4,7 @@
 
 **[Install](https://pypi.org/project/physics-ai999x/)** · **[Capability guide](https://huggingface.co/AI999X/physics-ai999x/tree/main/docs)** · **[Evaluation](https://huggingface.co/AI999X/physics-ai999x/tree/main/evaluation)** · **[AI999X on Hugging Face](https://huggingface.co/AI999X)** · **[Website](https://ai999x.com)** · **[Support: Buy Me a Coffee](https://buymeacoffee.com/ibnuljaiffarabi)**
 
-License: Apache-2.0 · Author: Ibnul Jaif Farabi (creator and engineer) · Organization: AI999X · Version 1.3.1
+License: Apache-2.0 · Author: Ibnul Jaif Farabi (creator and engineer) · Organization: AI999X · Version 2.0.0
 
 physics-ai999x is an offline, deterministic Python solver that answers physics questions with verified results from 148 certified capabilities, gives 859 documented answers identically on Windows and Linux, and refuses rather than guesses when an answer cannot be verified.
 
@@ -25,7 +25,7 @@ physics-ai999x is an offline, deterministic Python solver that answers physics q
 
 | Property | Value |
 |---|---|
-| Package | `physics-ai999x` 1.3.1 (import `physics_ai999x`) |
+| Package | `physics-ai999x` 2.0.0 (import `physics_ai999x`) |
 | Type | Deterministic neuro-symbolic physics engine (rule-based reading + certified symbolic capabilities) |
 | Capabilities | 23 certified derivations, 16 certified model_familys, 2 certified procedures, 107 certified relations |
 | Knowledge pack | version 0.6.0 |
@@ -59,7 +59,20 @@ physics.ask("Who created you?").message
 # -> physics-ai999x was created and engineered by Ibnul Jaif Farabi at AI999X.
 ```
 
-Command line: `physics-ai999x "<question>"`, `physics-ai999x --capabilities`. The outputs above were produced by running this exact code on physics-ai999x 1.3.1.
+Command line: `physics-ai999x "<question>"`, `physics-ai999x --capabilities`. The outputs above were produced by running this exact code on physics-ai999x 2.0.0.
+
+## Find the right capability, and draw it
+
+`physics.search()` finds which certified capability a question is about — across **every** AI999X model, so a question for another model points you to it. It runs the AI999X capability encoder (a 4.9 MB ONNX model, offline): `pip install "physics-ai999x[search]"`. `ask(question, suggest=True)` adds the same pointers to a question it does not answer; an answer itself never changes.
+
+```python
+import physics_ai999x as physics
+
+physics.search("How long does a pendulum take to swing back and forth?", k=2)
+# -> Period of a simple pendulum (physics-ai999x, 0.78); Precession period of a Foucault pendulum (mechanics-ai999x, 0.68)
+physics.search("Solve x^2 - 5x + 6 = 0", k=2)
+# -> Roots of a quadratic equation (algebra-ai999x, 0.67); Solution of two linear equations in two unknowns (algebra-ai999x, 0.57)
+```
 
 ## How every answer is verified
 
@@ -139,10 +152,10 @@ Why the gate: the engine verifies a computation, not a reading. A copied number 
 ## Citation
 
 ```bibtex
-@software{physics_ai999x_1_3_1,
+@software{physics_ai999x_2_0_0,
   title  = {physics-ai999x: an offline, verified physics solver},
   author = {Farabi, Ibnul Jaif}, organization = {AI999X},
-  year   = {2026}, version = {1.3.1},
+  year   = {2026}, version = {2.0.0},
   url    = {https://huggingface.co/AI999X/physics-ai999x}
 }
 ```

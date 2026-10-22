@@ -195,7 +195,7 @@ result.show()
 ### Motion at constant velocity — `uniform_motion`
 
 $$
-d = t v
+d = v t
 $$
 
 | input | meaning | kind / role | unit | default |
@@ -214,7 +214,7 @@ physics_ai999x.solve('uniform_motion', v='20 m/s', t='30 s', target='d')
 ```
 
 $$
-\begin{aligned}d &= t v \\ d &= t v = 600\ \mathrm{m}\end{aligned}
+\begin{aligned}d &= v t \\ d &= t v = 600\ \mathrm{m}\end{aligned}
 $$
 
 | invalid call | outcome | message |
@@ -227,7 +227,7 @@ $$
 ### Velocity under constant acceleration — `velocity_time`
 
 $$
-v = a t + v_0
+v = v_0 + a t
 $$
 
 | input | meaning | kind / role | unit | default |
@@ -247,7 +247,7 @@ physics_ai999x.solve('velocity_time', v0='5 m/s', a='2 m/s^2', t='4 s', target='
 ```
 
 $$
-\begin{aligned}v &= a t + v_0 \\ v &= a t + v_0 = 13\ \mathrm{m/s}\end{aligned}
+\begin{aligned}v &= v_0 + a t \\ v &= a t + v_0 = 13\ \mathrm{m/s}\end{aligned}
 $$
 
 | invalid call | outcome | message |
@@ -260,7 +260,7 @@ $$
 ### Displacement under constant acceleration — `displacement_time`
 
 $$
-x = \frac{a t^{2}}{2} + t v_0
+x = v_0 t + \frac{a t^{2}}{2}
 $$
 
 | input | meaning | kind / role | unit | default |
@@ -280,7 +280,7 @@ physics_ai999x.solve('displacement_time', v0='3 m/s', a='2 m/s^2', t='4 s', targ
 ```
 
 $$
-\begin{aligned}x &= \frac{a t^{2}}{2} + t v_0 \\ x &= \frac{t \left(a t + 2 v_0\right)}{2} = 28\ \mathrm{m}\end{aligned}
+\begin{aligned}x &= v_0 t + \frac{a t^{2}}{2} \\ x &= \frac{t \left(a t + 2 v_0\right)}{2} = 28\ \mathrm{m}\end{aligned}
 $$
 
 | invalid call | outcome | message |
@@ -293,7 +293,7 @@ $$
 ### Speed after a displacement under constant acceleration — `velocity_displacement`
 
 $$
-v^{2} = 2 a x + v_0^{2}
+v^{2} = v_0^{2} + 2 a x
 $$
 
 | input | meaning | kind / role | unit | default |
@@ -313,7 +313,7 @@ physics_ai999x.solve('velocity_displacement', v0='6 m/s', a='2 m/s^2', x='16 m',
 ```
 
 $$
-\begin{aligned}v^{2} &= 2 a x + v_0^{2} \\ v &= - \sqrt{2 a x + v_0^{2}} = 10\ \mathrm{m/s}\end{aligned}
+\begin{aligned}v^{2} &= v_0^{2} + 2 a x \\ v &= - \sqrt{2 a x + v_0^{2}} = 10\ \mathrm{m/s}\end{aligned}
 $$
 
 | invalid call | outcome | message |
@@ -326,7 +326,7 @@ $$
 ### Displacement from the mean of initial and final velocity — `average_velocity_displacement`
 
 $$
-x = \frac{t \left(v + v_0\right)}{2}
+x = \frac{\left(v_0 + v\right) t}{2}
 $$
 
 | input | meaning | kind / role | unit | default |
@@ -345,7 +345,7 @@ physics_ai999x.solve('average_velocity_displacement', v0='4 m/s', v='10 m/s', t=
 ```
 
 $$
-\begin{aligned}x &= \frac{t \left(v + v_0\right)}{2} \\ x &= \frac{t \left(v + v_0\right)}{2} = 21\ \mathrm{m}\end{aligned}
+\begin{aligned}x &= \frac{\left(v_0 + v\right) t}{2} \\ x &= \frac{t \left(v + v_0\right)}{2} = 21\ \mathrm{m}\end{aligned}
 $$
 
 | invalid call | outcome | message |
@@ -358,7 +358,7 @@ $$
 ### Net force and acceleration — `newton_second`
 
 $$
-F = a m
+F = m a
 $$
 
 | input | meaning | kind / role | unit | default |
@@ -376,7 +376,7 @@ physics_ai999x.solve('newton_second', m='4 kg', a='2.5 m/s^2', target='F')
 ```
 
 $$
-\begin{aligned}F &= a m \\ F &= a m = 10\ \mathrm{N}\end{aligned}
+\begin{aligned}F &= m a \\ F &= a m = 10\ \mathrm{N}\end{aligned}
 $$
 
 | invalid call | outcome | message |
@@ -389,7 +389,7 @@ $$
 ### Weight in a uniform gravitational field — `weight`
 
 $$
-W = g m
+W = m g
 $$
 
 | input | meaning | kind / role | unit | default |
@@ -407,7 +407,7 @@ physics_ai999x.solve('weight', m='10 kg', g='9.8 m/s^2', target='W')
 ```
 
 $$
-\begin{aligned}W &= g m \\ W &= g m = 98\ \mathrm{N}\end{aligned}
+\begin{aligned}W &= m g \\ W &= g m = 98\ \mathrm{N}\end{aligned}
 $$
 
 | invalid call | outcome | message |
@@ -451,7 +451,7 @@ $$
 ### Sliding friction — `kinetic_friction`
 
 $$
-f = N \mu
+f = \mu N
 $$
 
 | input | meaning | kind / role | unit | default |
@@ -469,7 +469,7 @@ physics_ai999x.solve('kinetic_friction', mu='0.25 1', N='80 N', target='f')
 ```
 
 $$
-\begin{aligned}f &= N \mu \\ f &= N \mu = 20\ \mathrm{N}\end{aligned}
+\begin{aligned}f &= \mu N \\ f &= N \mu = 20\ \mathrm{N}\end{aligned}
 $$
 
 | invalid call | outcome | message |
@@ -575,7 +575,7 @@ $$
 ### Work by a constant force — `work`
 
 $$
-W = F d \cos{\left(\theta \right)}
+W = F d \cos\left(\theta\right)
 $$
 
 | input | meaning | kind / role | unit | default |
@@ -595,7 +595,7 @@ physics_ai999x.solve('work', F='10 N', d='5 m', theta='60 deg', target='W')
 ```
 
 $$
-\begin{aligned}W &= F d \cos{\left(\theta \right)} \\ W &= F d \cos{\left(\theta \right)} = 25\ \mathrm{J}\end{aligned}
+\begin{aligned}W &= F d \cos\left(\theta\right) \\ W &= F d \cos{\left(\theta \right)} = 25\ \mathrm{J}\end{aligned}
 $$
 
 | invalid call | outcome | message |
@@ -639,7 +639,7 @@ $$
 ### Gravitational potential energy near the surface — `gravitational_pe`
 
 $$
-U = g h m
+U = m g h
 $$
 
 | input | meaning | kind / role | unit | default |
@@ -658,7 +658,7 @@ physics_ai999x.solve('gravitational_pe', m='2 kg', g='9.8 m/s^2', h='5 m', targe
 ```
 
 $$
-\begin{aligned}U &= g h m \\ U &= g h m = 98\ \mathrm{J}\end{aligned}
+\begin{aligned}U &= m g h \\ U &= g h m = 98\ \mathrm{J}\end{aligned}
 $$
 
 | invalid call | outcome | message |
@@ -1012,7 +1012,7 @@ $$
 ### Pressure of a column of fluid — `hydrostatic_pressure`
 
 $$
-P = g h \rho
+P = \rho g h
 $$
 
 | input | meaning | kind / role | unit | default |
@@ -1031,7 +1031,7 @@ physics_ai999x.solve('hydrostatic_pressure', rho='1000 kg/m^3', g='9.8 m/s^2', h
 ```
 
 $$
-\begin{aligned}P &= g h \rho \\ P &= g h \rho = 19600\ \mathrm{Pa}\end{aligned}
+\begin{aligned}P &= \rho g h \\ P &= g h \rho = 19600\ \mathrm{Pa}\end{aligned}
 $$
 
 | invalid call | outcome | message |
@@ -1075,7 +1075,7 @@ $$
 ### Electric power — `electric_power`
 
 $$
-P = I V
+P = V I
 $$
 
 | input | meaning | kind / role | unit | default |
@@ -1094,7 +1094,7 @@ physics_ai999x.solve('electric_power', V='12 V', I='3 A', target='P')
 ```
 
 $$
-\begin{aligned}P &= I V \\ P &= I V = 36\ \mathrm{W}\end{aligned}
+\begin{aligned}P &= V I \\ P &= I V = 36\ \mathrm{W}\end{aligned}
 $$
 
 | invalid call | outcome | message |
@@ -1169,7 +1169,7 @@ $$
 ### Heat for a temperature change — `heat`
 
 $$
-Q = c \Delta T m
+Q = m c \Delta T
 $$
 
 | input | meaning | kind / role | unit | default |
@@ -1188,7 +1188,7 @@ physics_ai999x.solve('heat', m='0.5 kg', c='4000 J/(kg*K)', dT='10 K', target='Q
 ```
 
 $$
-\begin{aligned}Q &= c \Delta T m \\ Q &= c \Delta T m = 20000\ \mathrm{J}\end{aligned}
+\begin{aligned}Q &= m c \Delta T \\ Q &= c \Delta T m = 20000\ \mathrm{J}\end{aligned}
 $$
 
 | invalid call | outcome | message |
@@ -1269,7 +1269,7 @@ $$
 ### Normal force on an incline — `normal_force_incline`
 
 $$
-N = g m \cos{\left(\theta \right)}
+N = m g \cos\left(\theta\right)
 $$
 
 | input | meaning | kind / role | unit | default |
@@ -1291,7 +1291,7 @@ physics_ai999x.solve('normal_force_incline', m='10 kg', g='9.8 m/s^2', theta='60
 ```
 
 $$
-\begin{aligned}N &= g m \cos{\left(\theta \right)} \\ N &= g m \cos{\left(\theta \right)} = 49\ \mathrm{N}\end{aligned}
+\begin{aligned}N &= m g \cos\left(\theta\right) \\ N &= g m \cos{\left(\theta \right)} = 49\ \mathrm{N}\end{aligned}
 $$
 
 | invalid call | outcome | message |
@@ -1304,7 +1304,7 @@ $$
 ### Component of the weight along an incline — `weight_component_along_incline`
 
 $$
-F = g m \sin{\left(\theta \right)}
+F = m g \sin\left(\theta\right)
 $$
 
 | input | meaning | kind / role | unit | default |
@@ -1326,7 +1326,7 @@ physics_ai999x.solve('weight_component_along_incline', m='10 kg', g='9.8 m/s^2',
 ```
 
 $$
-\begin{aligned}F &= g m \sin{\left(\theta \right)} \\ F &= g m \sin{\left(\theta \right)} = 49\ \mathrm{N}\end{aligned}
+\begin{aligned}F &= m g \sin\left(\theta\right) \\ F &= g m \sin{\left(\theta \right)} = 49\ \mathrm{N}\end{aligned}
 $$
 
 | invalid call | outcome | message |
@@ -1339,7 +1339,7 @@ $$
 ### Acceleration down a frictionless incline — `acceleration_frictionless_incline`
 
 $$
-a = g \sin{\left(\theta \right)}
+a = g \sin\left(\theta\right)
 $$
 
 | input | meaning | kind / role | unit | default |
@@ -1361,7 +1361,7 @@ physics_ai999x.solve('acceleration_frictionless_incline', g='9.8 m/s^2', theta='
 ```
 
 $$
-\begin{aligned}a &= g \sin{\left(\theta \right)} \\ a &= g \sin{\left(\theta \right)} = 4.9\ \mathrm{m/s^2}\end{aligned}
+\begin{aligned}a &= g \sin\left(\theta\right) \\ a &= g \sin{\left(\theta \right)} = 4.9\ \mathrm{m/s^2}\end{aligned}
 $$
 
 | invalid call | outcome | message |
@@ -1444,7 +1444,7 @@ $$
 ### Tension in a rope holding a hanging body — `tension_hanging_at_rest`
 
 $$
-T = g m
+T = m g
 $$
 
 | input | meaning | kind / role | unit | default |
@@ -1466,7 +1466,7 @@ physics_ai999x.solve('tension_hanging_at_rest', m='10 kg', g='9.8 m/s^2', target
 ```
 
 $$
-\begin{aligned}T &= g m \\ T &= g m = 98\ \mathrm{N}\end{aligned}
+\begin{aligned}T &= m g \\ T &= g m = 98\ \mathrm{N}\end{aligned}
 $$
 
 | invalid call | outcome | message |
@@ -1479,7 +1479,7 @@ $$
 ### Average net force from a change of momentum — `average_force_from_momentum_change`
 
 $$
-F = \frac{- p_1 + p_2}{t}
+F = \frac{p_2 - p_1}{t}
 $$
 
 | input | meaning | kind / role | unit | default |
@@ -1500,7 +1500,7 @@ physics_ai999x.solve('average_force_from_momentum_change', p2='25 kg*m/s', p1='1
 ```
 
 $$
-\begin{aligned}F &= \frac{- p_1 + p_2}{t} \\ F &= \frac{- p_1 + p_2}{t} = 5\ \mathrm{N}\end{aligned}
+\begin{aligned}F &= \frac{p_2 - p_1}{t} \\ F &= \frac{- p_1 + p_2}{t} = 5\ \mathrm{N}\end{aligned}
 $$
 
 | invalid call | outcome | message |
@@ -1513,7 +1513,7 @@ $$
 ### Speed after falling from rest — `speed_after_fall_from_rest`
 
 $$
-v = \sqrt{2} \sqrt{g} \sqrt{h}
+v = \sqrt{2 g h}
 $$
 
 | input | meaning | kind / role | unit | default |
@@ -1534,7 +1534,7 @@ physics_ai999x.solve('speed_after_fall_from_rest', g='9.8 m/s^2', h='10 m', targ
 ```
 
 $$
-\begin{aligned}v &= \sqrt{2} \sqrt{g} \sqrt{h} \\ v &= \sqrt{2} \sqrt{g} \sqrt{h} = 14\ \mathrm{m/s}\end{aligned}
+\begin{aligned}v &= \sqrt{2 g h} \\ v &= \sqrt{2} \sqrt{g} \sqrt{h} = 14\ \mathrm{m/s}\end{aligned}
 $$
 
 | invalid call | outcome | message |
@@ -1547,7 +1547,7 @@ $$
 ### Force on a charge in an electric field — `electric_force_in_field`
 
 $$
-F = Ef q
+F = q E_{f}
 $$
 
 | input | meaning | kind / role | unit | default |
@@ -1568,7 +1568,7 @@ physics_ai999x.solve('electric_force_in_field', q='2e-06 C', Ef='30000 N/C', tar
 ```
 
 $$
-\begin{aligned}F &= Ef q \\ F &= Ef q = 0.06\ \mathrm{N}\end{aligned}
+\begin{aligned}F &= q E_{f} \\ F &= E_{f} q = 0.06\ \mathrm{N}\end{aligned}
 $$
 
 | invalid call | outcome | message |
@@ -1586,7 +1586,7 @@ $$
 ### Electric field of a point charge — `point_charge_field`
 
 $$
-Ef = \frac{Q ke}{r^{2}}
+E_{f} = \frac{k_{e} Q}{r^{2}}
 $$
 
 | input | meaning | kind / role | unit | default |
@@ -1608,7 +1608,7 @@ physics_ai999x.solve('point_charge_field', Q='2e-06 C', r='0.3 m', target='Ef')
 ```
 
 $$
-\begin{aligned}Ef &= \frac{Q ke}{r^{2}} \\ Ef &= \frac{Q ke}{r^{2}} = 199723\ \mathrm{N/C}\end{aligned}
+\begin{aligned}E_{f} &= \frac{k_{e} Q}{r^{2}} \\ E_{f} &= \frac{Q k_{e}}{r^{2}} = 199723\ \mathrm{N/C}\end{aligned}
 $$
 
 | invalid call | outcome | message |
@@ -1626,7 +1626,7 @@ $$
 ### Electric potential of a point charge — `point_charge_potential`
 
 $$
-V = \frac{Q ke}{r}
+V = \frac{k_{e} Q}{r}
 $$
 
 | input | meaning | kind / role | unit | default |
@@ -1648,7 +1648,7 @@ physics_ai999x.solve('point_charge_potential', Q='3e-09 C', r='0.5 m', target='V
 ```
 
 $$
-\begin{aligned}V &= \frac{Q ke}{r} \\ V &= \frac{Q ke}{r} = 53.9253\ \mathrm{V}\end{aligned}
+\begin{aligned}V &= \frac{k_{e} Q}{r} \\ V &= \frac{Q k_{e}}{r} = 53.9253\ \mathrm{V}\end{aligned}
 $$
 
 | invalid call | outcome | message |
@@ -1666,7 +1666,7 @@ $$
 ### Potential difference in a uniform field — `uniform_field_potential`
 
 $$
-V = Ef d
+V = E_{f} d
 $$
 
 | input | meaning | kind / role | unit | default |
@@ -1687,7 +1687,7 @@ physics_ai999x.solve('uniform_field_potential', Ef='2000 V/m', d='0.005 m', targ
 ```
 
 $$
-\begin{aligned}V &= Ef d \\ V &= Ef d = 10\ \mathrm{V}\end{aligned}
+\begin{aligned}V &= E_{f} d \\ V &= E_{f} d = 10\ \mathrm{V}\end{aligned}
 $$
 
 | invalid call | outcome | message |
@@ -1744,7 +1744,7 @@ $$
 ### Energy stored in a capacitor — `capacitor_energy`
 
 $$
-Ecap = \frac{C V^{2}}{2}
+\text{Ecap} = \frac{C V^{2}}{2}
 $$
 
 | input | meaning | kind / role | unit | default |
@@ -1765,7 +1765,7 @@ physics_ai999x.solve('capacitor_energy', C='0.0001 F', V='20 V', target='Ecap')
 ```
 
 $$
-\begin{aligned}Ecap &= \frac{C V^{2}}{2} \\ Ecap &= \frac{C V^{2}}{2} = 0.02\ \mathrm{J}\end{aligned}
+\begin{aligned}\text{Ecap} &= \frac{C V^{2}}{2} \\ \text{Ecap} &= \frac{C V^{2}}{2} = 0.02\ \mathrm{J}\end{aligned}
 $$
 
 | invalid call | outcome | message |
@@ -1783,7 +1783,7 @@ $$
 ### Capacitance of parallel plates — `parallel_plate_capacitor`
 
 $$
-C = \frac{A eps0}{d}
+C = \frac{\varepsilon_{0} A}{d}
 $$
 
 | input | meaning | kind / role | unit | default |
@@ -1805,7 +1805,7 @@ physics_ai999x.solve('parallel_plate_capacitor', A='0.01 m^2', d='0.001 m', targ
 ```
 
 $$
-\begin{aligned}C &= \frac{A eps0}{d} \\ C &= \frac{A eps0}{d} = 8.85419e-11\ \mathrm{F}\end{aligned}
+\begin{aligned}C &= \frac{\varepsilon_{0} A}{d} \\ C &= \frac{A \varepsilon_{0}}{d} = 8.85419e-11\ \mathrm{F}\end{aligned}
 $$
 
 | invalid call | outcome | message |
@@ -1903,7 +1903,7 @@ $$
 ### Resistance of a uniform wire — `resistivity`
 
 $$
-R = \frac{L rho_e}{A}
+R = \frac{\rho_{e} L}{A}
 $$
 
 | input | meaning | kind / role | unit | default |
@@ -1925,7 +1925,7 @@ physics_ai999x.solve('resistivity', rho_e='1.68e-08 ohm*m', L='10 m', A='1e-06 m
 ```
 
 $$
-\begin{aligned}R &= \frac{L rho_e}{A} \\ R &= \frac{L rho_e}{A} = 0.168\ \mathrm{ohm}\end{aligned}
+\begin{aligned}R &= \frac{\rho_{e} L}{A} \\ R &= \frac{L \rho_{e}}{A} = 0.168\ \mathrm{ohm}\end{aligned}
 $$
 
 | invalid call | outcome | message |
@@ -1943,7 +1943,7 @@ $$
 ### Magnetic force on a moving charge — `magnetic_force_charge`
 
 $$
-F = B q v \sin{\left(theta \right)}
+F = q v B \sin\left(\theta\right)
 $$
 
 | input | meaning | kind / role | unit | default |
@@ -1966,7 +1966,7 @@ physics_ai999x.solve('magnetic_force_charge', q='1.6e-19 C', v='2e+06 m/s', B='0
 ```
 
 $$
-\begin{aligned}F &= B q v \sin{\left(theta \right)} \\ F &= B q v \sin{\left(theta \right)} = 1.6e-13\ \mathrm{N}\end{aligned}
+\begin{aligned}F &= q v B \sin\left(\theta\right) \\ F &= B q v \sin{\left(\theta \right)} = 1.6e-13\ \mathrm{N}\end{aligned}
 $$
 
 | invalid call | outcome | message |
@@ -1984,7 +1984,7 @@ $$
 ### Magnetic force on a current-carrying wire — `magnetic_force_wire`
 
 $$
-F = B I L \sin{\left(theta \right)}
+F = I L B \sin\left(\theta\right)
 $$
 
 | input | meaning | kind / role | unit | default |
@@ -2007,7 +2007,7 @@ physics_ai999x.solve('magnetic_force_wire', I='5 A', L='0.2 m', B='0.4 T', theta
 ```
 
 $$
-\begin{aligned}F &= B I L \sin{\left(theta \right)} \\ F &= B I L \sin{\left(theta \right)} = 0.4\ \mathrm{N}\end{aligned}
+\begin{aligned}F &= I L B \sin\left(\theta\right) \\ F &= B I L \sin{\left(\theta \right)} = 0.4\ \mathrm{N}\end{aligned}
 $$
 
 | invalid call | outcome | message |
@@ -2025,7 +2025,7 @@ $$
 ### Magnetic field of a long straight wire — `long_wire_field`
 
 $$
-B = \frac{I mu0}{2 \pi r}
+B = \frac{\mu_{0} I}{2 \pi r}
 $$
 
 | input | meaning | kind / role | unit | default |
@@ -2048,7 +2048,7 @@ physics_ai999x.solve('long_wire_field', I='10 A', r='0.05 m', target='B')
 ```
 
 $$
-\begin{aligned}B &= \frac{I mu0}{2 \pi r} \\ B &= \frac{I mu0}{2 \pi r} = 4e-05\ \mathrm{T}\end{aligned}
+\begin{aligned}B &= \frac{\mu_{0} I}{2 \pi r} \\ B &= \frac{I \mu_{0}}{2 \pi r} = 4e-05\ \mathrm{T}\end{aligned}
 $$
 
 | invalid call | outcome | message |
@@ -2066,7 +2066,7 @@ $$
 ### Magnetic field inside a long solenoid — `solenoid_field`
 
 $$
-B = I mu0 nt
+B = \mu_{0} n_{t} I
 $$
 
 | input | meaning | kind / role | unit | default |
@@ -2088,7 +2088,7 @@ physics_ai999x.solve('solenoid_field', nt='1000 1/m', I='2 A', target='B')
 ```
 
 $$
-\begin{aligned}B &= I mu0 nt \\ B &= I mu0 nt = 0.00251327\ \mathrm{T}\end{aligned}
+\begin{aligned}B &= \mu_{0} n_{t} I \\ B &= I \mu_{0} n_{t} = 0.00251327\ \mathrm{T}\end{aligned}
 $$
 
 | invalid call | outcome | message |
@@ -2146,7 +2146,7 @@ $$
 ### Speed in a circular orbit — `orbital_speed`
 
 $$
-v = \frac{\sqrt{G} \sqrt{M}}{\sqrt{r}}
+v = \sqrt{\frac{G M}{r}}
 $$
 
 | input | meaning | kind / role | unit | default |
@@ -2168,7 +2168,7 @@ physics_ai999x.solve('orbital_speed', M='5.97e+24 kg', r='6.77e+06 m', target='v
 ```
 
 $$
-\begin{aligned}v &= \frac{\sqrt{G} \sqrt{M}}{\sqrt{r}} \\ v &= \frac{\sqrt{G} \sqrt{M}}{\sqrt{r}} = 7671.77\ \mathrm{m/s}\end{aligned}
+\begin{aligned}v &= \sqrt{\frac{G M}{r}} \\ v &= \frac{\sqrt{G} \sqrt{M}}{\sqrt{r}} = 7671.77\ \mathrm{m/s}\end{aligned}
 $$
 
 | invalid call | outcome | message |
@@ -2186,7 +2186,7 @@ $$
 ### Period of a circular orbit — `orbital_period`
 
 $$
-T = \frac{2 \pi r^{\frac{3}{2}}}{\sqrt{G} \sqrt{M}}
+T = 2 \pi \sqrt{\frac{r^{3}}{G M}}
 $$
 
 | input | meaning | kind / role | unit | default |
@@ -2208,7 +2208,7 @@ physics_ai999x.solve('orbital_period', r='4.22e+07 m', M='5.97e+24 kg', target='
 ```
 
 $$
-\begin{aligned}T &= \frac{2 \pi r^{\frac{3}{2}}}{\sqrt{G} \sqrt{M}} \\ T &= \frac{2 \pi r^{\frac{3}{2}}}{\sqrt{G} \sqrt{M}} = 86289.6\ \mathrm{s}\end{aligned}
+\begin{aligned}T &= 2 \pi \sqrt{\frac{r^{3}}{G M}} \\ T &= \frac{2 \pi r^{\frac{3}{2}}}{\sqrt{G} \sqrt{M}} = 86289.6\ \mathrm{s}\end{aligned}
 $$
 
 | invalid call | outcome | message |
@@ -2226,7 +2226,7 @@ $$
 ### Ideal gas law — `ideal_gas_moles`
 
 $$
-P V = R T n
+P V = n R T
 $$
 
 | input | meaning | kind / role | unit | default |
@@ -2249,7 +2249,7 @@ physics_ai999x.solve('ideal_gas_moles', n='1 mol', T='273.15 K', V='0.0224 m^3',
 ```
 
 $$
-\begin{aligned}P V &= R T n \\ P &= \frac{R T n}{V} = 101388\ \mathrm{Pa}\end{aligned}
+\begin{aligned}P V &= n R T \\ P &= \frac{R T n}{V} = 101388\ \mathrm{Pa}\end{aligned}
 $$
 
 | invalid call | outcome | message |
@@ -2267,7 +2267,7 @@ $$
 ### Heat to melt or freeze — `latent_heat_fusion`
 
 $$
-Q = Lf m
+Q = m L_{f}
 $$
 
 | input | meaning | kind / role | unit | default |
@@ -2289,7 +2289,7 @@ physics_ai999x.solve('latent_heat_fusion', m='2 kg', Lf='334000 J/kg', target='Q
 ```
 
 $$
-\begin{aligned}Q &= Lf m \\ Q &= Lf m = 668000\ \mathrm{J}\end{aligned}
+\begin{aligned}Q &= m L_{f} \\ Q &= L_{f} m = 668000\ \mathrm{J}\end{aligned}
 $$
 
 | invalid call | outcome | message |
@@ -2307,7 +2307,7 @@ $$
 ### Heat to boil or condense — `latent_heat_vaporization`
 
 $$
-Q = Lv m
+Q = m L_{v}
 $$
 
 | input | meaning | kind / role | unit | default |
@@ -2329,7 +2329,7 @@ physics_ai999x.solve('latent_heat_vaporization', m='0.5 kg', Lv='2.26e+06 J/kg',
 ```
 
 $$
-\begin{aligned}Q &= Lv m \\ Q &= Lv m = 1.13e+06\ \mathrm{J}\end{aligned}
+\begin{aligned}Q &= m L_{v} \\ Q &= L_{v} m = 1.13e+06\ \mathrm{J}\end{aligned}
 $$
 
 | invalid call | outcome | message |
@@ -2347,7 +2347,7 @@ $$
 ### Linear thermal expansion — `linear_expansion`
 
 $$
-dL = L alpha_t dT
+d_{L} = \alpha_{t} L d_{T}
 $$
 
 | input | meaning | kind / role | unit | default |
@@ -2369,7 +2369,7 @@ physics_ai999x.solve('linear_expansion', alpha_t='1.2e-05 1/K', L='100 m', dT='3
 ```
 
 $$
-\begin{aligned}dL &= L alpha_t dT \\ dL &= L alpha_t dT = 0.036\ \mathrm{m}\end{aligned}
+\begin{aligned}d_{L} &= \alpha_{t} L d_{T} \\ d_{L} &= L \alpha_{t} d_{T} = 0.036\ \mathrm{m}\end{aligned}
 $$
 
 | invalid call | outcome | message |
@@ -2387,7 +2387,7 @@ $$
 ### Thin lens equation — `thin_lens`
 
 $$
-\frac{1}{d_o} + \frac{1}{d_i} = \frac{1}{f}
+\frac{1}{d_{o}} + \frac{1}{d_{i}} = \frac{1}{f}
 $$
 
 | input | meaning | kind / role | unit | default |
@@ -2408,7 +2408,7 @@ physics_ai999x.solve('thin_lens', d_o='0.3 m', f='0.1 m', target='d_i')
 ```
 
 $$
-\begin{aligned}\frac{1}{d_o} + \frac{1}{d_i} &= \frac{1}{f} \\ d_i &= \frac{d_o f}{d_o - f} = 0.15\ \mathrm{m}\end{aligned}
+\begin{aligned}\frac{1}{d_{o}} + \frac{1}{d_{i}} &= \frac{1}{f} \\ d_{i} &= \frac{d_{o} f}{d_{o} - f} = 0.15\ \mathrm{m}\end{aligned}
 $$
 
 | invalid call | outcome | message |
@@ -2426,7 +2426,7 @@ $$
 ### Energy of a photon — `photon_energy`
 
 $$
-E = f h
+E = h f
 $$
 
 | input | meaning | kind / role | unit | default |
@@ -2447,7 +2447,7 @@ physics_ai999x.solve('photon_energy', f='5e+14 Hz', target='E')
 ```
 
 $$
-\begin{aligned}E &= f h \\ E &= f h = 3.31304e-19\ \mathrm{J}\end{aligned}
+\begin{aligned}E &= h f \\ E &= f h = 3.31304e-19\ \mathrm{J}\end{aligned}
 $$
 
 | invalid call | outcome | message |
@@ -2465,7 +2465,7 @@ $$
 ### Photon energy from wavelength — `photon_energy_wavelength`
 
 $$
-E = \frac{c h}{lam}
+E = \frac{h c}{\lambda}
 $$
 
 | input | meaning | kind / role | unit | default |
@@ -2487,7 +2487,7 @@ physics_ai999x.solve('photon_energy_wavelength', lam='5e-07 m', target='E')
 ```
 
 $$
-\begin{aligned}E &= \frac{c h}{lam} \\ E &= \frac{c h}{lam} = 3.97289e-19\ \mathrm{J}\end{aligned}
+\begin{aligned}E &= \frac{h c}{\lambda} \\ E &= \frac{c h}{\lambda} = 3.97289e-19\ \mathrm{J}\end{aligned}
 $$
 
 | invalid call | outcome | message |
@@ -2505,7 +2505,7 @@ $$
 ### Momentum of a photon — `photon_momentum`
 
 $$
-p = \frac{h}{lam}
+p = \frac{h}{\lambda}
 $$
 
 | input | meaning | kind / role | unit | default |
@@ -2526,7 +2526,7 @@ physics_ai999x.solve('photon_momentum', lam='5e-07 m', target='p')
 ```
 
 $$
-\begin{aligned}p &= \frac{h}{lam} \\ p &= \frac{h}{lam} = 1.32521e-27\ \mathrm{kg\,m/s}\end{aligned}
+\begin{aligned}p &= \frac{h}{\lambda} \\ p &= \frac{h}{\lambda} = 1.32521e-27\ \mathrm{kg\,m/s}\end{aligned}
 $$
 
 | invalid call | outcome | message |
@@ -2544,7 +2544,7 @@ $$
 ### De Broglie wavelength — `de_broglie`
 
 $$
-lam = \frac{h}{p}
+\lambda = \frac{h}{p}
 $$
 
 | input | meaning | kind / role | unit | default |
@@ -2566,7 +2566,7 @@ physics_ai999x.solve('de_broglie', p='1e-24 kg*m/s', target='lam')
 ```
 
 $$
-\begin{aligned}lam &= \frac{h}{p} \\ lam &= \frac{h}{p} = 6.62607e-10\ \mathrm{m}\end{aligned}
+\begin{aligned}\lambda &= \frac{h}{p} \\ \lambda &= \frac{h}{p} = 6.62607e-10\ \mathrm{m}\end{aligned}
 $$
 
 | invalid call | outcome | message |
@@ -2584,7 +2584,7 @@ $$
 ### Rest energy — `rest_energy`
 
 $$
-E0 = c^{2} m
+E_{0} = m c^{2}
 $$
 
 | input | meaning | kind / role | unit | default |
@@ -2605,7 +2605,7 @@ physics_ai999x.solve('rest_energy', m='0.001 kg', target='E0')
 ```
 
 $$
-\begin{aligned}E0 &= c^{2} m \\ E0 &= c^{2} m = 8.98755e+13\ \mathrm{J}\end{aligned}
+\begin{aligned}E_{0} &= m c^{2} \\ E_{0} &= c^{2} m = 8.98755e+13\ \mathrm{J}\end{aligned}
 $$
 
 | invalid call | outcome | message |
@@ -2623,7 +2623,7 @@ $$
 ### Period of a simple pendulum — `pendulum_period`
 
 $$
-T = \frac{2 \pi \sqrt{Lp}}{\sqrt{g}}
+T = 2 \pi \sqrt{\frac{L_{p}}{g}}
 $$
 
 | input | meaning | kind / role | unit | default |
@@ -2644,7 +2644,7 @@ physics_ai999x.solve('pendulum_period', Lp='1 m', g='9.80665 m/s^2', target='T')
 ```
 
 $$
-\begin{aligned}T &= \frac{2 \pi \sqrt{Lp}}{\sqrt{g}} \\ T &= \frac{2 \pi \sqrt{Lp}}{\sqrt{g}} = 2.00641\ \mathrm{s}\end{aligned}
+\begin{aligned}T &= 2 \pi \sqrt{\frac{L_{p}}{g}} \\ T &= \frac{2 \pi \sqrt{L_{p}}}{\sqrt{g}} = 2.00641\ \mathrm{s}\end{aligned}
 $$
 
 | invalid call | outcome | message |
@@ -2662,7 +2662,7 @@ $$
 ### Period of a mass on a spring — `spring_oscillation_period`
 
 $$
-T = \frac{2 \pi \sqrt{m}}{\sqrt{k}}
+T = 2 \pi \sqrt{\frac{m}{k}}
 $$
 
 | input | meaning | kind / role | unit | default |
@@ -2683,7 +2683,7 @@ physics_ai999x.solve('spring_oscillation_period', m='0.5 kg', k='200 N/m', targe
 ```
 
 $$
-\begin{aligned}T &= \frac{2 \pi \sqrt{m}}{\sqrt{k}} \\ T &= \frac{2 \pi \sqrt{m}}{\sqrt{k}} = 0.314159\ \mathrm{s}\end{aligned}
+\begin{aligned}T &= 2 \pi \sqrt{\frac{m}{k}} \\ T &= \frac{2 \pi \sqrt{m}}{\sqrt{k}} = 0.314159\ \mathrm{s}\end{aligned}
 $$
 
 | invalid call | outcome | message |
@@ -2701,7 +2701,7 @@ $$
 ### Torque of a force — `torque_lever`
 
 $$
-tau = F r \sin{\left(theta \right)}
+\tau = r F \sin\left(\theta\right)
 $$
 
 | input | meaning | kind / role | unit | default |
@@ -2723,7 +2723,7 @@ physics_ai999x.solve('torque_lever', r='0.3 m', F='50 N', theta='90 deg', target
 ```
 
 $$
-\begin{aligned}tau &= F r \sin{\left(theta \right)} \\ tau &= F r \sin{\left(theta \right)} = 15\ \mathrm{N\,m}\end{aligned}
+\begin{aligned}\tau &= r F \sin\left(\theta\right) \\ \tau &= F r \sin{\left(\theta \right)} = 15\ \mathrm{N\,m}\end{aligned}
 $$
 
 | invalid call | outcome | message |
@@ -2741,7 +2741,7 @@ $$
 ### Rotational kinetic energy — `rotational_kinetic_energy`
 
 $$
-KR = \frac{Ir omega^{2}}{2}
+K_{R} = \frac{I_{r} \omega^{2}}{2}
 $$
 
 | input | meaning | kind / role | unit | default |
@@ -2762,7 +2762,7 @@ physics_ai999x.solve('rotational_kinetic_energy', Ir='2 kg*m^2', omega='10 rad/s
 ```
 
 $$
-\begin{aligned}KR &= \frac{Ir omega^{2}}{2} \\ KR &= \frac{Ir omega^{2}}{2} = 100\ \mathrm{J}\end{aligned}
+\begin{aligned}K_{R} &= \frac{I_{r} \omega^{2}}{2} \\ K_{R} &= \frac{I_{r} \omega^{2}}{2} = 100\ \mathrm{J}\end{aligned}
 $$
 
 | invalid call | outcome | message |
@@ -2780,7 +2780,7 @@ $$
 ### Angular momentum of a rotating body — `angular_momentum`
 
 $$
-L = Ir omega
+L = I_{r} \omega
 $$
 
 | input | meaning | kind / role | unit | default |
@@ -2801,7 +2801,7 @@ physics_ai999x.solve('angular_momentum', Ir='0.5 kg*m^2', omega='8 rad/s', targe
 ```
 
 $$
-\begin{aligned}L &= Ir omega \\ L &= Ir omega = 4\ \mathrm{kg\,m^2/s}\end{aligned}
+\begin{aligned}L &= I_{r} \omega \\ L &= I_{r} \omega = 4\ \mathrm{kg\,m^2/s}\end{aligned}
 $$
 
 | invalid call | outcome | message |
@@ -2819,7 +2819,7 @@ $$
 ### Tangential acceleration of a point on a rotating body — `tangential_acceleration`
 
 $$
-a = alpha r
+a = r \alpha
 $$
 
 | input | meaning | kind / role | unit | default |
@@ -2840,7 +2840,7 @@ physics_ai999x.solve('tangential_acceleration', r='0.5 m', alpha='4 rad/s^2', ta
 ```
 
 $$
-\begin{aligned}a &= alpha r \\ a &= alpha r = 2\ \mathrm{m/s^2}\end{aligned}
+\begin{aligned}a &= r \alpha \\ a &= \alpha r = 2\ \mathrm{m/s^2}\end{aligned}
 $$
 
 | invalid call | outcome | message |
@@ -2858,7 +2858,7 @@ $$
 ### Centripetal acceleration from angular velocity — `centripetal_acceleration_omega`
 
 $$
-a = omega^{2} r
+a = r \omega^{2}
 $$
 
 | input | meaning | kind / role | unit | default |
@@ -2879,7 +2879,7 @@ physics_ai999x.solve('centripetal_acceleration_omega', r='2 m', omega='3 rad/s',
 ```
 
 $$
-\begin{aligned}a &= omega^{2} r \\ a &= omega^{2} r = 18\ \mathrm{m/s^2}\end{aligned}
+\begin{aligned}a &= r \omega^{2} \\ a &= \omega^{2} r = 18\ \mathrm{m/s^2}\end{aligned}
 $$
 
 | invalid call | outcome | message |
@@ -2897,7 +2897,7 @@ $$
 ### Angular momentum of a point mass on a circle — `angular_momentum_point_mass`
 
 $$
-L = m r v
+L = m v r
 $$
 
 | input | meaning | kind / role | unit | default |
@@ -2919,7 +2919,7 @@ physics_ai999x.solve('angular_momentum_point_mass', m='2 kg', v='3 m/s', r='4 m'
 ```
 
 $$
-\begin{aligned}L &= m r v \\ L &= m r v = 24\ \mathrm{kg\,m^2/s}\end{aligned}
+\begin{aligned}L &= m v r \\ L &= m r v = 24\ \mathrm{kg\,m^2/s}\end{aligned}
 $$
 
 | invalid call | outcome | message |
@@ -2937,7 +2937,7 @@ $$
 ### Absolute pressure at a depth in a fluid — `absolute_pressure_depth`
 
 $$
-P = P0 + g h rho
+P = P_{0} + \rho g h
 $$
 
 | input | meaning | kind / role | unit | default |
@@ -2960,7 +2960,7 @@ physics_ai999x.solve('absolute_pressure_depth', P0='101325 Pa', rho='1000 kg/m^3
 ```
 
 $$
-\begin{aligned}P &= P0 + g h rho \\ P &= P0 + g h rho = 199325\ \mathrm{Pa}\end{aligned}
+\begin{aligned}P &= P_{0} + \rho g h \\ P &= P_{0} + g h \rho = 199325\ \mathrm{Pa}\end{aligned}
 $$
 
 | invalid call | outcome | message |
@@ -3056,7 +3056,7 @@ $$
 ### Thermal expansion of volume — `volume_expansion`
 
 $$
-dV = V0 beta dT
+d_{V} = \beta V_{0} d_{T}
 $$
 
 | input | meaning | kind / role | unit | default |
@@ -3078,7 +3078,7 @@ physics_ai999x.solve('volume_expansion', beta='0.00021 1/K', V0='0.001 m^3', dT=
 ```
 
 $$
-\begin{aligned}dV &= V0 beta dT \\ dV &= V0 beta dT = 1.05e-05\ \mathrm{m^3}\end{aligned}
+\begin{aligned}d_{V} &= \beta V_{0} d_{T} \\ d_{V} &= V_{0} \beta d_{T} = 1.05e-05\ \mathrm{m^3}\end{aligned}
 $$
 
 | invalid call | outcome | message |
@@ -3096,7 +3096,7 @@ $$
 ### Efficiency of a heat engine — `engine_efficiency`
 
 $$
-eff = \frac{W}{Qh}
+\text{eff} = \frac{W}{Q_{h}}
 $$
 
 | input | meaning | kind / role | unit | default |
@@ -3117,7 +3117,7 @@ physics_ai999x.solve('engine_efficiency', W='300 J', Qh='1000 J', target='eff')
 ```
 
 $$
-\begin{aligned}eff &= \frac{W}{Qh} \\ eff &= \frac{W}{Qh} = 0.3\ \mathrm{1}\end{aligned}
+\begin{aligned}\text{eff} &= \frac{W}{Q_{h}} \\ \text{eff} &= \frac{W}{Q_{h}} = 0.3\ \mathrm{1}\end{aligned}
 $$
 
 | invalid call | outcome | message |
@@ -3135,7 +3135,7 @@ $$
 ### Carnot (maximum) efficiency — `carnot_efficiency`
 
 $$
-eff = - \frac{Tc}{Th} + 1
+\text{eff} = 1 - \frac{T_{c}}{T_{h}}
 $$
 
 | input | meaning | kind / role | unit | default |
@@ -3156,7 +3156,7 @@ physics_ai999x.solve('carnot_efficiency', Tc='300 K', Th='600 K', target='eff')
 ```
 
 $$
-\begin{aligned}eff &= - \frac{Tc}{Th} + 1 \\ eff &= \frac{- Tc + Th}{Th} = 0.5\ \mathrm{1}\end{aligned}
+\begin{aligned}\text{eff} &= 1 - \frac{T_{c}}{T_{h}} \\ \text{eff} &= \frac{- T_{c} + T_{h}}{T_{h}} = 0.5\ \mathrm{1}\end{aligned}
 $$
 
 | invalid call | outcome | message |
@@ -3174,7 +3174,7 @@ $$
 ### Maximum speed of a mass on a spring — `shm_max_speed`
 
 $$
-v = \frac{X \sqrt{k}}{\sqrt{m}}
+v = X \sqrt{\frac{k}{m}}
 $$
 
 | input | meaning | kind / role | unit | default |
@@ -3196,7 +3196,7 @@ physics_ai999x.solve('shm_max_speed', X='0.1 m', k='100 N/m', m='1 kg', target='
 ```
 
 $$
-\begin{aligned}v &= \frac{X \sqrt{k}}{\sqrt{m}} \\ v &= \frac{X \sqrt{k}}{\sqrt{m}} = 1\ \mathrm{m/s}\end{aligned}
+\begin{aligned}v &= X \sqrt{\frac{k}{m}} \\ v &= \frac{X \sqrt{k}}{\sqrt{m}} = 1\ \mathrm{m/s}\end{aligned}
 $$
 
 | invalid call | outcome | message |
@@ -3253,7 +3253,7 @@ $$
 ### Wavelength of light in a medium — `wavelength_in_medium`
 
 $$
-lam_n = \frac{lam}{n}
+\lambda_{n} = \frac{\lambda}{n}
 $$
 
 | input | meaning | kind / role | unit | default |
@@ -3274,7 +3274,7 @@ physics_ai999x.solve('wavelength_in_medium', lam='6e-07 m', n='1.5 1', target='l
 ```
 
 $$
-\begin{aligned}lam_n &= \frac{lam}{n} \\ lam_n &= \frac{lam}{n} = 4e-07\ \mathrm{m}\end{aligned}
+\begin{aligned}\lambda_{n} &= \frac{\lambda}{n} \\ \lambda_{n} &= \frac{\lambda}{n} = 4e-07\ \mathrm{m}\end{aligned}
 $$
 
 | invalid call | outcome | message |
@@ -3369,7 +3369,7 @@ $$
 ### Rms voltage of a sinusoidal supply — `rms_voltage`
 
 $$
-Vrms = \frac{\sqrt{2} V0}{2}
+V_{\text{rms}} = \frac{V_{0}}{\sqrt{2}}
 $$
 
 | input | meaning | kind / role | unit | default |
@@ -3389,7 +3389,7 @@ physics_ai999x.solve('rms_voltage', V0='170 V', target='Vrms')
 ```
 
 $$
-\begin{aligned}Vrms &= \frac{\sqrt{2} V0}{2} \\ Vrms &= \frac{\sqrt{2} V0}{2} = 120.208\ \mathrm{V}\end{aligned}
+\begin{aligned}V_{\text{rms}} &= \frac{V_{0}}{\sqrt{2}} \\ V_{\text{rms}} &= \frac{\sqrt{2} V_{0}}{2} = 120.208\ \mathrm{V}\end{aligned}
 $$
 
 | invalid call | outcome | message |
@@ -3407,7 +3407,7 @@ $$
 ### Rms current of a sinusoidal supply — `rms_current`
 
 $$
-Irms = \frac{\sqrt{2} I0}{2}
+I_{\text{rms}} = \frac{I_{0}}{\sqrt{2}}
 $$
 
 | input | meaning | kind / role | unit | default |
@@ -3427,7 +3427,7 @@ physics_ai999x.solve('rms_current', I0='10 A', target='Irms')
 ```
 
 $$
-\begin{aligned}Irms &= \frac{\sqrt{2} I0}{2} \\ Irms &= \frac{\sqrt{2} I0}{2} = 7.07107\ \mathrm{A}\end{aligned}
+\begin{aligned}I_{\text{rms}} &= \frac{I_{0}}{\sqrt{2}} \\ I_{\text{rms}} &= \frac{\sqrt{2} I_{0}}{2} = 7.07107\ \mathrm{A}\end{aligned}
 $$
 
 | invalid call | outcome | message |
@@ -3445,7 +3445,7 @@ $$
 ### Magnetic field at the centre of a circular loop — `loop_center_field`
 
 $$
-B = \frac{I mu0}{2 r}
+B = \frac{\mu_{0} I}{2 r}
 $$
 
 | input | meaning | kind / role | unit | default |
@@ -3467,7 +3467,7 @@ physics_ai999x.solve('loop_center_field', I='5 A', r='0.1 m', target='B')
 ```
 
 $$
-\begin{aligned}B &= \frac{I mu0}{2 r} \\ B &= \frac{I mu0}{2 r} = 3.14159e-05\ \mathrm{T}\end{aligned}
+\begin{aligned}B &= \frac{\mu_{0} I}{2 r} \\ B &= \frac{I \mu_{0}}{2 r} = 3.14159e-05\ \mathrm{T}\end{aligned}
 $$
 
 | invalid call | outcome | message |
@@ -3485,7 +3485,7 @@ $$
 ### Time constant of an RL circuit — `rl_time_constant`
 
 $$
-tau = \frac{L}{R}
+\tau = \frac{L}{R}
 $$
 
 | input | meaning | kind / role | unit | default |
@@ -3506,7 +3506,7 @@ physics_ai999x.solve('rl_time_constant', L='0.5 H', R='100 ohm', target='tau')
 ```
 
 $$
-\begin{aligned}tau &= \frac{L}{R} \\ tau &= \frac{L}{R} = 0.005\ \mathrm{s}\end{aligned}
+\begin{aligned}\tau &= \frac{L}{R} \\ \tau &= \frac{L}{R} = 0.005\ \mathrm{s}\end{aligned}
 $$
 
 | invalid call | outcome | message |
@@ -3524,7 +3524,7 @@ $$
 ### Reactance of an inductor — `inductive_reactance`
 
 $$
-X = 2 \pi L f
+X = 2 \pi f L
 $$
 
 | input | meaning | kind / role | unit | default |
@@ -3546,7 +3546,7 @@ physics_ai999x.solve('inductive_reactance', f='60 Hz', L='0.03 H', target='X')
 ```
 
 $$
-\begin{aligned}X &= 2 \pi L f \\ X &= 2 \pi L f = 11.3097\ \mathrm{ohm}\end{aligned}
+\begin{aligned}X &= 2 \pi f L \\ X &= 2 \pi L f = 11.3097\ \mathrm{ohm}\end{aligned}
 $$
 
 | invalid call | outcome | message |
@@ -3564,7 +3564,7 @@ $$
 ### Reactance of a capacitor — `capacitive_reactance`
 
 $$
-X = \frac{1}{2 \pi C f}
+X = \frac{1}{2 \pi f C}
 $$
 
 | input | meaning | kind / role | unit | default |
@@ -3586,7 +3586,7 @@ physics_ai999x.solve('capacitive_reactance', f='60 Hz', C='1e-06 F', target='X')
 ```
 
 $$
-\begin{aligned}X &= \frac{1}{2 \pi C f} \\ X &= \frac{1}{2 \pi C f} = 2652.58\ \mathrm{ohm}\end{aligned}
+\begin{aligned}X &= \frac{1}{2 \pi f C} \\ X &= \frac{1}{2 \pi C f} = 2652.58\ \mathrm{ohm}\end{aligned}
 $$
 
 | invalid call | outcome | message |
@@ -3604,7 +3604,7 @@ $$
 ### Resonant frequency of an LC circuit — `lc_resonance`
 
 $$
-f = \frac{1}{2 \pi \sqrt{C} \sqrt{L}}
+f = \frac{1}{2 \pi \sqrt{L C}}
 $$
 
 | input | meaning | kind / role | unit | default |
@@ -3625,7 +3625,7 @@ physics_ai999x.solve('lc_resonance', L='8e-09 H', C='3.17e-12 F', target='f')
 ```
 
 $$
-\begin{aligned}f &= \frac{1}{2 \pi \sqrt{C} \sqrt{L}} \\ f &= \frac{1}{2 \pi \sqrt{C} \sqrt{L}} = 9.99414e+08\ \mathrm{Hz}\end{aligned}
+\begin{aligned}f &= \frac{1}{2 \pi \sqrt{L C}} \\ f &= \frac{1}{2 \pi \sqrt{C} \sqrt{L}} = 9.99414e+08\ \mathrm{Hz}\end{aligned}
 $$
 
 | invalid call | outcome | message |
@@ -3643,7 +3643,7 @@ $$
 ### Angular velocity under constant angular acceleration — `angular_velocity_time`
 
 $$
-omega = alpha t + omega0
+\omega = \omega_{0} + \alpha t
 $$
 
 | input | meaning | kind / role | unit | default |
@@ -3665,7 +3665,7 @@ physics_ai999x.solve('angular_velocity_time', omega0='2 rad/s', alpha='3 rad/s^2
 ```
 
 $$
-\begin{aligned}omega &= alpha t + omega0 \\ omega &= alpha t + omega0 = 14\ \mathrm{rad/s}\end{aligned}
+\begin{aligned}\omega &= \omega_{0} + \alpha t \\ \omega &= \alpha t + \omega_{0} = 14\ \mathrm{rad/s}\end{aligned}
 $$
 
 | invalid call | outcome | message |
@@ -3683,7 +3683,7 @@ $$
 ### Angular velocity and angle turned under constant angular acceleration — `angular_velocity_angle`
 
 $$
-omega^{2} = 2 alpha theta + omega0^{2}
+\omega^{2} = \omega_{0}^{2} + 2 \alpha \theta
 $$
 
 | input | meaning | kind / role | unit | default |
@@ -3705,7 +3705,7 @@ physics_ai999x.solve('angular_velocity_angle', omega0='0 rad/s', alpha='2 rad/s^
 ```
 
 $$
-\begin{aligned}omega^{2} &= 2 alpha theta + omega0^{2} \\ omega &= - \sqrt{2 alpha theta + omega0^{2}} = 10\ \mathrm{rad/s}\end{aligned}
+\begin{aligned}\omega^{2} &= \omega_{0}^{2} + 2 \alpha \theta \\ \omega &= - \sqrt{2 \alpha \theta + \omega_{0}^{2}} = 10\ \mathrm{rad/s}\end{aligned}
 $$
 
 | invalid call | outcome | message |
@@ -3723,7 +3723,7 @@ $$
 ### Energy balance of a cyclic heat engine — `engine_energy_balance`
 
 $$
-W = - Qc + Qh
+W = Q_{h} - Q_{c}
 $$
 
 | input | meaning | kind / role | unit | default |
@@ -3744,7 +3744,7 @@ physics_ai999x.solve('engine_energy_balance', Qh='1000 J', Qc='700 J', target='W
 ```
 
 $$
-\begin{aligned}W &= - Qc + Qh \\ W &= - Qc + Qh = 300\ \mathrm{J}\end{aligned}
+\begin{aligned}W &= Q_{h} - Q_{c} \\ W &= - Q_{c} + Q_{h} = 300\ \mathrm{J}\end{aligned}
 $$
 
 | invalid call | outcome | message |
@@ -3762,7 +3762,7 @@ $$
 ### Coefficient of performance of a refrigerator — `cop_refrigerator`
 
 $$
-cop = \frac{Qc}{W}
+\text{cop} = \frac{Q_{c}}{W}
 $$
 
 | input | meaning | kind / role | unit | default |
@@ -3784,7 +3784,7 @@ physics_ai999x.solve('cop_refrigerator', Qc='1200 J', W='400 J', target='cop')
 ```
 
 $$
-\begin{aligned}cop &= \frac{Qc}{W} \\ cop &= \frac{Qc}{W} = 3\ \mathrm{1}\end{aligned}
+\begin{aligned}\text{cop} &= \frac{Q_{c}}{W} \\ \text{cop} &= \frac{Q_{c}}{W} = 3\ \mathrm{1}\end{aligned}
 $$
 
 | invalid call | outcome | message |
@@ -3802,7 +3802,7 @@ $$
 ### Coefficient of performance of a heat pump — `cop_heat_pump`
 
 $$
-cop = \frac{Qh}{W}
+\text{cop} = \frac{Q_{h}}{W}
 $$
 
 | input | meaning | kind / role | unit | default |
@@ -3824,7 +3824,7 @@ physics_ai999x.solve('cop_heat_pump', Qh='1500 J', W='500 J', target='cop')
 ```
 
 $$
-\begin{aligned}cop &= \frac{Qh}{W} \\ cop &= \frac{Qh}{W} = 3\ \mathrm{1}\end{aligned}
+\begin{aligned}\text{cop} &= \frac{Q_{h}}{W} \\ \text{cop} &= \frac{Q_{h}}{W} = 3\ \mathrm{1}\end{aligned}
 $$
 
 | invalid call | outcome | message |
@@ -3842,7 +3842,7 @@ $$
 ### Radius of a charged particle's circle in a magnetic field — `cyclotron_radius`
 
 $$
-r = \frac{m v}{B q \sin{\left(theta \right)}}
+r = \frac{m v}{q B \sin\left(\theta\right)}
 $$
 
 | input | meaning | kind / role | unit | default |
@@ -3866,7 +3866,7 @@ physics_ai999x.solve('cyclotron_radius', m='1.67e-27 kg', v='1e+06 m/s', q='1.6e
 ```
 
 $$
-\begin{aligned}r &= \frac{m v}{B q \sin{\left(theta \right)}} \\ r &= \frac{m v}{B q \sin{\left(theta \right)}} = 0.020875\ \mathrm{m}\end{aligned}
+\begin{aligned}r &= \frac{m v}{q B \sin\left(\theta\right)} \\ r &= \frac{m v}{B q \sin{\left(\theta \right)}} = 0.020875\ \mathrm{m}\end{aligned}
 $$
 
 | invalid call | outcome | message |
@@ -3884,7 +3884,7 @@ $$
 ### Time constant of an RC circuit — `rc_time_constant`
 
 $$
-tau = C R
+\tau = R C
 $$
 
 | input | meaning | kind / role | unit | default |
@@ -3906,7 +3906,7 @@ physics_ai999x.solve('rc_time_constant', R='1000 ohm', C='8e-06 F', target='tau'
 ```
 
 $$
-\begin{aligned}tau &= C R \\ tau &= C R = 0.008\ \mathrm{s}\end{aligned}
+\begin{aligned}\tau &= R C \\ \tau &= C R = 0.008\ \mathrm{s}\end{aligned}
 $$
 
 | invalid call | outcome | message |
@@ -3924,7 +3924,7 @@ $$
 ### Voltage of a discharging capacitor — `rc_discharging`
 
 $$
-V = V0 e^{- \frac{t}{C R}}
+V = V_{0} e^{\frac{-t}{R C}}
 $$
 
 | input | meaning | kind / role | unit | default |
@@ -3948,7 +3948,7 @@ physics_ai999x.solve('rc_discharging', V0='12 V', t='0.008 s', R='1000 ohm', C='
 ```
 
 $$
-\begin{aligned}V &= V0 e^{- \frac{t}{C R}} \\ V &= V0 e^{- \frac{t}{C R}} = 4.41455\ \mathrm{V}\end{aligned}
+\begin{aligned}V &= V_{0} e^{\frac{-t}{R C}} \\ V &= V_{0} e^{- \frac{t}{C R}} = 4.41455\ \mathrm{V}\end{aligned}
 $$
 
 | invalid call | outcome | message |
@@ -3966,7 +3966,7 @@ $$
 ### Voltage of a charging capacitor — `rc_charging`
 
 $$
-V = emf \left(1 - e^{- \frac{t}{C R}}\right)
+V = \text{emf} \left(1 - e^{\frac{-t}{R C}}\right)
 $$
 
 | input | meaning | kind / role | unit | default |
@@ -3990,7 +3990,7 @@ physics_ai999x.solve('rc_charging', emf='9 V', t='0.008 s', R='1000 ohm', C='8e-
 ```
 
 $$
-\begin{aligned}V &= emf \left(1 - e^{- \frac{t}{C R}}\right) \\ V &= emf - emf e^{- \frac{t}{C R}} = 5.68909\ \mathrm{V}\end{aligned}
+\begin{aligned}V &= \text{emf} \left(1 - e^{\frac{-t}{R C}}\right) \\ V &= \text{emf} - \text{emf} e^{- \frac{t}{C R}} = 5.68909\ \mathrm{V}\end{aligned}
 $$
 
 | invalid call | outcome | message |
@@ -4008,7 +4008,7 @@ $$
 ### Thermal expansion of an area — `area_expansion`
 
 $$
-dA = 2 A alpha_t dT
+d_{A} = 2 \alpha_{t} A d_{T}
 $$
 
 | input | meaning | kind / role | unit | default |
@@ -4030,7 +4030,7 @@ physics_ai999x.solve('area_expansion', alpha_t='1.2e-05 1/K', A='2 m^2', dT='50 
 ```
 
 $$
-\begin{aligned}dA &= 2 A alpha_t dT \\ dA &= 2 A alpha_t dT = 0.0024\ \mathrm{m^2}\end{aligned}
+\begin{aligned}d_{A} &= 2 \alpha_{t} A d_{T} \\ d_{A} &= 2 A \alpha_{t} d_{T} = 0.0024\ \mathrm{m^2}\end{aligned}
 $$
 
 | invalid call | outcome | message |
@@ -4048,7 +4048,7 @@ $$
 ### Emf of a rod moving through a magnetic field — `motional_emf`
 
 $$
-emf = B l v
+\text{emf} = B l v
 $$
 
 | input | meaning | kind / role | unit | default |
@@ -4070,7 +4070,7 @@ physics_ai999x.solve('motional_emf', B='0.5 T', l='0.2 m', v='3 m/s', target='em
 ```
 
 $$
-\begin{aligned}emf &= B l v \\ emf &= B l v = 0.3\ \mathrm{V}\end{aligned}
+\begin{aligned}\text{emf} &= B l v \\ \text{emf} &= B l v = 0.3\ \mathrm{V}\end{aligned}
 $$
 
 | invalid call | outcome | message |
@@ -4088,7 +4088,7 @@ $$
 ### Current dying away in an RL circuit — `rl_current_decay`
 
 $$
-I = I0 e^{- \frac{t}{tau}}
+I = I_{0} e^{\frac{-t}{\tau}}
 $$
 
 | input | meaning | kind / role | unit | default |
@@ -4110,7 +4110,7 @@ physics_ai999x.solve('rl_current_decay', I0='10 A', t='0.0025 s', tau='0.0025 s'
 ```
 
 $$
-\begin{aligned}I &= I0 e^{- \frac{t}{tau}} \\ I &= I0 e^{- \frac{t}{tau}} = 3.67879\ \mathrm{A}\end{aligned}
+\begin{aligned}I &= I_{0} e^{\frac{-t}{\tau}} \\ I &= I_{0} e^{- \frac{t}{\tau}} = 3.67879\ \mathrm{A}\end{aligned}
 $$
 
 | invalid call | outcome | message |
@@ -4311,7 +4311,7 @@ Call `solve("<id>", **inputs)` with plain numbers; the result's `values` holds e
 The equivalent resistance of two resistors connected in series and connected in parallel.
 
 $$
-rs = r_{1} + r_{2},\quad rp \left(r_{1} + r_{2}\right) = r_{1} r_{2}
+r_{s} = r_{1} + r_{2},\quad r_{p} \left(r_{1} + r_{2}\right) = r_{1} r_{2}
 $$
 
 | input | meaning | condition |
@@ -4351,7 +4351,7 @@ physics_ai999x.solve('two_resistors_series_parallel', r1=100.0, r2=100.0)
 The final velocity and the displacement of a body that starts at velocity u and accelerates uniformly at a for a time t.
 
 $$
-v = a t + u,\quad 2 s = t \left(u + v\right)
+v = u + a t,\quad 2 s = \left(u + v\right) t
 $$
 
 | input | meaning | condition |
