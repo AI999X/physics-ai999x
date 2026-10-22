@@ -63,7 +63,7 @@ Command line: `physics-ai999x "<question>"`, `physics-ai999x --capabilities`. Th
 
 ## Find the right capability, and draw it
 
-`physics.search()` finds which certified capability a question is about — across **every** AI999X model, so a question for another model points you to it. It runs the AI999X capability encoder (a 4.9 MB ONNX model, offline): `pip install "physics-ai999x[search]"`. `ask(question, suggest=True)` adds the same pointers to a question it does not answer; an answer itself never changes.
+`physics.search()` finds which certified capability a question is about — across **every** AI999X model, so a question for another model points you to it. It runs **[ai999x-encoder](https://huggingface.co/AI999X/ai999x-encoder)**, AI999X's own capability encoder (4.7M parameters, a 4.9 MB ONNX model, offline; the root `model.safetensors` of this repository): `pip install "physics-ai999x[search]"`. `ask(question, suggest=True)` adds the same pointers to a question it does not answer; an answer itself never changes.
 
 ```python
 import physics_ai999x as physics

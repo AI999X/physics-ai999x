@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "physics-ai999x"
 version = "2.0.0"
-description = "Offline, verified physics solver: natural-language questions to typed quantities, certified relations, step-by-step working, LaTeX and honest refusals (zero wrong answers by design)"
+description = "Offline, verified physics solver: natural-language questions to typed quantities, certified relations, step-by-step working, LaTeX and honest refusals (zero wrong answers by design); finds the right capability across every AI999X model and draws figures"
 readme = "README.md"
 requires-python = ">=3.10"
 license = {text = "Apache-2.0"}
